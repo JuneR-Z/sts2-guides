@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>杀戮尖塔2攻略站 — 最强卡组 · 角色攻略 · 卡牌强度榜 | STS2 Guides</title>
+<meta name="description" content="杀戮尖塔2(Slay the Spire 2)最全中文攻略站。铁甲战士、静默猎手、故障机器人、亡灵缚者、摄政王全角色Build推荐，卡牌强度榜，遗物攻略，新手入门教程。每日更新。">
+<meta name="keywords" content="杀戮尖塔2,Slay the Spire 2,攻略,卡组,Build,角色,遗物,卡牌强度榜,新手攻略,铁甲战士,静默猎手,故障机器人,亡灵缚者,摄政王">
+<link rel="canonical" href="https://sts2-guides.com/zh/">
+<link rel="alternate" hreflang="zh" href="https://sts2-guides.com/zh/">
+<link rel="alternate" hreflang="en" href="https://sts2-guides.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://sts2-guides.com/en/">
+<style>
+:root {
+  --bg-primary: #0d0d1a;
+  --bg-secondary: #151528;
+  --bg-card: #1a1a30;
+  --bg-card-hover: #222240;
+  --border: #2a2a45;
+  --text-primary: #e8e6dc;
+  --text-secondary: #a09c8c;
+  --text-muted: #686450;
+  --gold: #d4a03c;
+  --gold-light: #f0c860;
+  --crimson: #c0392b;
+  --crimson-light: #e74c3c;
+  --blue: #3498db;
+  --green: #27ae60;
+  --purple: #8e44ad;
+  --orange: #e67e22;
+  --ironclad: #c0392b;
+  --silent: #27ae60;
+  --defect: #3498db;
+  --necrobinder: #8e44ad;
+  --regent: #d4a03c;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: var(--bg-secondary);
+  border-bottom: 2px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--gold), var(--crimson));
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.logo-text { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+.logo-text span { color: var(--gold-light); }
+
+nav { display: flex; gap: 0; }
+nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 4px;
+  transition: all .2s;
+}
+nav a:hover { color: var(--gold-light); background: rgba(255,255,255,0.05); }
+nav a.active { color: var(--gold-light); }
+
+.lang-switch { display: flex; align-items: center; gap: 8px; }
+.lang-switch a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  transition: all .2s;
+}
+.lang-switch a:hover { border-color: var(--gold); color: var(--gold-light); }
+.lang-switch a.active-lang { background: var(--gold); color: #111; border-color: var(--gold); }
+
+.search-box {
+  display: flex; align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 14px; gap: 8px;
+}
+.search-box input {
+  background: none; border: none;
+  color: var(--text-primary);
+  font-size: 14px; outline: none;
+  width: 180px;
+}
+.search-box input::placeholder { color: var(--text-muted); }
+.search-box button { background: none; border: none; color: var(--gold); cursor: pointer; font-size: 16px; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(180deg, #1a1030 0%, var(--bg-primary) 100%);
+  padding: 60px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.hero h1 {
+  font-size: 36px; font-weight: 800; margin-bottom: 12px;
+  background: linear-gradient(135deg, var(--gold-light), var(--crimson-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p { color: var(--text-secondary); font-size: 16px; max-width: 600px; margin: 0 auto 24px; }
+.hero-stats { display: flex; justify-content: center; gap: 40px; margin-top: 20px; }
+.hero-stat { text-align: center; }
+.hero-stat .num { font-size: 28px; font-weight: 700; color: var(--gold-light); }
+.hero-stat .label { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+/* Characters */
+.section { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+.section-title {
+  font-size: 22px; font-weight: 700; margin-bottom: 4px;
+  display: flex; align-items: center; gap: 8px;
+}
+.section-title::before { content: ''; width: 4px; height: 22px; background: var(--gold); border-radius: 2px; }
+.section-subtitle { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; }
+
+.char-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.char-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: all .25s;
+  position: relative;
+  overflow: hidden;
+}
+.char-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 8px 30px rgba(212,160,60,0.15);
+}
+.char-card .char-icon {
+  width: 48px; height: 48px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.char-card.ironclad .char-icon { background: rgba(192,57,43,0.2); }
+.char-card.silent .char-icon { background: rgba(39,174,96,0.2); }
+.char-card.defect .char-icon { background: rgba(52,152,219,0.2); }
+.char-card.necrobinder .char-icon { background: rgba(142,68,173,0.2); }
+.char-card.regent .char-icon { background: rgba(212,160,60,0.2); }
+.char-card h3 { font-size: 17px; margin-bottom: 4px; }
+.char-card .en-name { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; }
+.char-card .tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.char-card .tag {
+  font-size: 11px; padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  color: var(--text-secondary);
+}
+.char-card .badge {
+  position: absolute; top: 12px; right: 12px;
+  font-size: 10px; padding: 2px 8px;
+  border-radius: 10px;
+  background: var(--crimson); color: #fff;
+}
+.char-card .badge.new { background: var(--green); }
+
+/* Quick Links */
+.quick-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 40px; }
+.quick-link {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 14px; font-weight: 600;
+  transition: all .2s;
+}
+.quick-link:hover { border-color: var(--gold); background: var(--bg-card-hover); }
+.quick-link .icon { font-size: 18px; }
+
+/* Guides List */
+.guide-list { display: flex; flex-direction: column; gap: 12px; }
+.guide-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none; color: inherit;
+  transition: all .2s;
+}
+.guide-item:hover { border-color: var(--gold); background: var(--bg-card-hover); }
+.guide-item .rank { font-size: 24px; font-weight: 800; color: var(--text-muted); min-width: 30px; text-align: center; }
+.guide-item .rank.hot { color: var(--crimson-light); }
+.guide-item .content { flex: 1; }
+.guide-item h4 { font-size: 15px; margin-bottom: 4px; }
+.guide-item .meta { font-size: 12px; color: var(--text-muted); display: flex; gap: 12px; }
+.guide-item .arrow { color: var(--text-muted); font-size: 18px; }
+.guide-item .type-tag {
+  font-size: 11px; padding: 3px 10px;
+  border-radius: 10px;
+  white-space: nowrap; font-weight: 600;
+}
+.type-tag.build { background: rgba(212,160,60,0.15); color: var(--gold-light); }
+.type-tag.beginner { background: rgba(39,174,96,0.15); color: var(--green); }
+.type-tag.tierlist { background: rgba(231,76,60,0.15); color: var(--crimson-light); }
+.type-tag.relic { background: rgba(142,68,173,0.15); color: #b07cd8; }
+.type-tag.boss { background: rgba(52,152,219,0.15); color: var(--blue); }
+.type-tag.coop { background: rgba(230,126,34,0.15); color: var(--orange); }
+
+/* Two Column */
+.two-col { display: grid; grid-template-columns: 1fr 320px; gap: 24px; }
+@media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } .hero h1 { font-size: 26px; } nav { display: none; } }
+
+/* Sidebar */
+.sidebar-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.sidebar-card h3 { font-size: 15px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.hot-list { list-style: none; }
+.hot-list li { margin-bottom: 8px; }
+.hot-list li:last-child { margin-bottom: 0; }
+.hot-list a {
+  color: var(--text-secondary); text-decoration: none;
+  font-size: 13px; display: flex; align-items: center; gap: 8px;
+  transition: color .2s;
+}
+.hot-list a:hover { color: var(--gold-light); }
+.hot-list .order {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px;
+  font-size: 11px; font-weight: 700;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.06);
+  color: var(--text-muted);
+}
+.hot-list .order.top1 { background: var(--crimson); color: #fff; }
+.hot-list .order.top2 { background: var(--orange); color: #fff; }
+.hot-list .order.top3 { background: var(--gold); color: #111; }
+
+.update-item { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.update-item:last-child { border-bottom: none; }
+.update-item .date { color: var(--text-muted); font-size: 11px; }
+.update-item a { color: var(--text-secondary); text-decoration: none; }
+.update-item a:hover { color: var(--gold-light); }
+
+/* Footer */
+footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: 40px 20px;
+  margin-top: 60px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+footer a { color: var(--text-secondary); text-decoration: none; }
+footer a:hover { color: var(--gold-light); }
+.footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; flex-wrap: wrap; }
+.footer-disclaimer { max-width: 600px; margin: 0 auto; font-size: 12px; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/zh/" class="logo">
+      <div class="logo-icon">🗡️</div>
+      <div class="logo-text">STS2<span>攻略站</span></div>
+    </a>
+    <nav>
+      <a href="/zh/" class="active">首页</a>
+      <a href="#builds">卡组推荐</a>
+      <a href="#characters">角色攻略</a>
+      <a href="#tierlist">强度榜</a>
+      <a href="#relics">遗物</a>
+      <a href="#beginner">新手入门</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="search-box">
+        <input type="text" placeholder="搜索攻略...">
+        <button>🔍</button>
+      </div>
+      <div class="lang-switch">
+        <a href="/en/">EN</a>
+        <a href="/zh/" class="active-lang">中文</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <p style="color:var(--gold-light);font-size:13px;letter-spacing:2px;margin-bottom:8px;">SLAY THE SPIRE 2 · 抢先体验版</p>
+  <h1>杀戮尖塔2 中文攻略站</h1>
+  <p>全5角色最强卡组推荐 · 卡牌强度榜 · 遗物图鉴 · 新手入门教程 · Boss打法详解 · 联机配合攻略</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">5</div><div class="label">可玩角色</div></div>
+    <div class="hero-stat"><div class="num">567</div><div class="label">卡牌收录</div></div>
+    <div class="hero-stat"><div class="num">286</div><div class="label">遗物图鉴</div></div>
+    <div class="hero-stat"><div class="num">30+</div><div class="label">攻略文章</div></div>
+  </div>
+</section>
+
+<div class="section">
+  <div class="quick-links">
+    <a href="#beginner" class="quick-link"><span class="icon">📖</span> 新手入门指南</a>
+    <a href="#characters" class="quick-link"><span class="icon">🦸</span> 角色选择推荐</a>
+    <a href="#builds" class="quick-link"><span class="icon">🏆</span> 最强卡组构筑</a>
+    <a href="#tierlist" class="quick-link"><span class="icon">📊</span> 卡牌强度榜</a>
+    <a href="#relics" class="quick-link"><span class="icon">💎</span> 遗物优先级</a>
+    <a href="#boss" class="quick-link"><span class="icon">👹</span> Boss打法攻略</a>
+  </div>
+
+  <h2 class="section-title" id="characters">角色攻略</h2>
+  <p class="section-subtitle">3位回归经典 + 2位全新角色，每个角色都有多套主流构筑路线</p>
+  <div class="char-grid">
+    <a href="#" class="char-card ironclad">
+      <div class="char-icon">⚔️</div>
+      <h3>铁甲战士</h3>
+      <div class="en-name">Ironclad</div>
+      <div class="tag-row">
+        <span class="tag">力量流</span>
+        <span class="tag">格挡流</span>
+        <span class="tag">自残流</span>
+        <span class="tag">消耗流</span>
+      </div>
+    </a>
+    <a href="#" class="char-card silent">
+      <div class="char-icon">🗡️</div>
+      <h3>静默猎手</h3>
+      <div class="en-name">Silent</div>
+      <div class="tag-row">
+        <span class="tag">毒流</span>
+        <span class="tag">小刀流</span>
+        <span class="tag">弃牌流</span>
+      </div>
+    </a>
+    <a href="#" class="char-card defect">
+      <div class="char-icon">⚡</div>
+      <h3>故障机器人</h3>
+      <div class="en-name">Defect</div>
+      <div class="tag-row">
+        <span class="tag">球体流</span>
+        <span class="tag">能力流</span>
+        <span class="tag">0费流</span>
+      </div>
+    </a>
+    <a href="#" class="char-card necrobinder">
+      <span class="badge new">NEW</span>
+      <div class="char-icon">💀</div>
+      <h3>亡灵缚者</h3>
+      <div class="en-name">Necrobinder</div>
+      <div class="tag-row">
+        <span class="tag">召唤流</span>
+        <span class="tag">献祭流</span>
+        <span class="tag">灵魂流</span>
+      </div>
+    </a>
+    <a href="#" class="char-card regent">
+      <span class="badge new">NEW</span>
+      <div class="char-icon">👑</div>
+      <h3>摄政王</h3>
+      <div class="en-name">Regent</div>
+      <div class="tag-row">
+        <span class="tag">号令流</span>
+        <span class="tag">奇巧流</span>
+        <span class="tag">星辰流</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="two-col">
+    <div>
+      <h2 class="section-title" id="builds">最新攻略</h2>
+      <p class="section-subtitle">持续更新，涵盖全角色构筑、机制解读与实战技巧</p>
+      <div class="guide-list">
+
+        <a href="#" class="guide-item">
+          <span class="rank hot">🔥</span>
+          <span class="type-tag beginner">新手</span>
+          <div class="content">
+            <h4>杀戮尖塔2 零基础入门指南：从第一把到稳定通关</h4>
+            <div class="meta">
+              <span>🕐 5月20日更新</span>
+              <span>👁 12,845 阅读</span>
+              <span>💬 89 评论</span>
+            </div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="#" class="guide-item">
+          <span class="rank">1</span>
+          <span class="type-tag build">构筑</span>
+          <div class="content">
+            <h4>铁甲战士 力量流完全体构筑指南：一回合秒杀Boss</h4>
+            <div class="meta">
+              <span>🕐 5月19日更新</span>
+              <span>👁 9,231 阅读</span>
+              <span>💬 67 评论</span>
+            </div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="#" class="guide-item">
+          <span class="rank">2</span>
+          <span class="type-tag tierlist">强度榜</span>
+          <div class="content">
+            <h4>全角色卡牌强度榜 S~D 评级 (2026年5月版)</h4>
+            <div class="meta">
+              <span>🕐 5月18日更新</span>
+              <span>👁 8,720 阅读</span>
+              <span>💬 54 评论</span>
+            </div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="#" class="guide-item">
+          <span class="rank">3</span>
+          <span class="type-tag build">构筑</span>
+          <div class="content">
+            <h4>静默猎手 毒液爆发流：叠毒999不是梦</h4>
+            <div class="meta">
+              <span>🕐 5月17日更新</span>
+              <span>👁 7,456 阅读</span>
+              <span>💬 43 评论</span>
+            </div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="#" class="guide-item">
+          <span class="rank">4</span>
+          <span class="type-tag build">构筑</span>
+          <div class="content">
+            <h4>亡灵缚者 召唤流深度解析：如何用骷髅海淹没尖塔</h4>
+            <div class="meta">
+              <span>🕐 5月16日更新</span>
+              <span>👁 6,892 阅读</span>
+              <span>💬 38 评论</span>
+            </div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="#" class="guide-item">
+          <span class="rank">5</span>
+          <span class="type-tag relic">遗物</span>
+          <div class="content">
+            <h4>S级遗物全解析：哪些遗物看到必拿？Ancient遗物机制详解</h4>
+            <div class="meta">
+              <span>🕐 5月15日更新</span>
+              <span>👁 5,987 阅读</span>
+              <span>💬 31 评论</span>
+            </div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="#" class="guide-item">
+          <span class="rank">6</span>
+          <span class="type-tag build">构筑</span>
+          <div class="content">
+            <h4>故障机器人 能力指数增长流：每回合100+伤害的数学魔法</h4>
+            <div class="meta">
+              <span>🕐 5月14日更新</span>
+              <span>👁 5,321 阅读</span>
+              <span>💬 28 评论</span>
+            </div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="#" class="guide-item">
+          <span class="rank">7</span>
+          <span class="type-tag coop">联机</span>
+          <div class="content">
+            <h4>双人联机最强组合推荐：亡灵缚者 + 铁甲战士的化学反应</h4>
+            <div class="meta">
+              <span>🕐 5月13日更新</span>
+              <span>👁 4,876 阅读</span>
+              <span>💬 24 评论</span>
+            </div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="#" class="guide-item">
+          <span class="rank">8</span>
+          <span class="type-tag boss">Boss</span>
+          <div class="content">
+            <h4>第三章最终Boss「腐败之心」机制全解 & 各角色应对策略</h4>
+            <div class="meta">
+              <span>🕐 5月12日更新</span>
+              <span>👁 4,210 阅读</span>
+              <span>💬 19 评论</span>
+            </div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="#" class="guide-item">
+          <span class="rank">9</span>
+          <span class="type-tag build">构筑</span>
+          <div class="content">
+            <h4>摄政王 号令流完全攻略：用"Sly"机制精准控场</h4>
+            <div class="meta">
+              <span>🕐 5月11日更新</span>
+              <span>👁 3,945 阅读</span>
+              <span>💬 16 评论</span>
+            </div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+
+      </div>
+    </div>
+
+    <aside>
+      <div class="sidebar-card">
+        <h3>🔥 本周热门</h3>
+        <ul class="hot-list">
+          <li><a href="#"><span class="order top1">1</span> 零基础入门指南</a></li>
+          <li><a href="#"><span class="order top2">2</span> 全角色强度对比</a></li>
+          <li><a href="#"><span class="order top3">3</span> 卡牌强度榜 S-D</a></li>
+          <li><a href="#"><span class="order">4</span> 铁甲战士 力量流</a></li>
+          <li><a href="#"><span class="order">5</span> 新手该选哪个角色？</a></li>
+          <li><a href="#"><span class="order">6</span> 路线选择终极指南</a></li>
+          <li><a href="#"><span class="order">7</span> 如何管理卡组厚度</a></li>
+          <li><a href="#"><span class="order">8</span> 遗物优先级排名</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>📅 最近更新</h3>
+        <div class="update-item">
+          <span class="date">05-21</span>
+          <a href="#">EA补丁 0.4.2 更新解读：铁甲战士增强</a>
+        </div>
+        <div class="update-item">
+          <span class="date">05-20</span>
+          <a href="#">新手入门指南更新：新增路线选择章节</a>
+        </div>
+        <div class="update-item">
+          <span class="date">05-19</span>
+          <a href="#">新增"Sly""Forge"两大机制深度解析</a>
+        </div>
+        <div class="update-item">
+          <span class="date">05-18</span>
+          <a href="#">联机攻略：双人最佳6种组合排行</a>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>❓ 常见问题</h3>
+        <div style="font-size:13px;">
+          <p style="margin-bottom:8px;"><strong style="color:var(--gold-light);">Q:</strong> 新手推荐哪个角色？</p>
+          <p style="color:var(--text-muted);margin-bottom:12px;">A: 铁甲战士操作直观，回血机制容错高，是最佳入门选择。</p>
+
+          <p style="margin-bottom:8px;"><strong style="color:var(--gold-light);">Q:</strong> 卡组最优厚度是多少？</p>
+          <p style="color:var(--text-muted);margin-bottom:12px;">A: 推荐控制在20-30张，过厚会影响核心卡上手率。</p>
+
+          <p style="margin-bottom:8px;"><strong style="color:var(--gold-light);">Q:</strong> 应该优先删什么卡？</p>
+          <p style="color:var(--text-muted);margin-bottom:12px;">A: 优先删除初始打击/防御，保持卡组纯净度。</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/zh/">首页</a>
+    <a href="#">关于本站</a>
+    <a href="#">投稿攻略</a>
+    <a href="#">联系站长</a>
+    <a href="#">隐私政策</a>
+    <a href="/en/">English</a>
+  </div>
+  <div class="footer-disclaimer">
+    STS2攻略站是Slay the Spire 2的非官方中文玩家社区，所有内容由玩家贡献。<br>
+    游戏版权归 Mega Crit Games 所有。本站为独立爱好者站点，与官方无关联。<br>
+    © 2026 STS2Guides. 本站使用 Google AdSense 广告支持运营。
+  </div>
+</footer>
+
+</body>
+</html>

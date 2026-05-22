@@ -161,7 +161,18 @@ nav a.active { color: var(--gold-light); }
   gap: 40px;
   margin-top: 20px;
 }
-.hero-stat { text-align: center; }
+.hero-stat {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all .2s;
+}
+.hero-stat:hover {
+  background: rgba(255,255,255,0.05);
+  transform: translateY(-2px);
+}
 .hero-stat .num { font-size: 28px; font-weight: 700; color: var(--gold-light); }
 .hero-stat .label { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 
@@ -500,10 +511,10 @@ footer a:hover { color: var(--gold-light); }
   <h1>The Ultimate STS2 Strategy Guide</h1>
   <p>Best builds for all 5 characters · Card tier lists · Relic database · Beginner walkthrough · Boss strategies · Co-op synergy guide</p>
   <div class="hero-stats">
-    <div class="hero-stat"><div class="num">5</div><div class="label">Characters</div></div>
-    <div class="hero-stat"><div class="num">567</div><div class="label">Cards</div></div>
-    <div class="hero-stat"><div class="num">286</div><div class="label">Relics</div></div>
-    <div class="hero-stat"><div class="num">30+</div><div class="label">Guides</div></div>
+    <a href="characters/index.html" class="hero-stat"><div class="num">5</div><div class="label">Characters</div></a>
+    <a href="cards/index.html" class="hero-stat"><div class="num">567</div><div class="label">Cards</div></a>
+    <a href="relics/index.html" class="hero-stat"><div class="num">286</div><div class="label">Relics</div></a>
+    <a href="guides/index.html" class="hero-stat"><div class="num">30+</div><div class="label">Guides</div></a>
   </div>
 </section>
 

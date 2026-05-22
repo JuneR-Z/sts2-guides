@@ -8,3 +8,4 @@ site-strategy.md
 
 # Page generator script (local tool, not deployed)
 generate-detail-pages.ps1
+generate_detail_pages.py

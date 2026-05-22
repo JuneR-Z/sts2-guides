@@ -273,7 +273,7 @@ function renderCards() {
 
   tbody.innerHTML = filtered.map(c => `
     <tr>
-      <td><span class="tier-badge ${c.tier.toLowerCase()}">${c.tier}</span></td>
+      <td><span class="tier-badge ${c.tier.toLowerCase()}" title="${c.reason ? c.reason : 'Auto-assigned based on rarity'}">${c.tier}</span></td>
       <td>
         <div class="card-name">
           ${c.name}

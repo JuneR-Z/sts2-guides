@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Slay the Spire 2 Tier List — Best Cards Ranked (S to D) | STS2Guides</title>
-<meta name="description" content="Complete Slay the Spire 2 tier list ranking all 137 cards across 5 characters. S/A/B/C/D rankings with explanations for every card. Updated with the latest meta.">
+<meta name="description" content="Complete Slay the Spire 2 tier list ranking all cards across 5 characters. S/A/B/C/D rankings with explanations for every card. Updated with the latest meta.">
 <link rel="canonical" href="https://sts2guides.com/en/tier-list/">
 <script type="application/ld+json">
 {
@@ -89,6 +89,7 @@ nav a.active { color: var(--gold-light); }
 .card-right .card-effect { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
 .card-right .card-upgrade { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
 .card-right .card-why { font-size: 11px; color: var(--blue); font-style: italic; }
+.card-right .card-why.auto { color: var(--text-muted); font-style: normal; opacity: 0.6; }
 
 .empty-tier { text-align: center; padding: 20px; color: var(--text-muted); font-size: 13px; }
 
@@ -143,21 +144,15 @@ footer a:hover { color: var(--gold-light); }
 
 <div class="hero">
   <h1>Slay the Spire 2 Tier List</h1>
-  <p>The definitive ranking of all cards across 5 characters. Every card rated S through D with explanations on <em>why</em> each card earns its rank — not just what it does.</p>
+  <p>The definitive ranking of all cards across 5 characters. Every card rated S through D based on power level and versatility. Manually rated cards include detailed explanations.</p>
   <div class="hero-meta">
-    <span>📊 137 Cards Rated</span>
+    <span id="heroTotal">📊 Loading...</span>
     <span>👤 5 Characters</span>
     <span>📅 Updated: May 2026</span>
   </div>
 </div>
 
-<nav class="char-tabs" id="charTabs">
-  <button class="char-tab active" data-char="ironclad">🛡️ Ironclad <span style="font-size:11px;color:var(--text-muted)">39</span></button>
-  <button class="char-tab" data-char="silent">🗡️ Silent <span style="font-size:11px;color:var(--text-muted)">29</span></button>
-  <button class="char-tab" data-char="defect">⚡ Defect <span style="font-size:11px;color:var(--text-muted)">26</span></button>
-  <button class="char-tab" data-char="necrobinder">💀 Necrobinder <span style="font-size:11px;color:var(--text-muted)">16</span></button>
-  <button class="char-tab" data-char="regent">👑 Regent <span style="font-size:11px;color:var(--text-muted)">17</span></button>
-</nav>
+<nav class="char-tabs" id="charTabs"></nav>
 
 <div class="section" id="tierContent"></div>
 
@@ -173,251 +168,60 @@ footer a:hover { color: var(--gold-light); }
   <p>Slay the Spire 2 fan guide site. Not affiliated with Mega Crit.</p>
 </footer>
 
+<script src="../cards/cards-data.js"></script>
 <script>
-// All tier data embedded directly
-const tierData = {
-ironclad: {
-  name: "Ironclad",
-  tiers: {
-    S: [
-      {name:"Battle Trance",cost:"0",type:"Skill",rarity:"Uncommon",effect:"Draw 3 cards. You cannot draw additional cards this turn.","upgrade":"Draw 4 cards.","why":"0-cost draw 3 is absurd. The downside rarely matters if you play it last in your turn. Auto-pick in every Ironclad deck."},
-      {name:"Feel No Pain",cost:"1",type:"Power",rarity:"Uncommon",effect:"Whenever a card is Exhausted, gain 3 Block.","upgrade":"Gain 4 Block.","why":"The engine behind every Exhaust deck. Turns the Ironclad's core mechanic into passive defense. With Corruption, it's immortality."},
-      {name:"Demon Form",cost:"3",type:"Power",rarity:"Rare",effect:"At the start of each turn, gain 2 Strength.","upgrade":"Gain 3 Strength.","why":"The ultimate boss-killer. Plays itself in long fights — every turn you get stronger. Pair with Reaper for full sustain."},
-      {name:"Corruption",cost:"3",type:"Power",rarity:"Rare",effect:"Skills cost 0. Whenever you play a Skill, Exhaust it.","upgrade":"Costs 2.","why":"Breaks the game. Turns every Skill into 0-cost, and the Exhaust triggers Feel No Pain and Dark Embrace for infinite value."},
-      {name:"Limit Break",cost:"1",type:"Skill",rarity:"Rare",effect:"Double your Strength. Exhaust.","upgrade":"Double your Strength. (Does not Exhaust.)","why":"Doubles your Strength output. Upgraded, it's reusable for exponential scaling. The reason Strength builds beat A20."},
-      {name:"Fiend Fire",cost:"2",type:"Attack",rarity:"Rare",effect:"Exhaust your hand. Deal 7 damage for each card Exhausted.","upgrade":"Deal 10 damage.","why":"Massive burst damage + deck thinning in one card. Kills most hallway fights instantly and cleans your deck for boss fights."},
-      {name:"Offering",cost:"0",type:"Skill",rarity:"Rare",effect:"Lose 6 HP. Gain 2 Energy. Draw 3 cards. Exhaust.","upgrade":"Draw 5 cards.","why":"0-cost energy + draw for 6 HP. The HP cost is trivial compared to the tempo swing. Every Ironclad deck wants at least one."},
-      {name:"Feed",cost:"1",type:"Attack",rarity:"Rare",effect:"Deal 10 damage. If this kills a non-minion enemy, gain 3 Max HP. Exhaust.","upgrade":"Deal 12 damage. Gain 4 Max HP.","why":"Free max HP scaling through the entire run. With good timing, you can farm 30+ extra HP. The best sustain card in the game."}
-    ],
-    A: [
-      {name:"Headbutt",cost:"1",type:"Attack",rarity:"Common",effect:"Deal 9 damage. Place a card from your discard pile on top of your draw pile.","upgrade":"Deal 12 damage.","why":"The best common attack. Reliable damage + card recursion. Lets you replay your best card next turn."},
-      {name:"Shrug It Off",cost:"1",type:"Skill",rarity:"Common",effect:"Gain 8 Block. Draw 1 card.","upgrade":"Gain 11 Block.","why":"Block + draw on one card. The Ironclad's workhorse defense — fits in every deck, no synergy required."},
-      {name:"Whirlwind",cost:"X",type:"Attack",rarity:"Uncommon",effect:"Deal 5 damage to ALL enemies X times.","upgrade":"Deal 8 damage.","why":"The best AoE tool. With Strength scaling and energy support, it clears entire fights in one cast."},
-      {name:"Carnage",cost:"2",type:"Attack",rarity:"Uncommon",effect:"Deal 20 damage. Ethereal.","upgrade":"Deal 28 damage.","why":"20 damage for 2 energy is exceptional early. Ethereal is actually a benefit — it removes itself after use, thinning your deck."},
-      {name:"Disarm",cost:"1",type:"Skill",rarity:"Uncommon",effect:"Enemy loses 2 Strength. Exhaust.","upgrade":"Enemy loses 3 Strength.","why":"Neuters multi-hit enemies and bosses. Book of Stabbing, Hexaghost, The Heart — Disarm cuts their damage drastically."},
-      {name:"Shockwave",cost:"2",type:"Skill",rarity:"Uncommon",effect:"Apply 3 Weak and 3 Vulnerable to ALL enemies. Exhaust.","upgrade":"Apply 5 Weak and 5 Vulnerable.","why":"Applies both key debuffs to all enemies at once. A perfect opener for boss fights and multi-enemy encounters."},
-      {name:"Inflame",cost:"1",type:"Power",rarity:"Uncommon",effect:"Gain 2 Strength.","upgrade":"Gain 3 Strength.","why":"Simple, efficient Strength. No downside, immediate payoff. The reliable workhorse that gets Strength builds started."},
-      {name:"Spot Weakness",cost:"1",type:"Skill",rarity:"Uncommon",effect:"If the enemy intends to attack, gain 3 Strength.","upgrade":"Gain 4 Strength.","why":"Highest Strength-per-energy in the game when it hits. Slightly conditional, but enemies attack often enough to be reliable."},
-      {name:"Burning Pact",cost:"1",type:"Skill",rarity:"Uncommon",effect:"Exhaust 1 card. Draw 2 cards.","upgrade":"Draw 3 cards.","why":"Targeted exhaust + draw. Thins Strikes and Defends while cycling your deck. Upgraded it's 3 draws — incredible."},
-      {name:"Barricade",cost:"3",type:"Power",rarity:"Rare",effect:"Block is not removed at the start of your turn.","upgrade":"Costs 2.","why":"Enables block-stacking builds. With Entrench and Body Slam, you can become unkillable while dealing massive damage."},
-      {name:"Impervious",cost:"2",type:"Skill",rarity:"Rare",effect:"Gain 30 Block. Exhaust.","upgrade":"Gain 40 Block.","why":"30 block for 2 energy is the highest block-to-cost ratio in the game. A lifesaver in emergencies."},
-      {name:"Reaper",cost:"2",type:"Attack",rarity:"Rare",effect:"Deal 4 damage to ALL enemies. Heal HP equal to unblocked damage.","upgrade":"Deal 5 damage.","why":"With Strength, this is full-heal-on-demand. The Ironclad's only lifesteal — essential for long A20 runs."},
-      {name:"Immolate",cost:"2",type:"Attack",rarity:"Rare",effect:"Deal 21 damage to ALL enemies. Add a Burn to your discard pile.","upgrade":"Deal 28 damage.","why":"Act 2 hallway fights solved. The Burn downside is negligible compared to the massive AoE burst."},
-      {name:"Double Tap",cost:"1",type:"Skill",rarity:"Rare",effect:"This turn, your next Attack is played twice.","upgrade":"Your next 2 Attacks are played twice.","why":"Doubles any attack — pair with Heavy Blade or Bludgeon for devastating turns. The Ironclad's best combo enabler."},
-      {name:"Exhume",cost:"1",type:"Skill",rarity:"Rare",effect:"Put a card from your Exhaust pile into your hand. Exhaust.","upgrade":"Costs 0.","why":"Lets you replay your best exhausted cards. Fiend Fire twice? Limit Break three times? Exhume makes it happen."}
-    ],
-    B: [
-      {name:"Anger",cost:"0",type:"Attack",rarity:"Common",effect:"Deal 6 damage. Add a copy of this card into your discard pile.","upgrade":"Deal 8 damage.","why":"Free damage that clones itself. Prevents dead draws by keeping your hand full of attacks. Best early game."},
-      {name:"Body Slam",cost:"1",type:"Attack",rarity:"Common",effect:"Deal damage equal to your current Block.","upgrade":"Costs 0.","why":"Block-build win condition. In a dedicated block deck this hits harder than any other card. Needs synergy to work."},
-      {name:"Pommel Strike",cost:"1",type:"Attack",rarity:"Common",effect:"Deal 9 damage. Draw 1 card.","upgrade":"Deal 10 damage. Draw 2 cards.","why":"Solid attack that cycles itself. Upgraded, it's premium draw + damage. A reliable card for any deck."},
-      {name:"Heavy Blade",cost:"2",type:"Attack",rarity:"Common",effect:"Deal 14 damage. Strength affects this card 3 times.","upgrade":"Deal 14 damage. Strength affects this card 5 times.","why":"The payoff for Strength builds. 5x Strength multiplier upgraded means every point of Strength is worth 5 damage."},
-      {name:"Thunderclap",cost:"1",type:"Attack",rarity:"Common",effect:"Deal 4 damage to ALL enemies. Apply 1 Vulnerable.","upgrade":"Deal 7 damage.","why":"AoE damage + mass Vulnerable in one card. Pairs well with Whirlwind or Immolate for follow-up damage."},
-      {name:"Uppercut",cost:"2",type:"Attack",rarity:"Uncommon",effect:"Deal 13 damage. Apply 1 Weak and 1 Vulnerable.","upgrade":"Deal 13 damage. Apply 2 Weak and 2 Vulnerable.","why":"Good damage plus both debuffs. Strong in Acts 1-2, but falls off in late game when you have better debuff sources."},
-      {name:"True Grit",cost:"1",type:"Skill",rarity:"Common",effect:"Gain 7 Block. Exhaust a card in your hand.","upgrade":"Gain 9 Block. Exhaust a card in your hand.","why":"Block + targeted exhaust. Upgraded, it lets you choose which card to remove. Great for thinning Strikes."},
-      {name:"Entrench",cost:"2",type:"Skill",rarity:"Uncommon",effect:"Double your current Block.","upgrade":"Costs 1.","why":"Core of block builds alongside Barricade. Doubling 30+ block creates unbreakable walls. Dead draw without block setup."},
-      {name:"Bludgeon",cost:"3",type:"Attack",rarity:"Rare",effect:"Deal 32 damage.","upgrade":"Deal 42 damage.","why":"Highest single-hit damage in the game. Amazing with Double Tap or Necronomicon. Clunky at 3 energy without support."},
-      {name:"Brutality",cost:"1",type:"Power",rarity:"Rare",effect:"At the start of your turn, lose 1 HP and draw 1 card.","upgrade":"Innate.","why":"Passive draw. The HP loss adds up over long fights, but the extra card per turn compensates well."}
-    ],
-    C: [
-      {name:"Bash",cost:"2",type:"Attack",rarity:"Basic",effect:"Deal 8 damage. Apply 2 Vulnerable.","upgrade":"Deal 10 damage. Apply 3 Vulnerable.","why":"Your starter debuff. 2-cost is expensive for its effect. Replace ASAP with Thunderclap or Uppercut."},
-      {name:"Clothesline",cost:"2",type:"Attack",rarity:"Common",effect:"Deal 12 damage. Apply 2 Weak.","upgrade":"Deal 14 damage. Apply 3 Weak.","why":"Expensive for what it does. Shockwave or Disarm are better debuff sources. Take early if desperate."},
-      {name:"Flex",cost:"0",type:"Skill",rarity:"Common",effect:"Gain 2 Strength. At the end of this turn, lose 2 Strength.","upgrade":"Gain 4 Strength.","why":"Temporary Strength is hard to capitalize on. Needs artifact or Orange Pellets to become permanent. Niche."},
-      {name:"Cleave",cost:"1",type:"Attack",rarity:"Common",effect:"Deal 8 damage to ALL enemies.","upgrade":"Deal 11 damage.","why":"Weak AoE. Whirlwind and Immolate are strictly better. Take only if you have zero AoE in Act 2."},
-      {name:"Twin Strike",cost:"1",type:"Attack",rarity:"Common",effect:"Deal 5 damage twice.","upgrade":"Deal 7 damage twice.","why":"Two hits for Strength scaling, but Pommel Strike or Sword Boomerang do it better. Replace when possible."},
-      {name:"Blood for Blood",cost:"4",type:"Attack",rarity:"Uncommon",effect:"Costs 1 less for each time you lose HP in combat. Deal 18 damage.","upgrade":"Deal 22 damage.","why":"Too slow. By the time it's cheap, you've already taken too much damage. Reaper is a better payoff."}
-    ],
-    D: [
-      {name:"Strike",cost:"1",type:"Attack",rarity:"Basic",effect:"Deal 6 damage.","upgrade":"Deal 9 damage.","why":"Starter card. Remove these as early as possible — they're dead weight in Act 2+."},
-      {name:"Defend",cost:"1",type:"Skill",rarity:"Basic",effect:"Gain 5 Block.","upgrade":"Gain 8 Block.","why":"Starter block. Outclassed by every other block card. Remove after Strikes are gone."}
-    ]
-  }
-},
-silent: {
-  name: "Silent",
-  tiers: {
-    S: [
-      {name:"Corpse Explosion",cost:"2",type:"Skill",rarity:"Rare",effect:"Apply 6 Poison. When the enemy dies, deal damage equal to its max HP to ALL enemies.","upgrade":"Apply 9 Poison.","why":"Solves every multi-enemy fight. Poison one target, kill it, and its death nukes everything else. Best AoE in the game."},
-      {name:"Adrenaline",cost:"0",type:"Skill",rarity:"Rare",effect:"Gain 1 Energy. Draw 2 cards. Exhaust.","upgrade":"Gain 2 Energy.","why":"Net positive energy + draw, costs zero. No downside. Every Silent deck takes every copy offered."},
-      {name:"Wraith Form",cost:"3",type:"Power",rarity:"Rare",effect:"Gain 2 Intangible. At the end of your turn, lose 1 Dexterity.","upgrade":"Gain 3 Intangible.","why":"3 turns of near-invincibility. With Well Laid Plans, you play it the turn before lethal. The Dexterity loss rarely matters."},
-      {name:"Catalyst",cost:"1",type:"Skill",rarity:"Rare",effect:"Double an enemy's Poison. Exhaust.","upgrade":"Triple an enemy's Poison.","why":"The Poison build's kill button. Doubles (or triples) existing Poison. Turns 50 poison into 150 — instant boss kill."},
-      {name:"Nightmare",cost:"3",type:"Skill",rarity:"Rare",effect:"Choose a card. Next turn, add 3 copies of that card to your hand. Exhaust.","upgrade":"Costs 2.","why":"Triple any card. Three Wraith Forms, three Catalysts, three Adrenalines. Breaks the game with the right target."},
-      {name:"Well Laid Plans",cost:"1",type:"Power",rarity:"Uncommon",effect:"At the end of your turn, Retain up to 1 card.","upgrade":"Retain up to 2 cards.","why":"Retaining cards is the Silent's superpower. Hold Wraith Form for the right turn, save Catalyst for after Poison build-up. Low-key the best Silent card."}
-    ],
-    A: [
-      {name:"Blade Dance",cost:"1",type:"Skill",rarity:"Common",effect:"Add 2 Shivs to your hand.","upgrade":"Add 3 Shivs.","why":"3 Shivs for 1 energy is the most energy-efficient damage in the game. Pairs with Accuracy, After Image, and Envenom."},
-      {name:"Backflip",cost:"1",type:"Skill",rarity:"Common",effect:"Gain 5 Block. Draw 2 cards.","upgrade":"Gain 8 Block.","why":"Block + draw. The Silent's version of Shrug It Off. Picks itself — there's no deck that doesn't want Backflip."},
-      {name:"Acrobatics",cost:"1",type:"Skill",rarity:"Common",effect:"Draw 3 cards. Discard 1 card.","upgrade":"Draw 4 cards.","why":"Massive draw. Turns discarding into an advantage when paired with Tactician or Reflex. The Silent's best cycle tool."},
-      {name:"Leg Sweep",cost:"2",type:"Skill",rarity:"Uncommon",effect:"Apply 2 Weak. Gain 11 Block.","upgrade":"Apply 3 Weak. Gain 14 Block.","why":"High block + long-lasting Weak. Neutralizes boss multi-attacks by itself."},
-      {name:"Calculated Gamble",cost:"0",type:"Skill",rarity:"Uncommon",effect:"Discard your hand, then draw that many cards. Exhaust.","upgrade":"(Does not Exhaust.)","why":"Redraw your entire hand for free. Upgraded, it's reusable. Triggers every discard synergy at once."},
-      {name:"Piercing Wail",cost:"1",type:"Skill",rarity:"Common",effect:"ALL enemies lose 6 Strength this turn. Exhaust.","upgrade":"ALL enemies lose 8 Strength.","why":"Temporary Strength reduction that blocks just as hard. The Silent's Disarm — essential against multi-hit enemies."},
-      {name:"After Image",cost:"1",type:"Power",rarity:"Rare",effect:"Whenever you play a card, gain 1 Block.","upgrade":"Innate.","why":"Passive block every card. In Shiv decks, you can generate 8-10 block per turn for free. Stacks with itself."},
-      {name:"Noxious Fumes",cost:"1",type:"Power",rarity:"Uncommon",effect:"At the start of your turn, apply 2 Poison to ALL enemies.","upgrade":"Apply 3 Poison.","why":"Passive, free, permanent Poison. Solves artifact charges and chip damage. The backbone of every Poison build."},
-      {name:"Malaise",cost:"X",type:"Skill",rarity:"Rare",effect:"Enemy loses X Strength. Apply X Weak. Exhaust.","upgrade":"Enemy loses X+1 Strength. Apply X+1 Weak.","why":"Permanent Strength drain + Weak. Dump all energy into it and the boss hits like a child. The ultimate defensive card."},
-      {name:"Burst",cost:"1",type:"Skill",rarity:"Rare",effect:"This turn, your next Skill is played twice.","upgrade":"Your next 2 Skills are played twice.","why":"Double any skill. Poison stacking, block generation, card draw — everything gets doubled. Pairs beautifully with Catalyst."}
-    ],
-    B: [
-      {name:"Neutralize",cost:"0",type:"Attack",rarity:"Basic",effect:"Deal 3 damage. Apply 1 Weak.","upgrade":"Deal 4 damage. Apply 2 Weak.","why":"Best starter card in the game. 0-cost Weak is already good, and it's your only turn-1 debuff source early."},
-      {name:"Dagger Spray",cost:"1",type:"Attack",rarity:"Common",effect:"Deal 4 damage to ALL enemies twice.","upgrade":"Deal 6 damage twice.","why":"Reliable early AoE. Solves Act 1 multi-enemy fights, but falls off by Act 3 unless you have Strength."},
-      {name:"Deadly Poison",cost:"1",type:"Skill",rarity:"Common",effect:"Apply 5 Poison.","upgrade":"Apply 7 Poison.","why":"Solid Poison application. But Noxious Fumes is more efficient long-term. Take if you need immediate Poison stack."},
-      {name:"Cloak And Dagger",cost:"1",type:"Skill",rarity:"Common",effect:"Gain 6 Block. Add 1 Shiv to your hand.","upgrade":"Add 2 Shivs.","why":"Block + Shiv. A safe card that advances both defense and offense. Not flashy, but rarely wrong to pick."},
-      {name:"Dash",cost:"2",type:"Attack",rarity:"Uncommon",effect:"Gain 10 Block. Deal 10 damage.","upgrade":"Gain 13 Block. Deal 13 damage.","why":"Block + damage in one. Excellent early game, but 2-cost becomes awkward in tighter decks."},
-      {name:"Concentrate",cost:"0",type:"Skill",rarity:"Uncommon",effect:"Discard 2 cards. Gain 2 Energy.","upgrade":"Discard 2 cards. Gain 3 Energy.","why":"Energy generation from discard. Strong with Reflex or Tactician, but hurts without discard synergy."},
-      {name:"Storm of Steel",cost:"1",type:"Skill",rarity:"Rare",effect:"Discard your hand. Add 1 Shiv for each card discarded.","upgrade":"Upgrade all Shivs created.","why":"Turns a full hand into Shivs. Good in Shiv-heavy builds, but Blade Dance does the job more efficiently."},
-      {name:"Envenom",cost:"2",type:"Power",rarity:"Rare",effect:"Whenever an unblocked Attack deals damage, apply 1 Poison.","upgrade":"Costs 1.","why":"Adds Poison to every attack. Strong with Shivs, but 2-cost setup is slow. Better in hybrid builds."}
-    ],
-    C: [
-      {name:"Survivor",cost:"1",type:"Skill",rarity:"Basic",effect:"Gain 8 Block. Discard 1 card.","upgrade":"Gain 11 Block.","why":"Starter block. The discard can be beneficial, but it's still just a Defend++."},
-      {name:"Flechettes",cost:"1",type:"Attack",rarity:"Uncommon",effect:"Deal 4 damage for each Skill in your hand.","upgrade":"Deal 6 damage.","why":"Too conditional. Needs a skill-heavy hand to do anything useful. Inconsistent damage."},
-      {name:"Endless Agony",cost:"0",type:"Attack",rarity:"Uncommon",effect:"Deal 4 damage. When drawn, add a copy of this card to your hand. Exhaust.","upgrade":"Deal 6 damage.","why":"Free damage that clogs your deck. 4 damage isn't worth the hand space it eats."},
-      {name:"Prepared",cost:"0",type:"Skill",rarity:"Common",effect:"Draw 1 card. Discard 1 card.","upgrade":"Draw 2 cards. Discard 1 card.","why":"Net zero value unless you have discard synergy. Acrobatics and Dagger Throw are better cycle tools."},
-      {name:"Accuracy",cost:"1",type:"Power",rarity:"Uncommon",effect:"Shivs deal 3 additional damage.","upgrade":"Shivs deal 5 additional damage.","why":"Situational. Only useful in pure Shiv decks, and even then it's a dead draw until you find Shiv generators."}
-    ],
-    D: [
-      {name:"Strike",cost:"1",type:"Attack",rarity:"Basic",effect:"Deal 6 damage.","upgrade":"Deal 9 damage.","why":"Remove at shops. Dead weight past Act 1."},
-      {name:"Defend",cost:"1",type:"Skill",rarity:"Basic",effect:"Gain 5 Block.","upgrade":"Gain 8 Block.","why":"Worse than every other block card. Remove when possible."}
-    ]
-  }
-},
-defect: {
-  name: "Defect",
-  tiers: {
-    S: [
-      {name:"Glacier",cost:"2",type:"Skill",rarity:"Uncommon",effect:"Gain 7 Block. Channel 2 Frost.","upgrade":"Gain 10 Block.","why":"Instant block + 2 Frost orbs. The Defect's best block card. With Focus, each Frost orb passively blocks 5+ damage per turn."},
-      {name:"Defragment",cost:"1",type:"Power",rarity:"Uncommon",effect:"Gain 1 Focus.","upgrade":"Gain 2 Focus.","why":"The most important card in any Defect deck. Focus makes every orb stronger. Take every copy you see."},
-      {name:"Electrodynamics",cost:"2",type:"Power",rarity:"Rare",effect:"Lightning now hits ALL enemies. Channel 2 Lightning.","upgrade":"Channel 3 Lightning.","why":"Solves AoE forever. Turns single-target Lightning orbs into mass damage. Essential for Act 2 and beyond."},
-      {name:"Biased Cognition",cost:"1",type:"Power",rarity:"Rare",effect:"Gain 4 Focus. At the start of each turn, lose 1 Focus.","upgrade":"Gain 5 Focus.","why":"+5 Focus on turn 1 wins fast fights. Pair with Core Surge's Artifact to negate the Focus loss entirely."},
-      {name:"Echo Form",cost:"3",type:"Power",rarity:"Rare",effect:"The first card you play each turn is played twice. Ethereal.","upgrade":"(Not Ethereal.)","why":"Doubles your best card every turn. Echo your Defragment for 4 Focus, or double your Glacier. Wins runs by itself."},
-      {name:"Seek",cost:"0",type:"Skill",rarity:"Rare",effect:"Choose 1 card from your draw pile and put it into your hand. Exhaust.","upgrade":"Choose 2 cards.","why":"0-cost tutoring. Fetch your key powers on turn 1. The only card that lets you choose exactly what you need."}
-    ],
-    A: [
-      {name:"Ball Lightning",cost:"1",type:"Attack",rarity:"Common",effect:"Deal 7 damage. Channel 1 Lightning.","upgrade":"Deal 10 damage.","why":"The best common attack. Damage + Lightning channel in one card. Carries Act 1 by itself."},
-      {name:"Cold Snap",cost:"1",type:"Attack",rarity:"Common",effect:"Deal 6 damage. Channel 1 Frost.","upgrade":"Deal 9 damage.","why":"Damage + Frost orb. Bridges offense and defense elegantly. Better than Ball Lightning in long fights."},
-      {name:"Coolheaded",cost:"1",type:"Skill",rarity:"Common",effect:"Channel 1 Frost. Draw 1 card.","upgrade":"Draw 2 cards.","why":"Frost generation + draw. Essential for cycling your deck and maintaining Frost wall."},
-      {name:"Equilibrium",cost:"2",type:"Skill",rarity:"Uncommon",effect:"Gain 13 Block. Retain your hand this turn.","upgrade":"Gain 16 Block.","why":"Big block plus retain. Lets you set up next turn perfectly. Lines up Echo Form and other key powers."},
-      {name:"Loop",cost:"1",type:"Power",rarity:"Uncommon",effect:"At the start of your turn, trigger the passive ability of your next Orb.","upgrade":"Trigger the passive ability of your next 2 Orbs.","why":"Effectively doubles your orb output. With Frost orbs, it doubles your passive block — huge defensive value."},
-      {name:"Capacitor",cost:"1",type:"Power",rarity:"Uncommon",effect:"Gain 2 Orb slots.","upgrade":"Gain 3 Orb slots.","why":"More orb slots = more passive value. The difference between having 3 and 6 orbs is the difference between dying and immortality."},
-      {name:"Creative AI",cost:"3",type:"Power",rarity:"Rare",effect:"At the start of each turn, add a random Power card to your hand.","upgrade":"Costs 2.","why":"Infinite scaling. Generates Defragment, Buffer, Echo Form for free. The ultimate long-fight engine."},
-      {name:"Buffer",cost:"2",type:"Power",rarity:"Rare",effect:"Prevent the next time you would lose HP.","upgrade":"Prevent the next 2 times.","why":"Negates a hit entirely. Against bosses, blocking one 40-damage attack is equivalent to 40 block for 2 energy."},
-      {name:"All For One",cost:"2",type:"Attack",rarity:"Rare",effect:"Deal 10 damage. Put all 0-cost cards from your discard pile into your hand.","upgrade":"Deal 14 damage.","why":"Core of Claw/0-cost decks. Recurs your entire 0-cost package. With Scrape and Hologram, goes infinite."},
-      {name:"Core Surge",cost:"1",type:"Attack",rarity:"Rare",effect:"Deal 11 damage. Gain 1 Artifact. Exhaust.","upgrade":"Deal 15 damage.","why":"Artifact is the key to breaking Biased Cognition. Play Core Surge → Biased Cognition = permanent +5 Focus."},
-      {name:"Machine Learning",cost:"1",type:"Power",rarity:"Rare",effect:"At the start of your turn, draw 1 additional card.","upgrade":"Innate.","why":"Passive extra draw every turn. Not flashy, but drawing 6 cards per turn instead of 5 is a huge advantage."}
-    ],
-    B: [
-      {name:"Dualcast",cost:"1",type:"Skill",rarity:"Basic",effect:"Evoke your next Orb twice.","upgrade":"Costs 0.","why":"Starter card, but still useful late game. Double-evoking a Frost orb for emergency block is always relevant."},
-      {name:"Claw",cost:"0",type:"Attack",rarity:"Common",effect:"Deal 3 damage. Increase the damage of ALL Claw cards by 2 this combat.","upgrade":"Deal 5 damage.","why":"Scaling 0-cost damage. Needs multiple copies and All For One to shine. A meme, but a consistent one."},
-      {name:"Compile Driver",cost:"1",type:"Attack",rarity:"Common",effect:"Deal 7 damage. Draw 1 card for each unique Orb you have.","upgrade":"Deal 10 damage.","why":"Draw engine with orb diversity. Great when you're running Lightning + Frost + Plasma. Mediocre with only one orb type."},
-      {name:"Consume",cost:"2",type:"Skill",rarity:"Uncommon",effect:"Gain 2 Focus. Lose 1 Orb slot.","upgrade":"Gain 3 Focus.","why":"Big Focus at the cost of an orb slot. With Capacitor, the slot loss is negligible. Excellent with Inserter relic."},
-      {name:"Recycle",cost:"1",type:"Skill",rarity:"Uncommon",effect:"Exhaust a card. Gain Energy equal to its cost.","upgrade":"Costs 0.","why":"Energy generation + deck thinning. Exhaust a 3-cost card you don't need for free energy. Upgrade makes it net positive."}
-    ],
-    C: [
-      {name:"Zap",cost:"1",type:"Skill",rarity:"Basic",effect:"Channel 1 Lightning.","upgrade":"Costs 0.","why":"Your starter orb generator. Upgraded it's acceptable, but Ball Lightning is strictly better. Replace when possible."},
-      {name:"Streamline",cost:"2",type:"Attack",rarity:"Common",effect:"Deal 15 damage. Reduce this card's cost by 1 this combat.","upgrade":"Deal 20 damage.","why":"Self-cost-reducing damage. Too slow — by the time it's 0-cost, the fight is often over."},
-      {name:"Barrage",cost:"1",type:"Attack",rarity:"Common",effect:"Deal 4 damage for each of your channeled Orbs.","upgrade":"Deal 6 damage.","why":"Scales with orb count. With 6+ orbs it's strong, but setting that up takes time. Dead draw early."},
-      {name:"Sweeping Beam",cost:"1",type:"Attack",rarity:"Common",effect:"Deal 6 damage to ALL enemies. Draw 1 card.","upgrade":"Deal 9 damage.","why":"Weak AoE that cycles. Electrodynamics solves AoE better. Take only if desperate for Act 2 help."}
-    ],
-    D: [
-      {name:"Strike",cost:"1",type:"Attack",rarity:"Basic",effect:"Deal 6 damage.","upgrade":"Deal 9 damage.","why":"Your worst attack. Remove these first."},
-      {name:"Defend",cost:"1",type:"Skill",rarity:"Basic",effect:"Gain 5 Block.","upgrade":"Gain 8 Block.","why":"Replaced by Frost orbs and real block cards ASAP."}
-    ]
-  }
-},
-necrobinder: {
-  name: "Necrobinder",
-  tiers: {
-    S: [
-      {name:"Mass Grave",cost:"2",type:"Skill",rarity:"Rare",effect:"Summon 3 Skeletons (3 HP each).","upgrade":"Summon 3 Skeletons (5 HP each).","why":"3 minions for 2 energy. Floods the board instantly. Each Skeleton blocks a hit and enables all minion synergies."},
-      {name:"Soul Nova",cost:"2",type:"Attack",rarity:"Rare",effect:"Spend all Souls. Deal 7 damage to ALL enemies for each Soul spent.","upgrade":"Deal 10 damage per Soul.","why":"The Necrobinder's finisher. With 4+ Souls, this deletes every enemy on screen. Build Souls, then detonate."},
-      {name:"Undead Commander",cost:"2",type:"Power",rarity:"Rare",effect:"All minions gain +3 HP and deal +2 damage.","upgrade":"+5 HP and +3 damage.","why":"Buff all minions permanently. Turns your board of 3-HP Skeletons into a lethal army. The Necrobinder's Demon Form."}
-    ],
-    A: [
-      {name:"Dark Offering",cost:"0",type:"Skill",rarity:"Uncommon",effect:"Destroy a minion. Draw 2 cards. Gain 1 Energy.","upgrade":"Draw 3 cards.","why":"0-cost sacrifice for card draw + energy. Sac a nearly-dead Skeleton for a massive tempo swing."},
-      {name:"Soul Harvest",cost:"0",type:"Skill",rarity:"Uncommon",effect:"Gain 1 Soul. Heal 2 HP for each Soul you have. Exhaust.","upgrade":"Heal 3 HP per Soul.","why":"Sustain that scales with Souls. With 5 Souls, this heals 15 HP for 0 energy. Essential for long runs."},
-      {name:"Death Pact",cost:"1",type:"Skill",rarity:"Rare",effect:"Destroy all minions. Heal 4 HP for each minion destroyed. Gain 1 Soul per minion.","upgrade":"Heal 6 HP.","why":"Emergency heal + Soul generation. With 3+ minions, this is a full heal. Also generates Souls for Soul Nova."},
-      {name:"Lich Form",cost:"3",type:"Power",rarity:"Rare",effect:"Whenever a minion dies, Channel 1 Soul Orb (passive: deal 3 damage at turn start).","upgrade":"Costs 2.","why":"Turns minion deaths into passive damage. With Mass Grave and Dark Offering cycling minions, the damage stacks fast."}
-    ],
-    B: [
-      {name:"Bone Throw",cost:"1",type:"Attack",rarity:"Common",effect:"Deal 8 damage. Gain 1 Soul.","upgrade":"Deal 11 damage.","why":"Solid damage + Soul generation. Your best common attack. Generates the resource your whole kit revolves around."},
-      {name:"Ghost Form",cost:"1",type:"Skill",rarity:"Common",effect:"Summon a Ghost (2 HP). At the start of your turn, Ghost deals 4 damage to a random enemy.","upgrade":"Ghost deals 6 damage.","why":"Passive damage minion. Ghost avoids being targeted most turns, so it tends to survive and chip damage all fight."},
-      {name:"Soul Shield",cost:"1",type:"Skill",rarity:"Common",effect:"Gain 5 Block. Gain 3 additional Block per Soul.","upgrade":"Gain 7 Block.","why":"Block that scales with Souls. With 3-4 Souls, this is your best block card. Dead without Soul generation."},
-      {name:"Corpse Lance",cost:"2",type:"Attack",rarity:"Common",effect:"Deal 12 damage. If you have a minion, deal 18 instead.","upgrade":"Deal 15 damage. With minion: 22.","why":"High damage with minion condition. Reliable with the Necrobinder's easy minion access. Upgraded, 22 damage for 2 is excellent."},
-      {name:"Wraith Wall",cost:"2",type:"Skill",rarity:"Uncommon",effect:"Summon a Wraith (8 HP). When attacked, Wraith gains 4 Block.","upgrade":"Summon a Wraith (12 HP).","why":"Tanky minion that softens blows. The Wraith's self-block makes it surprisingly durable. Good for stalling."},
-      {name:"Bone Armor",cost:"2",type:"Power",rarity:"Uncommon",effect:"At the end of your turn, gain 2 Block for each minion you control.","upgrade":"Gain 3 Block per minion.","why":"Passive block per minion. With Mass Grave + Undead Commander, this generates 9+ free block per turn."}
-    ],
-    C: [
-      {name:"Raise Dead",cost:"1",type:"Skill",rarity:"Basic",effect:"Summon a Skeleton (3 HP). Taunt.","upgrade":"Summon a Skeleton (5 HP).","why":"Your starter minion. Serviceable early, but Mass Grave is strictly better. Replace when possible."},
-      {name:"Soul Drain",cost:"1",type:"Skill",rarity:"Basic",effect:"Destroy a minion. Gain 2 Souls.","upgrade":"Gain 3 Souls.","why":"Sacrifices your minion for Souls. Dark Offering is better because it gives energy + draw. Too narrow."},
-      {name:"Grave Touch",cost:"1",type:"Skill",rarity:"Common",effect:"Apply 2 Vulnerable. If any minions are active, apply 4 instead.","upgrade":"Apply 3 Vulnerable. With minions: 5.","why":"Conditional Vulnerable. With minions it's decent, but there are better ways to spend energy."}
-    ],
-    D: [
-      {name:"Strike",cost:"1",type:"Attack",rarity:"Basic",effect:"Deal 6 damage.","upgrade":"Deal 9 damage.","why":"Remove as soon as possible."},
-      {name:"Defend",cost:"1",type:"Skill",rarity:"Basic",effect:"Gain 5 Block.","upgrade":"Gain 8 Block.","why":"Replace with Soul Shield or better block."}
-    ]
-  }
-},
-regent: {
-  name: "Regent",
-  tiers: {
-    S: [
-      {name:"Tactical Genius",cost:"2",type:"Power",rarity:"Uncommon",effect:"At the start of each turn, you may choose from 2 additional Commands.","upgrade":"Costs 1.","why":"More Command choices = more Sly = more everything. The Regent's key engine card. Always pick."},
-      {name:"Starfall",cost:"3",type:"Attack",rarity:"Rare",effect:"Deal damage equal to your Stars to ALL enemies. Lose all Stars.","upgrade":"Deal 100% more damage.","why":"Your ultimate finisher. Build Stars all fight, then unleash 50+ damage to all enemies. The Regent's Soul Nova."}
-    ],
-    A: [
-      {name:"Feint",cost:"0",type:"Skill",rarity:"Common",effect:"Gain 1 Sly. Gain 3 Block.","upgrade":"Gain 2 Sly.","why":"0-cost Sly generation + block. The most efficient Sly builder. Spam this every turn to fuel your whole kit."},
-      {name:"Precision Strike",cost:"1",type:"Attack",rarity:"Common",effect:"Deal 7 damage. If you have Sly, deal 3 additional damage per Sly.","upgrade":"Deal 9 damage.","why":"Damage that scales with Sly. With 3 Sly (easy to maintain), this is 16 damage for 1 energy. Excellent scaling common."},
-      {name:"Cunning Plan",cost:"1",type:"Skill",rarity:"Uncommon",effect:"Gain 2 Sly. Draw 2 cards.","upgrade":"Gain 3 Sly.","why":"Sly generation + draw. Efficient at building your resource while cycling your deck."},
-      {name:"Master of Arms",cost:"1",type:"Power",rarity:"Uncommon",effect:"Whenever you gain Sly, gain 2 Block.","upgrade":"Gain 3 Block.","why":"Turns every Sly gain into free block. With Feint and Cunning Plan, you generate block passively while building your strategy."},
-      {name:"Outmaneuver",cost:"1",type:"Skill",rarity:"Rare",effect:"Gain 1 Sly for each enemy. Next turn, gain 1 Energy per Sly you have.","upgrade":"Costs 0.","why":"Sly burst + next-turn energy. In multi-enemy fights, this can generate 4+ energy next turn. The Regent's Adrenaline equivalent."},
-      {name:"Loyal Subject",cost:"2",type:"Power",rarity:"Rare",effect:"Whenever you gain Sly, gain 1 Star.","upgrade":"Gain 2 Stars.","why":"Converts Sly into Stars passively. With Feint and Cunning Plan, you're building Stars every turn without spending extra actions."},
-      {name:"Throne Room",cost:"2",type:"Skill",rarity:"Rare",effect:"Play the next card you play this turn twice. Exhaust.","upgrade":"Costs 1.","why":"Doubles any card. Cunning Plan for 6 Sly? Starfall twice? The Regent's combo enabler."},
-      {name:"Star Ascension",cost:"2",type:"Power",rarity:"Rare",effect:"Your Stars are no longer lost when spent. (Starfall deals half damage.)","upgrade":"Starfall deals full damage.","why":"Removes Starfall's downside: Stars become permanent. Upgraded, Starfall hits for full power AND Stars stay."}
-    ],
-    B: [
-      {name:"Royal Guard",cost:"2",type:"Skill",rarity:"Basic",effect:"Gain 10 Block. If you have Sly, deal damage equal to your Block to a random enemy.","upgrade":"Gain 14 Block.","why":"Starter card that stays useful. High block plus free damage if you have Sly (which you should always have)."},
-      {name:"Noble's Blade",cost:"1",type:"Attack",rarity:"Common",effect:"Deal 8 damage. Gain 1 Star.","upgrade":"Deal 11 damage.","why":"Your best Star generator. Spend turns building Stars with this, then finish with Starfall."},
-      {name:"Courtly Defense",cost:"1",type:"Skill",rarity:"Common",effect:"Gain 7 Block. Gain 2 additional Block per Sly.","upgrade":"Gain 9 Block.","why":"Block that scales with Sly. With 3 Sly, this is 13 block for 1 energy. Solid defense."},
-      {name:"Royal Decree",cost:"2",type:"Skill",rarity:"Uncommon",effect:"All enemies gain 2 Vulnerable and 2 Weak. Spend 1 Sly: repeat this effect.","upgrade":"Apply 3 Vulnerable and 3 Weak.","why":"Reusable AOE debuff. At 1 Sly per repeat, you can stack debuffs multiple times if you have the resources."},
-      {name:"Imperial Decree",cost:"3",type:"Skill",rarity:"Rare",effect:"Gain 5 Sly and 3 Stars. Exhaust.","upgrade":"Gain 7 Sly and 4 Stars.","why":"Massive resource burst. Expensive at 3 cost, but it sets up your entire engine. Upgraded payoff is huge."}
-    ],
-    C: [
-      {name:"Command: Strike",cost:"0",type:"Skill",rarity:"Basic",effect:"If you follow the Command this turn, gain 1 Sly.","upgrade":"Gain 2 Sly.","why":"Starter Sly generator. Feint is strictly better (guaranteed Sly + block). Replace when you can."},
-      {name:"Diplomatic Immunity",cost:"1",type:"Skill",rarity:"Common",effect:"Gain 1 Artifact. Gain 1 Sly. Exhaust.","upgrade":"Gain 1 Artifact. Gain 2 Sly. Exhaust.","why":"One-time Artifact with Sly. Useful against debuff-heavy enemies, but Exhaust makes it a one-shot."}
-    ],
-    D: [
-      {name:"Strike",cost:"1",type:"Attack",rarity:"Basic",effect:"Deal 6 damage.","upgrade":"Deal 9 damage.","why":"Remove at shops."},
-      {name:"Defend",cost:"1",type:"Skill",rarity:"Basic",effect:"Gain 5 Block.","upgrade":"Gain 8 Block.","why":"Replace with Courtly Defense or Soul Shield."}
-    ]
-  }
-}
-};
+const characters = [
+  { id: 'ironclad', icon: '⚔️', name: 'Ironclad' },
+  { id: 'silent', icon: '🗡️', name: 'Silent' },
+  { id: 'defect', icon: '⚡', name: 'Defect' },
+  { id: 'necrobinder', icon: '💀', name: 'Necrobinder' },
+  { id: 'regent', icon: '👑', name: 'Regent' }
+];
 
-// Exclude starter Strike and Defend from counts
-function getNonStarterCount(char) {
-  const data = tierData[char];
-  let count = 0;
-  for (const tier of ['S','A','B','C','D']) {
-    for (const card of data.tiers[tier]) {
-      if (card.name !== 'Strike' && card.name !== 'Defend') count++;
-    }
-  }
-  return count;
-}
+const tierOrder = ['S','A','B','C','D'];
 
 const tierLabels = {
-  S: { label: "S Tier — Instant Pick", desc: "Take these over almost anything. These cards define builds, win runs, and have no real downside." },
-  A: { label: "A Tier — Strong Pick", desc: "Excellent cards that fit into most decks. Rarely wrong to take, often build-defining." },
-  B: { label: "B Tier — Situational", desc: "Good cards in the right deck. Need synergy or specific conditions to shine." },
-  C: { label: "C Tier — Niche / Skip", desc: "Take only if you have no better options or if they're critical for your specific build." },
-  D: { label: "D Tier — Starter / Avoid", desc: "Your basic cards. Remove these at shops as soon as possible." }
+  S: { label: "S Tier — Top Pick", desc: "These cards define builds and win runs. Take them over almost anything." },
+  A: { label: "A Tier — Strong Pick", desc: "Excellent cards that fit into most decks. Rarely wrong to take." },
+  B: { label: "B Tier — Solid / Situational", desc: "Good cards in the right deck. Need some synergy to shine." },
+  C: { label: "C Tier — Niche / Average", desc: "Take if you need what they offer, but there are usually better options." },
+  D: { label: "D Tier — Basic / Avoid", desc: "Starter and below-average cards. Remove these when possible." }
 };
 
-function renderCharacter(char) {
-  const data = tierData[char];
-  const order = ['S','A','B','C','D'];
+// Group cards by character and tier
+function groupCards(charId) {
+  const cards = cardsData.filter(c => c.character === charId);
+  const groups = { S: [], A: [], B: [], C: [], D: [] };
+  for (const c of cards) {
+    const t = (c.tier || 'C').toUpperCase();
+    if (groups[t]) groups[t].push(c);
+  }
+  return groups;
+}
+
+// Build character tabs
+function buildTabs() {
+  let html = '';
+  for (const ch of characters) {
+    const cards = cardsData.filter(c => c.character === ch.id);
+    html += `<button class="char-tab${ch.id === 'ironclad' ? ' active' : ''}" data-char="${ch.id}">${ch.icon} ${ch.name} <span style="font-size:11px;color:var(--text-muted)">${cards.length}</span></button>`;
+  }
+  document.getElementById('charTabs').innerHTML = html;
+}
+
+// Render tier groups for a character
+function renderCharacter(charId) {
+  const groups = groupCards(charId);
   let html = '';
 
-  for (const tier of order) {
-    const cards = data.tiers[tier];
-    if (!cards || cards.length === 0) continue;
+  for (const tier of tierOrder) {
+    const cards = groups[tier];
+    if (!cards || cards.length === 0) {
+      html += `<div class="tier-group">`;
+      html += `<div class="tier-header"><span class="tier-label ${tier.toLowerCase()}">${tier} Tier</span><span class="tier-desc">${tierLabels[tier].desc}</span><span class="tier-count">0 cards</span></div>`;
+      html += `<div class="empty-tier">No cards in this tier</div></div>`;
+      continue;
+    }
     const info = tierLabels[tier];
     html += `<div class="tier-group">`;
     html += `<div class="tier-header">`;
@@ -427,22 +231,36 @@ function renderCharacter(char) {
     html += `</div>`;
     html += `<div class="tier-cards">`;
     for (const card of cards) {
+      const costDisplay = card.cost != null && card.cost === -1 ? 'X' : (card.cost != null ? card.cost : '?');
+      const hasReason = card.reason && card.reason.trim();
       html += `<div class="tier-card card-${tier.toLowerCase()}">`;
       html += `<div class="card-left">`;
       html += `<span class="card-tier-badge ${tier.toLowerCase()}">${tier}</span>`;
-      html += `<span class="card-cost">${card.cost === 'X' ? 'X' : card.cost} ⚡</span>`;
+      html += `<span class="card-cost">${costDisplay} ⚡</span>`;
       html += `</div>`;
       html += `<div class="card-right">`;
       html += `<div class="card-name-row"><strong>${card.name}</strong><span class="card-type-tag ${card.type}">${card.type}</span></div>`;
       html += `<div class="card-effect">${card.effect}</div>`;
-      html += `<div class="card-upgrade">⬆ Upgrade: ${card.upgrade}</div>`;
-      html += `<div class="card-why">💡 ${card.why}</div>`;
+      if (card.upgrade) {
+        html += `<div class="card-upgrade">⬆ Upgrade: ${card.upgrade}</div>`;
+      }
+      if (hasReason) {
+        html += `<div class="card-why">💡 ${card.reason}</div>`;
+      } else {
+        html += `<div class="card-why auto">Auto-assigned — no manual rating yet</div>`;
+      }
       html += `</div></div>`;
     }
     html += `</div></div>`;
   }
   return html;
 }
+
+// Update hero total
+document.getElementById('heroTotal').textContent = `📊 ${cardsData.length} Cards Rated`;
+
+// Initialize
+buildTabs();
 
 // Initial render
 document.getElementById('tierContent').innerHTML = renderCharacter('ironclad');

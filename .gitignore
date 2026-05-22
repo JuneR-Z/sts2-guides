@@ -1,0 +1,3 @@
+# Build scripts and override data — local only, not committed
+build_data.ps1
+en/cards/tier-overrides.js

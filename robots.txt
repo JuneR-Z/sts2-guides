@@ -2,7 +2,4 @@ User-agent: *
 Allow: /
 Sitemap: https://sts2guides.com/sitemap.xml
 
-# Disallow search index JSON (not user-facing)
 Disallow: /en/search-index.json
-
-Host: sts2guides.com

@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All Guides — Slay the Spire 2 | STS2Guides</title>
 <meta name="description" content="All Slay the Spire 2 guides: beginner's guide, character builds, boss strategies, card tier lists, relic rankings, and co-op synergy guides.">
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="All Guides — Slay the Spire 2 | STS2Guides">
+    <meta property="og:description" content="All Slay the Spire 2 guides: beginner's guide, character builds, boss strategies, card tier lists, relic rankings, and co-op synergy guides.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STS2Guides">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="All Guides — Slay the Spire 2 | STS2Guides">
+    <meta name="twitter:description" content="All Slay the Spire 2 guides: beginner's guide, character builds, boss strategies, card tier lists, relic rankings, and co-op synergy guides.">
 <link rel="canonical" href="https://sts2guides.com/en/guides/">
 <style>
 :root {
@@ -123,6 +132,34 @@ footer a:hover{color:var(--gold-light);}
   ]
 }
 </script>
+
+<style>
+/* Cookie Consent Banner */
+#cookie-consent {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #1a1a2e; border-top: 1px solid #3a3a5a;
+  padding: 16px 24px; z-index: 9999;
+  display: none;
+  align-items: center; justify-content: center; gap: 16px;
+  flex-wrap: wrap; box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+}
+#cookie-consent p {
+  margin: 0; color: #c8c4b4; font-size: 14px; max-width: 500px; line-height: 1.5;
+}
+#cookie-consent a { color: #e6a750; text-decoration: underline; }
+#cookie-consent .cc-btns { display: flex; gap: 10px; }
+.cc-btn {
+  padding: 8px 20px; border-radius: 6px; font-size: 14px; font-weight: 600;
+  cursor: pointer; border: none; transition: background 0.2s;
+}
+.cc-accept { background: #e6a750; color: #0d0d1a; }
+.cc-accept:hover { background: #f0c060; }
+.cc-reject { background: #3a3a5a; color: #c8c4b4; }
+.cc-reject:hover { background: #4a4a6a; }
+@media (max-width: 480px) {
+  #cookie-consent { flex-direction: column; text-align: center; padding: 14px 16px; }
+}
+</style>
 </head>
 <body>
 
@@ -341,6 +378,28 @@ document.getElementById('searchModalInput').addEventListener('input', function()
   el.innerHTML = r.map(function(i) { return '<a class="search-result-item" href="' + i.url + '"><span class="result-icon">' + (icons[i.category] || '\u{1F4C4}') + '</span><div class="result-info"><span class="result-cat">' + i.category + '</span><div class="result-title">' + i.title + '</div></div></a>'; }).join('');
 });
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); } });
+</script>
+
+<div id="cookie-consent">
+  <p>We use cookies to improve your experience and for analytics. <a href="/en/privacy.html">Privacy Policy</a></p>
+  <div class="cc-btns">
+    <button class="cc-btn cc-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cc-btn cc-reject" onclick="rejectCookies()">Reject</button>
+  </div>
+</div>
+<script>
+(function(){
+  var c = document.cookie.match('(^|;)\\s*cookie_consent\\s*=\\s*([^;]+)');
+  if (!c) { document.getElementById('cookie-consent').style.display = 'flex'; }
+})();
+function acceptCookies(){
+  document.cookie = 'cookie_consent=accepted; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+function rejectCookies(){
+  document.cookie = 'cookie_consent=rejected; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
 </script>
 </body>
 </html>

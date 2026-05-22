@@ -1,0 +1,17 @@
+[
+  {"title":"Home — STS2Guides","url":"/en/index.html","category":"Home","keywords":"slay the spire 2 guide beginner build tier list character relic boss"},
+  {"title":"Characters Overview","url":"/en/characters/index.html","category":"Characters","keywords":"ironclad silent defect necrobinder regent all characters tier list overview"},
+  {"title":"Ironclad Guide","url":"/en/characters/ironclad.html","category":"Characters","keywords":"ironclad strength exhaust build demon form limit break heavy blade dual wield offering"},
+  {"title":"Silent Guide","url":"/en/characters/silent.html","category":"Characters","keywords":"silent poison shiv discard build catalyst burst wraith form accuracy blade dance"},
+  {"title":"Defect Guide","url":"/en/characters/defect.html","category":"Characters","keywords":"defect orb lightning frost dark plasma focus scaling echo form creative ai biased cognition"},
+  {"title":"Necrobinder Guide","url":"/en/characters/necrobinder.html","category":"Characters","keywords":"necrobinder summon minion sacrifice soul skeleton army bone spirit necromancy"},
+  {"title":"Regent Guide","url":"/en/characters/regent.html","category":"Characters","keywords":"regent command star aristocrat sly decree inspire overwhelm strategist"},
+  {"title":"Card Database & Tier List","url":"/en/cards/index.html","category":"Cards","keywords":"card database tier list filter search attack skill power curse status all cards strength dexterity"},
+  {"title":"Relic Database","url":"/en/relics/index.html","category":"Relics","keywords":"relic database tier starter boss rare vajra dead branch snecko eye fossilized helix necronomicon"},
+  {"title":"Boss Strategy Guides","url":"/en/bosses/index.html","category":"Bosses","keywords":"boss guide slime guardian hexaghost bronze automaton collector champ awakened one time eater donu deca corrupt heart strategy"},
+  {"title":"Beginner's Guide","url":"/en/guides/beginner.html","category":"Guides","keywords":"beginner new player guide tips tricks how to play basics first run mechanics explained"},
+  {"title":"Ironclad Strength Build","url":"/en/guides/ironclad-strength-build.html","category":"Guides","keywords":"ironclad strength build demon form limit break heavy blade spot weakness inflame reaper offering"},
+  {"title":"Silent Poison Build","url":"/en/guides/silent-poison-build.html","category":"Guides","keywords":"silent poison build catalyst burst deadly poison noxious fumes corpse explosion wraith form"},
+  {"title":"Necrobinder Summon Build","url":"/en/guides/necrobinder-summon-build.html","category":"Guides","keywords":"necrobinder summon build skeleton army bone spirit soul lantern necronomicon minion swarm"},
+  {"title":"Guides Overview","url":"/en/guides/index.html","category":"Guides","keywords":"guides all guides build beginner boss co-op tier list strategy tips"}
+]

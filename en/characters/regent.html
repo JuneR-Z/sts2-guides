@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regent Guide — Best Builds, Cards & Strategy | STS2Guides</title>
+<meta name="description" content="Complete Regent guide for Slay the Spire 2. Best builds (Command Mastery, Sly Control, Royal Guard), S-tier cards, relic combos, and Ascension strategies.">
+<link rel="canonical" href="https://sts2guides.com/en/characters/regent/">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad; --orange: #e67e22;
+  --char-color: #d4a03c;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; min-height: 100vh; }
+header { background: var(--bg-secondary); border-bottom: 2px solid var(--char-color); position: sticky; top:0; z-index:100; }
+.header-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--gold), var(--crimson)); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+.logo-text { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+.logo-text span { color: var(--gold-light); }
+nav { display: flex; gap: 0; }
+nav a { color: var(--text-secondary); text-decoration: none; padding: 8px 14px; font-size: 13px; border-radius: 4px; transition: all .2s; }
+nav a:hover { color: var(--gold-light); background: rgba(255,255,255,0.05); }
+nav a.active { color: var(--gold-light); }
+.breadcrumb { max-width: 1200px; margin: 0 auto; padding: 12px 20px; font-size: 13px; color: var(--text-muted); }
+.breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+.breadcrumb a:hover { color: var(--gold-light); }
+.hero { background: linear-gradient(180deg, rgba(212,160,60,0.15) 0%, var(--bg-primary) 100%); padding: 40px 20px 20px; text-align: center; border-bottom: 1px solid var(--border); }
+.hero h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
+.hero .subtitle { color: var(--text-secondary); font-size: 15px; margin-bottom: 16px; }
+.char-stats { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.char-stat { text-align: center; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 20px; min-width: 80px; }
+.char-stat .num { font-size: 20px; font-weight: 700; color: var(--char-color); }
+.char-stat .label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.section { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+.section-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.section-title::before { content: ''; width: 4px; height: 20px; background: var(--char-color); border-radius: 2px; }
+.mech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 20px; }
+.mech-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
+.mech-card h4 { color: var(--char-color); font-size: 15px; margin-bottom: 8px; }
+.mech-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+.build-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 16px; position: relative; }
+.build-card .tier { position: absolute; top: 16px; right: 16px; font-size: 12px; font-weight: 800; padding: 3px 12px; border-radius: 4px; }
+.build-card .tier.s { background: var(--crimson); color: #fff; }
+.build-card .tier.a { background: var(--orange); color: #fff; }
+.build-card .tier.b { background: var(--blue); color: #fff; }
+.build-card h3 { font-size: 18px; margin-bottom: 8px; }
+.build-card .desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 14px; }
+.card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.card-tag { font-size: 11px; padding: 3px 10px; border-radius: 10px; background: rgba(212,160,60,0.15); color: var(--gold-light); font-weight: 600; }
+.card-tag.relic { background: rgba(142,68,173,0.15); color: #b07cd8; }
+.tips-list { list-style: none; }
+.tips-list li { font-size: 13px; color: var(--text-secondary); padding: 6px 0; padding-left: 20px; position: relative; }
+.tips-list li::before { content: '▸'; position: absolute; left: 0; color: var(--char-color); }
+.back-link { display: inline-flex; align-items: center; gap: 4px; color: var(--text-muted); text-decoration: none; font-size: 13px; margin-top: 20px; }
+.back-link:hover { color: var(--gold-light); }
+footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 30px 20px; margin-top: 40px; text-align: center; color: var(--text-muted); font-size: 12px; }
+footer a { color: var(--text-secondary); text-decoration: none; }
+footer a:hover { color: var(--gold-light); }
+.footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 12px; flex-wrap: wrap; }
+@media (max-width: 768px) { .hero h1 { font-size: 24px; } nav { display: none; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+      <a href="./" class="active">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../guides/index.html">Guides</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Characters</a> › Regent</div>
+
+<section class="hero">
+  <div style="font-size:48px;margin-bottom:4px;">👑</div>
+  <h1>Regent <span style="font-size:14px;background:var(--green);color:#fff;padding:2px 10px;border-radius:10px;vertical-align:middle;">NEW</span></h1>
+  <p class="subtitle">Command · Sly Control · Star Scaling · Positioning</p>
+  <div class="char-stats">
+    <div class="char-stat"><div class="num">70</div><div class="label">Max HP</div></div>
+    <div class="char-stat"><div class="num">Hard</div><div class="label">Difficulty</div></div>
+    <div class="char-stat"><div class="num">Royal Decree</div><div class="label">Starting Relic</div></div>
+    <div class="char-stat"><div class="num">65</div><div class="label">Total Cards</div></div>
+  </div>
+</section>
+
+<div class="section">
+  <h2 class="section-title">Overview</h2>
+  <p style="color:var(--text-secondary);max-width:800px;">The Regent is a tactical commander who issues Commands each turn to control the battlefield. Master the <strong style="color:var(--gold-light);">Sly</strong> mechanic to outmaneuver enemies — Sly increases crit chance and unlocks powerful bonus effects. <strong style="color:var(--gold-light);">Stars</strong> accumulate from consistent Command execution and persist between combats, powering devastating finishers like Starfall. Complex but incredibly rewarding for players who enjoy tactical decision-making.</p>
+</div>
+
+<div class="section">
+  <h2 class="section-title">Core Mechanics</h2>
+  <div class="mech-grid">
+    <div class="mech-card">
+      <h4>📜 Command System</h4>
+      <p>Each turn, your Royal Decree relic offers a Command choice (Strike, Defend, Balance, etc.). Following it grants Sly stacks and bonus effects. Tactical Genius gives more Command options — increasing your chance of a good match.</p>
+    </div>
+    <div class="mech-card">
+      <h4>🦊 Sly Mechanic</h4>
+      <p>Sly represents tactical advantage. Each stack increases crit chance and unlocks bonus effects on Command cards. At 5 Sly stacks, all attacks ignore enemy block entirely. Manage Sly like a second resource bar.</p>
+    </div>
+    <div class="mech-card">
+      <h4>⭐ Star Scaling</h4>
+      <p>Stars accumulate when you perfectly execute Commands. At 10 Stars, unleash Starfall — a massive AoE finisher. Stars persist between combats, rewarding consistent play. Enter boss fights with high Stars for a massive advantage.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2 class="section-title">Best Builds</h2>
+
+  <div class="build-card">
+    <span class="tier s">S-TIER</span>
+    <h3>Command Mastery</h3>
+    <p class="desc">Maximize Command execution consistency. Tactical Genius gives extra Command choices each turn, ensuring you rarely break Command. Build Sly and Stars simultaneously for overwhelming power. Loyal Subject converts Sly gains into Star generation.</p>
+    <div class="card-tags">
+      <span class="card-tag">Command: Assault</span><span class="card-tag">Tactical Genius</span>
+      <span class="card-tag">Loyal Subject</span><span class="card-tag">Cunning Plan</span>
+      <span class="card-tag">Precision Strike</span><span class="card-tag">Starfall</span>
+    </div>
+    <div class="card-tags">
+      <span class="card-tag relic">Crown of Stars</span><span class="card-tag relic">Commander's Ring</span>
+    </div>
+  </div>
+
+  <div class="build-card">
+    <span class="tier a">A-TIER</span>
+    <h3>Sly Control</h3>
+    <p class="desc">Focus entirely on Sly generation and maintenance. At 5 Sly stacks, you ignore enemy block entirely — making every attack a direct hit. Feint and Cunning Plan generate Sly reliably. Outmaneuver scales Sly to Energy conversion for explosive turns.</p>
+    <div class="card-tags">
+      <span class="card-tag">Feint</span><span class="card-tag">Outmaneuver</span>
+      <span class="card-tag">Precision Strike</span><span class="card-tag">Cunning Plan</span>
+      <span class="card-tag">Command: Strike</span><span class="card-tag">Sly Stab</span>
+    </div>
+    <div class="card-tags">
+      <span class="card-tag relic">Shadow Cloak</span><span class="card-tag relic">Assassin's Dagger</span>
+    </div>
+  </div>
+
+  <div class="build-card">
+    <span class="tier b">B-TIER</span>
+    <h3>Royal Guard</h3>
+    <p class="desc">Turn defense into offense. Royal Guard blocks and retaliates with damage equal to your block. Defensive Formation generates block and Sly. Stack block while Stars accumulate naturally, then finish with a massive Starfall.</p>
+    <div class="card-tags">
+      <span class="card-tag">Royal Guard</span><span class="card-tag">Defensive Formation</span>
+      <span class="card-tag">Counter-Command</span><span class="card-tag">Stalwart Defender</span>
+      <span class="card-tag">Starfall</span><span class="card-tag">Fortify</span>
+    </div>
+    <div class="card-tags">
+      <span class="card-tag relic">Tower Shield</span><span class="card-tag relic">Iron Crown</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2 class="section-title">Pro Tips</h2>
+  <ul class="tips-list">
+    <li>Always check your Command at the start of each turn <strong style="color:var(--gold-light);">before</strong> playing any cards.</li>
+    <li>Breaking Command is sometimes correct — if following it would kill you, ignore it and survive.</li>
+    <li>Sly stacks are your most valuable resource. Cards that generate Sly without requiring Commands are premium picks.</li>
+    <li>Stars persist between fights. Plan your path to enter boss fights with high Star count for a huge Starfall.</li>
+    <li>Regent is weakest in short hallway fights. She truly shines in elite and boss encounters where she can build momentum.</li>
+    <li>Tactical Genius is the single best upgrade — more Command choices = more consistency and more Stars.</li>
+  </ul>
+</div>
+
+<div class="section"><a href="./" class="back-link">← Back to All Characters</a></div>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a><a href="#">About</a><a href="#">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+</footer>
+
+</body>
+</html>

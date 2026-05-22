@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silent Guide — Best Builds, Cards & Strategy | STS2Guides</title>
+<meta name="description" content="Complete Silent guide for Slay the Spire 2. Best builds (Poison, Shiv, Discard), S-tier cards, relic combos, and Ascension strategies.">
+<link rel="canonical" href="https://sts2guides.com/en/characters/silent/">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad; --orange: #e67e22;
+  --char-color: #27ae60;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; min-height: 100vh; }
+header { background: var(--bg-secondary); border-bottom: 2px solid var(--char-color); position: sticky; top:0; z-index:100; }
+.header-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--gold), var(--crimson)); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+.logo-text { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+.logo-text span { color: var(--gold-light); }
+nav { display: flex; gap: 0; }
+nav a { color: var(--text-secondary); text-decoration: none; padding: 8px 14px; font-size: 13px; border-radius: 4px; transition: all .2s; }
+nav a:hover { color: var(--gold-light); background: rgba(255,255,255,0.05); }
+nav a.active { color: var(--gold-light); }
+.breadcrumb { max-width: 1200px; margin: 0 auto; padding: 12px 20px; font-size: 13px; color: var(--text-muted); }
+.breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+.breadcrumb a:hover { color: var(--gold-light); }
+.hero { background: linear-gradient(180deg, rgba(39,174,96,0.15) 0%, var(--bg-primary) 100%); padding: 40px 20px 20px; text-align: center; border-bottom: 1px solid var(--border); }
+.hero h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
+.hero .subtitle { color: var(--text-secondary); font-size: 15px; margin-bottom: 16px; }
+.char-stats { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.char-stat { text-align: center; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 20px; min-width: 80px; }
+.char-stat .num { font-size: 20px; font-weight: 700; color: var(--char-color); }
+.char-stat .label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.section { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+.section-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.section-title::before { content: ''; width: 4px; height: 20px; background: var(--char-color); border-radius: 2px; }
+.mech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 20px; }
+.mech-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
+.mech-card h4 { color: var(--char-color); font-size: 15px; margin-bottom: 8px; }
+.mech-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+.build-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 16px; position: relative; }
+.build-card .tier { position: absolute; top: 16px; right: 16px; font-size: 12px; font-weight: 800; padding: 3px 12px; border-radius: 4px; }
+.build-card .tier.s { background: var(--crimson); color: #fff; }
+.build-card .tier.a { background: var(--orange); color: #fff; }
+.build-card .tier.b { background: var(--gold); color: #111; }
+.build-card h3 { font-size: 18px; margin-bottom: 8px; }
+.build-card .desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 14px; }
+.card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.card-tag { font-size: 11px; padding: 3px 10px; border-radius: 10px; background: rgba(39,174,96,0.15); color: var(--green); font-weight: 600; }
+.card-tag.relic { background: rgba(142,68,173,0.15); color: #b07cd8; }
+.tips-list { list-style: none; }
+.tips-list li { font-size: 13px; color: var(--text-secondary); padding: 6px 0; padding-left: 20px; position: relative; }
+.tips-list li::before { content: '▸'; position: absolute; left: 0; color: var(--char-color); }
+.back-link { display: inline-flex; align-items: center; gap: 4px; color: var(--text-muted); text-decoration: none; font-size: 13px; margin-top: 20px; }
+.back-link:hover { color: var(--gold-light); }
+footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 30px 20px; margin-top: 40px; text-align: center; color: var(--text-muted); font-size: 12px; }
+footer a { color: var(--text-secondary); text-decoration: none; }
+footer a:hover { color: var(--gold-light); }
+.footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 12px; flex-wrap: wrap; }
+@media (max-width: 768px) { .hero h1 { font-size: 24px; } nav { display: none; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+      <a href="./" class="active">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../guides/index.html">Guides</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Characters</a> › Silent</div>
+
+<section class="hero">
+  <div style="font-size:48px;margin-bottom:4px;">🗡️</div>
+  <h1>Silent</h1>
+  <p class="subtitle">Poison · Shiv · Discard · Dexterity</p>
+  <div class="char-stats">
+    <div class="char-stat"><div class="num">70</div><div class="label">Max HP</div></div>
+    <div class="char-stat"><div class="num">Medium</div><div class="label">Difficulty</div></div>
+    <div class="char-stat"><div class="num">Ring of the Snake</div><div class="label">Starting Relic</div></div>
+    <div class="char-stat"><div class="num">71</div><div class="label">Total Cards</div></div>
+  </div>
+</section>
+
+<div class="section">
+  <h2 class="section-title">Overview</h2>
+  <p style="color:var(--text-secondary);max-width:800px;">The Silent excels at precision damage through Poison stacking and rapid Shiv attacks. Her starting relic, <strong style="color:var(--gold-light);">Ring of the Snake</strong> (draw 2 extra cards on turn 1), gives her excellent opening consistency. Her larger starting deck and defensive lean require careful card selection in Act 1, but she scales into one of the most powerful characters in the late game.</p>
+</div>
+
+<div class="section">
+  <h2 class="section-title">Core Mechanics</h2>
+  <div class="mech-grid">
+    <div class="mech-card">
+      <h4>☠️ Poison Stacking</h4>
+      <p>Apply Poison that deals damage each turn. Catalyst doubles or triples existing Poison — the core of exponential damage scaling. Noxious Fumes provides passive, artifact-proof Poison application.</p>
+    </div>
+    <div class="mech-card">
+      <h4>🔪 Shiv Spam</h4>
+      <p>Generate 0-cost Shivs with Blade Dance and Cloak and Dagger. Pair with Accuracy for damage boosts, or leverage Wrist Blade (+4 to 0-cost attacks). Shuriken/Kunai proc on 3 attacks per turn.</p>
+    </div>
+    <div class="mech-card">
+      <h4>🃏 Discard Synergy</h4>
+      <p>Cycle your deck with Acrobatics and Calculated Gamble. Tactician generates energy on discard. Reflex draws cards. Tingsha and Tough Bandages convert discards into damage and block.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2 class="section-title">Best Builds</h2>
+
+  <div class="build-card">
+    <span class="tier s">S-TIER</span>
+    <h3>Poison Build</h3>
+    <p class="desc">Apply poison and multiply it with Catalyst. Corpse Explosion clears multi-enemy fights on its own. Noxious Fumes provides reliable passive scaling. Well Laid Plans lets you hold Catalyst for the perfect moment.</p>
+    <div class="card-tags">
+      <span class="card-tag">Catalyst</span><span class="card-tag">Corpse Explosion</span>
+      <span class="card-tag">Bouncing Flask</span><span class="card-tag">Noxious Fumes</span>
+      <span class="card-tag">Deadly Poison</span><span class="card-tag">Crippling Cloud</span>
+    </div>
+    <div class="card-tags">
+      <span class="card-tag relic">Snecko Skull</span><span class="card-tag relic">The Specimen</span><span class="card-tag relic">Twisted Funnel</span>
+    </div>
+  </div>
+
+  <div class="build-card">
+    <span class="tier a">A-TIER</span>
+    <h3>Shiv Build</h3>
+    <p class="desc">Generate and play free Shivs each turn. Scale damage with Accuracy and relic procs. After Image provides block for every card played — including Shivs. Wrist Blade makes all 0-cost attacks deal +4 damage.</p>
+    <div class="card-tags">
+      <span class="card-tag">Blade Dance</span><span class="card-tag">Accuracy</span>
+      <span class="card-tag">Cloak and Dagger</span><span class="card-tag">Finisher</span>
+      <span class="card-tag">After Image</span><span class="card-tag">Infinite Blades</span>
+    </div>
+    <div class="card-tags">
+      <span class="card-tag relic">Wrist Blade</span><span class="card-tag relic">Shuriken</span><span class="card-tag relic">Kunai</span>
+    </div>
+  </div>
+
+  <div class="build-card">
+    <span class="tier b">B-TIER</span>
+    <h3>Discard Cycle</h3>
+    <p class="desc">Cycle through your entire deck multiple times per turn. Tingsha and Tough Bandages generate damage and block on each discard. Requires careful relic support but creates infinite combos when it comes together.</p>
+    <div class="card-tags">
+      <span class="card-tag">Calculated Gamble</span><span class="card-tag">Acrobatics</span>
+      <span class="card-tag">Tactician</span><span class="card-tag">Reflex</span>
+      <span class="card-tag">Eviscerate</span><span class="card-tag">Concentrate</span>
+    </div>
+    <div class="card-tags">
+      <span class="card-tag relic">Tingsha</span><span class="card-tag relic">Tough Bandages</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2 class="section-title">Pro Tips</h2>
+  <ul class="tips-list">
+    <li>Silent struggles in Act 1 — prioritize strong attack cards like Dagger Spray before the first elite fight.</li>
+    <li><strong style="color:var(--gold-light);">Well Laid Plans</strong> is one of her best cards. Retaining a Catalyst or key card wins fights.</li>
+    <li>Upgrade Neutralize early. 2 turns of Weak dramatically reduces incoming damage.</li>
+    <li>Don't over-commit to one archetype too early. Silent benefits from blending Poison, Shiv, and discard elements.</li>
+    <li>Wraith Form is the best defensive card in the game — 3 turns of Intangible makes you nearly invincible.</li>
+    <li>Nightmare + Catalyst can generate 3 Catalysts next turn for exponential poison multiplication.</li>
+  </ul>
+</div>
+
+<div class="section"><a href="./" class="back-link">← Back to All Characters</a></div>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a><a href="#">About</a><a href="#">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+</footer>
+
+</body>
+</html>

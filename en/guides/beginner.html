@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slay the Spire 2 Beginner Guide — From First Run to Consistent Wins | STS2Guides</title>
+<meta name="description" content="Complete beginner's guide for Slay the Spire 2. Learn basic rules, map pathing, deck management, which character to pick, and how to win your first run.">
+<link rel="canonical" href="https://sts2guides.com/en/guides/beginner.html">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--green);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:28px;font-weight:800;margin-bottom:4px;color:var(--gold-light);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--gold-light);border-left:4px solid var(--green);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.article .tip-box{background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.article .tip-box strong{color:var(--green);}
+.article .warn-box{background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.article .warn-box strong{color:var(--crimson);}
+.article .phase-steps{counter-reset:step;list-style:none;padding-left:0;}
+.article .phase-steps li{counter-increment:step;padding:10px 0 10px 40px;position:relative;margin-bottom:8px;}
+.article .phase-steps li::before{content:counter(step);position:absolute;left:0;width:26px;height:26px;background:var(--green);color:#fff;border-radius:50%;text-align:center;line-height:26px;font-size:13px;font-weight:700;top:8px;}
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:30px;}
+.toc h3{font-size:14px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;}
+.toc a{display:block;padding:4px 0;color:var(--text-secondary);text-decoration:none;font-size:13px;}
+.toc a:hover{color:var(--gold-light);}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+      <a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="./" class="active">Guides</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Beginner's Guide</div>
+
+<article class="article">
+  <h1>Slay the Spire 2 Beginner Guide: From First Run to Consistent Wins</h1>
+  <div class="meta">📖 Beginner Guide · Updated May 20, 2026 · 12 min read</div>
+
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <a href="#basics">1. Basic Rules & Terminology</a>
+    <a href="#character">2. Which Character to Start With</a>
+    <a href="#pathing">3. Map Pathing Strategy</a>
+    <a href="#deck">4. Deck Management: What to Pick, Skip & Remove</a>
+    <a href="#combat">5. Combat Fundamentals</a>
+    <a href="#first-run">6. Your First Win: A Step-by-Step Plan</a>
+    <a href="#mistakes">7. Common Beginner Mistakes</a>
+  </div>
+
+  <h2 id="basics">1. Basic Rules & Terminology</h2>
+  <p>Slay the Spire 2 is a <strong>roguelike deck-builder</strong>. Each run, you climb a spire fighting enemies, collecting cards, and acquiring relics. When you die, you start over — but you learn something new each time.</p>
+
+  <h3>Key Terms</h3>
+  <ul>
+    <li><strong>Energy:</strong> You start with 3 energy per turn. Each card costs energy to play. Manage your energy efficiently.</li>
+    <li><strong>Block:</strong> Temporary HP that expires at the start of your next turn. Essential for survival.</li>
+    <li><strong>Strength/Dexterity:</strong> Stats that increase attack damage and block gain respectively.</li>
+    <li><strong>Vulnerable/Weak:</strong> Debuffs — Vulnerable makes enemies take +50% damage; Weak makes them deal -25% damage.</li>
+    <li><strong>Exhaust:</strong> Removes a card from your deck for the rest of combat. Often beneficial, not bad.</li>
+    <li><strong>Intangible:</strong> Reduces all damage taken to 1. One of the strongest defensive buffs.</li>
+  </ul>
+
+  <h2 id="character">2. Which Character to Start With</h2>
+  <p>For your first few runs, pick <strong>Ironclad</strong>. Here's why:</p>
+  <ul>
+    <li>✅ Built-in healing (Burning Blood: +6 HP after each fight)</li>
+    <li>✅ Straightforward game plan: hit hard, block big</li>
+    <li>✅ Forgiving of mistakes — you can recover from bad turns</li>
+    <li>✅ Teaches core concepts without overwhelming mechanics</li>
+  </ul>
+  <p>Once you've won a run or two, try <strong>Silent</strong> to learn Poison and card cycling, then <strong>Defect</strong> for Orb management.</p>
+
+  <div class="warn-box">
+    <strong>⚠️ Avoid Necrobinder and Regent as a beginner.</strong> They are the most complex characters with unique mechanics (minion board management, Command system). Master the basics first.
+  </div>
+
+  <h2 id="pathing">3. Map Pathing Strategy</h2>
+  <p>The most important strategic decision happens <strong>before every fight</strong>: which room to enter next.</p>
+
+  <h3>Priority Order (Act 1)</h3>
+  <ol class="phase-steps">
+    <li><strong>3-4 Hallway Fights</strong> — You need card rewards early. Aim for at least 3 fights before your first elite.</li>
+    <li><strong>1-2 Campfires</strong> — Upgrade key cards (Bash, Neutralize). Don't rest unless you're below 30% HP.</li>
+    <li><strong>1-2 Elites</strong> — Elites drop relics. Fight at least one per act. The earlier you fight them, the stronger you get.</li>
+    <li><strong>Shops?</strong> — Visit if you have 200+ gold and need card removal or a key relic.</li>
+    <li><strong>Question Marks (?)</strong> — High variance. Can be free relics, gold, or tough fights. Worth the risk early.</li>
+  </ol>
+
+  <div class="tip-box">
+    <strong>💡 Golden Rule:</strong> Path toward campfires <em>before</em> elites. Resting after a tough elite fight is much less useful than upgrading cards before one.
+  </div>
+
+  <h3>Pathing by Act</h3>
+  <ul>
+    <li><strong>Act 1 (Floors 1-16):</strong> Prioritize fights and campfires. Build your offense.</li>
+    <li><strong>Act 2 (Floors 17-33):</strong> Fights get harder. Add AoE and scaling solutions. Visit ? rooms for events.</li>
+    <li><strong>Act 3 (Floors 34-50):</strong> Round out your deck. Remove remaining Strikes. Prepare for the boss.</li>
+  </ul>
+
+  <h2 id="deck">4. Deck Management</h2>
+  <h3>When to Take Cards</h3>
+  <ul>
+    <li><strong>Act 1:</strong> Take almost any attack card. You need damage to kill elites before they kill you.</li>
+    <li><strong>Act 2:</strong> Be pickier. Look for synergy, AoE, and cards that scale (Powers, Strength/Focus generators).</li>
+    <li><strong>Act 3:</strong> Very selective. Only take cards that directly improve your existing strategy.</li>
+  </ul>
+
+  <h3>When to Skip</h3>
+  <ul>
+    <li>If the card doesn't fit your build at all</li>
+    <li>If your deck is already 25+ cards</li>
+    <li>If you're offered a curse (always skip unless you have a specific synergy)</li>
+  </ul>
+
+  <h3>Optimal Deck Size</h3>
+  <p>Aim for <strong>20-30 cards</strong>. Fewer than 20 = you cycle too fast through bad cards. More than 35 = you can't find your key cards consistently.</p>
+
+  <h3>Card Removal Priority</h3>
+  <ol>
+    <li><strong>Strikes first</strong> — they're the weakest attack cards in the game</li>
+    <li><strong>Defends second</strong> — only after you have better block options</li>
+    <li><strong>Curses immediately</strong> — if you somehow got one, remove it ASAP</li>
+  </ol>
+
+  <h2 id="combat">5. Combat Fundamentals</h2>
+  <h3>The Block/Damage Balance</h3>
+  <p>Every turn, ask: <strong>"Will I take damage this turn?"</strong></p>
+  <ul>
+    <li>If yes → Play enough block to survive, then spend remaining energy on attacks.</li>
+    <li>If no (enemy is buffing, not attacking) → Go fully offensive.</li>
+  </ul>
+  <p>This is the single most important combat concept. <strong>Don't over-block</strong> when the enemy isn't attacking.</p>
+
+  <h3>Enemy Intent</h3>
+  <p>Always check the enemy's intent icon above their head:</p>
+  <ul>
+    <li>🗡️ Sword = Attacking (block this!)</li>
+    <li>🛡️ Shield = Buffing/Blocking (attack freely)</li>
+    <li>💀 Skull = Strong attack incoming (stack extra block)</li>
+  </ul>
+
+  <h3>Elite Fights</h3>
+  <p>Act 1 elites are damage races. If you can't kill them within 4-5 turns, they'll overwhelm you. This is why prioritizing attack cards in Act 1 is so important.</p>
+
+  <ul>
+    <li><strong>Gremlin Nob:</strong> Punishes Skills (+2 Strength each time you play one). Play Attacks only.</li>
+    <li><strong>Lagavulin:</strong> Starts asleep. Use the first 3 turns to set up Powers and buffs.</li>
+    <li><strong>3 Sentries:</strong> Fill your deck with Dazed cards. Kill one quickly to reduce incoming damage.</li>
+  </ul>
+
+  <h2 id="first-run">6. Your First Win: Step-by-Step Plan</h2>
+  <p>Follow this plan as Ironclad for your highest chance of winning your first few runs:</p>
+
+  <ol class="phase-steps">
+    <li><strong>Act 1 — Build Offense:</strong> Take Carnage, Hemokinesis, Anger, Pommel Strike. Upgrade Bash at the first campfire.</li>
+    <li><strong>Act 1 Elite:</strong> With 3-4 attack cards, you can beat any Act 1 elite. Fight at least one.</li>
+    <li><strong>Act 1 Boss:</strong> Prepare for the boss based on which one spawns. Slime Boss needs AoE. Guardian needs consistent block. Hexaghost needs scaling.</li>
+    <li><strong>Act 2 — Add Defense & Scaling:</strong> Take Shrug It Off, Disarm, Feel No Pain, Spot Weakness. Choose a build direction (Strength or Block).</li>
+    <li><strong>Act 2 Boss:</strong> The hardest fights in the game. Save potions. You need scaling damage AND strong block.</li>
+    <li><strong>Act 3 — Refine:</strong> Remove Strikes. Only take cards that perfect your strategy. Focus on consistency.</li>
+    <li><strong>Final Boss:</strong> Play carefully. Don't greed for damage if you're at risk. A win is a win.</li>
+  </ol>
+
+  <div class="tip-box">
+    <strong>💡 Potion Strategy:</strong> Save block potions (Block Potion, Fairy in a Bottle) for Act 2 elites and bosses. Use attack potions (Fire Potion, Explosive Potion) early to save HP in hallway fights.
+  </div>
+
+  <h2 id="mistakes">7. Common Beginner Mistakes</h2>
+  <ul>
+    <li><strong>❌ Taking every card offered.</strong> Skipping is one of the most powerful actions in the game.</li>
+    <li><strong>❌ Resting too often at campfires.</strong> Upgrading cards is permanent power. Resting is temporary. Upgrade unless you'll die without healing.</li>
+    <li><strong>❌ Avoiding elites.</strong> Relics are how you scale. Fight at least 2 elites per run.</li>
+    <li><strong>❌ Over-blocking on non-attack turns.</strong> If the enemy is buffing, attack! You're wasting energy.</li>
+    <li><strong>❌ Building an unfocused deck.</strong> Pick a strategy and commit. A deck trying to do everything does nothing well.</li>
+    <li><strong>❌ Ignoring card removal.</strong> Removing Strikes is one of the best investments in the game.</li>
+    <li><strong>❌ Taking Snecko Eye without thinking.</strong> It's one of the best relics — but terrible if your deck is full of 0-1 cost cards.</li>
+  </ul>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">Ready to dive deeper? Check out our <a href="ironclad-strength-build.html" style="color:var(--gold-light);">Ironclad Strength Build Guide</a> for your next step.</p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a><a href="#">About</a><a href="#">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+</footer>
+
+</body>
+</html>

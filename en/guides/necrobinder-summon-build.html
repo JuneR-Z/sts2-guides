@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Necrobinder Summon Build Guide — Flood the Spire with Skeleton Army | STS2Guides</title>
+<meta name="description" content="Complete Necrobinder Summon build guide for Slay the Spire 2. Mass Grave + Undead Commander combos, best cards, relic synergies, and minion board management.">
+<link rel="canonical" href="https://sts2guides.com/en/guides/necrobinder-summon-build.html">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--purple);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:26px;font-weight:800;margin-bottom:4px;color:#b07cd8;}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:#b07cd8;border-left:4px solid var(--purple);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.card-ref{display:inline-block;padding:2px 10px;background:rgba(142,68,173,0.1);border:1px solid rgba(142,68,173,0.3);border-radius:8px;font-size:13px;margin:2px;}
+.combo-box{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin:20px 0;}
+.combo-box h4{color:var(--gold-light);margin-bottom:8px;}
+.stage-guide{counter-reset:stage;list-style:none;padding-left:0;}
+.stage-guide li{counter-increment:stage;padding:12px 0 12px 40px;position:relative;border-bottom:1px solid var(--border);}
+.stage-guide li::before{content:counter(stage);position:absolute;left:0;width:26px;height:26px;background:var(--purple);color:#fff;border-radius:50%;text-align:center;line-height:26px;font-size:13px;font-weight:700;top:12px;}
+.tip-box{background:rgba(142,68,173,0.08);border:1px solid rgba(142,68,173,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.tip-box strong{color:#b07cd8;}
+.warn-box{background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.warn-box strong{color:var(--crimson);}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+      <a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="./" class="active">Guides</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Necrobinder Summon Build</div>
+
+<article class="article">
+  <h1>Necrobinder Summon Build: Flood the Spire with Skeleton Army</h1>
+  <div class="meta">🏆 Build Guide · Updated May 16, 2026 · 8 min read · <span style="color:var(--crimson);font-weight:700;">S-Tier</span></div>
+
+  <p>The Summon Army build transforms the Necrobinder into an overwhelming force. By filling the board with Skeletons, Ghosts, and Abominations, you create a wall of minions that tank damage, deal passive damage every turn, and generate massive Soul stacks for devastating finishers. When the build comes together, you barely need to play block cards — your minions handle everything.</p>
+
+  <h2>How It Works</h2>
+  <p>The core loop has three phases:</p>
+  <ol>
+    <li><strong>Build Your Army</strong> — Summon minions to fill all 4 board slots. Skeletons taunt (enemies target them first), Ghosts deal passive damage each turn, Abominations hit hard.</li>
+    <li><strong>Buff Your Army</strong> — Play <span class="card-ref">Undead Commander</span> to give all minions +HP and +damage. Your skeletons become tanky, your ghosts become dangerous.</li>
+    <li><strong>Overwhelm</strong> — Let your minions handle defense and chip damage. Use accumulated Souls for <span class="card-ref">Soul Nova</span> as a finisher.</li>
+  </ol>
+
+  <div class="combo-box">
+    <h4>💀 The Perfect Opening</h4>
+    <p><strong>Turn 1:</strong> Play <span class="card-ref">Mass Grave</span> (summon 3 Skeletons) + <span class="card-ref">Undead Commander</span> (buff all).<br>
+    <strong>Turn 2:</strong> Add <span class="card-ref">Ghost Form</span> for passive damage. Your board is now full with 3 tanks and 1 DPS.<br>
+    <strong>Turn 3+:</strong> Replace fallen minions, use <span class="card-ref">Dark Offering</span> to cycle, accumulate Souls. Finish with <span class="card-ref">Soul Nova</span>.</p>
+  </div>
+
+  <h2>Core Cards</h2>
+  <h3>Must-Have (S-Tier)</h3>
+  <ul>
+    <li><strong>Mass Grave</strong> — Summon 3 Skeletons at once. This instantly fills most of your board and provides massive defense value. The single most efficient summon card.</li>
+    <li><strong>Undead Commander</strong> — ALL minions gain +3-5 HP and +2-3 damage. This turns your fragile Skeletons into real threats. Play this as early as possible.</li>
+    <li><strong>Soul Nova</strong> — Spend all Souls for massive AoE damage. At 5+ Souls, this clears rooms. At 10+ Souls, it one-shots bosses.</li>
+    <li><strong>Bone Legion</strong> — Summon 2 Skeletons with bonus HP. Reliable, efficient board filler.</li>
+  </ul>
+
+  <h3>Strong Support (A-Tier)</h3>
+  <ul>
+    <li><strong>Dark Offering</strong> — Sacrifice a minion for card draw and energy. Use this on a low-HP Skeleton that's about to die anyway.</li>
+    <li><strong>Graveyard Shift</strong> — Resurrect a minion that died this combat. Excellent value when your buffed minions fall.</li>
+    <li><strong>Ghost Form</strong> — Passive 4-6 damage per turn. Great for chip damage while your Skeletons tank.</li>
+    <li><strong>Soul Harvest</strong> — Gain Souls whenever a minion dies. Makes your inevitable losses into resources.</li>
+    <li><strong>Soul Drain</strong> — Basic sacrifice for Soul generation. Use on Skeletons at 1 HP.</li>
+  </ul>
+
+  <h2>Board Management Fundamentals</h2>
+  <p>Managing your 4 minion slots is the key skill for this build:</p>
+  <ul>
+    <li><strong>Slot 1-2:</strong> Skeletons (taunt, absorb hits) — keep at least 1 alive at all times.</li>
+    <li><strong>Slot 3:</strong> Ghost (passive damage) — position behind taunt minions.</li>
+    <li><strong>Slot 4:</strong> Flex slot — another Skeleton for defense, or Abomination for damage.</li>
+  </ul>
+  <p>When a skeleton is at 1-2 HP and about to die, sacrifice it with <span class="card-ref">Soul Drain</span> or <span class="card-ref">Dark Offering</span> to extract value before it falls. Then immediately replace it with a fresh summon.</p>
+
+  <div class="warn-box">
+    <strong>⚠️ Common Mistake:</strong> Don't sacrifice your last taunt minion. If you have no Skeletons on board, enemies will attack you directly. Always keep at least 1 taunt minion active.
+  </div>
+
+  <h2>Best Relics</h2>
+  <ul>
+    <li><strong>General's Banner</strong> (S) — All minions deal +1 damage. Simple, effective, stacks with Undead Commander.</li>
+    <li><strong>Necronomicon</strong> (S) — Summoned minions have +2 HP. Makes Skeletons significantly tankier.</li>
+    <li><strong>Soul Vessel</strong> (A) — Start combat with 2 Souls. Speeds up your Soul economy.</li>
+    <li><strong>Blood Chalice</strong> (B) — Heal 2 HP whenever you play a Sacrifice card. Good sustain in longer fights.</li>
+  </ul>
+
+  <h2>Run Strategy — Stage by Stage</h2>
+  <ol class="stage-guide">
+    <li>
+      <strong>Floors 1-8 (Early Act 1):</strong> 
+      <p>Necrobinder's Act 1 is challenging. Take <span class="card-ref">Bone Throw</span> for damage, <span class="card-ref">Raise Dead</span> for a tank. You need at least 2 summon cards before your first elite. Upgrade <span class="card-ref">Raise Dead</span> for a sturdier skeleton.</p>
+    </li>
+    <li>
+      <strong>Floors 9-16 (Late Act 1):</strong>
+      <p>Look for <span class="card-ref">Bone Legion</span> and <span class="card-ref">Ghost Form</span>. If offered <span class="card-ref">Undead Commander</span>, take it immediately — it's your build-defining Power. By now you should have 3-4 summon cards.</p>
+    </li>
+    <li>
+      <strong>Floors 17-25 (Early Act 2):</strong>
+      <p>The build takes off. <span class="card-ref">Mass Grave</span> is your #1 priority. <span class="card-ref">Dark Offering</span> provides card draw. Your board should be full most turns. This is when the build feels powerful.</p>
+    </li>
+    <li>
+      <strong>Floors 26-33 (Late Act 2):</strong>
+      <p>Refine your Soul economy. <span class="card-ref">Soul Harvest</span> and <span class="card-ref">Soul Nova</span> give you a finisher. Remove Strikes — you'll rarely play attacks manually once your minion engine is running.</p>
+    </li>
+    <li>
+      <strong>Floors 34-50 (Act 3):</strong>
+      <p>Your board should be permanently full with buffed minions. Save Souls for boss fights. <span class="card-ref">Soul Nova</span> at 8+ Souls destroys anything. The Summon Army build is one of the safest ways to clear Act 3.</p>
+    </li>
+  </ol>
+
+  <div class="tip-box">
+    <strong>💡 Pro Tip — Minion Turn Order:</strong> Minions act <em>after</em> you play all your cards but <em>before</em> enemies attack. This means you can sacrifice a low-HP minion, play Dark Offering for card draw, summon a fresh Skeleton, and that new Skeleton will tank the incoming enemy attack — all in one turn.
+  </div>
+
+  <h2>Matchup Notes</h2>
+  <ul>
+    <li><strong>vs Gremlin Nob:</strong> Hard matchup. Your summon skills trigger his Strength buff. Minimize skill usage and rely on Bone Throw for damage.</li>
+    <li><strong>vs Slime Boss:</strong> Excellent matchup. Skeletons tank the small slimes after the split. Ghosts chip all of them simultaneously.</li>
+    <li><strong>vs Collector:</strong> Your Skeletons can taunt his minions. Focus on killing the Collector directly while minions handle defense.</li>
+    <li><strong>vs Time Eater:</strong> Good matchup. Your minions deal passive damage without using cards, making the 12-card limit less punishing.</li>
+  </ul>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">Also check: <a href="../characters/necrobinder.html" style="color:var(--gold-light);">Necrobinder Character Guide</a> · <a href="ironclad-strength-build.html" style="color:var(--gold-light);">Ironclad Strength Build</a></p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a><a href="#">About</a><a href="#">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+</footer>
+
+</body>
+</html>

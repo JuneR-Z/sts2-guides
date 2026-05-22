@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silent Poison Build Guide — Stack 999 Poison with Catalyst | STS2Guides</title>
+<meta name="description" content="Complete Silent Poison build guide for Slay the Spire 2. Catalyst + Burst + Corpse Explosion combos, best cards, relic synergies, and how to apply 999 Poison.">
+<link rel="canonical" href="https://sts2guides.com/en/guides/silent-poison-build.html">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--green);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:26px;font-weight:800;margin-bottom:4px;color:var(--green);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--green);border-left:4px solid var(--green);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.card-ref{display:inline-block;padding:2px 10px;background:rgba(39,174,96,0.1);border:1px solid rgba(39,174,96,0.3);border-radius:8px;font-size:13px;margin:2px;}
+.combo-box{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin:20px 0;}
+.combo-box h4{color:var(--gold-light);margin-bottom:8px;}
+.stage-guide{counter-reset:stage;list-style:none;padding-left:0;}
+.stage-guide li{counter-increment:stage;padding:12px 0 12px 40px;position:relative;border-bottom:1px solid var(--border);}
+.stage-guide li::before{content:counter(stage);position:absolute;left:0;width:26px;height:26px;background:var(--green);color:#fff;border-radius:50%;text-align:center;line-height:26px;font-size:13px;font-weight:700;top:12px;}
+.tip-box{background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.tip-box strong{color:var(--green);}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+      <a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="./" class="active">Guides</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Silent Poison Build</div>
+
+<article class="article">
+  <h1>Silent Poison Build: Stack 999 Poison with Catalyst + Burst</h1>
+  <div class="meta">🏆 Build Guide · Updated May 17, 2026 · 8 min read · <span style="color:var(--crimson);font-weight:700;">S-Tier</span></div>
+
+  <p>The Poison Build is the Silent's strongest and most reliable archetype. Through exponential multiplication with <strong>Catalyst</strong>, you can stack Poison from single digits to hundreds or even the game's maximum of 999. Once the poison is applied, it deals damage every turn while you focus entirely on defense — making this one of the safest builds in the game.</p>
+
+  <h2>How Poison Works</h2>
+  <p>Poison is a debuff applied to enemies. At the start of the enemy's turn, they take damage equal to their current Poison, then the Poison is reduced by 1. The key insight: <strong>Catalyst doesn't just add more poison — it multiplies it</strong>. A double-cast Catalyst turns 8 Poison into 24 into 72. Triple-cast turns 8 into 24 into 72 into 216.</p>
+
+  <div class="combo-box">
+    <h4>☠️ Ideal Combo Sequence</h4>
+    <p><strong>Setup → Multiply → Defend → Win</strong></p>
+    <p>1. Apply initial Poison with <span class="card-ref">Bouncing Flask</span> or <span class="card-ref">Deadly Poison</span><br>
+    2. Use <span class="card-ref">Burst</span> → <span class="card-ref">Catalyst+</span> to triple Poison twice in one turn<br>
+    3. Block with <span class="card-ref">Backflip</span>, <span class="card-ref">Leg Sweep</span>, or <span class="card-ref">Wraith Form</span><br>
+    4. Watch the enemy die to passive Poison damage</p>
+  </div>
+
+  <h2>Core Cards</h2>
+  <h3>Must-Have (S-Tier)</h3>
+  <ul>
+    <li><strong>Catalyst</strong> — The heart of the build. Upgraded version <em>triples</em> Poison instead of doubling. This is your win condition — take every copy you see.</li>
+    <li><strong>Corpse Explosion</strong> — Apply 6-9 Poison. When the enemy dies, deal damage equal to its max HP to ALL enemies. This single card solves every multi-enemy fight.</li>
+    <li><strong>Burst</strong> — Your next Skill is played twice. Burst + Catalyst turns 2× into 4× or 9× multiplication. The most important combo enabler.</li>
+    <li><strong>Well Laid Plans</strong> — Retain 1-2 cards each turn. Hold Catalyst until you have Burst. Hold Wraith Form for the boss's big attack. Enables perfect sequencing.</li>
+    <li><strong>Wraith Form</strong> — 2-3 turns of Intangible (take 1 damage from all hits). The best defensive card in the game, and it costs you nothing in the Poison build since enemies die from passive damage.</li>
+  </ul>
+
+  <h3>Poison Generators (A-Tier)</h3>
+  <ul>
+    <li><strong>Bouncing Flask</strong> — Apply 3 Poison to a random enemy 3-4 times. The best initial Poison applier.</li>
+    <li><strong>Noxious Fumes</strong> — Apply 2-3 Poison to ALL enemies at the start of each turn. Bypasses Artifact. Excellent passive scaling.</li>
+    <li><strong>Deadly Poison</strong> — Apply 5-7 Poison. Simple, reliable, cheap.</li>
+    <li><strong>Crippling Cloud</strong> — Apply 4-7 Poison AND 2 Weak to ALL enemies. Great AoE setup.</li>
+  </ul>
+
+  <h3>Defensive & Utility (A-Tier)</h3>
+  <ul>
+    <li><strong>Backflip</strong> — 5-8 Block + draw 2 cards. Your best defensive common.</li>
+    <li><strong>Leg Sweep</strong> — 2 Weak + 11-14 Block. Stops big attacks.</li>
+    <li><strong>Adrenaline</strong> — 0 cost: gain 1-2 Energy + draw 2 cards. Always take.</li>
+    <li><strong>Piercing Wail</strong> — ALL enemies lose 6-8 Strength for 1 turn. Nullifies multi-hit attacks.</li>
+  </ul>
+
+  <h2>Best Relics</h2>
+  <ul>
+    <li><strong>Snecko Skull</strong> (S) — Apply +1 Poison whenever you apply Poison. Massive value over a long fight.</li>
+    <li><strong>The Specimen</strong> (A) — When an enemy dies, transfer its Poison to another enemy. Chain reaction kills.</li>
+    <li><strong>Twisted Funnel</strong> (A) — At the start of combat, apply 4 Poison to ALL enemies. Free initial stack.</li>
+    <li><strong>Runic Pyramid</strong> (S) — Don't discard your hand. Hold Catalyst and Burst indefinitely. Game-breaking.</li>
+    <li><strong>Orange Pellets</strong> (S) — Removes debuffs. Clears Wraith Form's Dexterity loss, leaving only the Intangible.</li>
+  </ul>
+
+  <h2>Run Strategy — Stage by Stage</h2>
+  <ol class="stage-guide">
+    <li>
+      <strong>Floors 1-8 (Early Act 1):</strong> 
+      <p>Survival mode. Silent's Act 1 is rough — take <span class="card-ref">Dagger Spray</span>, <span class="card-ref">Poisoned Stab</span>, <span class="card-ref">Quick Slash</span>. You need attacks to beat elites. <span class="card-ref">Deadly Poison</span> is good but not enough alone. Upgrade <span class="card-ref">Neutralize</span> first.</p>
+    </li>
+    <li>
+      <strong>Floors 9-16 (Late Act 1):</strong>
+      <p>Look for your first <span class="card-ref">Bouncing Flask</span> and <span class="card-ref">Noxious Fumes</span>. If offered <span class="card-ref">Catalyst</span>, take it even if you don't have much poison yet — you'll find more. Add <span class="card-ref">Backflip</span> for block and card draw.</p>
+    </li>
+    <li>
+      <strong>Floors 17-25 (Early Act 2):</strong>
+      <p>The build comes online. <span class="card-ref">Catalyst</span> + <span class="card-ref">Burst</span> is your goal. <span class="card-ref">Well Laid Plans</span> is a top priority. If you see <span class="card-ref">Corpse Explosion</span>, take it — it solves multi-enemy fights permanently.</p>
+    </li>
+    <li>
+      <strong>Floors 26-33 (Late Act 2):</strong>
+      <p>Add defense. <span class="card-ref">Wraith Form</span> wins runs. <span class="card-ref">Leg Sweep</span>, <span class="card-ref">Piercing Wail</span> for mitigation. By now you should have: 3-4 poison sources, at least 1 Catalyst, solid block, and card draw. Remove Strikes.</p>
+    </li>
+    <li>
+      <strong>Floors 34-50 (Act 3):</strong>
+      <p>Your deck is now a poison machine. In every fight: apply poison → double/triple it → defend. Bosses die in 3-4 turns to passive damage while you block everything. Nightmare can create 3 additional Catalysts for truly absurd poison stacking.</p>
+    </li>
+  </ol>
+
+  <div class="tip-box">
+    <strong>💡 Pro Tip — Infinite Poison Scaling:</strong> With Nightmare + Catalyst+, you can create 3 copies of Catalyst+ in your hand next turn. Play all three: 8 Poison → 24 → 72 → 216 → 648 (with original Catalyst). This kills anything in the game, including the Heart.
+  </div>
+
+  <h2>Matchup Notes</h2>
+  <ul>
+    <li><strong>vs Artifact enemies:</strong> Use low-value poison first (<span class="card-ref">Noxious Fumes</span> tick) to strip Artifact charges, then apply your real poison.</li>
+    <li><strong>vs Time Eater:</strong> Poison is excellent here — you don't need to play many cards. Just apply poison and block.</li>
+    <li><strong>vs Awakened One:</strong> Don't play Powers in phase 1 unless absolutely necessary. Noxious Fumes gives him Strength.</li>
+    <li><strong>vs Donu & Deca:</strong> Corpse Explosion on one kills both. The easiest boss fight for this build.</li>
+  </ul>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">Also check: <a href="../characters/silent.html" style="color:var(--gold-light);">Silent Character Guide</a> · <a href="beginner.html" style="color:var(--gold-light);">Beginner's Guide</a></p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a><a href="#">About</a><a href="#">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+</footer>
+
+</body>
+</html>

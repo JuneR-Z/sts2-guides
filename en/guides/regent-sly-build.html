@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regent Sly & Star Build Guide — Command the Battlefield | STS2Guides</title>
+<meta name="description" content="Complete Regent Sly build guide for Slay the Spire 2. Command synergies, Star stacking, Starfall nuke combos, and how to master the Regent's unique mechanics.">
+<link rel="canonical" href="https://sts2guides.com/en/guides/regent-sly-build.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "STS2Guides", "item": "https://sts2guides.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sts2guides.com/en/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Regent Sly Build", "item": "https://sts2guides.com/en/guides/regent-sly-build.html" }
+  ]
+}
+</script>
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad; --orange: #e67e22;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--purple);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:26px;font-weight:800;margin-bottom:4px;color:var(--purple);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--purple);border-left:4px solid var(--purple);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.card-ref{display:inline-block;padding:2px 10px;background:rgba(142,68,173,0.1);border:1px solid rgba(142,68,173,0.3);border-radius:8px;font-size:13px;margin:2px;}
+.combo-box{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin:20px 0;}
+.combo-box h4{color:var(--gold-light);margin-bottom:8px;}
+.stage-guide{counter-reset:stage;list-style:none;padding-left:0;}
+.stage-guide li{counter-increment:stage;padding:12px 0 12px 40px;position:relative;border-bottom:1px solid var(--border);}
+.stage-guide li::before{content:counter(stage);position:absolute;left:0;width:26px;height:26px;background:var(--purple);color:#fff;border-radius:50%;text-align:center;line-height:26px;font-size:13px;font-weight:700;top:12px;}
+.tip-box{background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.tip-box strong{color:var(--green);}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:900px){
+  .article h1{font-size:22px;}
+  .header-inner{flex-wrap:wrap;height:auto;padding:8px 12px;gap:8px;}
+  .logo{order:1;} .logo-text{font-size:15px;}
+  nav{order:3;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;justify-content:flex-start;padding:4px 0;}
+  nav a{font-size:12px;padding:6px 10px;white-space:nowrap;flex-shrink:0;}
+  .search-box{width:100%;margin-top:4px;}
+  .search-box input{width:100%;}
+  .section{padding:24px 14px;}
+  .card-table th,.card-table td{padding:6px 8px;font-size:11px;}
+}
+@media(max-width:480px){
+  .article h1{font-size:18px;}
+  .logo-text{font-size:13px;}
+  nav a{font-size:11px;padding:5px 8px;}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo"><div class="logo-icon">👑</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../relics/index.html">Relics</a>
+      <a href="../bosses/index.html">Bosses</a>
+      <a href="./" class="active">Guides</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Regent Sly & Star Build</div>
+
+<article class="article">
+  <h1>Regent Sly & Star Build — Command the Battlefield</h1>
+  <p class="meta">Build Type: Sly/Star Scaling · Difficulty: Intermediate · Updated May 2026</p>
+
+  <p>The Regent is the most tactically complex character in Slay the Spire 2. Their core mechanics — <strong>Sly</strong>, <strong>Stars</strong>, and <strong>Commands</strong> — create a layered decision-making system that rewards careful planning. This guide teaches you how to generate Sly, convert it into Stars, and unleash devastating <span class="card-ref">Starfall</span> finishers.</p>
+
+  <h2>Understanding Regent's Mechanics</h2>
+  <h3>Sly (🧠 Strategy Resource)</h3>
+  <p>Sly is a stacking buff that improves your cards. Many Regent cards have conditional bonuses: "If you have Sly, do X." Each Sly stack represents tactical advantage. You can have <strong>unlimited Sly stacks</strong>, making it the Regent's primary scaling vector.</p>
+
+  <h3>Stars (⭐ Burst Resource)</h3>
+  <p>Stars are a currency you accumulate through Sly-generating effects. Unlike Sly, Stars are meant to be spent — primarily via <span class="card-ref">Starfall</span>, which converts all Stars into massive AOE damage. Think of Stars as your "ult meter."</p>
+
+  <h3>Commands (👑 Tactical Choices)</h3>
+  <p>Each turn, the Regent receives random Commands (bonuses for specific actions). Following a Command generates Sly. <span class="card-ref">Tactical Genius</span> expands your Command options, giving you more flexibility.</p>
+
+  <h2>S-Tier Core Cards</h2>
+
+  <div class="combo-box"><h4>👑 Win Condition Combo</h4>
+  <p><span class="card-ref">Feint</span> → <span class="card-ref">Cunning Plan</span> → <span class="card-ref">Loyal Subject</span> → <span class="card-ref">Starfall</span> = Infinite scaling loop. Every Sly becomes a Star, and Stars get cashed out for screen-clearing damage.</p></div>
+
+  <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+    <tr style="border-bottom:1px solid var(--border);"><th style="text-align:left;padding:8px;color:var(--purple);">Card</th><th style="text-align:left;padding:8px;color:var(--purple);">Tier</th><th style="text-align:left;padding:8px;color:var(--purple);">Why</th></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Feint</td><td style="padding:8px;color:var(--gold-light);">A</td><td style="padding:8px;color:var(--text-secondary);">0-cost Sly + Block. Best Sly generator in the game. Always take.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Cunning Plan</td><td style="padding:8px;color:var(--gold-light);">A</td><td style="padding:8px;color:var(--text-secondary);">2 Sly + draw 2. Card advantage plus scaling in one package.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Tactical Genius</td><td style="padding:8px;color:var(--gold-light);">S</td><td style="padding:8px;color:var(--text-secondary);">More Commands = more Sly opportunities. The build's engine.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Loyal Subject</td><td style="padding:8px;color:var(--gold-light);">A</td><td style="padding:8px;color:var(--text-secondary);">Every Sly is now also a Star. Doubles your scaling speed.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Starfall</td><td style="padding:8px;color:var(--gold-light);">S</td><td style="padding:8px;color:var(--text-secondary);">Your finisher. 30 Stars × base damage = 210+ AOE. One-shots everything.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Precision Strike</td><td style="padding:8px;color:var(--gold-light);">A</td><td style="padding:8px;color:var(--text-secondary);">Scales with Sly. At 10 Sly, deals 37+ damage for 1 energy.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Throne Room</td><td style="padding:8px;color:var(--gold-light);">A</td><td style="padding:8px;color:var(--text-secondary);">Double your next card. Doubling Cunning Plan = 4 Sly + 4 draw.</td></tr>
+    <tr><td style="padding:8px;">Star Ascension</td><td style="padding:8px;color:var(--gold-light);">A</td><td style="padding:8px;color:var(--text-secondary);">Stars persist after Starfall. Enables repeated nuking.</td></tr>
+  </table>
+
+  <h2>Build Variants</h2>
+
+  <h3>Pure Sly Engine (Balanced)</h3>
+  <p>Priority: <span class="card-ref">Tactical Genius</span> → <span class="card-ref">Feint</span> → <span class="card-ref">Precision Strike</span> → <span class="card-ref">Cunning Plan</span></p>
+  <p>The most consistent approach. Stack Sly to ~15-20 and let <span class="card-ref">Precision Strike</span> carry your damage. <span class="card-ref">Master of Arms</span> converts Sly generation into Block, keeping you safe.</p>
+
+  <h3>Star Combo (Burst)</h3>
+  <p>Priority: <span class="card-ref">Loyal Subject</span> → <span class="card-ref">Cunning Plan</span> → <span class="card-ref">Starfall</span> → <span class="card-ref">Star Ascension</span></p>
+  <p>Go all-in on Stars. With <span class="card-ref">Loyal Subject</span> + <span class="card-ref">Star Ascension</span>, you can Starfall every 3-4 turns without losing progress. Best for boss fights.</p>
+
+  <h3>Command Focus (Utility)</h3>
+  <p>Priority: <span class="card-ref">Tactical Genius+</span> → <span class="card-ref">Outmaneuver</span> → <span class="card-ref">Cunning Plan</span> → <span class="card-ref">Royal Guard</span></p>
+  <p>Generate so much Sly from Commands that your <span class="card-ref">Royal Guard</span> becomes a 30+ damage nuke every time. <span class="card-ref">Outmaneuver</span> gives massive Energy turns.</p>
+
+  <h2>Stage-by-Stage Game Plan</h2>
+  <ol class="stage-guide">
+    <li><strong>Act 1</strong> — Take <span class="card-ref">Feint</span> and <span class="card-ref">Precision Strike</span> early. <span class="card-ref">Royal Guard</span> is decent block. First <span class="card-ref">Cunning Plan</span> is an auto-pick.</li>
+    <li><strong>Act 1 Boss</strong> — You should have 3-5 Sly by boss. <span class="card-ref">Precision Strike</span> will be dealing 16+ damage. Don't force Stars yet.</li>
+    <li><strong>Act 2</strong> — <span class="card-ref">Tactical Genius</span> is your key unlock. With it, every turn generates Sly. Consider <span class="card-ref">Loyal Subject</span> if you're building toward Starfall.</li>
+    <li><strong>Act 2 Boss</strong> — With 10+ Sly and <span class="card-ref">Tactical Genius</span>, your turns generate consistent value. <span class="card-ref">Throne Room</span> on <span class="card-ref">Cunning Plan</span> is a huge power spike.</li>
+    <li><strong>Act 3</strong> — Time to add <span class="card-ref">Starfall</span> and <span class="card-ref">Star Ascension</span>. You should have 20+ Stars per fight. Starfall easily hits 150+ AOE.</li>
+    <li><strong>Act 4</strong> — <span class="card-ref">Star Ascension</span> is essential for the Act 4 boss gauntlet. You need to Starfall multiple times. <span class="card-ref">Diplomatic Immunity</span> blocks debuffs.</li>
+  </ol>
+
+  <h2>Relic Synergies</h2>
+  <div class="combo-box"><h4>💎 Best Relics for This Build</h4>
+  <ul>
+    <li><strong>Crown of Stars</strong> — Start each combat with 3 Stars. Instant acceleration.</li>
+    <li><strong>Tactical Map</strong> — Gain 1 extra Command choice each turn. Sly generation doubled.</li>
+    <li><strong>Royal Scepter</strong> — When you gain Sly, gain 1 Block. Passive defense while scaling.</li>
+    <li><strong>Ambition Stone</strong> — Stars deal 50% more damage. Direct Starfall buff.</li>
+    <li><strong>Commander's Baton</strong> — Following a Command gives +1 Energy. Massive tempo.</li>
+  </ul></div>
+
+  <div class="tip-box"><strong>💡 Pro Tip:</strong> The <span class="card-ref">Feint</span> + <span class="card-ref">Loyal Subject</span> + <span class="card-ref">Star Ascension</span> combo creates a self-sustaining loop. Every Feint gives 1 Sly + 1 Star (via Loyal Subject). After Starfall, you keep all Stars (via Star Ascension). Feint again. Repeat. You never run out of resources.</div>
+
+  <h2>Common Mistakes</h2>
+  <ul>
+    <li><strong>Starfalling too early</strong> — Don't fire Starfall at 5 Stars. Wait until 15+ for meaningful impact.</li>
+    <li><strong>Ignoring Commands</strong> — Commands aren't optional flavor. Following them is how you scale. Track your options every turn.</li>
+    <li><strong>Over-prioritizing Stars without Sly</strong> — Stars come from Sly. No Sly = no Stars. Build the engine first.</li>
+    <li><strong>Skipping block cards</strong> — Regent's block package (<span class="card-ref">Royal Guard</span>, <span class="card-ref">Courtly Defense</span>, <span class="card-ref">Master of Arms</span>) is strong. Don't go all-in on Sly and forget defense.</li>
+  </ul>
+
+  <div class="tip-box"><strong>🔒 Disclaimer:</strong> This guide reflects game mechanics as of Slay the Spire 2 Early Access (2026). Cards, stats, and mechanics are subject to change during development. This is community research, not official documentation. Always check official Mega Crit patch notes for the latest balance updates.</div>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a><a href="../relics/index.html">Relics</a><a href="../bosses/index.html">Bosses</a><a href="./">Guides</a></div>
+  <p>STS2Guides is an unofficial fan community site. Slay the Spire 2 is developed by Mega Crit Games. This site is not affiliated with or endorsed by Mega Crit Games. © 2026 STS2Guides. All game assets and mechanics belong to their respective owners.</p>
+</footer>
+
+<div id="searchOverlay" class="search-overlay" onclick="closeSearch(event)">
+  <div class="search-modal" onclick="event.stopPropagation()">
+    <div class="search-modal-header"><input type="text" id="searchModalInput" placeholder="Type to search..." autofocus><button class="search-close" onclick="closeSearch()">✕</button></div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+<style>
+.search-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:1000;justify-content:center;padding-top:60px;}
+.search-overlay.active{display:flex;}
+.search-modal{width:640px;max-width:90vw;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;overflow:hidden;max-height:80vh;display:flex;flex-direction:column;}
+.search-modal-header{display:flex;align-items:center;padding:16px;gap:12px;border-bottom:1px solid var(--border);}
+.search-modal-header input{flex:1;background:var(--bg-card);border:1px solid var(--border);color:var(--text-primary);padding:10px 16px;border-radius:8px;font-size:15px;outline:none;}
+.search-close{background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;}
+.search-results{overflow-y:auto;padding:8px;flex:1;}
+.search-result-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:8px;cursor:pointer;transition:all .15s;text-decoration:none;color:inherit;}
+.search-result-item:hover{background:var(--bg-card-hover);}
+.search-result-item .result-icon{font-size:20px;flex-shrink:0;width:36px;text-align:center;}
+.search-result-item .result-info{overflow:hidden;}
+.search-result-item .result-title{font-size:14px;font-weight:600;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.search-result-item .result-cat{font-size:11px;color:var(--gold-light);display:inline-block;padding:1px 6px;background:rgba(212,160,60,0.15);border-radius:3px;margin-bottom:2px;}
+.search-empty{text-align:center;padding:40px;color:var(--text-muted);font-size:14px;}
+</style>
+<script>
+let searchIndex=[];
+fetch('../search-index.json').then(r=>r.json()).then(d=>{searchIndex=d;}).catch(()=>{});
+function openSearch(){document.getElementById('searchOverlay').classList.add('active');document.getElementById('searchModalInput').focus();}
+function closeSearch(e){if(e&&e.target!==document.getElementById('searchOverlay'))return;var el=document.getElementById('searchOverlay');el.classList.remove('active');document.getElementById('searchModalInput').value='';document.getElementById('searchResults').innerHTML='';}
+document.getElementById('searchModalInput').addEventListener('input',function(){var q=this.value.toLowerCase().trim(),el=document.getElementById('searchResults');if(!q){el.innerHTML='';return;}var r=searchIndex.filter(function(i){return i.title.toLowerCase().includes(q)||i.keywords.includes(q)||i.category.toLowerCase().includes(q);}).slice(0,10);if(!r.length){el.innerHTML='<div class="search-empty">No results for "<strong>'+q+'</strong>"</div>';return;}var icons={Characters:'🦸',Cards:'🃏',Relics:'💎',Bosses:'👹',Guides:'📖',Home:'🏠'};el.innerHTML=r.map(function(i){return'<a class="search-result-item" href="'+i.url+'"><span class="result-icon">'+(icons[i.category]||'📄')+'</span><div class="result-info"><span class="result-cat">'+i.category+'</span><div class="result-title">'+i.title+'</div></div></a>';}).join('');});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();if((e.ctrlKey||e.metaKey)&&e.key=='k'){e.preventDefault();openSearch();}});
+</script>
+</body>
+</html>

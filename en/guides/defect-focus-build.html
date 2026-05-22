@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Defect Focus & Orb Build Guide — Frost Wall + Lightning Storm | STS2Guides</title>
+<meta name="description" content="Complete Defect Focus/Orb build guide for Slay the Spire 2. Glacier + Defragment combos, best orb cards, capacitor strategies, and how to become immortal.">
+<link rel="canonical" href="https://sts2guides.com/en/guides/defect-focus-build.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "STS2Guides", "item": "https://sts2guides.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sts2guides.com/en/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Defect Focus Build", "item": "https://sts2guides.com/en/guides/defect-focus-build.html" }
+  ]
+}
+</script>
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad; --orange: #e67e22;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--blue);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:26px;font-weight:800;margin-bottom:4px;color:var(--blue);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--blue);border-left:4px solid var(--blue);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.card-ref{display:inline-block;padding:2px 10px;background:rgba(52,152,219,0.1);border:1px solid rgba(52,152,219,0.3);border-radius:8px;font-size:13px;margin:2px;}
+.combo-box{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin:20px 0;}
+.combo-box h4{color:var(--gold-light);margin-bottom:8px;}
+.stage-guide{counter-reset:stage;list-style:none;padding-left:0;}
+.stage-guide li{counter-increment:stage;padding:12px 0 12px 40px;position:relative;border-bottom:1px solid var(--border);}
+.stage-guide li::before{content:counter(stage);position:absolute;left:0;width:26px;height:26px;background:var(--blue);color:#fff;border-radius:50%;text-align:center;line-height:26px;font-size:13px;font-weight:700;top:12px;}
+.tip-box{background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.tip-box strong{color:var(--green);}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:900px){
+  .article h1{font-size:22px;}
+  .header-inner{flex-wrap:wrap;height:auto;padding:8px 12px;gap:8px;}
+  .logo{order:1;} .logo-text{font-size:15px;}
+  nav{order:3;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;justify-content:flex-start;padding:4px 0;}
+  nav a{font-size:12px;padding:6px 10px;white-space:nowrap;flex-shrink:0;}
+  .search-box{width:100%;margin-top:4px;}
+  .search-box input{width:100%;}
+  .section{padding:24px 14px;}
+  .card-table th,.card-table td{padding:6px 8px;font-size:11px;}
+}
+@media(max-width:480px){
+  .article h1{font-size:18px;}
+  .logo-text{font-size:13px;}
+  nav a{font-size:11px;padding:5px 8px;}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo"><div class="logo-icon">⚡</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../relics/index.html">Relics</a>
+      <a href="../bosses/index.html">Bosses</a>
+      <a href="./" class="active">Guides</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Defect Focus & Orb Build</div>
+
+<article class="article">
+  <h1>Defect Focus/Orb Build — Become Immortal</h1>
+  <p class="meta">Build Type: Orb Control · Difficulty: Beginner-Friendly · Updated May 2026</p>
+
+  <p>The Defect's <strong>Focus/Orb build</strong> is arguably the most powerful scaling engine in Slay the Spire 2. By stacking <strong>Focus</strong> and filling Orb slots with <strong>Frost Orbs</strong>, you generate an unbreakable Block wall that passively blocks all incoming damage — while your Lightning Orbs chip away at enemies turn after turn.</p>
+
+  <h2>Core Strategy</h2>
+  <p>The build revolves around three pillars:</p>
+  <ol>
+    <li><strong>Focus Generation</strong> — <span class="card-ref">Defragment</span>, <span class="card-ref">Biased Cognition</span>, and <span class="card-ref">Consume</span> are your primary Focus sources. Each point of Focus increases your Frost block and Lightning damage by 1.</li>
+    <li><strong>Orb Slots</strong> — <span class="card-ref">Capacitor</span> gives you more Orb slots, allowing more simultaneous Frost/Lightning orbs. The more slots, the more passive value per turn.</li>
+    <li><strong>Orb Generation</strong> — <span class="card-ref">Glacier</span>, <span class="card-ref">Coolheaded</span>, and <span class="card-ref">Cold Snap</span> channel Frost. <span class="card-ref">Ball Lightning</span> and <span class="card-ref">Electrodynamics</span> handle offense.</li>
+  </ol>
+
+  <h2>S-Tier Core Cards</h2>
+
+  <div class="combo-box"><h4>⚡ Win Condition Combo</h4>
+  <p><span class="card-ref">Defragment+</span> + <span class="card-ref">Capacitor+</span> + <span class="card-ref">Glacier+</span> = 40+ passive Block per turn. You literally cannot die to most encounters.</p></div>
+
+  <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+    <tr style="border-bottom:1px solid var(--border);"><th style="text-align:left;padding:8px;color:var(--blue);">Card</th><th style="text-align:left;padding:8px;color:var(--blue);">Tier</th><th style="text-align:left;padding:8px;color:var(--blue);">Why</th></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Defragment</td><td style="padding:8px;color:var(--gold-light);">S</td><td style="padding:8px;color:var(--text-secondary);">The best Focus card: no downside, permanent scaling. Upgrade for 2 Focus.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Biased Cognition</td><td style="padding:8px;color:var(--gold-light);">S</td><td style="padding:8px;color:var(--text-secondary);">Massive Focus spike. Use <span class="card-ref">Core Surge</span> first to block the Focus loss with Artifact.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Glacier</td><td style="padding:8px;color:var(--gold-light);">S</td><td style="padding:8px;color:var(--text-secondary);">Block + 2 Frost in one card. The best defensive card in the game.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Echo Form</td><td style="padding:8px;color:var(--gold-light);">S</td><td style="padding:8px;color:var(--text-secondary);">Double your best card every turn. Doubling Defragment = 4 Focus per turn.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Electrodynamics</td><td style="padding:8px;color:var(--gold-light);">S</td><td style="padding:8px;color:var(--text-secondary);">Lightning hits ALL. Essential for multi-enemy fights and AOE scaling.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Capacitor</td><td style="padding:8px;color:var(--gold-light);">A</td><td style="padding:8px;color:var(--text-secondary);">More Orb slots = more passive value. Upgrade for +3 slots.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Seek</td><td style="padding:8px;color:var(--gold-light);">S</td><td style="padding:8px;color:var(--text-secondary);">Finds your key Powers turn 1. Upgraded: fetch 2 cards.</td></tr>
+    <tr><td style="padding:8px;">Coolheaded</td><td style="padding:8px;color:var(--gold-light);">A</td><td style="padding:8px;color:var(--text-secondary);">Frost + card draw. Smooths your deck and provides Block.</td></tr>
+  </table>
+
+  <h2>Build Variants</h2>
+
+  <h3>Frost Wall (Defensive Scaling)</h3>
+  <p>Priority: <span class="card-ref">Glacier</span> → <span class="card-ref">Defragment</span> → <span class="card-ref">Capacitor</span> → <span class="card-ref">Coolheaded</span></p>
+  <p>Stack Frost Orbs until you passively generate 30+ Block per turn. Use a single copy of <span class="card-ref">Blizzard</span> (if available) to convert Block into damage.</p>
+
+  <h3>Lightning Storm (Offensive Scaling)</h3>
+  <p>Priority: <span class="card-ref">Electrodynamics</span> → <span class="card-ref">Defragment</span> → <span class="card-ref">Ball Lightning</span> → <span class="card-ref">Tempest</span></p>
+  <p>Channel as many Lightning Orbs as possible. With Focus, each orb deals major damage every turn.</p>
+
+  <h3>Claw Engine (Zero-Cost Aggro)</h3>
+  <p>Priority: <span class="card-ref">Claw</span> (multiple copies) → <span class="card-ref">All For One</span> → <span class="card-ref">Scrape</span> → <span class="card-ref">Hologram</span></p>
+  <p>Not orb-reliant. Each Claw played increases ALL Claw damage by 2. All For One fetches every 0-cost card (including all your Claws) from discard into hand.</p>
+
+  <h2>Stage-by-Stage Game Plan</h2>
+  <ol class="stage-guide">
+    <li><strong>Act 1</strong> — Grab early damage: <span class="card-ref">Ball Lightning</span>, <span class="card-ref">Cold Snap</span>, <span class="card-ref">Compile Driver</span>. Take 1-2 strong attacks to beat elites. First <span class="card-ref">Defragment</span> is an instant pick.</li>
+    <li><strong>Act 1 Boss</strong> — You should have ~3-4 Orbs channeled by now. Prioritize <span class="card-ref">Glacier</span> if offered. Remove Strikes at shops.</li>
+    <li><strong>Act 2</strong> — This is where the build comes online. <span class="card-ref">Capacitor</span> + <span class="card-ref">Defragment</span> + Frost Orbs = you stop taking damage. Avoid taking too many attacks.</li>
+    <li><strong>Act 2 Boss</strong> — <span class="card-ref">Echo Form</span> or <span class="card-ref">Biased Cognition</span> should carry you. If no Focus yet, prioritize <span class="card-ref">Coolheaded</span> for draw consistency.</li>
+    <li><strong>Act 3</strong> — Scale to the moon. Every Defragment pick is a priority. <span class="card-ref">Loop</span> doubles Orb passive triggers. You should be blocking 40+ per turn by now.</li>
+    <li><strong>Act 4</strong> — <span class="card-ref">Seek</span> is crucial for turn-1 setup. <span class="card-ref">Core Surge</span> + <span class="card-ref">Biased Cognition</span> locks in permanent Focus.</li>
+  </ol>
+
+  <h2>Relic Synergies</h2>
+  <div class="combo-box"><h4>💎 Best Relics for This Build</h4>
+  <ul>
+    <li><strong>Data Disk</strong> — Start with +1 Focus. Immediate value from turn 1.</li>
+    <li><strong>Inserter</strong> — Gain an Orb slot every 2 turns. Eventually infinite slots.</li>
+    <li><strong>Frozen Core</strong> — Replace a starter Relic; gain a Frost Orb when you end your turn with empty slots.</li>
+    <li><strong>Runic Capacitor</strong> — Start with 3 extra Orb slots. Instant power spike.</li>
+    <li><strong>Gold-Plated Cables</strong> — Your rightmost Orb's passive triggers an additional time.</li>
+    <li><strong>Emotion Chip</strong> — If you lose HP, trigger all Orb passives. Punish-safe.</li>
+  </ul></div>
+
+  <div class="tip-box"><strong>💡 Pro Tip:</strong> <span class="card-ref">Core Surge</span> gives 1 Artifact. If you play it BEFORE <span class="card-ref">Biased Cognition</span>, the Artifact blocks the "lose 1 Focus per turn" debuff, making the +4/+5 Focus <strong>permanent</strong>. This is the strongest single combo in the game.</div>
+
+  <h2>Common Mistakes</h2>
+  <ul>
+    <li><strong>Over-channeling</strong> — Don't fill your slots with Lightning if you have no Focus. 3 base damage per Lightning orb is terrible.</li>
+    <li><strong>Skipping Capacitor</strong> — 3 Orb slots is the default. You need 5-7 slots for this build to truly scale.</li>
+    <li><strong>Taking too many Attacks</strong> — Once you have Frost up, you don't need extra attacks. Draw consistency is more valuable.</li>
+  </ul>
+
+  <div class="tip-box"><strong>🔒 Disclaimer:</strong> This guide reflects game mechanics as of Slay the Spire 2 Early Access (2026). Stats and cards are based on community testing and may change. Use at your own discretion — and have fun! Consult official Mega Crit patch notes for the latest balance changes.</div>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a><a href="../relics/index.html">Relics</a><a href="../bosses/index.html">Bosses</a><a href="./">Guides</a></div>
+  <p>STS2Guides is an unofficial fan community site. Slay the Spire 2 is developed by Mega Crit Games. This site is not affiliated with or endorsed by Mega Crit Games. © 2026 STS2Guides. All game assets and mechanics belong to their respective owners.</p>
+</footer>
+
+<div id="searchOverlay" class="search-overlay" onclick="closeSearch(event)">
+  <div class="search-modal" onclick="event.stopPropagation()">
+    <div class="search-modal-header"><input type="text" id="searchModalInput" placeholder="Type to search..." autofocus><button class="search-close" onclick="closeSearch()">✕</button></div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+<style>
+.search-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:1000;justify-content:center;padding-top:60px;}
+.search-overlay.active{display:flex;}
+.search-modal{width:640px;max-width:90vw;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;overflow:hidden;max-height:80vh;display:flex;flex-direction:column;}
+.search-modal-header{display:flex;align-items:center;padding:16px;gap:12px;border-bottom:1px solid var(--border);}
+.search-modal-header input{flex:1;background:var(--bg-card);border:1px solid var(--border);color:var(--text-primary);padding:10px 16px;border-radius:8px;font-size:15px;outline:none;}
+.search-close{background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;}
+.search-results{overflow-y:auto;padding:8px;flex:1;}
+.search-result-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:8px;cursor:pointer;transition:all .15s;text-decoration:none;color:inherit;}
+.search-result-item:hover{background:var(--bg-card-hover);}
+.search-result-item .result-icon{font-size:20px;flex-shrink:0;width:36px;text-align:center;}
+.search-result-item .result-info{overflow:hidden;}
+.search-result-item .result-title{font-size:14px;font-weight:600;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.search-result-item .result-cat{font-size:11px;color:var(--gold-light);display:inline-block;padding:1px 6px;background:rgba(212,160,60,0.15);border-radius:3px;margin-bottom:2px;}
+.search-empty{text-align:center;padding:40px;color:var(--text-muted);font-size:14px;}
+</style>
+<script>
+let searchIndex=[];
+fetch('../search-index.json').then(r=>r.json()).then(d=>{searchIndex=d;}).catch(()=>{});
+function openSearch(){document.getElementById('searchOverlay').classList.add('active');document.getElementById('searchModalInput').focus();}
+function closeSearch(e){if(e&&e.target!==document.getElementById('searchOverlay'))return;var el=document.getElementById('searchOverlay');el.classList.remove('active');document.getElementById('searchModalInput').value='';document.getElementById('searchResults').innerHTML='';}
+document.getElementById('searchModalInput').addEventListener('input',function(){var q=this.value.toLowerCase().trim(),el=document.getElementById('searchResults');if(!q){el.innerHTML='';return;}var r=searchIndex.filter(function(i){return i.title.toLowerCase().includes(q)||i.keywords.includes(q)||i.category.toLowerCase().includes(q);}).slice(0,10);if(!r.length){el.innerHTML='<div class="search-empty">No results for "<strong>'+q+'</strong>"</div>';return;}var icons={Characters:'🦸',Cards:'🃏',Relics:'💎',Bosses:'👹',Guides:'📖',Home:'🏠'};el.innerHTML=r.map(function(i){return'<a class="search-result-item" href="'+i.url+'"><span class="result-icon">'+(icons[i.category]||'📄')+'</span><div class="result-info"><span class="result-cat">'+i.category+'</span><div class="result-title">'+i.title+'</div></div></a>';}).join('');});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();openSearch();}});
+</script>
+</body>
+</html>

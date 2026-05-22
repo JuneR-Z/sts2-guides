@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://sts2guides.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://sts2guides.com/en/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sts2guides.com/en/characters/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sts2guides.com/en/characters/ironclad.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sts2guides.com/en/characters/silent.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sts2guides.com/en/characters/defect.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sts2guides.com/en/characters/necrobinder.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sts2guides.com/en/characters/regent.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sts2guides.com/en/cards/</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sts2guides.com/en/relics/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sts2guides.com/en/bosses/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sts2guides.com/en/guides/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sts2guides.com/en/guides/beginner.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sts2guides.com/en/guides/ironclad-strength-build.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://sts2guides.com/en/guides/silent-poison-build.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://sts2guides.com/en/guides/necrobinder-summon-build.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+</urlset>

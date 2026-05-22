@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -36,7 +36,7 @@ header { background: var(--bg-secondary); border-bottom: 2px solid var(--gold); 
 nav { display: flex; gap: 0; }
 nav a { color: var(--text-secondary); text-decoration: none; padding: 8px 14px; font-size: 13px; border-radius: 4px; transition: all .2s; }
 nav a:hover { color: var(--gold-light); background: rgba(255,255,255,0.05); }
-nav a.active { color: var(--gold-light); }
+nav a.active { color: var(--gold-light); }.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}
 .breadcrumb { max-width: 1200px; margin: 0 auto; padding: 12px 20px; font-size: 13px; color: var(--text-muted); }
 .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
 .breadcrumb a:hover { color: var(--gold-light); }
@@ -196,8 +196,10 @@ footer a:hover { color: var(--gold-light); }
       <a href="../">Home</a>
       <a href="../characters/index.html">Characters</a>
       <a href="./" class="active">Cards</a>
+      <a href="../tier-list/index.html">Tier List</a>
       <a href="../bosses/index.html">Bosses</a><a href="../guides/index.html">Guides</a>
     </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
   </div>
 </header>
 
@@ -274,7 +276,7 @@ footer a:hover { color: var(--gold-light); }
 </div>
 
 <footer>
-  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="./">Cards</a><a href="#">About</a><a href="#">Privacy</a></div>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="./">Cards</a><a href="../tier-list/index.html">Tier List</a><a href="../about.html">About</a><a href="../privacy.html">Privacy</a></div>
   <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
   <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
 </footer>
@@ -342,7 +344,7 @@ renderCards();
   <div class="search-modal" onclick="event.stopPropagation()">
     <div class="search-modal-header">
       <input type="text" id="searchModalInput" placeholder="Type to search..." autofocus>
-      <button class="search-close" onclick="closeSearch()">鉁?/button>
+      <button class="search-close" onclick="closeSearch()">✕</button>
     </div>
     <div class="search-results" id="searchResults"></div>
   </div>

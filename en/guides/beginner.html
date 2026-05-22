@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -36,7 +36,7 @@ header{background:var(--bg-secondary);border-bottom:2px solid var(--green);posit
 nav{display:flex;gap:0;}
 nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
 nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
-nav a.active{color:var(--gold-light);}
+nav a.active{color:var(--gold-light);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}
 .breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
 .breadcrumb a{color:var(--text-secondary);text-decoration:none;}
 .breadcrumb a:hover{color:var(--gold-light);}
@@ -186,6 +186,7 @@ footer a:hover{color:var(--gold-light);}
       <a href="../bosses/index.html">Bosses</a>
       <a href="./" class="active">Guides</a>
     </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
   </div>
 </header>
 
@@ -349,7 +350,7 @@ footer a:hover{color:var(--gold-light);}
   <div class="search-modal" onclick="event.stopPropagation()">
     <div class="search-modal-header">
       <input type="text" id="searchModalInput" placeholder="Type to search..." autofocus>
-      <button class="search-close" onclick="closeSearch()">鉁?/button>
+      <button class="search-close" onclick="closeSearch()">✕</button>
     </div>
     <div class="search-results" id="searchResults"></div>
   </div>

@@ -1,3 +1,10 @@
 # Build scripts and override data — local only, not committed
 build_data.ps1
 en/cards/tier-overrides.js
+
+# Internal reference docs
+competitive-analysis.md
+site-strategy.md
+
+# Page generator script (local tool, not deployed)
+generate-detail-pages.ps1

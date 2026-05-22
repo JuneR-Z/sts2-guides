@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slay the Spire 2 Patch Notes — Full Update History | STS2Guides</title>
+<meta name="description" content="Complete Slay the Spire 2 patch notes history. Every update, balance change, card buff/nerf, relic adjustment, and bugfix from Early Access launch to latest version.">
+    <meta property="og:title" content="Slay the Spire 2 Patch Notes — Full Update History | STS2Guides">
+    <meta property="og:description" content="Complete Slay the Spire 2 patch notes history. Every update, balance change, card buff/nerf, relic adjustment, and bugfix from Early Access launch to latest version.">
+    <meta property="og:url" content="https://sts2guides.com/en/patch-notes/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STS2Guides">    <meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Slay the Spire 2 Patch Notes — Full Update History | STS2Guides">
+    <meta name="twitter:description" content="Complete Slay the Spire 2 patch notes history. Every update, balance change, card buff/nerf, relic adjustment, and bugfix from Early Access launch to latest version.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<meta name="keywords" content="Slay the Spire 2 patch notes, STS2 update, STS2 balance changes, STS2 changelog, STS2 card nerf buff">
+<link rel="canonical" href="https://sts2guides.com/en/patch-notes/">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad;
+  --teal: #00bcd4;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--teal);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--teal),var(--purple));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--teal);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--teal);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--teal);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--teal);color:var(--teal);background:rgba(255,255,255,0.05);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:28px;font-weight:800;margin-bottom:4px;color:var(--gold-light);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--gold-light);border-left:4px solid var(--teal);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.article a{color:var(--teal);text-decoration:none;}
+.article a:hover{text-decoration:underline;}
+.patch-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin:20px 0;}
+.patch-card .version{font-size:18px;font-weight:700;color:var(--teal);margin-bottom:4px;}
+.patch-card .date{font-size:12px;color:var(--text-muted);margin-bottom:12px;}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;margin-right:4px;}
+.tag-buff{background:rgba(39,174,96,0.15);color:var(--green);}
+.tag-nerf{background:rgba(192,57,43,0.15);color:var(--crimson);}
+.tag-new{background:rgba(52,152,219,0.15);color:var(--blue);}
+.tag-fix{background:rgba(142,68,173,0.15);color:var(--purple);}
+.timeline{position:relative;padding-left:30px;}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--border);}
+.timeline-item{position:relative;margin-bottom:30px;}
+.timeline-item::before{content:'';position:absolute;left:-30px;top:6px;width:14px;height:14px;background:var(--teal);border-radius:50%;border:3px solid var(--bg-primary);}
+.future-note{background:rgba(0,188,212,0.08);border:1px solid rgba(0,188,212,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.future-note strong{color:var(--teal);}
+.update-bar{background:rgba(0,188,212,0.08);border:1px solid rgba(0,188,212,0.2);border-radius:8px;padding:12px 16px;margin:12px 0;display:flex;align-items:center;gap:10px;}
+.update-bar .live-icon{width:10px;height:10px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.small-link{font-size:13px;color:var(--teal);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.small-link:hover{text-decoration:underline;}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--teal);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}}
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; }
+  .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "STS2Guides", "item": "https://sts2guides.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Patch Notes", "item": "https://sts2guides.com/en/patch-notes/"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">&#x1F4CB;</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+      <a href="../characters/">Characters</a>
+      <a href="../cards/">Cards</a>
+      <a href="../tier-list/">Tier List</a>
+      <a href="../relics/">Relics</a>
+      <a href="../bosses/">Bosses</a>
+      <a href="../guides/">Guides</a>
+    </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">&#x1F50D;</button>
+  </div>
+</header>
+
+<article class="article">
+  <h1>Slay the Spire 2 Patch Notes</h1>
+  <div class="meta">&#x1F4CB; Update History &middot; Last updated: May 23, 2026 &middot; 5 min read</div>
+
+  <div class="update-bar">
+    <div class="live-icon"></div>
+    <span style="color:var(--text-secondary);font-size:14px"><strong>Early Access — actively updated.</strong> This page tracks every balance change. Tier List and card ratings are updated within 24h of each patch.</span>
+  </div>
+
+  <h2>Update Timeline</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="patch-card">
+        <div class="version">v0.101.0 &mdash; May 2026 Balance Pass</div>
+        <div class="date">May 2026</div>
+        <p>The latest balance update focused on underperforming cards and relic accessibility.</p>
+        <ul>
+          <li><span class="tag tag-buff">Buff</span> Several Necrobinder Doom cards received cost reductions to improve early-game viability.</li>
+          <li><span class="tag tag-buff">Buff</span> Regent Forge scaling slightly increased on late-game relics.</li>
+          <li><span class="tag tag-fix">Fix</span> Resolved desync issues when players used Clone at camp in co-op mode.</li>
+          <li><span class="tag tag-fix">Fix</span> Fixed a rare softlock when all players died simultaneously in multiplayer.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="patch-card">
+        <div class="version">v0.100.0 &mdash; Major Update + Phobia Mode</div>
+        <div class="date">March 19, 2026</div>
+        <p>First major post-launch update. Introduced Phobia Mode and a large balance pass across all characters.</p>
+        <ul>
+          <li><span class="tag tag-new">New</span> <strong>Phobia Mode:</strong> A masochistic difficulty option. Each character now has a unique Phobia modifier (selectable from Neow at run start) that introduces harsh penalties in exchange for bonus rewards.</li>
+          <li><span class="tag tag-nerf">Nerf</span> Silent's Prepared reverted back to original effect (draw 1, discard 1).</li>
+          <li><span class="tag tag-buff">Buff</span> Several Defect Power cards received cost reductions.</li>
+          <li><span class="tag tag-nerf">Nerf</span> Snecko Eye confusion chance slightly adjusted in co-op.</li>
+          <li><span class="tag tag-fix">Fix</span> Numerous UI fixes for card preview in hand.</li>
+        </ul>
+        <a href="https://www.ign.com/wikis/slay-the-spire-2/Slay_the_Spire_2_v0.100.0_Patch_Notes" class="small-link" target="_blank" rel="noopener">&#x2197; Full patch notes on IGN</a>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="patch-card">
+        <div class="version">Early Access Launch &mdash; v0.99.x</div>
+        <div class="date">March 5, 2026</div>
+        <p>Slay the Spire 2 launched into Steam Early Access with <strong>97% positive reviews</strong> on day one. Launch content:</p>
+        <ul>
+          <li><span class="tag tag-new">New</span> <strong>5 playable characters:</strong> Ironclad, Silent, Defect, Necrobinder, Regent</li>
+          <li><span class="tag tag-new">New</span> <strong>4-player online co-op</strong> via Steam friends</li>
+          <li><span class="tag tag-new">New</span> <strong>570+ cards</strong>, 286+ relics, 99+ enemy types</li>
+          <li>Solo &amp; Co-op modes fully playable from Neow's Blessing through Act 3 boss</li>
+          <li>Ascension 1&ndash;20 available for all characters</li>
+        </ul>
+        <a href="https://store.steampowered.com/app/2868840/Slay_the_Spire_2/" class="small-link" target="_blank" rel="noopener">&#x2197; View on Steam</a>
+      </div>
+    </div>
+
+  </div>
+
+  <h2>How We Track Changes</h2>
+
+  <p>After every patch, we update:</p>
+  <ul>
+    <li><strong>Card Tier List</strong> &mdash; any card buffs or nerfs are reflected within 24 hours</li>
+    <li><strong>Relic Rankings</strong> &mdash; relic power shifts are recalculated</li>
+    <li><strong>Build Guides</strong> &mdash; major meta shifts trigger guide updates</li>
+    <li><strong>Co-op Strategy</strong> &mdash; co-op-specific balance changes get documented</li>
+  </ul>
+
+  <div class="future-note">
+    <strong>&#x1F514; Subscribe to updates:</strong> To stay current with every patch and how it impacts the meta, bookmark this page or follow our <a href="../tier-list/">Tier List</a> which is always updated to reflect the latest balance state.
+  </div>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);font-size:13px;">
+    &#x1F4CB; This page is updated after every official patch. Check back regularly.
+  </p>
+</article>
+
+<footer>
+  <div class="footer-links">
+    <a href="../">Home</a>
+    <a href="../cards/">Cards</a>
+    <a href="../tier-list/">Tier List</a>
+    <a href="../relics/">Relics</a>
+    <a href="../bosses/">Bosses</a>
+    <a href="../guides/">Guides</a>
+  </div>
+  <p>Slay the Spire 2 is developed by Mega Crit Games. STS2Guides is a fan-made resource. &copy; 2026</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+
+</body>
+</html>

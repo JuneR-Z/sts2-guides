@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Relic Database — Slay the Spire 2 | STS2Guides</title>
-<meta name="description" content="Complete Slay the Spire 2 relic database. Browse all relics by tier, character, and type. Starter relics, Boss relics, and synergies for all 5 characters.">
+<meta name="description" content="Complete Slay the Spire 2 relic database. Browse all 293 relics by tier, character, and type. Starter relics, Boss relics, and synergies for all 5 characters.">
 <link rel="canonical" href="https://sts2guides.com/en/relics/">
 <style>
 :root {
@@ -47,6 +47,8 @@ nav a.active { color: var(--gold-light); }
 .tier-legend .ts { background: var(--crimson); color: #fff; }
 .tier-legend .ta { background: var(--orange); color: #fff; }
 .tier-legend .tb { background: var(--gold); color: #111; }
+.tier-legend .tc { background: rgba(255,255,255,0.1); color: var(--text-secondary); }
+.tier-legend .td { background: rgba(255,255,255,0.05); color: var(--text-muted); }
 .tier-legend .tst { background: var(--green); color: #fff; }
 
 .relic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; }
@@ -56,6 +58,8 @@ nav a.active { color: var(--gold-light); }
 .tier-badge.tS { background: var(--crimson); color: #fff; }
 .tier-badge.tA { background: var(--orange); color: #fff; }
 .tier-badge.tB { background: var(--gold); color: #111; }
+.tier-badge.tC { background: rgba(255,255,255,0.1); color: var(--text-secondary); }
+.tier-badge.tD { background: rgba(255,255,255,0.05); color: var(--text-muted); }
 .tier-badge.tStarter { background: var(--green); color: #fff; }
 .relic-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; padding-right: 60px; }
 .relic-card .character-tag { display: inline-block; font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
@@ -183,6 +187,8 @@ footer p { color: var(--text-muted); font-size: 12px; }
       <option value="S">S Tier</option>
       <option value="A">A Tier</option>
       <option value="B">B Tier</option>
+      <option value="C">C Tier</option>
+      <option value="D">D Tier</option>
       <option value="Starter">Starter Relic</option>
     </select>
     <select id="filterCharacter" onchange="applyFilters()">
@@ -199,11 +205,13 @@ footer p { color: var(--text-muted); font-size: 12px; }
   </div>
 
   <div class="stat-bar">
-    <span id="resultCount">32 relics</span>
+    <span id="resultCount">293 relics</span>
     <div class="tier-legend">
       <span class="ts">S — Meta defining</span>
       <span class="ta">A — Strong pick</span>
       <span class="tb">B — Situational</span>
+      <span class="tc">C — Niche</span>
+      <span class="td">D — Weak</span>
       <span class="tst">Starter</span>
     </div>
   </div>
@@ -230,43 +238,11 @@ footer p { color: var(--text-muted); font-size: 12px; }
   </div>
 </footer>
 
+<script src="relics-data.js"></script>
 <script>
-const relics = [
-  {"id":"burning_blood","name":"Burning Blood","tier":"Starter","character":"ironclad","effect":"At the end of combat, heal 6 HP.","comment":"Sustain is key in Ascension. Lets you trade HP aggressively in hallway fights."},
-  {"id":"ring_of_the_snake","name":"Ring of the Snake","tier":"Starter","character":"silent","effect":"At the start of each combat, draw 2 additional cards.","comment":"+2 card draw on turn 1 is huge for setting up early. Key enabler for combo setups."},
-  {"id":"cracked_core","name":"Cracked Core","tier":"Starter","character":"defect","effect":"At the start of each combat, Channel 1 Lightning.","comment":"Passive damage output from turn 1. Pairs well with focus scaling and orb slots."},
-  {"id":"soul_lantern","name":"Soul Lantern","tier":"Starter","character":"necrobinder","effect":"Whenever a minion dies, gain 1 Soul. At 3 Souls, deal 8 damage to a random enemy.","comment":"Free AoE proc every few minion deaths. Enables Soul-based archetypes."},
-  {"id":"royal_decree","name":"Royal Decree","tier":"Starter","character":"regent","effect":"At the start of each turn, choose a Command. Gain 1 Sly when you follow it.","comment":"Sly generation engine. Pairs with Star-based synergies for scaling."},
-  {"id":"vajra","name":"Vajra","tier":"S","character":"all","effect":"At the start of each combat, gain 1 Strength.","comment":"Universally good. Free permanent Strength every fight. Stack with strength scaling."},
-  {"id":"dead_branch","name":"Dead Branch","tier":"S","character":"all","effect":"Whenever you Exhaust a card, add a random card to your hand.","comment":"Generates infinite value with exhaust-heavy decks. Can be chaotic but wildly powerful."},
-  {"id":"snecko_eye","name":"Snecko Eye","tier":"S","character":"all","effect":"At the start of each turn, draw 2 additional cards. Start each combat Confused.","comment":"+2 draw per turn is game-breaking. Confusion randomizes costs — use high-cost cards to exploit.","isBoss":true},
-  {"id":"runic_pyramid","name":"Runic Pyramid","tier":"S","character":"all","effect":"At the end of your turn, you no longer discard your hand.","comment":"Arguably the best relic in the game. Keep cards for perfect sequencing every turn.","isBoss":true},
-  {"id":"orange_pellets","name":"Orange Pellets","tier":"S","character":"all","effect":"When you play an Attack, Skill, and Power in the same turn, remove all your debuffs.","comment":"Hard counters Snecko Eye confusion, biased cognition focus drain, and more."},
-  {"id":"fossilized_helix","name":"Fossilized Helix","tier":"S","character":"all","effect":"Prevent the first time you would lose HP in each combat.","comment":"Free Buffer every fight. Turns certain death into a win condition."},
-  {"id":"necronomicon","name":"Necronomicon","tier":"S","character":"necrobinder","effect":"Summoned minions have +2 HP.","comment":"Massively boosts minion survivability. Lets minions tank extra hits."},
-  {"id":"crown_of_stars","name":"Crown of Stars","tier":"S","character":"regent","effect":"At the start of each combat, gain 3 Stars.","comment":"Free 3 Stars every fight. Jumpstarts Star-based scaling archetypes."},
-  {"id":"runic_capacitor","name":"Runic Capacitor","tier":"S","character":"defect","effect":"Start each combat with 3 additional Orb slots.","comment":"+3 orb slots is massive. Mandatory for any orb-focused Defect build."},
-  {"id":"calipers","name":"Calipers","tier":"A","character":"all","effect":"At the start of your turn, lose 15 Block rather than all Block.","comment":"Block retention enables defensive scaling decks. Pairs perfectly with Barricade."},
-  {"id":"pen_nib","name":"Pen Nib","tier":"A","character":"all","effect":"Every 10th Attack you play deals double damage.","comment":"Set up a double-damage finisher. Count triggers carefully for boss fights."},
-  {"id":"tungsten_rod","name":"Tungsten Rod","tier":"A","character":"all","effect":"Whenever you would lose HP, lose 1 less.","comment":"-1 per HP loss instance. Negates multi-hit attacks and self-damage synergies."},
-  {"id":"mummified_hand","name":"Mummified Hand","tier":"A","character":"all","effect":"Whenever you play a Power card, a random card in your hand costs 0 this turn.","comment":"Power-heavy decks get free turns. Pairs with Creative AI, Echo Form, etc."},
-  {"id":"shuriken","name":"Shuriken","tier":"A","character":"all","effect":"Every time you play 3 Attacks in a single turn, gain 1 Strength.","comment":"Scales strength for attack-heavy decks. +1 per proc — adds up fast."},
-  {"id":"kunai","name":"Kunai","tier":"A","character":"all","effect":"Every time you play 3 Attacks in a single turn, gain 1 Dexterity.","comment":"Dexterity scaling for attack spam decks. Turns Shiv builds into block machines."},
-  {"id":"charons_ashes","name":"Charon's Ashes","tier":"A","character":"ironclad","effect":"Whenever you Exhaust a card, deal 3 damage to ALL enemies.","comment":"AoE damage engine. Combine with Corruption + Feel No Pain for massive damage."},
-  {"id":"wrist_blade","name":"Wrist Blade","tier":"A","character":"silent","effect":"0-cost attacks deal +4 additional damage.","comment":"+4 damage to all 0-cost attacks. Shiv builds become devastating.","isBoss":true},
-  {"id":"data_disk","name":"Data Disk","tier":"A","character":"defect","effect":"At the start of each combat, gain 1 Focus.","comment":"Free focus scaling. +1 per fight adds up — critical for any orb build."},
-  {"id":"tough_bandages","name":"Tough Bandages","tier":"A","character":"silent","effect":"Whenever you discard a card, gain 3 Block.","comment":"Discard engine pays off with free block. Combo with Calculated Gamble."},
-  {"id":"tingsha","name":"Tingsha","tier":"A","character":"silent","effect":"Whenever you discard a card, deal 3 damage to a random enemy.","comment":"Free damage on discard. Pairs with Tough Bandages for a hybrid engine."},
-  {"id":"general_banner","name":"General's Banner","tier":"A","character":"necrobinder","effect":"Minions deal +1 damage.","comment":"Flat buff to all minion attacks. Scales multiplicatively with minion count."},
-  {"id":"bottled_flame","name":"Bottled Flame","tier":"B","character":"all","effect":"Upon pick-up, choose an Attack card. Start each combat with that card in your hand.","comment":"Guarantees an early key card. Best for setup attacks like Whirlwind or Immolate."},
-  {"id":"gold_plated_cables","name":"Gold-Plated Cables","tier":"B","character":"defect","effect":"Your rightmost Orb triggers its passive an additional time.","comment":"Double rightmost orb trigger. Position matters — put Focus-heavy orb on the right."},
-  {"id":"blood_chalice","name":"Blood Chalice","tier":"B","character":"necrobinder","effect":"Whenever you play a Sacrifice card, heal 2 HP.","comment":"Sustain engine for Sacrifice builds. Offsets HP costs in longer fights."},
-  {"id":"commanders_ring","name":"Commander's Ring","tier":"B","character":"regent","effect":"Gain 1 additional Star whenever you gain Stars.","comment":"Star generation booster. Multiplicative value as Star generators stack."}
-];
-
 const charNames = { ironclad: 'Ironclad', silent: 'Silent', defect: 'Defect', necrobinder: 'Necrobinder', regent: 'Regent', all: 'Universal' };
 const charColors = { ironclad: 'icon-clad', silent: 'icon-silent', defect: 'icon-defect', necrobinder: 'icon-necro', regent: 'icon-regent', all: 'icon-all' };
-const tierLabels = { S: 'S Tier', A: 'A Tier', B: 'B Tier', Starter: 'Starter Relic' };
+const tierLabels = { S: 'S Tier', A: 'A Tier', B: 'B Tier', C: 'C Tier', D: 'D Tier', Starter: 'Starter Relic' };
 
 function renderRelics(filtered) {
   const grid = document.getElementById('relicGrid');
@@ -299,7 +275,7 @@ function applyFilters() {
   const char = document.getElementById('filterCharacter').value;
   const query = document.getElementById('searchInput').value.toLowerCase();
 
-  let filtered = relics;
+  let filtered = relicsData;
   if (tier !== 'all') {
     filtered = filtered.filter(r => r.tier === tier || (tier === 'Starter' && r.tier === 'Starter'));
   }
@@ -324,10 +300,10 @@ function resetFilters() {
   document.getElementById('filterTier').value = 'all';
   document.getElementById('filterCharacter').value = 'all';
   document.getElementById('searchInput').value = '';
-  renderRelics(relics);
+  renderRelics(relicsData);
 }
 
-renderRelics(relics);
+renderRelics(relicsData);
 </script>
 <div id="searchOverlay" class="search-overlay" onclick="closeSearch(event)">
   <div class="search-modal" onclick="event.stopPropagation()">

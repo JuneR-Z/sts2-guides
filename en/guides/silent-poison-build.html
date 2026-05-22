@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -330,16 +330,16 @@ footer a:hover{color:var(--gold-light);}
 let searchIndex = [];
 fetch('../search-index.json').then(r => r.json()).then(d => { searchIndex = d; }).catch(() => { fetch('search-index.json').then(r => r.json()).then(d => { searchIndex = d; }) });
 function openSearch() { document.getElementById('searchOverlay').classList.add('active'); document.getElementById('searchModalInput').focus(); }
-function closeSearch(e) { if (e; e.target !== document.getElementById('searchOverlay')) return; var el = document.getElementById('searchOverlay'); el.classList.remove('active'); document.getElementById('searchModalInput').value = ''; document.getElementById('searchResults').innerHTML = ''; }
+function closeSearch(e) { if (e && e.target !== document.getElementById('searchOverlay')) return; var el = document.getElementById('searchOverlay'); el.classList.remove('active'); document.getElementById('searchModalInput').value = ''; document.getElementById('searchResults').innerHTML = ''; }
 document.getElementById('searchModalInput').addEventListener('input', function() {
   var q = this.value.toLowerCase().trim(), el = document.getElementById('searchResults');
   if (!q) { el.innerHTML = ''; return; }
-  var r = searchIndex.filter(function(i) { return i.title.toLowerCase().includes(q); i.keywords.includes(q); i.category.toLowerCase().includes(q); }).slice(0, 10);
+  var r = searchIndex.filter(function(i) { return i.title.toLowerCase().includes(q) || i.keywords.includes(q) || i.category.toLowerCase().includes(q); }).slice(0, 10);
   if (!r.length) { el.innerHTML = '<div class="search-empty">No results for "<strong>' + q + '</strong>"</div>'; return; }
   var icons = { Characters: '\u{1F9B8}', Cards: '\u{1F0CF}', Relics: '\u{1F48E}', Bosses: '\u{1F479}', Guides: '\u{1F4D6}', Home: '\u{1F3E0}' };
-  el.innerHTML = r.map(function(i) { return '<a class="search-result-item" href="' + i.url + '"><span class="result-icon">' + (icons[i.category]; '\u{1F4C4}') + '</span><div class="result-info"><span class="result-cat">' + i.category + '</span><div class="result-title">' + i.title + '</div></div></a>'; }).join('');
+  el.innerHTML = r.map(function(i) { return '<a class="search-result-item" href="' + i.url + '"><span class="result-icon">' + (icons[i.category] || '\u{1F4C4}') + '</span><div class="result-info"><span class="result-cat">' + i.category + '</span><div class="result-title">' + i.title + '</div></div></a>'; }).join('');
 });
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); if ((e.ctrlKey; e.metaKey); e.key === 'k') { e.preventDefault(); openSearch(); } });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); } });
 </script>
 </body>
 </html>

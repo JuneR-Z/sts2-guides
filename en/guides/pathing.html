@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STS2 Map Pathing & Route Strategy Guide — Master Every Act | STS2Guides</title>
+<meta name="description" content="Complete Slay the Spire 2 pathing guide. Learn optimal route selection for all 4 acts, campfire vs elite priority, ?, shop timing, ascension adjustments, and character-specific pathing strategies.">
+    <meta property="og:title" content="STS2 Map Pathing & Route Strategy Guide — Master Every Act | STS2Guides">
+    <meta property="og:description" content="Complete Slay the Spire 2 pathing guide. Learn optimal route selection for all 4 acts, campfire vs elite priority, ?, shop timing, ascension adjustments, and character-specific pathing strategies.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/pathing.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STS2Guides">    <meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="STS2 Map Pathing & Route Strategy Guide — Master Every Act | STS2Guides">
+    <meta name="twitter:description" content="Complete Slay the Spire 2 pathing guide. Learn optimal route selection for all 4 acts, campfire vs elite priority, ?, shop timing, ascension adjustments, and character-specific pathing strategies.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/pathing.html">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad; --orange: #e67e22;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--green);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:28px;font-weight:800;margin-bottom:4px;color:var(--gold-light);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--gold-light);border-left:4px solid var(--green);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.article .tip-box{background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.article .tip-box strong{color:var(--green);}
+.article .warn-box{background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.article .warn-box strong{color:var(--crimson);}
+.article .info-box{background:rgba(52,152,219,0.08);border:1px solid rgba(52,152,219,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.article .info-box strong{color:var(--blue);}
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:30px;}
+.toc h3{font-size:14px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;}
+.toc a{display:block;padding:4px 0;color:var(--text-secondary);text-decoration:none;font-size:13px;}
+.toc a:hover{color:var(--gold-light);}
+.act-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px;}
+.act-table th{background:var(--bg-card);color:var(--gold-light);padding:10px 12px;text-align:left;border-bottom:2px solid var(--border);font-size:12px;text-transform:uppercase;letter-spacing:1px;}
+.act-table td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text-secondary);}
+.act-table tr:hover td{background:rgba(255,255,255,0.02);}
+.priority-flow{display:flex;flex-direction:column;gap:8px;margin:16px 0;}
+.priority-step{display:flex;align-items:center;gap:12px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:14px 18px;}
+.priority-step .num{width:32px;height:32px;background:var(--gold);color:#111;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;}
+.priority-step .txt{font-size:14px;color:var(--text-secondary);}
+.priority-step .txt strong{color:var(--text-primary);}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}}
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; } .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .lang-switch { order:2; margin-left:auto; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size:18px; } .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; } .section-title { font-size:16px; }
+  footer { padding:16px; font-size:11px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "STS2Guides", "item": "https://sts2guides.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sts2guides.com/en/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Map Pathing Guide", "item": "https://sts2guides.com/en/guides/pathing.html" }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+            <a href="./" class="active">Guides</a>
+<a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a>
+      <a href="../relics/index.html">Relics</a>
+      <a href="../bosses/index.html">Bosses</a>
+      <a href="../patch-notes/">Patch Notes</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Map Pathing & Route Strategy</div>
+
+<article class="article">
+  <h1>Slay the Spire 2 Map Pathing &amp; Route Strategy Guide</h1>
+  <div class="meta">🗺️ Strategy Guide · Updated May 23, 2026 · 13 min read</div>
+
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <a href="#node-types">1. Understanding Map Node Types</a>
+    <a href="#act1-path">2. Act 1 Pathing: Building Your Foundation</a>
+    <a href="#act2-path">3. Act 2 Pathing: The Gauntlet</a>
+    <a href="#act3-path">4. Act 3 Pathing: Fine-Tuning for the Boss</a>
+    <a href="#act4-path">5. Act 4 (Corrupted Heart) Pathing</a>
+    <a href="#event-strategy">6. ? Room Strategy: When to Gamble</a>
+    <a href="#ascension-path">7. How Pathing Changes at A15+</a>
+    <a href="#character-path">8. Character-Specific Pathing Priorities</a>
+    <a href="#branching">9. Branch Selection &amp; Dead End Avoidance</a>
+    <a href="#checklist">10. Quick Reference: Per-Floor Decision Checklist</a>
+  </div>
+
+  <h2 id="node-types">1. Understanding Map Node Types</h2>
+  <p>Every floor on the map is a node. Before you can decide which path to take, you must understand what each node type offers and when it's valuable:</p>
+
+  <table class="act-table">
+    <tr><th>Node</th><th>Icon</th><th>What You Get</th><th>When It's Best</th></tr>
+    <tr><td><strong>Monster (Hallway Fight)</strong></td><td>🗡️</td><td>Card reward, gold, potion chance</td><td>Act 1 (need cards); any act if deck is weak</td></tr>
+    <tr><td><strong>Elite</strong></td><td>💀</td><td>Card reward, relic, more gold</td><td>When you're strong enough to fight them; higher risk, higher reward than hallway fights</td></tr>
+    <tr><td><strong>Campfire (Rest Site)</strong></td><td>🔥</td><td>Rest (30% HP) or Upgrade a card</td><td>Before elites (upgrade); after elites if low HP (rest)</td></tr>
+    <tr><td><strong>Merchant (Shop)</strong></td><td>💰</td><td>Buy cards, relics, potions; remove a card</td><td>When you have 200+ gold; near end of act for card removal</td></tr>
+    <tr><td><strong>Unknown (?)</strong></td><td>❓</td><td>Random event — can be fight, treasure, shop, or special encounter</td><td>Act 2-3 (events scale better); after fights if deck is strong</td></tr>
+    <tr><td><strong>Chest</strong></td><td>📦</td><td>Free relic</td><td>Always good; no downside (unless Cursed Key)</td></tr>
+    <tr><td><strong>Boss</strong></td><td>👑</td><td>Boss relic, card reward, gold</td><td>End of each act; mandatory</td></tr>
+  </table>
+
+  <div class="tip-box">
+    <strong>💡 The Golden Rule of Pathing:</strong> Path toward campfires <em>before</em> elites, not after. Upgrading a key card before fighting an elite is far more valuable than resting after taking damage from one.
+  </div>
+
+  <h2 id="act1-path">2. Act 1 Pathing: Building Your Foundation</h2>
+  <p>Act 1 is where most runs are won or lost. Your pathing decisions here determine whether you enter Act 2 strong or limping.</p>
+
+  <h3>Act 1 Priority Order</h3>
+  <div class="priority-flow">
+    <div class="priority-step"><div class="num">1</div><div class="txt"><strong>3-4 Hallway Fights</strong> — You need card rewards immediately. Without early attacks, you die to elites.</div></div>
+    <div class="priority-step"><div class="num">2</div><div class="txt"><strong>1-2 Campfires</strong> — Upgrade your best attack card. Don't rest unless you're below 30% HP with an elite next.</div></div>
+    <div class="priority-step"><div class="num">3</div><div class="txt"><strong>1-2 Elites</strong> — Relics are the most powerful resource in the game. Fight at least one elite per act, ideally two in Act 1.</div></div>
+    <div class="priority-step"><div class="num">4</div><div class="txt"><strong>Shop (200+ gold)</strong> — Card removal (Strike) or a key attack card/potion for the upcoming elite.</div></div>
+    <div class="priority-step"><div class="num">5</div><div class="txt"><strong>? Rooms (1-2)</strong> — Can give free gold, relics, or card removal. High variance but generally positive in Act 1.</div></div>
+  </div>
+
+  <h3>How Many Fights Before Your First Elite?</h3>
+  <p>This depends on your starting deck strength and the specific Act 1 elites:</p>
+  <ul>
+    <li><strong>Ironclad:</strong> 2-3 hallway fights are usually enough. Burning Blood healing lets you recover.</li>
+    <li><strong>Silent:</strong> 3-4 hallway fights. You need at least 2 attack cards added to fight elites safely.</li>
+    <li><strong>Defect:</strong> 2-3 hallway fights. Dualcast + Zap gives decent damage from the start.</li>
+    <li><strong>Necrobinder:</strong> 3-4 hallway fights. You need minions early; the starting deck is slow.</li>
+    <li><strong>Regent:</strong> 2-3 hallway fights. Command cards provide good upfront damage.</li>
+  </ul>
+
+  <div class="warn-box">
+    <strong>⚠️ Don't fight 3 elites in Act 1 unless you have an incredible start.</strong> The third elite risks too much HP that you'll need for Act 2 hallways. Two Act 1 elites is the sweet spot for most decks.
+  </div>
+
+  <h2 id="act2-path">3. Act 2 Pathing: The Gauntlet</h2>
+  <p>Act 2 is widely considered the hardest act. Enemies hit harder, have more HP, and often come in groups. Your pathing must be more conservative.</p>
+
+  <h3>Act 2 Priority Order</h3>
+  <div class="priority-flow">
+    <div class="priority-step"><div class="num">1</div><div class="txt"><strong>? Rooms</strong> — Act 2 events are the best in the game. Apparitions, Council of Ghosts, Ancient Writing, and many more can define your run.</div></div>
+    <div class="priority-step"><div class="num">2</div><div class="txt"><strong>Campfires</strong> — Upgrades are still king. Upgrade your scaling cards and key block options.</div></div>
+    <div class="priority-step"><div class="num">3</div><div class="txt"><strong>Shop</strong> — Card removal is critical. Remove Strikes. Buy key relics if available.</div></div>
+    <div class="priority-step"><div class="num">4</div><div class="txt"><strong>1-2 Hallway Fights</strong> — Only if your deck needs cards. Act 2 hallway fights are brutal (Avocado + Rat, Snake Plant, etc.). Avoid them if you can.</div></div>
+    <div class="priority-step"><div class="num">5</div><div class="txt"><strong>0-2 Elites</strong> — Only fight Act 2 elites if you have strong AoE and scaling. Book of Stabbing, Gremlin Leader, and Slavers will destroy shaky decks.</div></div>
+  </div>
+
+  <p>The key insight for Act 2: <strong>? rooms become HIGHER priority than fights</strong>. This is the exact opposite of Act 1. Act 2 events offer some of the strongest power spikes in the game, while Act 2 hallway fights are some of the most dangerous encounters.</p>
+
+  <h2 id="act3-path">4. Act 3 Pathing: Fine-Tuning for the Boss</h2>
+  <p>By Act 3, your deck should have a clear identity. Pathing is now about polishing — removing weaknesses, not adding new cards.</p>
+
+  <h3>Act 3 Priority Order</h3>
+  <div class="priority-flow">
+    <div class="priority-step"><div class="num">1</div><div class="txt"><strong>Campfires</strong> — Upgrade your last remaining key cards. If you're at full HP with no good upgrades, don't be afraid to skip the campfire for a fight.</div></div>
+    <div class="priority-step"><div class="num">2</div><div class="txt"><strong>Shop</strong> — Buy key relics, potions for the boss, and remove your last Strikes.</div></div>
+    <div class="priority-step"><div class="num">3</div><div class="txt"><strong>Elites (if strong)</strong> — Act 3 elites drop rare relics and a lot of gold. Fight them if your deck is confident.</div></div>
+    <div class="priority-step"><div class="num">4</div><div class="txt"><strong>? Rooms</strong> — Still valuable, but lower priority than campfires. The Mind Bloom event is the big one to hope for.</div></div>
+    <div class="priority-step"><div class="num">5</div><div class="txt"><strong>Hallway Fights</strong> — Only take if you need one more card or gold. You should be skipping most card rewards by now.</div></div>
+  </div>
+
+  <h2 id="act4-path">5. Act 4 (Corrupted Heart) Pathing</h2>
+  <p>Act 4 is unique: you get exactly one campfire, one shop, one elite (Spear &amp; Shield), and then the Corrupted Heart boss. There's only one path — your job is to optimize these three rooms.</p>
+  <ul>
+    <li><strong>Campfire:</strong> Upgrade your most impactful card. Don't rest — you need every edge for the Heart.</li>
+    <li><strong>Shop:</strong> Spend ALL your gold. There's nothing after this. Buy potions (Ghost in a Jar, Fairy in a Bottle), card removal, and the best relics available.</li>
+    <li><strong>Spear &amp; Shield:</strong> Kill the Shield first (it buffs the Spear). Save your best potions for the Heart.</li>
+  </ul>
+
+  <h2 id="event-strategy">6. ? Room Strategy: When to Gamble</h2>
+  <p>? rooms are the highest-variance nodes on the map. Understanding when to path into them is a key skill:</p>
+
+  <h3>Good Times to Visit ? Rooms</h3>
+  <ul>
+    <li><strong>Act 2:</strong> The best events are concentrated here. Apparitions (5 Intangible), Council of Ghosts, Ancient Writing (upgrade all Strikes/Defends), and Colosseum are run-defining.</li>
+    <li><strong>When your deck is ahead of the curve:</strong> Events often give permanent benefits (max HP, card removal, transforms) that are better than a card reward you'd skip anyway.</li>
+    <li><strong>When you're low on HP with no campfire nearby:</strong> Some events heal you or give you Max HP. Better than dying to the next fight.</li>
+  </ul>
+
+  <h3>Bad Times to Visit ? Rooms</h3>
+  <ul>
+    <li><strong>Act 1, floor 1-3:</strong> You need card rewards now. An event that gives gold or Max HP doesn't help you fight the first elite.</li>
+    <li><strong>When your deck desperately needs a specific type of card:</strong> You can't choose what events give you. If you need AoE, go fight hallway enemies.</li>
+    <li><strong>At very low HP in Act 2:</strong> Some Act 2 events are actually fights. Getting a "Dead Adventurer" fight at 15 HP is a run-ender.</li>
+  </ul>
+
+  <div class="info-box">
+    <strong>🔵 Event vs. Fight Rule of Thumb:</strong> Act 1: Favor fights 70/30. Act 2: Favor events 60/40. Act 3: Split 50/50, lean toward what your deck needs.
+  </div>
+
+  <h2 id="ascension-path">7. How Pathing Changes at A15+</h2>
+  <p>High Ascension fundamentally changes your risk tolerance:</p>
+
+  <h3>A10: Ascender's Bane</h3>
+  <p>You start with a Curse (Ascender's Bane) in your deck. This makes early ? rooms weaker — you want card rewards to dilute the curse and potentially transform it. Early campfires gain value: upgrading a card and having a route that lets you remove Ascender's Bane at a shop is ideal.</p>
+
+  <h3>A15: Unfavorable Events</h3>
+  <p>Many events become worse or gain negative outcomes. ? rooms lose significant value. You should now path toward <strong>more hallway fights and fewer events</strong> than at lower ascensions. The safe, predictable reward of a card choice beats the risk of a nerfed event.</p>
+
+  <h3>A17: Enhanced Enemy Movesets</h3>
+  <p>Enemies gain new, stronger attack patterns. Elites become significantly more dangerous. Your pathing must account for <strong>which elite you're facing</strong> more carefully:</p>
+  <ul>
+    <li>Avoid Act 2 elites entirely unless your deck is very strong.</li>
+    <li>Path toward campfires before elite fights religiously.</li>
+    <li>Consider resting at campfires more often — you can't afford to enter elite fights at half HP.</li>
+  </ul>
+
+  <h3>A18-A20: Double Boss &amp; Final Boss</h3>
+  <p>A19 adds a second Act 3 boss. A20 is double Act 3 boss. Your Act 3 pathing priority shifts: <strong>campfires become even more critical</strong>. You need every upgrade and every point of HP for the double boss gauntlet.</p>
+
+  <div class="warn-box">
+    <strong>⚠️ A20 Reality Check:</strong> At A20 with double boss, you should be ending Act 3 at near full HP with all key cards upgraded. If you're limping into the first boss at 40 HP, your pathing was too greedy earlier in the act.
+  </div>
+
+  <h2 id="character-path">8. Character-Specific Pathing Priorities</h2>
+
+  <h3>⚔️ Ironclad</h3>
+  <ul>
+    <li><strong>Aggressive Act 1:</strong> Burning Blood healing lets you fight 3 hallway fights + 2 elites more safely than any other character. Lean into this advantage.</li>
+    <li><strong>Upgrade priority:</strong> Bash → key attacks → key block cards. Bash+ applying 3 Vulnerable is enormous for elite fights.</li>
+    <li><strong>Act 2:</strong> You're tanky enough to take 1-2 extra fights if needed. Use this to hunt for Limit Break/Spot Weakness.</li>
+  </ul>
+
+  <h3>🗡️ Silent</h3>
+  <ul>
+    <li><strong>Conservative Act 1:</strong> Silent has the weakest starting deck for damage. Path for 4 hallway fights before your first elite.</li>
+    <li><strong>Shop priority:</strong> Buy an attack card early if your rewards were defensive. You cannot fight Gremlin Nob with only Neutralize + skills.</li>
+    <li><strong>Act 2 ? rooms:</strong> Silent benefits enormously from events. Apparitions + Wraith Form = immortality.</li>
+  </ul>
+
+  <h3>⚡ Defect</h3>
+  <ul>
+    <li><strong>Campfire hungry:</strong> Defect has the most impactful upgrades. Zap+ (0-cost) and Dualcast+ (0-cost) completely change your early game. Always path to campfires.</li>
+    <li><strong>Shop visits:</strong> Defect's uncommon pool is deep. Buying a Glacier or Defragment from a shop can carry runs.</li>
+  </ul>
+
+  <h3>💀 Necrobinder</h3>
+  <ul>
+    <li><strong>Slow start, needs fights:</strong> Necrobinder's starting deck has no minion synergy. You need 3-4 card rewards before fighting elites.</li>
+    <li><strong>Act 2 danger:</strong> Necrobinder is vulnerable to AoE enemy attacks that kill your minions before they act. Avoid Act 2 elites (Gremlin Leader's minion spawn, Book of Stabbing's multi-hit) unless you have a board lockdown strategy.</li>
+  </ul>
+
+  <h3>👑 Regent</h3>
+  <ul>
+    <li><strong>Consistent, flexible:</strong> Regent's Command mechanic means most cards provide decent value. You can fight elites earlier than Silent or Necrobinder.</li>
+    <li><strong>Shop visits:</strong> Regent benefits from buying Command-generating relics more than other characters. Prioritize shops in Act 2.</li>
+  </ul>
+
+  <h2 id="branching">9. Branch Selection &amp; Dead End Avoidance</h2>
+
+  <h3>The "Look Back" Rule</h3>
+  <p>Always check the map at the <strong>start of each act</strong> and plan your route. The most common pathing mistake is committing to a branch and only later realizing you're locked into 3 consecutive hallway fights with no campfire.</p>
+
+  <h3>How to Choose Between Branches</h3>
+  <ol>
+    <li><strong>Count campfires on each branch.</strong> Choose the branch with more campfires.</li>
+    <li><strong>Check elite accessibility.</strong> Can you reach elites with a campfire before them?</li>
+    <li><strong>Identify dead ends.</strong> Some paths force you into a shop or elite that you can't avoid. Know your escape routes.</li>
+    <li><strong>Shop placement matters.</strong> A shop right before the boss is ideal — you can spend all your gold on potions and removal.</li>
+    <li><strong>Flexibility wins.</strong> A path that gives you <em>options</em> (campfire or ? room next) is better than a rigid path where every step is predetermined.</li>
+  </ol>
+
+  <div class="tip-box">
+    <strong>💡 Pro Tip:</strong> If two branches look similar, take the one with more campfires. Upgrades are the most consistent source of power in the game — more so than any single relic or card.
+  </div>
+
+  <h2 id="checklist">10. Quick Reference: Per-Floor Decision Checklist</h2>
+  <p>When standing at a crossroads on the map, ask yourself:</p>
+  <ol>
+    <li><strong>Am I prepared for the next elite?</strong> If no, path toward campfires or fights first.</li>
+    <li><strong>Do I have enough HP to survive the worst-case scenario?</strong> If not, path conservatively.</li>
+    <li><strong>What does my deck need right NOW?</strong> Not what it needs in 10 floors — right now. Path to solve your immediate problem.</li>
+    <li><strong>Can I afford to be greedy?</strong> If you're ahead of the curve (full HP, strong deck), take the riskier path with more elites and events.</li>
+    <li><strong>Is there a shop before the boss?</strong> If not, consider re-routing to reach one for end-of-act spending.</li>
+  </ol>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">Map pathing is one part of the puzzle. Master the other half in our <a href="deck-building.html" style="color:var(--gold-light);">Deck Building Guide</a> and <a href="ascension.html" style="color:var(--gold-light);">Ascension Guide</a>.</p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="./">Guides</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a><a href="../tier-list/">Tier List</a><a href="../relics/index.html">Relics</a><a href="../about.html">About</a><a href="../privacy.html">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+
+</body>
+</html>

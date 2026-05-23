@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>Elite Enemy Guide: All Elite Fights, Patterns &amp; Rewards — STS2 Guides</title>
+<meta content="Complete Slay the Spire 2 Elite enemy guide. Every Elite fight broken down: attack patterns, behavioral AI, difficulty ranking, paths to avoid, and which characters handle each Elite best." name="description"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../index.html" rel="canonical"/>
+<style>
+:root{--bg:#0f1117;--bg-card:#1a1d28;--bg-card-hover:#1f2335;--border:#2a2d3a;--text:#e2e4e9;--text-muted:#8b8fa5;--gold:#c9a84c;--gold-light:#e8d48b;--red:#e55b5b;--red-light:#ff6b6b;--green:#4caf84;--green-light:#5fcf9a;--blue:#5b9bd5;--blue-light:#7ab8f0;--purple:#a78bfa;--orange:#f0a050;--accent-beginner:var(--green);--accent-build:var(--blue);--accent-boss:var(--red);--accent-mechanic:var(--purple);--accent-core:var(--gold)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.7}
+a{color:var(--gold);text-decoration:none}
+a:hover{color:var(--gold-light)}
+img{max-width:100%;height:auto}
+.container{max-width:900px;margin:0 auto;padding:0 20px}
+nav{display:flex;flex-wrap:wrap;gap:8px;padding:16px 0;border-bottom:1px solid var(--border);margin-bottom:32px;font-size:14px}
+nav a{padding:6px 14px;border-radius:6px;background:var(--bg-card);color:var(--text-muted)}
+nav a:hover,nav a.active{color:var(--gold-light);background:var(--bg-card-hover)}
+.breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:24px}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--gold)}
+article h1{font-size:2rem;color:var(--gold-light);margin-bottom:8px;line-height:1.3}
+article .subtitle{font-size:1.05rem;color:var(--text-muted);margin-bottom:24px}
+.meta-row{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--text-muted);margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:600}
+.tag-boss{background:rgba(229,91,91,.15);color:var(--red-light)}
+.tag-elite{background:rgba(240,160,80,.15);color:var(--orange)}
+h2{font-size:1.5rem;color:var(--gold);margin:40px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+h3{font-size:1.2rem;color:var(--text);margin:28px 0 12px}
+h4{font-size:1.05rem;color:var(--gold-light);margin:20px 0 8px}
+p{margin-bottom:16px}
+ul,ol{margin:0 0 20px 24px}
+li{margin-bottom:8px}
+.elite-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:20px}
+.elite-card:hover{border-color:var(--gold);background:var(--bg-card-hover)}
+.elite-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.elite-icon{font-size:2rem;line-height:1}
+.elite-name{font-size:1.3rem;font-weight:700;color:var(--gold-light)}
+.elite-act{font-size:12px;padding:3px 10px;border-radius:12px;background:rgba(200,150,60,.15);color:var(--gold)}
+.danger-badge{font-size:12px;padding:3px 10px;border-radius:12px;font-weight:600}
+.danger-high{background:rgba(229,91,91,.2);color:var(--red-light)}
+.danger-mid{background:rgba(240,160,80,.2);color:var(--orange)}
+.danger-low{background:rgba(76,175,132,.2);color:var(--green-light)}
+.table-wrap{overflow-x:auto;margin:16px 0 24px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:var(--bg-card);color:var(--gold);text-align:left;padding:10px 14px;border-bottom:2px solid var(--border);font-weight:600}
+td{padding:10px 14px;border-bottom:1px solid var(--border)}
+tr:nth-child(even) td{background:rgba(26,29,40,.5)}
+tr:hover td{background:var(--bg-card-hover)}
+.tip-box{background:rgba(167,139,250,.08);border-left:3px solid var(--purple);padding:16px 20px;border-radius:0 8px 8px 0;margin:20px 0}
+.tip-box strong{color:var(--purple)}
+.warn-box{background:rgba(229,91,91,.08);border-left:3px solid var(--red);padding:16px 20px;border-radius:0 8px 8px 0;margin:20px 0}
+.warn-box strong{color:var(--red-light)}
+.strat-box{background:rgba(200,168,76,.08);border-left:3px solid var(--gold);padding:16px 20px;border-radius:0 8px 8px 0;margin:20px 0}
+.strat-box strong{color:var(--gold-light)}
+footer{padding:40px 0 24px;border-top:1px solid var(--border);margin-top:60px;font-size:13px;color:var(--text-muted);text-align:center}
+footer a{color:var(--text-muted)}
+@media(max-width:640px){
+  article h1{font-size:1.5rem}
+  .elite-card{padding:16px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../guides/index.html">Guides</a>
+  <a href="../characters/index.html">Characters</a>
+  <a href="../cards/index.html">Cards</a>
+  <a href="../relics/index.html">Relics</a>
+  <a href="../tier-list/index.html">Tier List</a>
+  <a href="../bosses/index.html">Bosses</a>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">Home</a> › <a href="index.html">Guides</a> › Elite Enemy Guide
+</div>
+
+<article>
+<h1>Elite Enemy Guide: All Elite Fights, Patterns &amp; Rewards</h1>
+<p class="subtitle">Every Elite encounter in Slay the Spire 2 — attack patterns, AI behavior, difficulty rankings, and character-specific strategies.</p>
+
+<div class="meta-row">
+  <span class="tag tag-boss">Combat Guide</span>
+  <span class="tag tag-elite">Elite Fights</span>
+  <span>🕐 16 min read</span>
+  <span>📅 Updated: May 2026</span>
+</div>
+
+<p>Elite enemies are the mid-boss encounters on each Act map — harder than hallway fights, easier than Act Bosses, but <strong>the primary source of Relics</strong>. Killing Elites is how you snowball. Knowing which Elites to fight (and which to dodge) is a core climbing skill.</p>
+
+<h2>Why Fight Elites?</h2>
+<ul>
+  <li><strong>Guaranteed Relic drop</strong> — the only reliable way to gain relics outside of shops/events</li>
+  <li><strong>25–35 Gold</strong> (higher than hallway fights)</li>
+  <li><strong>Rare card reward chance</strong> is elevated (35% vs hallway 15%)</li>
+  <li>Pathing through 2+ Elites per Act is the "standard" for A20 climbing</li>
+</ul>
+
+<div class="warn-box">
+  <strong>⚠️ Golden Rule:</strong> Elites are relic pinatas — but only if your deck can handle them. Never path into an Elite with low HP (&lt;35). A dead runner gets zero relics.
+</div>
+
+<h2>Act 1 Elites</h2>
+<p>Act 1 Elites test your <strong>frontloaded damage</strong>. You haven't had time to build scaling, so these fights punish slow decks. Take attack cards early.</p>
+
+<div class="elite-card">
+  <div class="elite-header">
+    <span class="elite-icon">🔥</span>
+    <span class="elite-name">Gremlin Nob</span>
+    <span class="elite-act">Act 1</span>
+    <span class="danger-badge danger-high">Very Dangerous</span>
+  </div>
+  <p><strong>HP:</strong> 82–90 (ascends) | <strong>Moves:</strong> Skull Bash (6→8 dmg, applies Vulnerable), Rage (+3 Str, triggered when you play a Skill)</p>
+  <p>The classic noob-killer. Gremlin Nob <strong>gains 3 Strength every time you play a Skill card</strong>. If you try to block or set up powers, he'll out-scale you and murder you on turn 3–4.</p>
+  <div class="strat-box">
+    <strong>💡 Strategy:</strong> <strong>Play only Attacks.</strong> Do not play Defends, do not play Powers, do not play Skills. Frontload all damage. You should kill him within 3–4 turns. Ironclad with Anger/Whirlwind crushes him. Silent struggles — consider skipping this Elite entirely if your deck is skill-heavy.
+  </div>
+</div>
+
+<div class="elite-card">
+  <div class="elite-header">
+    <span class="elite-icon">🧌</span>
+    <span class="elite-name">Lagavulin</span>
+    <span class="elite-act">Act 1</span>
+    <span class="danger-badge danger-high">Dangerous</span>
+  </div>
+  <p><strong>HP:</strong> 109–115 | <strong>Moves:</strong> Starts Asleep (3 turns), then alternates: Siphon Soul (-1 Str, -1 Dex) → Attack (18→20 dmg)</p>
+  <p>Lagavulin starts asleep for 3 turns. This is free setup time — play all your Powers, then unleash on turn 3. Once awake, it reduces your Str/Dex every other turn and hits hard.</p>
+  <div class="strat-box">
+    <strong>💡 Strategy:</strong> Use the 3 sleep turns to play every Power in your hand. Then burst. Having a block plan matters — the 18–20 damage attacks come faster than Nob's scaling. Defect with Focus scaling and Silent with Noxious Fumes do well here.
+  </div>
+</div>
+
+<div class="elite-card">
+  <div class="elite-header">
+    <span class="elite-icon">🌀</span>
+    <span class="elite-name">Sentinel Trio</span>
+    <span class="elite-act">Act 1</span>
+    <span class="danger-badge danger-mid">Moderate</span>
+  </div>
+  <p><strong>HP:</strong> 3× 38–42 (3 sentries) | <strong>Moves:</strong> Each turn, 2 sentries attack (9→10 dmg), 1 applies 2 Dazed to discard pile</p>
+  <p>Three sentries that fill your deck with Dazed cards. The fight gets harder the longer it goes, as your draws become clogged with garbage. AoE is great here but not mandatory.</p>
+  <div class="strat-box">
+    <strong>💡 Strategy:</strong> Kill one sentry ASAP to reduce damage output. AoE (Whirlwind, Dagger Spray, Electrodynamics) is excellent. The key is killing the first sentry before Dazed cards flood your draw pile. Silent's Dagger Spray + Neutralize is very efficient.
+  </div>
+</div>
+
+<div class="elite-card">
+  <div class="elite-header">
+    <span class="elite-icon">💀</span>
+    <span class="elite-name">Bone Lord</span>
+    <span class="elite-act">Act 1</span>
+    <span class="danger-badge danger-mid">Moderate</span>
+  </div>
+  <p><strong>HP:</strong> 70→80 | <strong>Moves:</strong> Bone Wall (gains 30 Block), Bone Storm (7×3 dmg), Summon Skeletons (summons 2 minions, 12 HP each)</p>
+  <p>STS2 Act 1 Elite. Alternates between blocking and multi-hitting. Can summon minions that chip at you. Not the scariest Elite individually, but the block + minion cycle drags the fight out.</p>
+  <div class="strat-box">
+    <strong>💡 Strategy:</strong> Kill minions quickly — they accelerate Bone Lord's scaling. Multi-hit attacks break through Bone Wall efficiently. Defect's Lightning orbs ping minions for free. The fight is a DPS check more than a survival check.
+  </div>
+</div>
+
+<h2>Act 2 Elites</h2>
+<p>Act 2 Elites test your <strong>scaling and AoE</strong>. Hallway fights have already filtered your deck; if you survived Act 1 with a functional plan, most Act 2 Elites are manageable. But they punish greedy decks that haven't found their win condition.</p>
+
+<div class="elite-card">
+  <div class="elite-header">
+    <span class="elite-icon">🗡️</span>
+    <span class="elite-name">Book of Stabbing</span>
+    <span class="elite-act">Act 2</span>
+    <span class="danger-badge danger-high">Very Dangerous</span>
+  </div>
+  <p><strong>HP:</strong> 144–160 | <strong>Moves:</strong> Multi-stab: 6×N dmg (increase N each turn: 2→3→4...up to 7)</p>
+  <p>Every turn, Book of Stabbing attacks with an increasing number of hits. Turn 1: 6×2 (12). Turn 4: 6×5 (30). If you can't end this fight fast or apply Weak, <strong>you will die</strong>.</p>
+  <div class="strat-box">
+    <strong>💡 Strategy:</strong> <strong>Weak is king here.</strong> Silent's Neutralize/Crippling Cloud, Ironclad's Clothesline/Uppercut cut damage output in half. Disarm is a near-silver-bullet (reduces multi-hit per-strike). Kill before turn 6. Bronze Scales relic is excellent.
+  </div>
+</div>
+
+<div class="elite-card">
+  <div class="elite-header">
+    <span class="elite-icon">⚔️</span>
+    <span class="elite-name">Gremlin Leader</span>
+    <span class="elite-act">Act 2</span>
+    <span class="danger-badge danger-mid">Moderate</span>
+  </div>
+  <p><strong>HP:</strong> 140–155 | <strong>Moves:</strong> Summons 2 random Gremlins (7–25 HP), then alternates: Buff (+6 Str to all) → Attack (11×3→14×3)</p>
+  <p>Gremlin Leader summons minions, buffs all Gremlins, then attacks. If you kill all minions, it spends the next turn re-summoning instead of attacking — this is your window.</p>
+  <div class="strat-box">
+    <strong>💡 Strategy:</strong> AoE to clear minions forces the Leader to waste turns re-summoning. Electrodynamics, Whirlwind, Die Die Die, Corpse Explosion all shine. Don't let minions stack up — each one gets the +6 Str buff too.
+  </div>
+</div>
+
+<div class="elite-card">
+  <div class="elite-header">
+    <span class="elite-icon">🐍</span>
+    <span class="elite-name">Slavers (Trio)</span>
+    <span class="elite-act">Act 2</span>
+    <span class="danger-badge danger-high">Dangerous</span>
+  </div>
+  <p><strong>HP:</strong> Red Slaver 46, Blue Slaver 46, Taskmaster 54–60 | <strong>Moves:</strong> Red (Entangle + 13 dmg), Blue (Weak + 12 dmg), Taskmaster (applies Vulnerable + 7 dmg)</p>
+  <p>Turn 1 is brutal: you'll be Entangled (can't play Attacks), Weakened, and Vulnerable — all before you get a turn. The Taskmaster is priority #1.</p>
+  <div class="strat-box">
+    <strong>💡 Strategy:</strong> <strong>Kill Taskmaster first</strong> — it's the lowest HP and enables the other two with Vulnerable. Then kill Red Slaver. AoE is good but focus fire matters more. Having a potion for this fight (Fire Potion, Flex Potion) is highly recommended. Silent's Backstab/Ironclad's Offering help bypass Turn 1 debuffs.
+  </div>
+</div>
+
+<h2>Act 3 Elites</h2>
+<p>Act 3 Elites test your <strong>fully scaled endgame deck</strong>. If you've built correctly, these should be easier than Act 2 Elites — you now have relics, upgraded cards, and a clear archetype. If you struggle here, your deck lacks a coherent win condition.</p>
+
+<div class="elite-card">
+  <div class="elite-header">
+    <span class="elite-icon">🐙</span>
+    <span class="elite-name">Giant Head</span>
+    <span class="elite-act">Act 3</span>
+    <span class="danger-badge danger-mid">Moderate</span>
+  </div>
+  <p><strong>HP:</strong> 500→520 | <strong>Moves:</strong> Slow (applies 1 Slow to you per card played), Glare (applies 2 Weak), attack (13→15 dmg, scaled by your Slow stacks)</p>
+  <p>The tankiest Elite. 500 HP with a Slow mechanic: each card you play gives you +1 Slow. The Giant Head's attack damage increases by your Slow count. It's a <strong>scaling race</strong> — can you ramp faster than it deals damage?</p>
+  <div class="strat-box">
+    <strong>💡 Strategy:</strong> <strong>Play fewer, higher-impact cards.</strong> Powers are free (they don't add Slow on subsequent turns). Ironclad's Demon Form, Defect's Creative AI, Silent's Noxious Fumes all scale without adding Slow. The fight naturally ends by turn 7–8 with a decent deck. Weak application helps a lot.
+  </div>
+</div>
+
+<div class="elite-card">
+  <div class="elite-header">
+    <span class="elite-icon">🔄</span>
+    <span class="elite-name">Nemesis</span>
+    <span class="elite-act">Act 3</span>
+    <span class="danger-badge danger-mid">Moderate</span>
+  </div>
+  <p><strong>HP:</strong> 185→200 | <strong>Moves:</strong> Alternates every other turn: Intangible (cannot lose more than 1 HP per hit) → Attack (6×3→8×3, applies 3 Burns)</p>
+  <p>Nemesis cycles between Intangible turns (max 1 damage per hit) and attacking turns. Burns clutter your draw pile. The fight tests your <strong>damage scheduling</strong> — can you store burst for non-Intangible turns?</p>
+  <div class="strat-box">
+    <strong>💡 Strategy:</strong> Hold big attacks for non-Intangible turns. Use Intangible turns for Powers, blocking, and setup. Poison and Orb damage bypass Intangible (each tick is a separate instance). Medkit relic neutralizes Burn. Patience is key — this is a 6–8 turn fight.
+  </div>
+</div>
+
+<div class="elite-card">
+  <div class="elite-header">
+    <span class="elite-icon">🔮</span>
+    <span class="elite-name">Reptomancer</span>
+    <span class="elite-act">Act 3</span>
+    <span class="danger-badge danger-high">Very Dangerous</span>
+  </div>
+  <p><strong>HP:</strong> 180→200 | <strong>Moves:</strong> Summons 2 Daggers (25 HP), Daggers attack for 9→12 each. Reptomancer attacks for 11×2→13×2</p>
+  <p>The deadliest Act 3 Elite. Turn 1: two Daggers appear. If both Daggers survive to Turn 2, Reptomancer attacks for 11×2 <strong>while both Daggers also attack</strong> — that's ~40 damage on Turn 2 if you don't kill any Daggers.</p>
+  <div class="strat-box">
+    <strong>💡 Strategy:</strong> <strong>Kill Daggers on sight.</strong> Turn 1 priority is always killing at least one Dagger. AoE is premium (Immolate, Corpse Explosion, Electrodynamics). If you can't kill Daggers, block heavily. Reptomancer punishes slow decks harder than any other Elite.
+  </div>
+</div>
+
+<h2>Elite Difficulty Tier List (A20)</h2>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Rank</th><th>Elite</th><th>Act</th><th>Why It's Scary</th><th>Worst Character Matchup</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>S</td><td>Reptomancer</td><td>Act 3</td><td>40+ damage turn 2, demands immediate AoE</td><td>Silent (no AoE)</td></tr>
+    <tr><td>S</td><td>Gremlin Nob</td><td>Act 1</td><td>Punishes skills, ends runs before they start</td><td>Silent, Defect</td></tr>
+    <tr><td>A</td><td>Book of Stabbing</td><td>Act 2</td><td>Unchecked scaling, no Weak = death</td><td>Defect (slow setup)</td></tr>
+    <tr><td>A</td><td>Slavers</td><td>Act 2</td><td>Turn 1 triple debuff, burst damage</td><td>All characters</td></tr>
+    <tr><td>B</td><td>Lagavulin</td><td>Act 1</td><td>Str/Dex drain if fight drags</td><td>Silent</td></tr>
+    <tr><td>B</td><td>Giant Head</td><td>Act 3</td><td>500 HP check — do you scale?</td><td>Aggro Ironclad</td></tr>
+    <tr><td>C</td><td>Nemesis</td><td>Act 3</td><td>Intangible cycles, Burn clutter</td><td>Burst-heavy builds</td></tr>
+    <tr><td>C</td><td>Gremlin Leader</td><td>Act 2</td><td>AoE check, manageable with any AoE</td><td>Single-target decks</td></tr>
+    <tr><td>C</td><td>Sentinel Trio</td><td>Act 1</td><td>Dazed flood, slow kill = death</td><td>Slow decks</td></tr>
+    <tr><td>D</td><td>Bone Lord</td><td>Act 1</td><td>Manageable with multi-hit</td><td>None</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Pathing Optimization: How Many Elites Per Act?</h2>
+<table>
+  <thead>
+    <tr><th>Ascension</th><th>Act 1</th><th>Act 2</th><th>Act 3</th><th>Note</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>A0–A5</td><td>2–3</td><td>2–3</td><td>2–3</td><td>Farm everything, learn patterns</td></tr>
+    <tr><td>A6–A14</td><td>1–2</td><td>1–2</td><td>1–3</td><td>Slightly more cautious</td></tr>
+    <tr><td>A15–A19</td><td>1–2</td><td>1–2</td><td>1–2</td><td>Dodge Act 1 Nob if no frontload</td></tr>
+    <tr><td>A20</td><td>1</td><td>1</td><td>1–2</td><td>Quality over quantity; survival &gt; relics</td></tr>
+  </tbody>
+</table>
+
+<div class="tip-box">
+  <strong>🧠 Pro Tip: Super Elite Paths</strong><br/>
+  In STS2, some map seeds feature a "Super Elite" (Empowered Elite) with +50% HP and enhanced moves. They drop a <strong>rare relic + extra gold</strong>. Only path into these if you're confident — the reward is great but the risk of dying is real. Treat them as a Boss-level fight.
+</div>
+
+<h2>Character-Specific Elite Strategies</h2>
+
+<h3>Ironclad</h3>
+<ul>
+  <li><strong>Nob:</strong> Anger, Whirlwind, Heavy Blade — all attacks. Don't play Bash unless lethal.</li>
+  <li><strong>Book of Stabbing:</strong> Disarm is borderline broken. Clothesline for Weak.</li>
+  <li><strong>Reptomancer:</strong> Immolate deletes Daggers. Reaper heals you back after the burst.</li>
+  <li><strong>Best Act 1 Elite:</strong> Lagavulin (Strength scaling loves the 3 free turns)</li>
+</ul>
+
+<h3>Silent</h3>
+<ul>
+  <li><strong>Nob:</strong> Your worst matchup. Skip unless you have Blade Dance + Accuracy or 2+ potions.</li>
+  <li><strong>Book of Stabbing:</strong> Malaise is a silver bullet. Crippling Cloud for persistent Weak.</li>
+  <li><strong>Reptomancer:</strong> Corpse Explosion + Die Die Die. Best AoE character for this fight.</li>
+  <li><strong>Best Act 1 Elite:</strong> Sentinel Trio (Dagger Spray, Neutralize trivializes them)</li>
+</ul>
+
+<h3>Defect</h3>
+<ul>
+  <li><strong>Nob:</strong> Rough matchup. Take Ball Lightning, Cold Snap early. Powers kill you.</li>
+  <li><strong>Book of Stabbing:</strong> Go for the Eyes (Weak on demand). Frost orbs for passive block.</li>
+  <li><strong>Reptomancer:</strong> Electrodynamics is an instant win. Tempest + Thunder Strike.</li>
+  <li><strong>Best Act 1 Elite:</strong> Lagavulin (3 turns to set up orb slots and Powers)</li>
+</ul>
+
+<h3>Watcher (if available)</h3>
+<ul>
+  <li><strong>Nob:</strong> Wrath stance + attacks. Kill in 2 turns. Easiest matchup.</li>
+  <li><strong>Book of Stabbing:</strong> Talk to the Hand trivializes multi-hit. Wallop for block.</li>
+  <li><strong>Reptomancer:</strong> Conclude kills both Daggers. Blasphemy + Ragnarok ends the fight.</li>
+</ul>
+
+<h2>Elite Reward Priorities</h2>
+<ul>
+  <li><strong>Act 1:</strong> Any energy relic is S-tier. Damage relics (Bag of Marbles, Akabeko) secure early Elites.</li>
+  <li><strong>Act 2:</strong> Defensive/sustain relics (Meat on the Bone, Eternal Feather) to stabilize for Act 3.</li>
+  <li><strong>Act 3:</strong> Scaling relics (Girya, Du-Vu Doll, Vajra) to push damage through Boss gauntlet.</li>
+</ul>
+
+<h2>Key Takeaways</h2>
+<ol>
+  <li><strong>Act 1 frontload check:</strong> If your deck can't kill Nob, don't path into Act 1 Elites. Period.</li>
+  <li><strong>Weak is universal anti-Elite tech:</strong> It shuts down Nob, Book of Stabbing, Reptomancer, and Giant Head.</li>
+  <li><strong>AoE is mandatory for Act 2:</strong> Gremlin Leader, Slavers, and (in Act 3) Reptomancer all demand it.</li>
+  <li><strong>Act 3 Elites are scaling checks:</strong> If you can't kill Giant Head in 8 turns or burst Reptomancer's Daggers in 1, your deck isn't ready for the Act 3 Boss.</li>
+  <li><strong>2 Elites per Act = 6 extra relics per run.</strong> That's how you win at A20.</li>
+</ol>
+
+<div class="strat-box">
+  <strong>🛡️ Final Advice:</strong> The difference between an A15 player and an A20 player is knowing <em>which Elites to skip</em>. Respect Nob on Act 1. Respect Reptomancer on Act 3. Live to fight the Boss — relics from Elites mean nothing if you die before the campfire.
+</div>
+
+<hr style="border-color:var(--border);margin:32px 0"/>
+<p>Also see: <a href="pathing.html">Pathing &amp; Map Strategy</a> · <a href="ascension.html">Ascension Guide (A1–A20)</a> · <a href="deck-building.html">Deck Building Principles</a> · <a href="../bosses/index.html">Boss Strategy Guide</a></p>
+
+</article>
+</div>
+
+<footer>
+  <p>© 2026 STS2 Guides — Unofficial Fan Site. All game content, characters, and images are trademarks of Mega Crit Games.</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+</body></html>

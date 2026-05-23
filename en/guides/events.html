@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STS2 Event Guide — Every ?, Best Choices &amp; Outcomes | STS2Guides</title>
+<meta name="description" content="Complete Slay the Spire 2 event guide. Every Act 1-4 event with all choices, outcomes, risk/reward analysis, character-specific recommendations, and which events to always take or avoid.">
+    <meta property="og:title" content="STS2 Event Guide — Every ?, Best Choices &amp; Outcomes | STS2Guides">
+    <meta property="og:description" content="Complete Slay the Spire 2 event guide. Every Act 1-4 event with all choices, outcomes, risk/reward analysis, character-specific recommendations, and which events to always take or avoid.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/events.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STS2Guides">    <meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="STS2 Event Guide — Every ?, Best Choices &amp; Outcomes | STS2Guides">
+    <meta name="twitter:description" content="Complete Slay the Spire 2 event guide. Every Act 1-4 event with all choices, outcomes, risk/reward analysis, character-specific recommendations, and which events to always take or avoid.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/events.html">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad; --orange: #e67e22;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--purple);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:28px;font-weight:800;margin-bottom:4px;color:var(--gold-light);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--gold-light);border-left:4px solid var(--purple);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.article .tip-box{background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.article .tip-box strong{color:var(--green);}
+.article .warn-box{background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.article .warn-box strong{color:var(--crimson);}
+.article .info-box{background:rgba(52,152,219,0.08);border:1px solid rgba(52,152,219,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.article .info-box strong{color:var(--blue);}
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:30px;}
+.toc h3{font-size:14px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;}
+.toc a{display:block;padding:4px 0;color:var(--text-secondary);text-decoration:none;font-size:13px;}
+.toc a:hover{color:var(--gold-light);}
+.event-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin:16px 0;}
+.event-card h4{color:var(--gold-light);font-size:15px;margin-bottom:6px;}
+.event-card .event-icon{font-size:20px;margin-right:6px;}
+.event-card .choice{background:var(--bg-secondary);border:1px solid var(--border);border-radius:6px;padding:12px 14px;margin:8px 0;font-size:13px;}
+.event-card .choice.positive{border-left:3px solid var(--green);}
+.event-card .choice.risky{border-left:3px solid var(--orange);}
+.event-card .choice.negative{border-left:3px solid var(--crimson);}
+.event-card .choice .label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+.event-card .choice.positive .label{color:var(--green);}
+.event-card .choice.risky .label{color:var(--orange);}
+.event-card .choice.negative .label{color:var(--crimson);}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:4px;margin-right:4px;}
+.tag-strong{background:rgba(39,174,96,0.15);color:var(--green);}
+.tag-situational{background:rgba(230,126,34,0.15);color:var(--orange);}
+.tag-avoid{background:rgba(192,57,43,0.15);color:var(--crimson);}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}}
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; } .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+}
+@media (max-width: 480px) {
+  .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; }
+  footer { padding:16px; font-size:11px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "STS2Guides", "item": "https://sts2guides.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sts2guides.com/en/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Event Guide", "item": "https://sts2guides.com/en/guides/events.html" }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+            <a href="./" class="active">Guides</a>
+<a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a>
+      <a href="../relics/index.html">Relics</a>
+      <a href="../bosses/index.html">Bosses</a>
+      <a href="../patch-notes/">Patch Notes</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Event Guide</div>
+
+<article class="article">
+  <h1>Slay the Spire 2 Event Guide: Every ? Room, Best Choices &amp; Outcomes</h1>
+  <div class="meta">❓ Event Reference · Updated May 23, 2026 · 16 min read</div>
+
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <a href="#event-basics">1. How Events Work &amp; Risk Framework</a>
+    <a href="#act1-events">2. Act 1 Events (Floors 1–16)</a>
+    <a href="#act2-events">3. Act 2 Events (Floors 17–33)</a>
+    <a href="#act3-events">4. Act 3 Events (Floors 34–50)</a>
+    <a href="#special-events">5. Special &amp; Character-Specific Events</a>
+    <a href="#ascension-events">6. How Events Change at A15+</a>
+    <a href="#event-tierlist">7. Event Priority Tier List</a>
+    <a href="#event-tips">8. 10 Event Decision-Making Tips</a>
+  </div>
+
+  <h2 id="event-basics">1. How Events Work &amp; Risk Framework</h2>
+  <p>? rooms appear as grey question marks on the map. Stepping on one triggers a random event from that act's event pool. Events can give you cards, relics, gold, Max HP, card removal, card transforms, or nothing — sometimes they are actually fights in disguise.</p>
+
+  <h3>The Event Evaluation Framework</h3>
+  <p>Before making any event choice, evaluate it against these four categories:</p>
+  <ul>
+    <li><strong>Immediate Power:</strong> Does this make my deck stronger for the next fight?</li>
+    <li><strong>Long-Term Value:</strong> Does this improve my run's ceiling (e.g., relics, Max HP, gold)?</li>
+    <li><strong>Risk Assessment:</strong> What's the worst outcome? Can my current HP absorb it?</li>
+    <li><strong>Opportunity Cost:</strong> What would I get from a hallway fight instead?</li>
+  </ul>
+
+  <div class="info-box">
+    <strong>🔵 Key Concept:</strong> Events in STS2 follow the same act-based pool system as STS1. Each act has its own pool of events. Act 2 has the most powerful events; Act 1 events are generally weaker but safer.
+  </div>
+
+  <h2 id="act1-events">2. Act 1 Events (Floors 1–16)</h2>
+
+  <div class="event-card">
+    <h4><span class="event-icon">🐀</span>Big Fish / Mushroom Event</h4>
+    <p>A large creature offers a trade. You can fight it for a relic or take a less rewarding safe option.</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      Fight it if you have at least 2 attack cards added to your deck. The relic is almost always worth the HP loss in Act 1. Only skip if you're below 25 HP.
+    </div>
+    <div class="choice risky">
+      <div class="label">⚠️ SITUATIONAL</div>
+      Taking the safe option is fine if you're about to face an elite and can't afford HP loss.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-strong">Usually Take</span> Fight unless low HP. Relic reward outscales HP cost.</p>
+  </div>
+
+  <div class="event-card">
+    <h4><span class="event-icon">💎</span>Golden Idol</h4>
+    <p>Find a Golden Idol in a wall. You can take it (gain a Curse — Injury), or leave it.</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      Take it. The Golden Idol is a Curse, but it enables the Forgotten Altar event in Act 2 which gives you Bloody Idol (heal 5 HP whenever you gain gold). That's arguably the best event chain in the game. Remove the Injury later.
+    </div>
+    <div class="choice negative">
+      <div class="label">❌ AVOID</div>
+      Leaving it is only correct if you have no card removal options and can't afford a Curse.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-strong">Always Take</span> Enables the best Act 2 event chain.</p>
+  </div>
+
+  <div class="event-card">
+    <h4><span class="event-icon">👻</span>Dead Adventurer</h4>
+    <p>Find a dead adventurer. You can search the body — high chance of Loot (gold + relic), small chance of fighting a Lagavulin.</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      Search the body if you're above 35 HP. The gold and relic from Loot far outweigh the risk. Even the Lagavulin fight is winnable if you have attacks.
+    </div>
+    <div class="choice risky">
+      <div class="label">⚠️ SITUATIONAL</div>
+      Skip if below 30 HP. The Lagavulin fight will kill you at low HP with no attack cards.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-strong">Usually Take</span> Risk if HP > 35. Skip if low HP and weak deck.</p>
+  </div>
+
+  <div class="event-card">
+    <h4><span class="event-icon">🪙</span>Wing Statue / Sssserpent</h4>
+    <p>A serpent offers gold in exchange for HP loss, or a Curse (Doubt) in exchange for gold.</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      Take gold for HP if you have sustain (Ironclad's Burning Blood) or are at high HP. 175 gold for ~20 HP is a good rate in Act 1.
+    </div>
+    <div class="choice negative">
+      <div class="label">❌ AVOID</div>
+      Never take the Curse for gold. Doubt gives you Weak every turn, which is one of the worst curses.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-situational">Situational</span> HP for gold OK if you can recover. Never take the Curse.</p>
+  </div>
+
+  <div class="event-card">
+    <h4><span class="event-icon">🔥</span>Living Wall</h4>
+    <p>A wall offers to transform a card or remove a card for a cost (gold or HP).</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      Transform a Strike or Defend. Transforming removes the old card and gives a random one — always an upgrade over Starter cards. Card removal is also always good.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-strong">Always Take</span> Transform Strikes. Card removal is never bad.</p>
+  </div>
+
+  <div class="event-card">
+    <h4><span class="event-icon">📜</span>Scrap Ooze</h4>
+    <p>Dig through ooze for a relic. Each dig has a chance to give the relic or deal damage.</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      Dig until you get the relic or reach ~15 HP remaining. The expected value is positive — you usually get the relic within 3-4 digs. Stop earlier if you have an elite next.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-strong">Dig Smart</span> Get the relic, but don't die for it.</p>
+  </div>
+
+  <h2 id="act2-events">3. Act 2 Events (Floors 17–33)</h2>
+
+  <div class="event-card">
+    <h4><span class="event-icon">👻</span>Council of Ghosts / Apparitions</h4>
+    <p>Gain 5 Apparition cards (Ethereal, 1-cost: gain 1 Intangible). Lose 50% Max HP.</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      This is one of the strongest events in the entire game. 5 Intangible turns make you nearly invincible. Take this with almost any deck. The Max HP loss looks scary, but Intangible is worth far more than 50% of your HP pool. <strong>Exception:</strong> Don't take it if you have below 35 Max HP — you'll be too fragile.
+    </div>
+    <div class="choice risky">
+      <div class="label">⚠️ SITUATIONAL</div>
+      Skip if you have a consistent block engine (Frost Defect, Barricade Ironclad) and value the Max HP more than the safety net.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-strong">Almost Always Take</span> Arguably the best event in the game. Only skip at very low Max HP.</p>
+  </div>
+
+  <div class="event-card">
+    <h4><span class="event-icon">📖</span>Ancient Writing</h4>
+    <p>Choose: Upgrade all Strikes and Defends, or remove a card from your deck.</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      <strong>Remove a card</strong> in almost every case. Removing one Strike permanently improves every future draw. Upgrading Strikes is temporary value diluted by future card additions. Only upgrade all if you're a very new player with 5+ Strikes still in deck and Survival is your priority.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-strong">Remove a Card</span> Removal > temporary upgrades.</p>
+  </div>
+
+  <div class="event-card">
+    <h4><span class="event-icon">📚</span>Library</h4>
+    <p>Read a book: Heal 20% HP, or choose 1 of 3 cards to add to your deck.</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      Take the card if any of the three options meaningfully improve your deck. Heal 20% is the safe fallback if the cards are bad.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-situational">Situational</span> Card if good, heal if not.</p>
+  </div>
+
+  <div class="event-card">
+    <h4><span class="event-icon">🏟️</span>Colosseum</h4>
+    <p>Fight two consecutive elite-level encounters for two relics and large gold reward.</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      Fight both if your deck is strong and you're above 50 HP. Two relics + gold is an enormous power spike. If you can only handle one fight, you still get one relic.
+    </div>
+    <div class="choice risky">
+      <div class="label">⚠️ SITUATIONAL</div>
+      Skip entirely if weak. The second fight is against Taskmaster + 2 Slavers — a combo that kills unprepared decks.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-situational">Situational</span> Strong deck = free relics. Weak deck = run over.</p>
+  </div>
+
+  <div class="event-card">
+    <h4><span class="event-icon">🧛</span>Vampires (?) / Blood Vial</h4>
+    <p>Trade all Strikes for Bite cards (1-cost: deal 7 damage, heal 2 HP). Lose 30% Max HP. Requires Blood Vial relic.</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      Take if you still have 4+ Strikes. Bites are a massive upgrade — they give sustain on every attack. The Max HP loss is offset by the healing. Particularly good on Ironclad (synergy with Strength) and fragile characters who need sustain.
+    </div>
+    <div class="choice risky">
+      <div class="label">⚠️ SITUATIONAL</div>
+      Skip if you've already removed most Strikes (1-2 Bites isn't worth 30% Max HP) or if your deck is curse/status heavy.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-strong">Take with 4+ Strikes</span> Excellent sustain event.</p>
+  </div>
+
+  <div class="event-card">
+    <h4><span class="event-icon">🙏</span>Forgotten Altar</h4>
+    <p>Requires Golden Idol. Trade Golden Idol for Bloody Idol (heal 5 HP whenever you gain gold).</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      Always take this trade. Bloody Idol is one of the best relics in the game. Every gold pickup (including from fights) now heals you. This single relic can sustain you through entire acts.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-strong">Always Take</span> The entire reason you took Golden Idol in Act 1.</p>
+  </div>
+
+  <div class="event-card">
+    <h4><span class="event-icon">🔔</span>The Mausoleum</h4>
+    <p>Open a coffin: gain a random Curse, or gain a random Relic at HP cost.</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      Take the relic. A random relic + HP cost is usually worth it unless you have an elite next. Never take the Curse.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-strong">Take Relic</span> Never take the Curse.</p>
+  </div>
+
+  <h2 id="act3-events">4. Act 3 Events (Floors 34–50)</h2>
+
+  <div class="event-card">
+    <h4><span class="event-icon">🌺</span>Mind Bloom</h4>
+    <p>Three choices: Fight an Act 1 boss for a rare relic, upgrade all cards (no downside), or heal to full HP with a curse.</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      <strong>Fight the boss</strong> is almost always correct. A rare relic + gold + card reward is the highest-value choice. Upgrading all cards is safe and good if your deck is fully built. Heal + Curse is a desperation move for when you'll die otherwise.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-strong">Fight Boss</span> Best value. Upgrade all if boss fight is risky.</p>
+  </div>
+
+  <div class="event-card">
+    <h4><span class="event-icon">🌀</span>Sensory Stone</h4>
+    <p>Add a colorless card to your deck from a choice of 3.</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      Take the best colorless card. Apotheosis (upgrade all cards), Master of Strategy (draw 3, 0-cost), and Panache are premium picks. If all 3 are bad, skip.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-strong">Usually Take</span> Colorless pool has game-winners.</p>
+  </div>
+
+  <div class="event-card">
+    <h4><span class="event-icon">🌑</span>Winding Halls</h4>
+    <p>Two choices: become Writhing (lose 18 Max HP) and remove 2 cards, or gain Madness curse permanently.</p>
+    <div class="choice positive">
+      <div class="label">✅ RECOMMENDED</div>
+      Remove 2 cards at the cost of Max HP. Removing 2 Strikes/Defends in Act 3 is worth the HP cost. The curse option is terrible.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-strong">Remove 2 Cards</span> Worth the HP cost in Act 3.</p>
+  </div>
+
+  <div class="event-card">
+    <h4><span class="event-icon">⚱️</span>Falling</h4>
+    <p>Lose a random card (forced removal from a choice of Attack, Skill, or Power).</p>
+    <div class="choice negative">
+      <div class="label">❌ DANGEROUS</div>
+      This event can brick your run. You must choose a card type to lose, but the game picks which specific card. If you have one key Attack and the game targets Attacks, you might lose your win condition. If you have a "useless" card of the targeted type, you might trade it for a card you need. Evaluate very carefully.
+    </div>
+    <p style="margin-top:8px;font-size:12px;"><span class="tag tag-avoid">Dangerous</span> Can lose win conditions. Avoid late Act 3 ? rooms on critical decks.</p>
+  </div>
+
+  <h2 id="special-events">5. Special &amp; Character-Specific Events</h2>
+  <p>Some events only appear under specific conditions or for specific characters:</p>
+
+  <h3>Character-Specific Events</h3>
+  <ul>
+    <li><strong>Ironclad — Red Mask:</strong> Trade gold for the Red Mask relic (applies 1 Weak to all enemies at combat start). Always take it — one of the strongest utility relics.</li>
+    <li><strong>Silent — Face Trader:</strong> Trade your face for various outcomes. The "Good Face" (gain 50 gold after each combat with no downside) is run-winning. Acceptable risk.</li>
+    <li><strong>Defect — Transmutation Event:</strong> Can transform all Strikes and Defends into random cards at HP cost. High variance but usually positive in Act 3.</li>
+  </ul>
+
+  <h3>Shrine Events (No Downside)</h3>
+  <ul>
+    <li><strong>Transmogrifier:</strong> Transform a card (your choice). Always use on Strikes.</li>
+    <li><strong>Purifier:</strong> Remove a card (your choice). Always remove the worst card in your deck.</li>
+    <li><strong>Upgrade Shrine:</strong> Upgrade a card (your choice). Free upgrade, no downside.</li>
+    <li><strong>Duplicator:</strong> Duplicate any card in your deck. One of the best events — copy your best card (Wraith Form, Catalyst+, Limit Break+).</li>
+  </ul>
+
+  <h2 id="ascension-events">6. How Events Change at A15+</h2>
+  <p>At Ascension 15, the game applies "Unfavorable Events" — many events gain negative outcomes or have reduced rewards. This fundamentally changes event evaluation:</p>
+
+  <div class="warn-box">
+    <strong>⚠️ A15+ Event Strategy Shift:</strong> At A15+, ? rooms become significantly worse. You should path toward <strong>more hallway fights and fewer events</strong>. The predictable card reward from a fight is now often better than the risk of a nerfed event.
+  </div>
+
+  <h3>Most Impacted Events at A15+</h3>
+  <ul>
+    <li><strong>Living Wall:</strong> Transform or removal costs increase; sometimes adds a Curse.</li>
+    <li><strong>Scrap Ooze:</strong> Higher damage per dig, making it deadlier at low HP.</li>
+    <li><strong>Golden Idol:</strong> Taking it might cost more HP or give a worse Curse.</li>
+    <li><strong>Wing Statue:</strong> Worse HP-to-gold ratio.</li>
+    <li><strong>Forgotten Altar:</strong> Bloody Idol may have reduced healing.</li>
+  </ul>
+
+  <h3>Events That Remain Strong at A15+</h3>
+  <ul>
+    <li><strong>Apparitions:</strong> Still 5 Intangible. Still the best event in the game.</li>
+    <li><strong>Mind Bloom:</strong> Unchanged. Boss fight for rare relic remains top-tier.</li>
+    <li><strong>Duplicator:</strong> Unchanged. Free card duplication is always amazing.</li>
+    <li><strong>Ancient Writing:</strong> Unchanged. Card removal is always good.</li>
+  </ul>
+
+  <h2 id="event-tierlist">7. Event Priority Tier List</h2>
+
+  <h3>S-Tier (Run-Defining — Always Take the Best Option)</h3>
+  <ul>
+    <li><strong>Apparitions (Council of Ghosts):</strong> 5 Intangible turns. Wins runs by itself.</li>
+    <li><strong>Mind Bloom:</strong> Rare relic + gold + card. Unmatched value.</li>
+    <li><strong>Duplicator:</strong> Copy your best card. Instant power spike.</li>
+    <li><strong>Forgotten Altar (Bloody Idol):</strong> Infinite sustain from gold.</li>
+  </ul>
+
+  <h3>A-Tier (Very Strong — Almost Always Take)</h3>
+  <ul>
+    <li><strong>Ancient Writing:</strong> Free card removal.</li>
+    <li><strong>Upgrade Shrine:</strong> Free upgrade.</li>
+    <li><strong>Purifier:</strong> Free card removal.</li>
+    <li><strong>Colosseum (both fights):</strong> 2 relics + gold.</li>
+    <li><strong>Vampires (4+ Strikes):</strong> Bites for sustain.</li>
+  </ul>
+
+  <h3>B-Tier (Good Value — Take Most of the Time)</h3>
+  <ul>
+    <li><strong>Library:</strong> Free card selection or heal.</li>
+    <li><strong>Sensory Stone:</strong> Chance at premium colorless cards.</li>
+    <li><strong>Living Wall:</strong> Transform/removal at reasonable cost.</li>
+    <li><strong>Scrap Ooze:</strong> Relic for HP; manage risk.</li>
+    <li><strong>Red Mask (Ironclad):</strong> Gold for strong relic.</li>
+  </ul>
+
+  <h3>C-Tier (Situational — Evaluate Carefully)</h3>
+  <ul>
+    <li><strong>Golden Idol:</strong> Only as setup for Forgotten Altar.</li>
+    <li><strong>Wing Statue:</strong> Gold-for-HP only if you can sustain.</li>
+    <li><strong>Winding Halls:</strong> Card removal for Max HP; situational.</li>
+    <li><strong>Dead Adventurer:</strong> Gamble on HP threshold.</li>
+  </ul>
+
+  <h3>D-Tier (Avoid Unless Desperate)</h3>
+  <ul>
+    <li><strong>Falling:</strong> Can lose key cards. Dangerous.</li>
+    <li><strong>Wing Statue (Curse option):</strong> Doubt is awful. Never take.</li>
+    <li><strong>Mausoleum (Curse option):</strong> Curses are never worth it.</li>
+  </ul>
+
+  <h2 id="event-tips">8. 10 Event Decision-Making Tips</h2>
+  <ol>
+    <li><strong>Know the act pools.</strong> Different acts have different events. Act 2 has the best events — prioritize ? rooms there.</li>
+    <li><strong>HP is a resource, not a score.</strong> Spending 20 HP for a relic that saves you 50 HP over the run is a winning trade. Be aggressive with HP spending.</li>
+    <li><strong>Curses are almost never worth it.</strong> With very few exceptions (Golden Idol as setup), don't take Curses from events. They permanently weaken every future draw.</li>
+    <li><strong>Transforms are underrated.</strong> Turning a Strike into a random card is almost always positive. The average card in any character's pool is better than a Strike.</li>
+    <li><strong>Card removal is the safest choice.</strong> When in doubt, pick the option that removes a card. Thinner decks are stronger decks.</li>
+    <li><strong>Don't gamble when you're ahead.</strong> If your deck is strong and you're at full HP, don't take risky event options. Preserve your advantage.</li>
+    <li><strong>Do gamble when you're behind.</strong> If your deck is weak, take the riskier option. The safe route leads to a slow death anyway.</li>
+    <li><strong>Check your map before choosing.</strong> If there's a campfire next, you can afford more HP loss. If there's an elite, be conservative.</li>
+    <li><strong>At A15+, events lose value.</strong> Adjust your pathing: fewer ? rooms, more hallway fights.</li>
+    <li><strong>Apparitions wins runs.</strong> If you see Council of Ghosts, take the 5 Apparitions unless you are below 35 Max HP. It's that simple.</li>
+  </ol>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">? rooms are powerful but mysterious. Learn when to visit them in our <a href="pathing.html" style="color:var(--gold-light);">Map Pathing Guide</a>.</p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="./">Guides</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a><a href="../tier-list/">Tier List</a><a href="../relics/index.html">Relics</a><a href="../about.html">About</a><a href="../privacy.html">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+
+</body>
+</html>

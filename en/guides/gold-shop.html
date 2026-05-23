@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>Gold &amp; Shop Strategy: Optimal Shopping, When to Save, Best Relics to Buy — STS2 Guides</title>
+<meta content="Complete Slay the Spire 2 gold management and shop strategy guide. Learn which relics to buy, when to remove cards, optimal shopping paths, merchant pricing, and how to maximize every gold piece." name="description"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../index.html" rel="canonical"/>
+<style>
+:root{--bg:#0f1117;--bg-card:#1a1d28;--bg-card-hover:#1f2335;--border:#2a2d3a;--text:#e2e4e9;--text-muted:#8b8fa5;--gold:#c9a84c;--gold-light:#e8d48b;--red:#e55b5b;--red-light:#ff6b6b;--green:#4caf84;--green-light:#5fcf9a;--blue:#5b9bd5;--blue-light:#7ab8f0;--purple:#a78bfa;--orange:#f0a050;--accent-beginner:var(--green);--accent-build:var(--blue);--accent-boss:var(--red);--accent-mechanic:var(--purple)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.7}
+a{color:var(--gold);text-decoration:none}
+a:hover{color:var(--gold-light)}
+img{max-width:100%;height:auto}
+.container{max-width:900px;margin:0 auto;padding:0 20px}
+nav{display:flex;flex-wrap:wrap;gap:8px;padding:16px 0;border-bottom:1px solid var(--border);margin-bottom:32px;font-size:14px}
+nav a{padding:6px 14px;border-radius:6px;background:var(--bg-card);color:var(--text-muted)}
+nav a:hover,nav a.active{color:var(--gold-light);background:var(--bg-card-hover)}
+.breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:24px}
+.breadcrumb a{color:var(--text-muted)}
+.breadcrumb a:hover{color:var(--gold)}
+article h1{font-size:2rem;color:var(--gold-light);margin-bottom:8px;line-height:1.3}
+article .subtitle{font-size:1.05rem;color:var(--text-muted);margin-bottom:24px}
+.meta-row{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--text-muted);margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:600}
+.tag-start{background:rgba(76,175,132,.15);color:var(--green-light)}
+.tag-econ{background:rgba(200,168,76,.15);color:var(--gold)}
+h2{font-size:1.5rem;color:var(--gold);margin:40px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+h3{font-size:1.2rem;color:var(--text);margin:28px 0 12px}
+h4{font-size:1.05rem;color:var(--gold-light);margin:20px 0 8px}
+p{margin-bottom:16px}
+ul,ol{margin:0 0 20px 24px}
+li{margin-bottom:8px}
+.table-wrap{overflow-x:auto;margin:16px 0 24px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:var(--bg-card);color:var(--gold);text-align:left;padding:10px 14px;border-bottom:2px solid var(--border);font-weight:600}
+td{padding:10px 14px;border-bottom:1px solid var(--border)}
+tr:nth-child(even) td{background:rgba(26,29,40,.5)}
+tr:hover td{background:var(--bg-card-hover)}
+.tip-box{background:rgba(167,139,250,.08);border-left:3px solid var(--purple);padding:16px 20px;border-radius:0 8px 8px 0;margin:20px 0}
+.tip-box strong{color:var(--purple)}
+.warn-box{background:rgba(229,91,91,.08);border-left:3px solid var(--red);padding:16px 20px;border-radius:0 8px 8px 0;margin:20px 0}
+.warn-box strong{color:var(--red-light)}
+.strat-box{background:rgba(200,168,76,.08);border-left:3px solid var(--gold);padding:16px 20px;border-radius:0 8px 8px 0;margin:20px 0}
+.strat-box strong{color:var(--gold-light)}
+footer{padding:40px 0 24px;border-top:1px solid var(--border);margin-top:60px;font-size:13px;color:var(--text-muted);text-align:center}
+footer a{color:var(--text-muted)}
+@media(max-width:640px){
+  article h1{font-size:1.5rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../guides/index.html">Guides</a>
+  <a href="../characters/index.html">Characters</a>
+  <a href="../cards/index.html">Cards</a>
+  <a href="../relics/index.html">Relics</a>
+  <a href="../tier-list/index.html">Tier List</a>
+  <a href="../bosses/index.html">Bosses</a>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">Home</a> › <a href="index.html">Guides</a> › Gold &amp; Shop Strategy
+</div>
+
+<article>
+<h1>Gold &amp; Shop Strategy: When to Buy, When to Save, What to Prioritize</h1>
+<p class="subtitle">Master Slay the Spire 2's economy. Learn optimal shopping decisions, relic valuation, card removal math, and how to squeeze maximum value from every run's gold budget.</p>
+
+<div class="meta-row">
+  <span class="tag tag-start">Beginner-Friendly</span>
+  <span class="tag tag-econ">Economy Guide</span>
+  <span>🕐 12 min read</span>
+  <span>📅 Updated: May 2026</span>
+</div>
+
+<p>Gold is the most flexible resource in Slay the Spire 2. Unlike card rewards or relics — which are random — gold gives you <strong>agency</strong>. You choose what to buy. Bad shop decisions cost runs. Great shop decisions win runs at A20 where margins are razor-thin.</p>
+
+<h2>Gold Income: Where Does It Come From?</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Source</th><th>Gold Range</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>Hallway fight</td><td>10–20</td><td>Standard reward</td></tr>
+    <tr><td>Elite fight</td><td>25–35</td><td>Plus a relic = highest value node</td></tr>
+    <tr><td>Boss fight</td><td>95–105</td><td>Huge gold injection between acts</td></tr>
+    <tr><td>? Event rooms</td><td>0–90</td><td>Highly variable; some events give Gold for HP/curse</td></tr>
+    <tr><td>Chest rooms</td><td>0–60</td><td>Some chests contain gold, others contain curses that cost gold to remove</td></tr>
+    <tr><td>Old Coin relic</td><td>+300</td><td>S-tier relic; immediately enables aggressive shopping</td></tr>
+    <tr><td>Golden Idol event</td><td>+25% gold</td><td>Golden Idol amplifies all future gold income</td></tr>
+    <tr><td>Smiling Mask relic</td><td>-50 removal cost</td><td>Effective +25 gold per removal; adds up over a run</td></tr>
+  </tbody>
+</div>
+<p>A typical A20 run earns <strong>400–650 total gold</strong> (not counting Old Coin/Golden Idol). That's ~5–7 shop visits across 3 acts.</p>
+
+<h2>Shop Layout: What's Available?</h2>
+<p>Every shop (Act 1–3) has the same structure:</p>
+<table>
+  <thead><tr><th>Slot</th><th>Contains</th><th>Base Cost</th></tr></thead>
+  <tbody>
+    <tr><td>Relics (×3)</td><td>Random relics</td><td>150–180g (Common), 230–270g (Uncommon), 300–350g (Rare)</td></tr>
+    <tr><td>Cards (×5–7)</td><td>3 Attacks, 2 Skills, 1 Power (random)</td><td>50–73g (Common), 75–99g (Uncommon), 100–155g (Rare)</td></tr>
+    <tr><td>Colorless Cards (×2)</td><td>Neutral cards</td><td>85–120g</td></tr>
+    <tr><td>Potions (×3)</td><td>Random potions</td><td>48–60g</td></tr>
+    <tr><td>Card Removal</td><td>Remove 1 card from deck</td><td>75g (first), +25g each subsequent</td></tr>
+  </tbody>
+</table>
+
+<div class="tip-box">
+  <strong>🧠 Card Removal Math:</strong> First removal = 75g, second = 100g, third = 125g, etc. There's also the "Purify" event and Smiling Mask for free/discounted removals. <strong>Always remove at shops if you have Strikes/Defends left</strong> — it's the best use of gold before A15.
+</div>
+
+<h2>Relic Buying Priority: Tier List</h2>
+<p>Not all relics are worth their gold cost. Here's the valuation framework:</p>
+
+<h3>S-Tier: Always Buy (No Hesitation)</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Relic</th><th>Cost</th><th>Why It's Worth It</th></tr></thead>
+  <tbody>
+    <tr><td>Membership Card</td><td>150g</td><td>50% discount on ALL future purchases. Pays for itself in 1.5 shops.</td></tr>
+    <tr><td>Orange Pellets</td><td>170g</td><td>Clears all debuffs when you play Attack+Skill+Power in one turn. Breaks certain fights.</td></tr>
+    <tr><td>Dead Branch</td><td>280g</td><td>Win condition on its own with Shiv/Exhaust decks. Game-warping power.</td></tr>
+    <tr><td>Incense Burner</td><td>250g</td><td>Intangible every 6 turns. Plan around it → cheat Boss/Elite turns.</td></tr>
+    <tr><td>Gambling Chip</td><td>250g</td><td>Discard and redraw any number of cards at turn 1 start. Fixes bad hands.</td></tr>
+    <tr><td>Fossilized Helix</td><td>220g</td><td>Buffer on first turn of each combat. Prevents 15+ damage per fight.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>A-Tier: Buy If It Fits Your Build</h3>
+<table>
+  <thead><tr><th>Relic</th><th>Cost</th><th>Best Archetypes</th></tr></thead>
+  <tbody>
+    <tr><td>Chemical X</td><td>200g</td><td>X-cost spell builds (Tempest, Malaise, Whirlwind, Doppelganger)</td></tr>
+    <tr><td>Kunai / Shuriken</td><td>180g</td><td>Shiv/Silent attack spam</td></tr>
+    <tr><td>Data Disk</td><td>180g</td><td>Defect Focus builds (arguably S-tier for Defect)</td></tr>
+    <tr><td>Charon's Ashes</td><td>200g</td><td>Ironclad exhaust builds</td></tr>
+    <tr><td>Tingsha / Tough Bandages</td><td>180g</td><td>Silent discard builds</td></tr>
+    <tr><td>Pocketwatch</td><td>200g</td><td>Decks that play ≤3 cards per turn (Ironclad strength, Watcher stance)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>F-Tier: Never Buy</h3>
+<ul>
+  <li><strong>Dream Catcher</strong> — Resting is already a desperation play. Don't pay gold for it.</li>
+  <li><strong>Darkstone Periapt</strong> — You don't WANT curses. This rewards losing.</li>
+  <li><strong>The Specimen</strong> — Too situational; Corpse Explosion does the same job for free.</li>
+  <li><strong>Bottled Flame</strong> — Bottling an Attack sounds good until you brick your turn 1 draw for the rest of the run.</li>
+</ul>
+
+<h2>When to Buy Cards From the Shop</h2>
+<p>The general rule: <strong>don't buy cards unless they immediately upgrade your win condition</strong>. You get free card rewards from fights; gold is for relics and removals.</p>
+
+<table>
+  <thead><tr><th>Situation</th><th>Buy?</th><th>Reasoning</th></tr></thead>
+  <tbody>
+    <tr><td>Key missing piece for your archetype (e.g., Catalyst for poison deck)</td><td>✅ Yes</td><td>Completes your win condition — worth any cost</td></tr>
+    <tr><td>AoE card when you have zero AoE before Act 2</td><td>✅ Yes</td><td>Mandatory purchase; Act 2 Elites will kill you without it</td></tr>
+    <tr><td>Premium rare card (Offering, Adrenaline, Seek, Vault)</td><td>✅ Yes</td><td>Premium rares are insanely powerful and warping</td></tr>
+    <tr><td>Synergy piece you don't have the enabler for yet</td><td>❌ No</td><td>Don't buy Catalyst without poison cards. It's a curse until then.</td></tr>
+    <tr><td>Generic "good" common card</td><td>❌ No</td><td>You'll get these from fights. Save gold for relics.</td></tr>
+    <tr><td>Colorless card that doesn't define your deck</td><td>❌ No</td><td>Overpriced. Apotheosis/Master of Strategy are the exceptions.</td></tr>
+    <tr><td>Card from a different character's pool</td><td>❌ No</td><td>Prismatic Shard opens this up but it's a meme, not a strategy</td></tr>
+  </tbody>
+</table>
+
+<div class="strat-box">
+  <strong>🛒 The "Apotheosis Rule":</strong> If Apotheosis (upgrades all cards for the rest of combat) is in the shop, <strong>always buy it</strong> unless you already have one. It's the single best colorless card in the game and single-handedly wins runs. Cost: ~200g. Worth: infinite.
+</div>
+
+<h2>Potions: Hidden Shop Value</h2>
+<p>Potions are cheap (48–60g) and save runs. The shop is your <strong>guaranteed potion source</strong> — you'll find maybe 2–3 potions from fights per act.</p>
+
+<table>
+  <thead><tr><th>Buy These</th><th>Skip These</th></tr></thead>
+  <tbody>
+    <tr><td>Ghost in a Jar (1-turn Intangible)</td><td>Block Potion (too low value)</td></tr>
+    <tr><td>Fairy in a Bottle (revive at 30% HP)</td><td>Explosive Potion (10 AoE is negligible)</td></tr>
+    <tr><td>Cultist Potion (+1 Str/turn, 3 turns)</td><td>Fear Potion (3 Vulnerable is weak vs Bosses)</td></tr>
+    <tr><td>Focus Potion (Defect = instant buy)</td><td>Weak Potion (you should have Weak in your deck)</td></tr>
+    <tr><td>Flex Potion (+5 Str this turn → key burst turn)</td><td></td></tr>
+    <tr><td>Duplication Potion (doubles next card)</td><td></td></tr>
+  </tbody>
+</table>
+
+<div class="tip-box">
+  <strong>🧴 Potion Strategy:</strong> Don't hoard potions "for the final boss." Use them on Elites. An Elite kill = relic + gold + card + potion — a potion that secures an Elite kill is a <strong>net positive investment</strong> of 48g. The most common A20 mistake is dying with 3 potions.
+</div>
+
+<h2>Act-by-Act Shopping Strategy</h2>
+
+<h3>Act 1 Shop (Early — Floor 1–6)</h3>
+<ul>
+  <li><strong>Priority:</strong> Buy a powerful Attack card if you're going into an Elite path. Potions.</li>
+  <li><strong>Skip:</strong> Don't remove cards yet — 75g for one removal is half your gold. Wait.</li>
+  <li><strong>Don't hoard:</strong> If you find an S-tier relic and can afford it, buy it. Early power compounds.</li>
+  <li><strong>Jackpot finds:</strong> Apotheosis, Membership Card, Orange Pellets, any energy relic</li>
+</ul>
+
+<h3>Act 1 Boss → Act 2 Shop (Critical Moment)</h3>
+<ul>
+  <li>You just got <strong>~100g from the Boss</strong>. You probably have 250–350g total.</li>
+  <li><strong>This is your most important shop.</strong> Buy an S/A-tier relic or premium rare card.</li>
+  <li>NOW remove a Strike/Defend. Your deck is taking shape.</li>
+  <li>If you're weak on AoE, buy an AoE card NOW. Act 2 will punish you hard without it.</li>
+</ul>
+
+<h3>Act 2–3: Stay Flexible</h3>
+<ul>
+  <li>By now your deck should have a clear identity. Buy relics that amplify it.</li>
+  <li><strong>Card removal accelerates:</strong> At 150–200g per removal, the Smiling Mask relic becomes very appealing.</li>
+  <li>Stock up on potions before Act 3 Boss gauntlet.</li>
+</ul>
+
+<h2>Events That Affect Gold Strategy</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Event</th><th>Decision</th><th>Take It?</th></tr></thead>
+  <tbody>
+    <tr><td>Golden Idol (Act 1)</td><td>Take idol: +25% gold income, lose some HP</td><td>✅ Almost always yes. HP is a resource; +25% gold snowballs.</td></tr>
+    <tr><td>The Colosseum (Act 2)</td><td>Fight two waves back-to-back for 100g + rare relic</td><td>✅ If you're healthy (&gt;40 HP on A20, &gt;30 on lower ascension)</td></tr>
+    <tr><td>Knowledge is Power (Act 2)</td><td>Spend 75g to upgrade all Strikes/Defends</td><td>⚠️ Only if you have 5+ basics remaining AND enough gold</td></tr>
+    <tr><td>The Moai Head (Act 3)</td><td>Lose Golden Idol to gain 333 gold</td><td>✅ Late-game: cash out. 333g buys an S-tier relic.</td></tr>
+    <tr><td>Faces of the Merchant (Act 2)</td><td>Buy Mask: 50% HP heal at shops</td><td>❌ Too expensive (200g+). Shops are for relics, not healing.</td></tr>
+    <tr><td>The Joust (Act 2)</td><td>Bet 50g on winner. 50% chance to double.</td><td>⚠️ Gambling. Only if you're desperate or have absurd gold surplus.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Gold Relics: Valuation Guide</h2>
+<table>
+  <thead><tr><th>Relic</th><th>Effect</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Old Coin</td><td>+300 gold immediately</td><td>✅ S-tier. Instant relic purchase + removal.</td></tr>
+    <tr><td>Maw Bank</td><td>+12 gold per floor visited (max 400)</td><td>⚠️ A-tier if found early, D-tier late. Needs ~20 floors to max out.</td></tr>
+    <tr><td>Golden Idol</td><td>+25% gold from all sources</td><td>✅ A-tier. Stacks multiplicatively with Old Coin.</td></tr>
+    <tr><td>Smiling Mask</td><td>Card removal always costs 50g</td><td>⚠️ A-tier if found Act 1 (plan 4+ removals), C-tier if Act 3.</td></tr>
+    <tr><td>Ssserpent Head</td><td>+50 gold each ? room</td><td>⚠️ B-tier. You'll hit 5–7 ? rooms per run = 250–350g.</td></tr>
+    <tr><td>Ectoplasm</td><td>+1 energy, but cannot gain gold</td><td>❌ F-tier Boss relic. Energy is good but zero gold = zero agency. Skip.</td></tr>
+  </tbody>
+</table>
+
+<h2>Common Mistakes</h2>
+<ol>
+  <li><strong>Buying "nice to have" relics instead of saving for an S-tier:</strong> 150g on a common relic you don't need = you can't afford the 280g Dead Branch in the next shop.</li>
+  <li><strong>Skipping card removal:</strong> At A20, those 3 Strikes in your deck are actively losing you the run. Remove them.</li>
+  <li><strong>Overvaluing colorless cards:</strong> Most colorless cards are mediocre and overpriced. Only Apotheosis, Master of Strategy, Panache, and The Bomb justify their cost.</li>
+  <li><strong>Shopping too early on Act 1:</strong> You have ~100–150g. Buying a common card is fine. Buying a relic leaves you broke and unable to afford the Act 2 shop with 300g.</li>
+  <li><strong>Ignoring potions:</strong> 50g for a Ghost in a Jar that saves your run? That's a relic you paid 50g for.</li>
+  <li><strong>Taking Ectoplasm:</strong> Just don't. Energy is not worth losing the entire economy. Coffee Dripper (no rests) or Fusion Hammer (no smithing) are strictly better.</li>
+</ol>
+
+<h2>Sample Gold Budget: Ideal A20 Run</h2>
+<table>
+  <thead><tr><th>Act</th><th>Gold Earned</th><th>Gold Spent</th><th>Net</th></tr></thead>
+  <tbody>
+    <tr><td>Act 1</td><td>~150g</td><td>50g (1 potion), 0 removal</td><td>100g</td></tr>
+    <tr><td>Act 1 Boss</td><td>+100g</td><td>—</td><td>200g</td></tr>
+    <tr><td>Act 2 Shop</td><td>—</td><td>250g (A-tier relic), 75g (removal)</td><td>-125g (spend ~325g)</td></tr>
+    <tr><td>Act 2</td><td>+180g</td><td>50g (potion), 100g (removal)</td><td>30g</td></tr>
+    <tr><td>Act 2 Boss</td><td>+100g</td><td>—</td><td>130g</td></tr>
+    <tr><td>Act 3 Shop</td><td>—</td><td>150g (relic), 60g (potion), 125g (removal)</td><td>~0g</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>~530g</strong></td><td><strong>~860g</strong></td><td><strong>—</strong></td></tr>
+  </tbody>
+</table>
+<p>Note: This assumes no Old Coin or Membership Card, which dramatically shift the budget. With Old Coin, expect to buy 1–2 extra relics and 1–2 extra removals.</p>
+
+<h2>Key Takeaways</h2>
+<ol>
+  <li><strong>Gold priority:</strong> S-tier relics &gt; card removal &gt; key archetype cards &gt; potions &gt; A-tier relics &gt; everything else</li>
+  <li><strong>The Act 2 Shop is the most important.</strong> You have ~300g, your deck needs direction. Make it count.</li>
+  <li><strong>Card removal wins runs.</strong> Removing all Strikes is the single biggest power increase in the game.</li>
+  <li><strong>Buy potions, use them on Elites.</strong> A 50g potion that secures an Elite kill is the best ROI in STS2.</li>
+  <li><strong>Never take Ectoplasm.</strong> Zero gold means you can't remove cards, can't buy relics, can't buy potions. It's a trap.</li>
+  <li><strong>Membership Card is the best relic in the game.</strong> If you find it in a shop, buy it immediately. It pays for itself within 1–2 purchases.</li>
+</ol>
+
+<hr style="border-color:var(--border);margin:32px 0"/>
+<p>Also see: <a href="deck-building.html">Deck Building Principles</a> · <a href="elites.html">Elite Enemy Guide</a> · <a href="ascension.html">Ascension Guide</a> · <a href="beginner.html">Beginner's Guide</a></p>
+
+</article>
+</div>
+
+<footer>
+  <p>© 2026 STS2 Guides — Unofficial Fan Site. All game content, characters, and images are trademarks of Mega Crit Games.</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+</body></html>

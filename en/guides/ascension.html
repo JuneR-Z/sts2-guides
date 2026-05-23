@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STS2 Ascension Guide — All 20 Levels, Modifiers & Strategy | STS2Guides</title>
+<meta name="description" content="Complete Slay the Spire 2 Ascension guide covering all 20 levels. Learn every modifier, how strategy changes per milestone, and tips to climb A0 to A20 with each character.">
+    <meta property="og:title" content="STS2 Ascension Guide — All 20 Levels, Modifiers & Strategy | STS2Guides">
+    <meta property="og:description" content="Complete Slay the Spire 2 Ascension guide covering all 20 levels. Learn every modifier, how strategy changes per milestone, and tips to climb A0 to A20 with each character.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/ascension.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STS2Guides">    <meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="STS2 Ascension Guide — All 20 Levels, Modifiers & Strategy | STS2Guides">
+    <meta name="twitter:description" content="Complete Slay the Spire 2 Ascension guide covering all 20 levels. Learn every modifier, how strategy changes per milestone, and tips to climb A0 to A20 with each character.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/ascension.html">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--purple);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:28px;font-weight:800;margin-bottom:4px;color:var(--gold-light);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--gold-light);border-left:4px solid var(--purple);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.article .tip-box{background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.article .tip-box strong{color:var(--green);}
+.article .warn-box{background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.article .warn-box strong{color:var(--crimson);}
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:30px;}
+.toc h3{font-size:14px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;}
+.toc a{display:block;padding:4px 0;color:var(--text-secondary);text-decoration:none;font-size:13px;}
+.toc a:hover{color:var(--gold-light);}
+.asc-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;}
+.asc-table th{text-align:left;padding:10px 14px;background:var(--bg-card);border-bottom:2px solid var(--purple);color:var(--gold-light);font-size:12px;text-transform:uppercase;letter-spacing:1px;}
+.asc-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text-secondary);}
+.asc-table tr:hover td{background:var(--bg-card-hover);}
+.asc-table .lv{color:var(--purple);font-weight:700;white-space:nowrap;}
+.milestone{background:var(--bg-card);border:1px solid var(--purple);border-radius:10px;padding:20px;margin:24px 0;}
+.milestone h3{color:var(--purple);margin-top:0;}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}}
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; }
+  .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .lang-switch { order:2; margin-left:auto; }
+  .search-box { width:100%; margin-top:4px; }
+  .search-box input { width:100%; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size:18px; }
+  .logo-text { font-size:13px; }
+  .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; }
+  .section-title { font-size:16px; }
+  footer { padding:16px; font-size:11px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "STS2Guides", "item": "https://sts2guides.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sts2guides.com/en/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Ascension Guide", "item": "https://sts2guides.com/en/guides/ascension.html" }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+            <a href="./" class="active">Guides</a>
+<a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a>
+      <a href="../relics/index.html">Relics</a>
+      <a href="../bosses/index.html">Bosses</a>
+      <a href="../patch-notes/">Patch Notes</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Ascension Guide</div>
+
+<article class="article">
+  <h1>Slay the Spire 2 Ascension Guide: All 20 Levels &amp; How to Beat Them</h1>
+  <div class="meta">📖 Advanced Guide · Updated May 23, 2026 · 14 min read</div>
+
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <a href="#what-is">1. What Is Ascension?</a>
+    <a href="#levels">2. All 20 Ascension Levels (Full Modifier List)</a>
+    <a href="#milestones">3. Key Milestones &amp; Strategy Shifts</a>
+    <a href="#a10">4. Surviving A10+ (Starting Curse)</a>
+    <a href="#a17">5. Conquering A17–A19 (Enhanced Enemies)</a>
+    <a href="#a20">6. The A20 Challenge (Double Boss)</a>
+    <a href="#per-character">7. Best Characters for Each Ascension Range</a>
+    <a href="#tips">8. 10 Universal Ascension Climbing Tips</a>
+  </div>
+
+  <h2 id="what-is">1. What Is Ascension?</h2>
+  <p>Ascension is Slay the Spire 2's <strong>progressive difficulty system</strong>. After winning a run with any character, you unlock Ascension Level 1 for that character. Each subsequent win unlocks the next level, up to <strong>Ascension 20</strong>.</p>
+  <p>Each Ascension level adds one or more negative modifiers that stack — meaning at A20, you're playing with <strong>all 20 modifiers active simultaneously</strong>. This is where the game's true depth reveals itself. Strategies that work at A0 will get you killed at A15+.</p>
+
+  <div class="tip-box">
+    <strong>💡 Key Fact:</strong> Ascension levels are per-character. Unlocking A20 on Ironclad doesn't unlock it for Silent. You must climb independently with each hero.
+  </div>
+
+  <h2 id="levels">2. All 20 Ascension Levels</h2>
+  <p>Here is every Ascension modifier from A1 to A20. Each level's modifier <strong>stacks</strong> with all previous levels.</p>
+
+  <table class="asc-table">
+    <tr><th>Level</th><th>Modifier</th><th>Impact</th></tr>
+    <tr><td class="lv">A1</td><td>Elites spawn more often</td><td>More relic opportunities, but higher risk. Path carefully.</td></tr>
+    <tr><td class="lv">A2</td><td>Normal enemies are deadlier</td><td>Hallway fights hit harder. Block becomes more valuable early.</td></tr>
+    <tr><td class="lv">A3</td><td>Elites are deadlier</td><td>Elite fights become significantly harder. Don't face them under-prepared.</td></tr>
+    <tr><td class="lv">A4</td><td>Bosses are deadlier</td><td>Act bosses gain extra HP and damage. Scaling solutions mandatory.</td></tr>
+    <tr><td class="lv">A5</td><td>Heal less after boss fights</td><td>Boss healing reduced to 75% of missing HP. Potion management matters more.</td></tr>
+    <tr><td class="lv">A6</td><td>Start each run damaged</td><td>Begin with ~90% HP. Early shop/campfire pathing more important.</td></tr>
+    <tr><td class="lv">A7</td><td>Normal enemies are tougher</td><td>All hallway enemies gain HP. Front-loaded damage even more critical in Act 1.</td></tr>
+    <tr><td class="lv">A8</td><td>Elites are tougher</td><td>Elite HP scales up further. Need a plan to kill them before they overwhelm you.</td></tr>
+    <tr><td class="lv">A9</td><td>Bosses are tougher</td><td>Boss HP pool increases. Bring strong scaling damage or you'll die of attrition.</td></tr>
+    <tr><td class="lv">A10</td><td>Start with a Curse — <strong>Ascender's Bane</strong></td><td><strong>First major milestone.</strong> Unplayable curse clogs your deck. Prioritize removal or exhaust synergy.</td></tr>
+    <tr><td class="lv">A11</td><td>Start with 1 fewer potion slot</td><td>Down to 2 slots. Potion hoarding punished — use them or lose them.</td></tr>
+    <tr><td class="lv">A12</td><td>Upgraded cards appear less often</td><td>Fewer pre-upgraded cards in rewards. Campfire upgrades gain even more value.</td></tr>
+    <tr><td class="lv">A13</td><td>Bosses drop less gold</td><td>Income reduced. Shops become less frequent — spend gold wisely.</td></tr>
+    <tr><td class="lv">A14</td><td>Lower max HP</td><td>Reduced by ~5. Less room for error. Block and sustain gain importance.</td></tr>
+    <tr><td class="lv">A15</td><td>Unfavorable events</td><td><strong>Second major milestone.</strong> Many ? events have worse outcomes. Question marks become riskier.</td></tr>
+    <tr><td class="lv">A16</td><td>Shops are more expensive</td><td>Everything costs ~10% more. Card removal (now even more expensive) still worth it.</td></tr>
+    <tr><td class="lv">A17</td><td>Normal enemies have tougher movesets</td><td><strong>Third major milestone.</strong> Enemies gain enhanced attack patterns. Hallway fights can end runs.</td></tr>
+    <tr><td class="lv">A18</td><td>Elites have tougher movesets</td><td>Elite attack patterns enhanced. Gremlin Nob punishes skills harder, Book of Stabbing scales faster.</td></tr>
+    <tr><td class="lv">A19</td><td>Bosses have tougher movesets</td><td>Final set of enhanced boss patterns. Act 3 bosses become genuinely terrifying.</td></tr>
+    <tr><td class="lv">A20</td><td><strong>Double Act 3 Boss</strong></td><td><strong>Final challenge.</strong> Must beat TWO Act 3 bosses consecutively. Your deck must handle two completely different fights.</td></tr>
+  </table>
+
+  <h2 id="milestones">3. Key Milestones &amp; Strategy Shifts</h2>
+  <p>Not all Ascension levels are created equal. Here are the <strong>four watershed moments</strong> where your strategy must fundamentally change:</p>
+
+  <div class="milestone">
+    <h3>🔴 A10 — Ascender's Bane (Starting Curse)</h3>
+    <p>You begin every run with an unplayable Ethereal curse. This changes everything:</p>
+    <ul>
+      <li><strong>Deck is now 1 card thicker</strong> — you draw your key cards less often in the first shuffle.</li>
+      <li><strong>Card removal priority shifts</strong> — removing Ascender's Bane at a shop is often correct A10–A14, but at A15+ you usually just let it exhaust itself.</li>
+      <li><strong>Exhaust synergy gains value</strong> — Ironclad's exhaust cards become even stronger since Ascender's Bane feeds into them.</li>
+      <li><strong>Early game is harder</strong> — your first deck cycle takes longer, increasing variance.</li>
+    </ul>
+  </div>
+
+  <div class="milestone">
+    <h3>🟡 A15 — Unfavorable Events</h3>
+    <p>Question mark rooms become significantly more dangerous:</p>
+    <ul>
+      <li><strong>Event penalties increase</strong> — HP loss, curse chances, and gold costs are worse.</li>
+      <li><strong>? rooms are no longer "safe"</strong> — hallway fights become relatively more attractive.</li>
+      <li><strong>Path toward known benefits</strong> — campfires and shops gain value because they're predictable.</li>
+      <li><strong>Apparition event becomes riskier</strong> — the HP cost is higher, making the trade-off steeper.</li>
+    </ul>
+  </div>
+
+  <div class="milestone">
+    <h3>🟠 A17 — Enhanced Normal Enemies</h3>
+    <p>This is the single biggest difficulty spike in the game:</p>
+    <ul>
+      <li><strong>Hallway fights can now kill you</strong> — no fight is "free" anymore. Every encounter demands respect.</li>
+      <li><strong>Act 2 birds hit for 12×3 instead of 8×3</strong> — AoE goes from nice-to-have to mandatory.</li>
+      <li><strong>Act 1 Jaw Worm gains +2 Strength per buff</strong> — can snowball out of control.</li>
+      <li><strong>Front-loaded damage requirement rises sharply</strong> — you need to end fights in 3-4 turns, not 5-6.</li>
+      <li><strong>Resting at campfires becomes more common</strong> — upgrades are still better, but survival takes priority.</li>
+    </ul>
+  </div>
+
+  <div class="milestone">
+    <h3>🔴 A20 — Double Act 3 Boss</h3>
+    <p>The final exam. You face two bosses back-to-back with <strong>no rest between them</strong>:</p>
+    <ul>
+      <li><strong>Your deck must handle two completely different fights</strong> — a deck that crushes Time Eater might die to Awakened One.</li>
+      <li><strong>No campfire between bosses</strong> — you enter the second boss fight with whatever HP and potions you had after the first.</li>
+      <li><strong>Deck must be universally strong</strong> — niche strategies that only work against specific bosses become liabilities.</li>
+      <li><strong>Consistency is everything</strong> — your deck drawing poorly in either fight = run over.</li>
+    </ul>
+  </div>
+
+  <h2 id="a10">4. Surviving A10+ (Starting Curse)</h2>
+  <p>Adapting to Ascender's Bane is the first real test of Ascension climbing. Here's how to play around it:</p>
+  <h3>Card Removal Strategy</h3>
+  <ul>
+    <li><strong>A10–A14:</strong> Consider removing Ascender's Bane at the first shop if you have the gold. One fewer dead draw matters.</li>
+    <li><strong>A15+:</strong> Keep it. With unfavorable events, you need gold for more impactful purchases. Let the Ethereal keyword handle it.</li>
+  </ul>
+  <h3>Character-Specific Adaptations</h3>
+  <ul>
+    <li><strong>Ironclad:</strong> Lean into exhaust synergy. Feel No Pain, Dark Embrace, and True Grit all benefit from having an extra exhaust target. Corruption becomes even stronger.</li>
+    <li><strong>Silent:</strong> Card draw mitigates the curse. Acrobatics, Calculated Gamble, and Backflip help you cycle past Ascender's Bane faster.</li>
+    <li><strong>Defect:</strong> Seek and Hologram let you tutor past the dead draw. Compile Driver benefits from having more card types in deck.</li>
+    <li><strong>Necrobinder:</strong> Minion-based strategies don't care as much about one dead draw — your minions keep fighting.</li>
+    <li><strong>Regent:</strong> Command cards are mana-hungry. Ascender's Bane slightly worsens your energy economy. Prioritize energy relics.</li>
+  </ul>
+
+  <h2 id="a17">5. Conquering A17–A19 (Enhanced Enemies)</h2>
+  <p>A17+ is where most players get stuck. The enhanced movesets mean you need to <strong>re-learn threat assessment</strong> for every enemy:</p>
+
+  <h3>Act 1 Threats</h3>
+  <ul>
+    <li><strong>Jaw Worm:</strong> Gains +2 Strength (up from +1) per Bellow. Can deal 20+ damage by turn 3. Kill it fast or block heavily.</li>
+    <li><strong>Cultist:</strong> Ritual gives +3 Strength (up from +2). You have about 4 turns before damage becomes unmanageable.</li>
+    <li><strong>Gremlin Gang:</strong> More aggressive targeting. Fat Gremlin buffs happen more often. Kill the leader first.</li>
+  </ul>
+
+  <h3>Act 2 Threats</h3>
+  <ul>
+    <li><strong>Byrd (3 Birds):</strong> Each hits for 12 (up from 8). You need to knock them down immediately or have strong multi-hit AoE.</li>
+    <li><strong>Snake Plant:</strong> Now applies Frail on the multi-attack. Malleable gains extra block per hit — single big attacks are better than multi-hits.</li>
+    <li><strong>Chosen + Cultist:</strong> Chosen applies Hex more aggressively. Kill the Cultist first or you'll be overwhelmed.</li>
+  </ul>
+
+  <h3>Act 2 Elite: Taskmaster</h3>
+  <p>At A18, Taskmaster's wounds shuffle into your draw pile faster, and he cycles into his 30+ damage pattern more quickly. <strong>Killing the red slaver first is even more critical.</strong></p>
+
+  <h2 id="a20">6. The A20 Challenge (Double Boss)</h2>
+  <p>A20 is less about specific tricks and more about <strong>building a complete, well-rounded deck</strong>. Here's the approach:</p>
+
+  <h3>Deck Requirements at A20</h3>
+  <ul>
+    <li><strong>Reliable block engine</strong> — you can't afford to take chip damage across two boss fights.</li>
+    <li><strong>Scaling damage</strong> — front-loaded damage alone won't kill two full-HP bosses.</li>
+    <li><strong>Card draw/cycle</strong> — you need to find your key cards in both fights.</li>
+    <li><strong>Multiple win conditions</strong> — one strategy must work against two different boss mechanics.</li>
+  </ul>
+
+  <h3>Common A20 Boss Pairings &amp; Strategy</h3>
+  <ul>
+    <li><strong>Time Eater → Awakened One:</strong> First fight limits card plays (12 per turn), second punishes Power spam. Balanced decks with strong individual cards excel.</li>
+    <li><strong>Donu &amp; Deca → Time Eater:</strong> First fight tests AoE and block simultaneously, second tests card efficiency. Bring solutions for both crowds and single targets.</li>
+    <li><strong>Awakened One → Donu &amp; Deca:</strong> First fight makes Powers risky, second demands speed. Consider hoarding Power cards for the second fight.</li>
+  </ul>
+
+  <h2 id="per-character">7. Best Characters for Each Ascension Range</h2>
+
+  <h3>A0–A9 (Learning)</h3>
+  <p><strong>Best: Ironclad</strong> — Straightforward, built-in healing, forgiving of mistakes. Silent is also excellent for learning card cycling and poison mechanics.</p>
+
+  <h3>A10–A16 (Intermediate)</h3>
+  <p><strong>Best: Silent or Defect</strong> — Silent's card draw mitigates Ascender's Bane naturally. Defect's orb system provides consistent passive value while you draw past the curse.</p>
+
+  <h3>A17–A19 (Hard)</h3>
+  <p><strong>Best: Ironclad</strong> — Exhaust synergy and high base HP give you the most room to survive the enhanced enemy movesets. Silent requires near-perfect play to avoid dying to hallway fights.</p>
+
+  <h3>A20 (Master)</h3>
+  <p><strong>Best: Depends on playstyle</strong> — Ironclad is the most consistent (Corruption + Dead Branch is still broken). Defect has the highest ceiling with Frost orb builds. Silent requires the most skill but has the highest potential win rate in expert hands. Necrobinder and Regent are viable but less tested at this level.</p>
+
+  <div class="warn-box">
+    <strong>⚠️ Necrobinder &amp; Regent at A20:</strong> These characters are newer and less optimized. Minion board management becomes extremely difficult when enemies hit harder and faster. Not recommended for your first A20 clear.
+  </div>
+
+  <h2 id="tips">8. 10 Universal Ascension Climbing Tips</h2>
+  <ol>
+    <li><strong>Skip more cards.</strong> As difficulty increases, card quality thresholds rise. At A15+, you should skip 40-50% of card rewards.</li>
+    <li><strong>Upgrade, don't rest.</strong> At A0 you can rest freely. At A10+, every campfire upgrade is a permanent power increase. Rest only when you'll die without it.</li>
+    <li><strong>Plan your path before moving.</strong> At high Ascension, random pathing kills you. Decide your route based on the boss you're facing.</li>
+    <li><strong>Fight at least 2 elites per act.</strong> Relics scale you. Avoiding elites means you'll be too weak for the boss. At A15+, push for 3 elites if your HP allows.</li>
+    <li><strong>Use potions aggressively.</strong> A potion saved for the "perfect moment" is a potion wasted. Use them to save HP in hallway fights — that HP becomes campfire upgrades.</li>
+    <li><strong>Check the map for the Act boss immediately.</strong> Your entire pathing and card-picking strategy should be built around the boss you're facing.</li>
+    <li><strong>Remove Strikes early.</strong> At A10+ with the starting curse, your deck is already diluted. Removing Strikes at the first shop is almost always correct.</li>
+    <li><strong>Don't force archetypes.</strong> "I'm building a Strength deck" is the wrong mindset. Take what you're offered that solves your immediate problems. The archetype emerges naturally.</li>
+    <li><strong>Learn enemy patterns.</strong> At A17+, you can't afford to be surprised. Know exactly what each enemy does on each turn of their pattern.</li>
+    <li><strong>Accept that RNG exists.</strong> Not every run is winnable at A20. The best players win ~60-70% of A20 runs. Focus on improving your decisions, not blaming bad luck.</li>
+  </ol>
+
+  <div class="tip-box">
+    <strong>💡 Pro Tip:</strong> Watch A20 streamers or VODs. Seeing how top players navigate the same decisions you face is the fastest way to improve. Pay attention to what they <em>don't</em> take, not just what they do.
+  </div>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">Ready to put these principles into practice? Check out our <a href="deck-building.html" style="color:var(--gold-light);">Deck Building Principles Guide</a> to master card evaluation.</p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="./">Guides</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a><a href="../tier-list/">Tier List</a><a href="../relics/index.html">Relics</a><a href="../about.html">About</a><a href="../privacy.html">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+
+</body>
+</html>

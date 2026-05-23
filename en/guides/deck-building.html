@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STS2 Deck Building Guide — How to Build Winning Decks in Slay the Spire 2 | STS2Guides</title>
+<meta name="description" content="Master Slay the Spire 2 deck building with this in-depth guide. Learn card evaluation, curve management, archetype synergy, optimal deck size, and when to skip cards — from A0 to A20.">
+    <meta property="og:title" content="STS2 Deck Building Guide — How to Build Winning Decks in Slay the Spire 2 | STS2Guides">
+    <meta property="og:description" content="Master Slay the Spire 2 deck building with this in-depth guide. Learn card evaluation, curve management, archetype synergy, optimal deck size, and when to skip cards — from A0 to A20.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/deck-building.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STS2Guides">    <meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="STS2 Deck Building Guide — How to Build Winning Decks in Slay the Spire 2 | STS2Guides">
+    <meta name="twitter:description" content="Master Slay the Spire 2 deck building with this in-depth guide. Learn card evaluation, curve management, archetype synergy, optimal deck size, and when to skip cards — from A0 to A20.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/deck-building.html">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--blue);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:28px;font-weight:800;margin-bottom:4px;color:var(--gold-light);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--gold-light);border-left:4px solid var(--blue);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.article .tip-box{background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.article .tip-box strong{color:var(--green);}
+.article .warn-box{background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.article .warn-box strong{color:var(--crimson);}
+.article .info-box{background:rgba(52,152,219,0.08);border:1px solid rgba(52,152,219,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.article .info-box strong{color:var(--blue);}
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:30px;}
+.toc h3{font-size:14px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;}
+.toc a{display:block;padding:4px 0;color:var(--text-secondary);text-decoration:none;font-size:13px;}
+.toc a:hover{color:var(--gold-light);}
+.pill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0;}
+.pill{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:14px 16px;}
+.pill h4{margin-bottom:4px;font-size:14px;color:var(--gold-light);}
+.pill p{font-size:13px;color:var(--text-muted);margin-bottom:0;}
+.arch-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin:16px 0;}
+.arch-card h4{color:var(--blue);margin-bottom:8px;font-size:15px;}
+.arch-card .tags{margin-bottom:10px;display:flex;flex-wrap:wrap;gap:6px;}
+.arch-card .tags span{font-size:11px;padding:2px 10px;border-radius:4px;background:rgba(52,152,219,0.15);color:var(--blue);}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}.pill-grid{grid-template-columns:1fr;}}
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; }
+  .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .lang-switch { order:2; margin-left:auto; }
+  .search-box { width:100%; margin-top:4px; }
+  .search-box input { width:100%; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size:18px; }
+  .logo-text { font-size:13px; }
+  .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; }
+  .section-title { font-size:16px; }
+  footer { padding:16px; font-size:11px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "STS2Guides", "item": "https://sts2guides.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sts2guides.com/en/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Deck Building Guide", "item": "https://sts2guides.com/en/guides/deck-building.html" }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+            <a href="./" class="active">Guides</a>
+<a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a>
+      <a href="../relics/index.html">Relics</a>
+      <a href="../bosses/index.html">Bosses</a>
+      <a href="../patch-notes/">Patch Notes</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Deck Building Guide</div>
+
+<article class="article">
+  <h1>Slay the Spire 2 Deck Building Guide: How to Build Decks That Win</h1>
+  <div class="meta">📖 Core Guide · Updated May 23, 2026 · 15 min read</div>
+
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <a href="#golden-rules">1. The 5 Golden Rules of Deck Building</a>
+    <a href="#evaluation">2. Card Evaluation Framework: Take, Skip, or Remove?</a>
+    <a href="#curve">3. Energy Curve &amp; Card Balance</a>
+    <a href="#archetypes">4. Character Archetypes &amp; Synergy Guide</a>
+    <a href="#deck-size">5. Optimal Deck Size &amp; Card Removal Priority</a>
+    <a href="#per-act">6. How Deck Building Changes Per Act</a>
+    <a href="#traps">7. Common Deck Building Traps</a>
+    <a href="#advanced">8. Advanced Concepts for A15+</a>
+  </div>
+
+  <h2 id="golden-rules">1. The 5 Golden Rules of Deck Building</h2>
+  <p>Before diving into character-specific strategies, internalize these universal principles. They apply at every Ascension level with every character:</p>
+
+  <div class="pill-grid">
+    <div class="pill">
+      <h4>1. Solve Problems, Don't Chase Dreams</h4>
+      <p>Don't pick a card because it fits your "dream build." Pick it because it solves the next fight you're facing.</p>
+    </div>
+    <div class="pill">
+      <h4>2. Skipping Is a Superpower</h4>
+      <p>Not taking a card is often the best decision. Every card you add dilutes your ability to draw your best cards.</p>
+    </div>
+    <div class="pill">
+      <h4>3. Front-Loaded Damage First</h4>
+      <p>Act 1 elites are damage races. You need immediate damage output before you can afford to invest in scaling.</p>
+    </div>
+    <div class="pill">
+      <h4>4. Your Deck Must Do Three Things</h4>
+      <p>Every winning deck needs: (a) a block plan, (b) a damage plan, and (c) a way to make both stronger over time (scaling).</p>
+    </div>
+    <div class="pill">
+      <h4>5. Build Around What You Have</h4>
+      <p>Don't pick a Catalyst hoping for poison cards later. Build around the cards and relics you already own.</p>
+    </div>
+  </div>
+
+  <h2 id="evaluation">2. Card Evaluation Framework</h2>
+  <p>When you're offered a card reward, ask these four questions in order:</p>
+
+  <h3>The 4-Question Card Test</h3>
+  <ol>
+    <li><strong>Does this card help me beat the next elite/boss?</strong> — If yes, strongly consider it.</li>
+    <li><strong>Does this card synergize with cards I already have?</strong> — If yes, and it's Act 2+, it's likely a take.</li>
+    <li><strong>Does this card solve a weakness in my deck?</strong> — No AoE? Take that Whirlwind. No block? Take that Shrug It Off.</li>
+    <li><strong>Is this card better than an average draw from my current deck?</strong> — If no, skip it. This is the most underrated question.</li>
+  </ol>
+
+  <div class="info-box">
+    <strong>🔵 The "Skip Test":</strong> Imagine adding this card to your deck. Next fight, when you draw it instead of your best card — are you happy? If the answer is no, skip it.
+  </div>
+
+  <h3>Card Quality by Act</h3>
+  <p>What constitutes a "good card" changes dramatically as your run progresses:</p>
+  <ul>
+    <li><strong>Act 1:</strong> <em>Any</em> attack that deals 10+ damage for 1 energy is a take. You need damage output to kill elites. Even "bad" cards like Perfected Strike can carry you through Act 1.</li>
+    <li><strong>Act 2:</strong> Cards must do at least 2 things. A card that only deals damage with no utility is now questionable. AoE, debuff application, and card draw become premium.</li>
+    <li><strong>Act 3:</strong> Cards must be exceptional. You should skip 60-70% of Act 3 card rewards unless they directly perfect your existing game plan.</li>
+  </ul>
+
+  <h2 id="curve">3. Energy Curve &amp; Card Balance</h2>
+  <p>A well-constructed deck has a smooth energy curve. Here's what to aim for:</p>
+
+  <h3>Target Card Distribution (30-Card Deck)</h3>
+  <ul>
+    <li><strong>0-cost cards:</strong> 2–4 — Great for energy efficiency, but too many wastes card draw.</li>
+    <li><strong>1-cost cards:</strong> 15–18 — Your bread and butter. Most of your deck should be 1-cost.</li>
+    <li><strong>2-cost cards:</strong> 5–8 — Powerful effects that define your strategy. Don't take too many.</li>
+    <li><strong>3-cost cards:</strong> 1–2 — Game-changers like Demon Form or Echo Form. Only take if you have 4+ energy.</li>
+  </ul>
+
+  <div class="warn-box">
+    <strong>⚠️ The 3-Cost Trap:</strong> New players love expensive cards because they look powerful. But a hand of three 2-cost cards with 3 energy means you can only play one. Cheap, efficient cards win more runs than flashy expensive ones.
+  </div>
+
+  <h3>Attack-to-Skill Ratio</h3>
+  <p>Aim for roughly <strong>40% Attacks / 40% Skills / 20% Powers</strong> by mid-Act 2. In Act 1, you want closer to 60% Attacks because elites demand damage output.</p>
+
+  <h2 id="archetypes">4. Character Archetypes &amp; Synergy Guide</h2>
+
+  <div class="arch-card">
+    <h4>⚔️ Ironclad: Strength Build</h4>
+    <div class="tags"><span>Strength</span><span>Heavy Attacks</span><span>Limit Break</span></div>
+    <p>Stack Strength via Inflame, Spot Weakness, and Demon Form. Multiply with Limit Break. Finish with Sword Boomerang, Heavy Blade, or multi-hit attacks. Pairs well with Reaper for sustain.</p>
+    <p><strong>Key cards:</strong> Inflame, Spot Weakness, Limit Break, Demon Form, Sword Boomerang, Heavy Blade, Reaper</p>
+  </div>
+
+  <div class="arch-card">
+    <h4>🛡️ Ironclad: Exhaust/Block Build</h4>
+    <div class="tags"><span>Exhaust</span><span>Block Engine</span><span>Body Slam</span></div>
+    <p>Use Corruption to make skills free. Feel No Pain generates block on exhaust. Dark Embrace draws cards on exhaust. Body Slam converts block into damage. This is Ironclad's strongest A20 build.</p>
+    <p><strong>Key cards:</strong> Corruption, Feel No Pain, Dark Embrace, Body Slam, Barricade, Second Wind, True Grit</p>
+  </div>
+
+  <div class="arch-card">
+    <h4>🗡️ Silent: Poison Build</h4>
+    <div class="tags"><span>Poison</span><span>Catalyst</span><span>Block Stacking</span></div>
+    <p>Apply Poison with Deadly Poison, Noxious Fumes, and Bouncing Flask. Multiply with Catalyst (and Burst + Catalyst). Block with Footwork-backed defends or Wraith Form. This is Silent's most consistent A20 build.</p>
+    <p><strong>Key cards:</strong> Deadly Poison, Noxious Fumes, Catalyst, Burst, Corpse Explosion, Footwork, Wraith Form</p>
+  </div>
+
+  <div class="arch-card">
+    <h4>🔪 Silent: Shiv/Discard Build</h4>
+    <div class="tags"><span>Shiv</span><span>Discard</span><span>Card Draw</span></div>
+    <p>Generate Shivs with Infinite Blades, Cloak and Dagger, and Blade Dance. Scale with Accuracy and strength relics. Use Calculated Gamble and Acrobatics for insane card cycling. Tactician + Reflex creates infinite energy loops.</p>
+    <p><strong>Key cards:</strong> Blade Dance, Cloak and Dagger, Accuracy, Calculated Gamble, Acrobatics, Tactician, Reflex, After Image</p>
+  </div>
+
+  <div class="arch-card">
+    <h4>⚡ Defect: Frost/Focus Build</h4>
+    <div class="tags"><span>Frost Orbs</span><span>Focus Stacking</span><span>Passive Block</span></div>
+    <p>Generate Frost orbs with Glacier, Coolheaded, and Chill. Stack Focus with Defragment, Biased Cognition, and Data Disk. Frost orbs generate passive block every turn. This is the safest Defect build — nearly unkillable at high Focus.</p>
+    <p><strong>Key cards:</strong> Glacier, Coolheaded, Defragment, Biased Cognition, Capacitor, Echo Form, Loop</p>
+  </div>
+
+  <div class="arch-card">
+    <h4>⚡ Defect: Lightning/Dark Orb Build</h4>
+    <div class="tags"><span>Lightning</span><span>Dark Orbs</span><span>Evoke Spam</span></div>
+    <p>Fill orb slots with Lightning orbs and evoke them repeatedly. Use Electrodynamics for AoE. Dark orbs accumulate damage and can be evoked for massive single-target burst. Multicast on a stacked Dark orb can one-shot bosses.</p>
+    <p><strong>Key cards:</strong> Electrodynamics, Ball Lightning, Static Discharge, Darkness, Multicast, Recursion, Fission</p>
+  </div>
+
+  <div class="arch-card">
+    <h4>💀 Necrobinder: Summon Army Build</h4>
+    <div class="tags"><span>Minions</span><span>Death Triggers</span><span>Board Flood</span></div>
+    <p>Fill the board with cheap minions using Call of the Void, Bone Shards, and Danse Macabre. Buff them with Death March staff effects. Sacrifice minions for value with Bury and Countdown. Overwhelm enemies before they can deal with your board.</p>
+    <p><strong>Key cards:</strong> Call of the Void, Bone Shards, Danse Macabre, Death March, Bury, Afterlife, Devour Life</p>
+  </div>
+
+  <div class="arch-card">
+    <h4>👑 Regent: Sly/Command Build</h4>
+    <div class="tags"><span>Command</span><span>Sly Control</span><span>Star Scaling</span></div>
+    <p>Build Sly charges with Command cards. Spend charges on powerful Star effects. Balance Command cards with payoff cards. The key is maintaining the Sly-to-Star conversion rate — too many Command cards without Star payoffs, or vice versa, makes the deck stumble.</p>
+    <p><strong>Key cards:</strong> Subterfuge, Decree, Coronation, Celestial Mandate, Taxing Presence, Edict</p>
+  </div>
+
+  <h2 id="deck-size">5. Optimal Deck Size &amp; Card Removal</h2>
+
+  <h3>How Many Cards Should Your Deck Have?</h3>
+  <p>The eternal question. Here's the nuanced answer:</p>
+  <ul>
+    <li><strong>20–25 cards:</strong> Ideal for most runs. You cycle through your deck every 4-5 turns, seeing key cards reliably.</li>
+    <li><strong>25–35 cards:</strong> Common at A15+ when you're forced to take more cards. Still functional if you have strong card draw.</li>
+    <li><strong>15–20 cards:</strong> Viable with high-cycling builds (Silent discard, Defect Hologram loops). Risky — one status effect can wreck you.</li>
+    <li><strong>35+ cards:</strong> Only acceptable with Corruption + Dark Embrace or other mass-draw engines. Generally too inconsistent.</li>
+  </ul>
+
+  <div class="tip-box">
+    <strong>💡 Key Insight:</strong> A 25-card deck with 5 excellent cards and 20 average cards beats a 15-card deck with 10 excellent cards and 5 Strikes. Removal matters more than size.
+  </div>
+
+  <h3>Card Removal Priority Order</h3>
+  <ol>
+    <li><strong>Strikes</strong> — Always remove first. They're the weakest attack cards and dilute your draws.</li>
+    <li><strong>Curses</strong> — Remove immediately unless you have exhaust synergy (Ironclad) or discard synergy (Silent).</li>
+    <li><strong>Defends</strong> — Remove once you have better block options (Shrug It Off, Footwork, Glacier).</li>
+    <li><strong>Early-game filler</strong> — That Perfected Strike you took in Act 1 to beat Gremlin Nob? Remove it in Act 3 if it no longer serves your build.</li>
+  </ol>
+
+  <p>At minimum, remove <strong>2–3 Strikes</strong> over the course of a run. Each removal makes your deck noticeably better.</p>
+
+  <h2 id="per-act">6. How Deck Building Changes Per Act</h2>
+
+  <h3>Act 1: The Foundation</h3>
+  <p><strong>Goal:</strong> Survive and build a damage baseline.</p>
+  <ul>
+    <li>Take almost any attack card offered in the first 3-4 floors.</li>
+    <li>Priority 1: Damage. Priority 2: More damage. Priority 3: Block (only if you have enough damage).</li>
+    <li>Aim for 3-4 attack cards before your first elite.</li>
+    <li>Upgrade your best attack at the first campfire.</li>
+    <li>If you see a premium scaling card (Demon Form, Noxious Fumes, Defragment), take it — but only one.</li>
+  </ul>
+
+  <h3>Act 2: The Transition</h3>
+  <p><strong>Goal:</strong> Build scaling and AoE. Your deck needs to handle groups.</p>
+  <ul>
+    <li>Stop taking generic attacks. Only take attacks with additional value (AoE, debuff, card draw).</li>
+    <li>Add 1-2 strong block cards (Shrug It Off, Leg Sweep, Glacier).</li>
+    <li>Prioritize AoE damage — Act 2 has many multi-enemy fights.</li>
+    <li>Identify your win condition and start building toward it.</li>
+    <li>Remove at least one Strike at a shop.</li>
+  </ul>
+
+  <h3>Act 3: The Refinement</h3>
+  <p><strong>Goal:</strong> Polish your deck for the final boss.</p>
+  <ul>
+    <li>Be extremely selective. Skip most card rewards.</li>
+    <li>Only take cards that directly improve your existing win condition.</li>
+    <li>Remove remaining Strikes and any dead weight.</li>
+    <li>Buy key relics/potions at shops instead of cards.</li>
+    <li>Know which boss you're facing and adjust: Time Eater needs efficient turns, Awakened One punishes Power spam, Donu &amp; Deca need AoE + single-target.</li>
+  </ul>
+
+  <h2 id="traps">7. Common Deck Building Traps</h2>
+  <p>These mistakes kill more runs than bad RNG ever will:</p>
+
+  <h3>🪤 Trap 1: "This Card Is S-Tier, I Must Take It"</h3>
+  <p>A card isn't good in a vacuum — it's good in context. Offering is one of the best cards in the game, but taking it on floor 2 when you have no damage forces you to spend HP you don't have to spare. <strong>Evaluate cards based on your current deck state, not a tier list.</strong></p>
+
+  <h3>🪤 Trap 2: Chasing Archetypes Too Early</h3>
+  <p>Picking Catalyst on floor 3 because "I want to play poison Silent" is a trap. You have no poison cards yet. Take what helps you survive NOW, and let the archetype emerge naturally from your card pool.</p>
+
+  <h3>🪤 Trap 3: Ignoring Energy Economy</h3>
+  <p>Taking every 2-cost card you see because they're powerful creates a hand where you can only play one card per turn. Count your deck's average energy cost. If most cards cost 2, you need an energy relic or energy-generating cards.</p>
+
+  <h3>🪤 Trap 4: Not Enough Card Draw</h3>
+  <p>A deck without card draw is at the mercy of its shuffle order. You need at least 2-3 sources of card draw or deck manipulation to find your key cards consistently. </p>
+
+  <h3>🪤 Trap 5: Taking Too Many Powers</h3>
+  <p>Powers are permanent value, but they cost energy and a draw the turn you play them. Playing 3 Powers in one turn means you did nothing that turn except set up — and died because you didn't block. Limit to 3-5 Powers per deck, and only take them when you have the energy to support them.</p>
+
+  <div class="warn-box">
+    <strong>⚠️ The Biggest Trap of All:</strong> "My deck has a theme, so I must stay pure to it." The game doesn't care about your theme. A "Strength deck" that takes one Wraith Form is just a better Strength deck. Flexibility wins.
+  </div>
+
+  <h2 id="advanced">8. Advanced Concepts for A15+</h2>
+
+  <h3>Infinite and Near-Infinite Combos</h3>
+  <p>At high Ascension, certain card combinations can create infinite (or functionally infinite) loops:</p>
+  <ul>
+    <li><strong>Ironclad:</strong> Dropkick ×2 (with all enemies Vulnerable) = infinite damage. Sundial relic + Pommel Strike + Shrug It Off = infinite block and draw.</li>
+    <li><strong>Silent:</strong> Calculated Gamble + Tactician + Reflex + enough draw = infinite energy and card cycling.</li>
+    <li><strong>Defect:</strong> Recycle + Hologram + Turbo + small deck = infinite energy. Coolheaded ×2 + enough Focus = infinite block.</li>
+  </ul>
+  <p>Don't force infinites — they require very specific setups. But recognize when you're close to one and pivot accordingly.</p>
+
+  <h3>The "Hallway Fight" Calibration Test</h3>
+  <p>At A17+, use hallway fights as deck calibration checks:</p>
+  <ul>
+    <li><strong>Taking 0-5 damage</strong> from a hallway fight = your deck is ahead of the curve.</li>
+    <li><strong>Taking 5-15 damage</strong> = your deck is on pace. Normal.</li>
+    <li><strong>Taking 15-25 damage</strong> = your deck has a weakness. Identify and fix it immediately.</li>
+    <li><strong>Taking 25+ damage or using a potion</strong> = your deck is behind. Path conservatively and prioritize upgrades/shops.</li>
+  </ul>
+
+  <h3>Boss-Relative Deck Building</h3>
+  <p>At the start of each act, check which boss you'll face and build accordingly:</p>
+  <ul>
+    <li><strong>Slime Boss (Act 1):</strong> Needs strong single-target burst to split it at high HP. AoE is good for the split slimes.</li>
+    <li><strong>Guardian (Act 1):</strong> Needs consistent block every turn. Can't burst through its shell form — play the long game.</li>
+    <li><strong>Hexaghost (Act 1):</strong> Attack scales with your HP. Don't heal before this fight. Needs scaling damage for the Inferno turns.</li>
+    <li><strong>Collector (Act 2):</strong> Needs AoE to clear minions. Debuff removal (Weak/Crippling Cloud) helps.</li>
+    <li><strong>Bronze Automaton (Act 2):</strong> Needs strong block every 6th turn (Hyper Beam). Kill before the second Hyper Beam.</li>
+    <li><strong>Champ (Act 2):</strong> Don't bring him below 50% until you're ready to burst. The Execute phase is deadly.</li>
+  </ul>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">Ready for the ultimate challenge? Read our <a href="ascension.html" style="color:var(--gold-light);">Ascension Guide</a> to conquer A1 through A20.</p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="./">Guides</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a><a href="../tier-list/">Tier List</a><a href="../relics/index.html">Relics</a><a href="../about.html">About</a><a href="../privacy.html">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+
+</body>
+</html>

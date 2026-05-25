@@ -1,12 +1,8 @@
-# Build scripts and override data — local only, not committed
+deploy_adsense.py
 build_data.ps1
-en/cards/tier-overrides.js
-
-# Internal reference docs
-competitive-analysis.md
-site-strategy.md
-
-# Page generator script (local tool, not deployed)
 generate-detail-pages.ps1
 generate_detail_pages.py
 generate_sitemap.py
+competitive-analysis.md
+site-strategy.md
+en/cards/tier-overrides.js

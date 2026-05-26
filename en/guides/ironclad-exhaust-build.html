@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ironclad Corruption Exhaust Build — Immortal Block Engine | STS2Guides</title>
+<meta name="description" content="Complete Ironclad Corruption Exhaust build guide for Slay the Spire 2. Feel No Pain + Dark Embrace + Corruption combo, best cards, relics, and A20 strategy.">
+    <meta property="og:title" content="Ironclad Corruption Exhaust Build — Immortal Block Engine | STS2Guides">
+    <meta property="og:description" content="Complete Ironclad Corruption Exhaust build guide for Slay the Spire 2. Feel No Pain + Dark Embrace + Corruption combo, best cards, relics, and A20 strategy.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/ironclad-exhaust-build.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STS2Guides">    <meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ironclad Corruption Exhaust Build — Immortal Block Engine | STS2Guides">
+    <meta name="twitter:description" content="Complete Ironclad Corruption Exhaust build guide for Slay the Spire 2. Feel No Pain + Dark Embrace + Corruption combo, best cards, relics, and A20 strategy.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/ironclad-exhaust-build.html">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--crimson);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:26px;font-weight:800;margin-bottom:4px;color:var(--crimson);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--crimson);border-left:4px solid var(--crimson);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.card-ref{display:inline-block;padding:2px 10px;background:rgba(192,57,43,0.1);border:1px solid rgba(192,57,43,0.3);border-radius:8px;font-size:13px;margin:2px;}
+.combo-box{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin:20px 0;}
+.combo-box h4{color:var(--gold-light);margin-bottom:8px;}
+.stage-guide{counter-reset:stage;list-style:none;padding-left:0;}
+.stage-guide li{counter-increment:stage;padding:12px 0 12px 40px;position:relative;border-bottom:1px solid var(--border);}
+.stage-guide li::before{content:counter(stage);position:absolute;left:0;width:26px;height:26px;background:var(--crimson);color:#fff;border-radius:50%;text-align:center;line-height:26px;font-size:13px;font-weight:700;top:12px;}
+.tip-box{background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.tip-box strong{color:var(--green);}
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:30px;}
+.toc h3{font-size:14px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;}
+.toc a{display:block;padding:4px 0;color:var(--text-secondary);text-decoration:none;font-size:13px;}
+.toc a:hover{color:var(--gold-light);}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}}
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; }
+  .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .lang-switch { order:2; margin-left:auto; }
+  .search-box { width:100%; margin-top:4px; }
+  .search-box input { width:100%; }
+  .hero { padding:32px 16px; }
+  .hero h1 { font-size:22px; }
+  .hero p { font-size:14px; }
+  .hero-stats { gap:16px; flex-wrap:wrap; }
+  .hero-stat .num { font-size:22px; }
+  .section { padding:24px 14px; }
+  .section-title { font-size:18px; }
+  .char-grid { grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px; }
+  .char-card { padding:16px 14px; }
+  .char-card .char-icon { font-size:28px; }
+  .char-card .char-name { font-size:15px; }
+  .char-card .char-desc { font-size:12px; }
+  .char-build { padding:16px; }
+  .char-build h2 { font-size:18px; }
+  .build-grid { grid-template-columns:1fr; }
+  .filters { flex-direction:column; gap:8px; }
+  .filters select, .filters input { width:100%; }
+  .stat-bar { flex-direction:column; gap:8px; align-items:flex-start; }
+  .card-table th, .card-table td { padding:6px 8px; font-size:11px; }
+  .card-table th:last-child, .card-table td:last-child { min-width:180px; }
+  .content-grid { grid-template-columns:1fr; }
+  .footer-links { flex-wrap:wrap; gap:12px; }
+  .guide-card { padding:16px; }
+  .boss-grid { grid-template-columns:1fr; }
+  .relic-grid { grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); }
+  .search-modal { width:95vw; max-height:70vh; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size:18px; }
+  .logo-text { font-size:13px; }
+  .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; }
+  .section-title { font-size:16px; }
+  .char-grid { grid-template-columns:1fr 1fr; gap:8px; }
+  .char-card .char-name { font-size:13px; }
+  .card-table { font-size:10px; }
+  .card-table th, .card-table td { padding:4px 6px; font-size:10px; }
+  footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem","position": 1,"name": "STS2Guides","item": "https://sts2guides.com/"},
+    {"@type": "ListItem","position": 2,"name": "Guides","item": "https://sts2guides.com/en/guides/"},
+    {"@type": "ListItem","position": 3,"name": "Ironclad Exhaust Build","item": "https://sts2guides.com/en/guides/ironclad-exhaust-build.html"}
+  ]
+}
+</script>
+
+<style>
+#cookie-consent {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #1a1a2e; border-top: 1px solid #3a3a5a;
+  padding: 16px 24px; z-index: 9999;
+  display: none;
+  align-items: center; justify-content: center; gap: 16px;
+  flex-wrap: wrap; box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+}
+#cookie-consent p {
+  margin: 0; color: #c8c4b4; font-size: 14px; max-width: 500px; line-height: 1.5;
+}
+#cookie-consent a { color: #e6a750; text-decoration: underline; }
+#cookie-consent .cc-btns { display: flex; gap: 10px; }
+.cc-btn {
+  padding: 8px 20px; border-radius: 6px; font-size: 14px; font-weight: 600;
+  cursor: pointer; border: none; transition: background 0.2s;
+}
+.cc-accept { background: #e6a750; color: #0d0d1a; }
+.cc-accept:hover { background: #f0c060; }
+.cc-reject { background: #3a3a5a; color: #c8c4b4; }
+.cc-reject:hover { background: #4a4a6a; }
+@media (max-width: 480px) {
+  #cookie-consent { flex-direction: column; text-align: center; padding: 14px 16px; }
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+            <a href="./" class="active">Guides</a>
+<a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a>
+      <a href="../relics/index.html">Relics</a>
+      <a href="../bosses/index.html">Bosses</a>
+      <a href="../patch-notes/">Patch Notes</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Ironclad Exhaust Build</div>
+
+<article class="article">
+  <h1>Ironclad Corruption Exhaust Build: The Immortal Block Engine</h1>
+  <div class="meta">🏆 Build Guide · Updated May 26, 2026 · 10 min read · <span style="color:var(--crimson);font-weight:700;">S-Tier</span></div>
+
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <a href="#how-it-works">1. How It Works</a>
+    <a href="#core-cards">2. Core Cards</a>
+    <a href="#relics">3. Best Relics</a>
+    <a href="#run-strategy">4. Run Strategy — Stage by Stage</a>
+    <a href="#matchups">5. Matchup Notes</a>
+    <a href="#vs-strength">6. Exhaust vs. Strength: Which to Pick?</a>
+  </div>
+
+  <p>The Corruption Exhaust build is <strong>Ironclad's strongest A20 archetype</strong> — and arguably the most powerful build in all of Slay the Spire 2. By chaining exhaust synergies, you generate infinite block, infinite card draw, and infinite damage, all while naturally thinning your deck mid-combat. This is the build that veteran players use to climb Ascension levels consistently.</p>
+
+  <h2 id="how-it-works">1. How It Works</h2>
+  <p>The engine has three pillars that feed each other:</p>
+
+  <div class="combo-box">
+    <h4>🔥 Core Trinity</h4>
+    <p><strong>1. <span class="card-ref">Corruption</span></strong> (3-cost Power) — All Skills cost 0. When you play a Skill, Exhaust it.</p>
+    <p style="margin-top:12px;"><strong>2. <span class="card-ref">Feel No Pain</span></strong> (1-cost Power) — Whenever a card is Exhausted, gain 3-4 Block.</p>
+    <p style="margin-top:12px;"><strong>3. <span class="card-ref">Dark Embrace</span></strong> (2-1 cost Power) — Whenever a card is Exhausted, draw 1 card.</p>
+  </div>
+
+  <p>With all three online, every Skill you play: <strong>costs 0 → grants Block → draws a card → which might be another Skill → repeat.</strong> You can play your entire skill deck in a single turn while gaining hundreds of Block. Meanwhile, your deck self-thins, leaving only attacks that you draw every turn.</p>
+
+  <p>The beauty of this build is that it <strong>scales into itself</strong>. Every exhausted card makes your deck smaller, which makes you draw your remaining cards more often, which accelerates the engine further. By turn 4-5 of a boss fight, your 25-card deck becomes a 10-card machine that you cycle every single turn.</p>
+
+  <h2 id="core-cards">2. Core Cards</h2>
+
+  <h3>Must-Have (S-Tier)</h3>
+  <ul>
+    <li><strong>Corruption</strong> — The keystone. Once played, your entire skill suite becomes free. Upgrade reduces cost from 3 to 2 — essential at high Ascension where turn 1 is critical.</li>
+    <li><strong>Feel No Pain</strong> — Converts exhaust into block. With Corruption, a single Defend now gives 3-4 extra Block on top. Stack 2-3 copies for 9-12 Block per exhaust.</li>
+    <li><strong>Dark Embrace</strong> — Converts exhaust into card draw. With 2 Dark Embraces in play, one Shrug It Off becomes: 0 cost → 8 Block + 4 from FNP → draw 1 + 2 from Dark Embrace → 3 cards total.</li>
+    <li><strong>Body Slam</strong> — 0 cost, deal damage equal to your current Block. When you have 100+ Block (which you will), this one-shots everything. The build's primary win condition.</li>
+  </ul>
+
+  <h3>Strong Support (A-Tier)</h3>
+  <ul>
+    <li><strong>Shrug It Off</strong> — 0-cost Block + draw under Corruption. The perfect skill for this engine.</li>
+    <li><strong>Impervious</strong> — 30-40 Block for 0 cost. With FNP, that's 34-44 Block and draws 1-2 cards.</li>
+    <li><strong>Offering</strong> — 0-cost energy + card draw. Kicks off the engine on turn 1. The best setup card in the game.</li>
+    <li><strong>Second Wind</strong> — Exhaust all non-Attack cards in hand, gain Block per card exhausted. Underpowered alone, but with FNP + Dark Embrace, it's a huge block + draw burst.</li>
+    <li><strong>Battle Trance</strong> — 0-cost draw 3-4. Helps find Corruption on turn 1-2.</li>
+    <li><strong>True Grit+</strong> — Block + targeted exhaust. Use it to remove Strikes mid-combat, accelerating the engine.</li>
+  </ul>
+
+  <h3>Defensive Foundation</h3>
+  <ul>
+    <li><strong>Disarm</strong> — 0-cost under Corruption. Shuts down multi-hit enemies entirely.</li>
+    <li><strong>Flame Barrier</strong> — Block + thorns for 0 cost. Excellent against Book of Stabbing and Byrds.</li>
+    <li><strong>Ghostly Armor</strong> — Efficient block that becomes free under Corruption.</li>
+    <li><strong>Shockwave</strong> — AoE Weak + Vulnerable. Free under Corruption, devastating with Body Slam follow-up.</li>
+  </ul>
+
+  <div class="tip-box">
+    <strong>💡 The Exhume Trick:</strong> <span class="card-ref">Exhume</span> lets you replay any exhausted card. Under Corruption, Exhume costs 0 and you can Exhume Exhume — creating an infinite skill loop. Exhume your Offering for infinite energy, or Exhume your Impervious for infinite block.
+  </div>
+
+  <h2 id="relics">3. Best Relics</h2>
+  <ul>
+    <li><strong>Dead Branch</strong> (S+) — When a card exhausts, add a random card to your hand. With Corruption making everything exhaust, this floods your hand with free skills every turn. The single strongest relic for this build — it turns a controlled engine into absolute chaos in the best way.</li>
+    <li><strong>Charon's Ashes</strong> (S) — Deal 3 damage to ALL enemies whenever you exhaust a card. In a Corruption deck that exhausts 10+ cards per turn, that's 30+ AoE damage passively.</li>
+    <li><strong>Snecko Eye</strong> (A) — +2 card draw, randomizes costs. Corruption ignores cost randomization for Skills, so you get the draw bonus for free. Less essential than in Strength builds but still strong.</li>
+    <li><strong>Medical Kit</strong> (A) — Exhaust status cards. Turns Wounds and Dazes into block and draw engines.</li>
+    <li><strong>Calipers</strong> (A) — Lose only 15 Block at turn start instead of all. With FNP generating 50+ Block per turn, Calipers lets you carry over hundreds of Block between turns.</li>
+    <li><strong>Mummified Hand</strong> (B) — A Power played makes a random card cost 0. Nice early-game but redundant once Corruption is online.</li>
+  </ul>
+
+  <h2 id="run-strategy">4. Run Strategy — Stage by Stage</h2>
+  <ol class="stage-guide">
+    <li>
+      <strong>Floors 1-8 (Early Act 1):</strong>
+      <p>Play like a standard Ironclad. Take attacks — <span class="card-ref">Carnage</span>, <span class="card-ref">Hemokinesis</span>, <span class="card-ref">Anger</span>. You need damage to clear Act 1 elites. If you see <span class="card-ref">Feel No Pain</span> or <span class="card-ref">Shrug It Off</span>, grab them — they're functional even without Corruption. Don't take Corruption yet unless you have at least 3 skills to support it.</p>
+    </li>
+    <li>
+      <strong>Floors 9-16 (Late Act 1):</strong>
+      <p>If offered <span class="card-ref">Corruption</span>, take it. But <strong>do not play it</strong> in hallway fights — it will exhaust all your block skills and leave you defenseless. Save it for elites and bosses. Look for <span class="card-ref">Dark Embrace</span> and a second <span class="card-ref">Feel No Pain</span>. Start removing Strikes at shops.</p>
+    </li>
+    <li>
+      <strong>Floors 17-25 (Early Act 2):</strong>
+      <p>This is the build's power spike. With Corruption + 1 FNP + 1 Dark Embrace, you can beat any Act 2 fight without taking damage. Stack block skills aggressively — <span class="card-ref">Shrug It Off</span>, <span class="card-ref">True Grit</span>, <span class="card-ref">Ghostly Armor</span>. Take <span class="card-ref">Body Slam</span> whenever you see it. At this point, every skill pickup is a direct power increase.</p>
+    </li>
+    <li>
+      <strong>Floors 26-33 (Late Act 2):</strong>
+      <p>Refine your setup. Upgrade Corruption (3→2 cost) and Dark Embrace (2→1 cost) at campfires. If you found <span class="card-ref">Exhume</span>, the build is now capable of infinite loops. Remove remaining Strikes. Your deck should be 20-25 cards with ~15 being skills.</p>
+    </li>
+    <li>
+      <strong>Floors 34-50 (Act 3):</strong>
+      <p>Turn 1: play Corruption + Feel No Pain + Dark Embrace. Turn 2+: every skill is free, drawing cards and generating block. Stack Body Slam when block exceeds 100. Against bosses, you'll typically have 200+ Block by turn 5, at which point Body Slam one-shots anything. You are effectively unkillable.</p>
+    </li>
+  </ol>
+
+  <h2 id="matchups">5. Matchup Notes</h2>
+  <ul>
+    <li><strong>vs Sentries (Act 1 Elite):</strong> Dazed cards trigger FNP + Dark Embrace. Sentries fill your deck with Dazed, which you then exhaust for free block and draw — they're actually helping you. Easiest elite matchup.</li>
+    <li><strong>vs Slime Boss:</strong> Play Corruption after the first split. Exhausted skills thin your deck while generating block. Body Slam kills each split in one hit.</li>
+    <li><strong>vs Book of Stabbing (Act 2 Elite):</strong> Multi-hit is meaningless when you generate 40+ Block per turn. Disarm reduces each hit to 1-2 damage. Trivial.</li>
+    <li><strong>vs Time Eater:</strong> Your card count matters. Each skill play counts toward the 12-card limit. Plan your bursts — play 10-11 skills, let the turn end, Body Slam on the next turn. Not your hardest matchup, but requires planning.</li>
+    <li><strong>vs Awakened One:</strong> Before he transforms, play only 1-2 Powers (Corruption + FNP). Save Dark Embrace for phase 2. He clears debuffs but not powers on transform.</li>
+  </ul>
+
+  <h2 id="vs-strength">6. Exhaust vs. Strength: Which to Pick?</h2>
+  <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;color:var(--text-secondary);">
+    <tr style="border-bottom:1px solid var(--border);">
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Aspect</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Exhaust Build</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Strength Build</th>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Setup Speed</strong></td>
+      <td style="padding:10px;">Slow (needs 3 Powers)</td>
+      <td style="padding:10px;">Moderate (Demon Form alone)</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Defensive Power</strong></td>
+      <td style="padding:10px;color:var(--green);">S-Tier (200+ Block/turn)</td>
+      <td style="padding:10px;">Moderate (Relic-dependent)</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Hallway Fights</strong></td>
+      <td style="padding:10px;">Slower setup, but safe</td>
+      <td style="padding:10px;color:var(--green);">Faster to execute</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Boss Fights</strong></td>
+      <td style="padding:10px;color:var(--green);">Unbeatable once online</td>
+      <td style="padding:10px;">Strong, can lose to scaling</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>A20 Viability</strong></td>
+      <td style="padding:10px;color:var(--green);">S-Tier (highest win rate)</td>
+      <td style="padding:10px;">A-Tier (consistent)</td>
+    </tr>
+    <tr>
+      <td style="padding:10px;"><strong>Difficulty to Pilot</strong></td>
+      <td style="padding:10px;">High (timing matters)</td>
+      <td style="padding:10px;color:var(--green);">Easy (straightforward)</td>
+    </tr>
+  </table>
+
+  <p style="margin-top:12px;">For A20 climbing and consistent wins, the Exhaust build is superior. For learning the game or speed running lower Ascension levels, Strength is more forgiving. Both builds share enough cards that you can pivot between them mid-run if the right pieces show up.</p>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">Also check: <a href="ironclad-strength-build.html" style="color:var(--gold-light);">Ironclad Strength Build</a> · <a href="../cards/index.html" style="color:var(--gold-light);">Card Database</a> · <a href="infinite-combos.html" style="color:var(--gold-light);">Infinite Combos Guide</a></p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a><a href="../about.html">About</a><a href="../privacy.html">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+
+<div id="searchOverlay" class="search-overlay" onclick="closeSearch(event)">
+  <div class="search-modal" onclick="event.stopPropagation()">
+    <div class="search-modal-header">
+      <input type="text" id="searchModalInput" placeholder="Type to search..." autofocus>
+      <button class="search-close" onclick="closeSearch()">✕</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+<style>
+.search-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); z-index:1000; justify-content:center; padding-top:60px; }
+.search-overlay.active { display:flex; }
+.search-modal { width:640px; max-width:90vw; background:var(--bg-secondary); border:1px solid var(--border); border-radius:12px; overflow:hidden; max-height:80vh; display:flex; flex-direction:column; }
+.search-modal-header { display:flex; align-items:center; padding:16px; gap:12px; border-bottom:1px solid var(--border); }
+.search-modal-header input { flex:1; background:var(--bg-card); border:1px solid var(--border); color:var(--text-primary); padding:10px 16px; border-radius:8px; font-size:15px; outline:none; }
+.search-modal-header input:focus { border-color:var(--gold); }
+.search-close { background:none; border:none; color:var(--text-muted); font-size:20px; cursor:pointer; padding:4px 8px; }
+.search-close:hover { color:var(--gold-light); }
+.search-results { overflow-y:auto; padding:8px; flex:1; }
+.search-result-item { display:flex; align-items:center; gap:12px; padding:12px 16px; border-radius:8px; cursor:pointer; transition:all .15s; text-decoration:none; color:inherit; }
+.search-result-item:hover { background:var(--bg-card-hover); }
+.search-result-item .result-icon { font-size:20px; flex-shrink:0; width:36px; text-align:center; }
+.search-result-item .result-info { overflow:hidden; }
+.search-result-item .result-title { font-size:14px; font-weight:600; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-result-item .result-cat { font-size:11px; color:var(--gold-light); display:inline-block; padding:1px 6px; background:rgba(212,160,60,0.15); border-radius:3px; margin-bottom:2px; }
+.search-result-item .result-desc { font-size:12px; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-empty { text-align:center; padding:40px; color:var(--text-muted); font-size:14px; }
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; }
+  .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .lang-switch { order:2; margin-left:auto; }
+  .search-box { width:100%; margin-top:4px; }
+  .search-box input { width:100%; }
+  .hero { padding:32px 16px; }
+  .hero h1 { font-size:22px; }
+  .hero p { font-size:14px; }
+  .hero-stats { gap:16px; flex-wrap:wrap; }
+  .hero-stat .num { font-size:22px; }
+  .section { padding:24px 14px; }
+  .section-title { font-size:18px; }
+  .char-grid { grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px; }
+  .char-card { padding:16px 14px; }
+  .char-card .char-icon { font-size:28px; }
+  .char-card .char-name { font-size:15px; }
+  .char-card .char-desc { font-size:12px; }
+  .char-build { padding:16px; }
+  .char-build h2 { font-size:18px; }
+  .build-grid { grid-template-columns:1fr; }
+  .filters { flex-direction:column; gap:8px; }
+  .filters select, .filters input { width:100%; }
+  .stat-bar { flex-direction:column; gap:8px; align-items:flex-start; }
+  .card-table th, .card-table td { padding:6px 8px; font-size:11px; }
+  .card-table th:last-child, .card-table td:last-child { min-width:180px; }
+  .content-grid { grid-template-columns:1fr; }
+  .footer-links { flex-wrap:wrap; gap:12px; }
+  .guide-card { padding:16px; }
+  .boss-grid { grid-template-columns:1fr; }
+  .relic-grid { grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); }
+  .search-modal { width:95vw; max-height:70vh; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size:18px; }
+  .logo-text { font-size:13px; }
+  .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; }
+  .section-title { font-size:16px; }
+  .char-grid { grid-template-columns:1fr 1fr; gap:8px; }
+  .char-card .char-name { font-size:13px; }
+  .card-table { font-size:10px; }
+  .card-table th, .card-table td { padding:4px 6px; font-size:10px; }
+  footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script>
+let searchIndex = [];
+fetch('../search-index.json').then(r => r.json()).then(d => { searchIndex = d; }).catch(() => { fetch('search-index.json').then(r => r.json()).then(d => { searchIndex = d; }) });
+function openSearch() { document.getElementById('searchOverlay').classList.add('active'); document.getElementById('searchModalInput').focus(); }
+function closeSearch(e) { if (e && e.target !== document.getElementById('searchOverlay')) return; var el = document.getElementById('searchOverlay'); el.classList.remove('active'); document.getElementById('searchModalInput').value = ''; document.getElementById('searchResults').innerHTML = ''; }
+document.getElementById('searchModalInput').addEventListener('input', function() {
+  var q = this.value.toLowerCase().trim(), el = document.getElementById('searchResults');
+  if (!q) { el.innerHTML = ''; return; }
+  var r = searchIndex.filter(function(i) { return i.title.toLowerCase().includes(q) || i.keywords.includes(q) || i.category.toLowerCase().includes(q); }).slice(0, 10);
+  if (!r.length) { el.innerHTML = '<div class="search-empty">No results for "<strong>' + q + '</strong>"</div>'; return; }
+  var icons = { Characters: '\u{1F9B8}', Cards: '\u{1F0CF}', Relics: '\u{1F48E}', Bosses: '\u{1F479}', Guides: '\u{1F4D6}', Home: '\u{1F3E0}' };
+  el.innerHTML = r.map(function(i) { return '<a class="search-result-item" href="' + i.url + '"><span class="result-icon">' + (icons[i.category] || '\u{1F4C4}') + '</span><div class="result-info"><span class="result-cat">' + i.category + '</span><div class="result-title">' + i.title + '</div></div></a>'; }).join('');
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); } });
+</script>
+
+<div id="cookie-consent">
+  <p>We use cookies to improve your experience and for analytics. <a href="/en/privacy.html">Privacy Policy</a></p>
+  <div class="cc-btns">
+    <button class="cc-btn cc-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cc-btn cc-reject" onclick="rejectCookies()">Reject</button>
+  </div>
+</div>
+<script>
+(function(){
+  var c = document.cookie.match('(^|;)\\s*cookie_consent\\s*=\\s*([^;]+)');
+  if (!c) { document.getElementById('cookie-consent').style.display = 'flex'; }
+})();
+function acceptCookies(){
+  document.cookie = 'cookie_consent=accepted; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+function rejectCookies(){
+  document.cookie = 'cookie_consent=rejected; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slay the Spire 2 Infinite Combos — Every Character's Infinite Loop Guide | STS2Guides</title>
+<meta name="description" content="Complete guide to all Slay the Spire 2 infinite combos. Dropkick loops, discard cycles, Recycle engine, Necrobinder recursion — every infinite setup for all 5 characters.">
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Slay the Spire 2 Infinite Combos — Every Character's Infinite Loop Guide | STS2Guides">
+    <meta property="og:description" content="Complete guide to all Slay the Spire 2 infinite combos. Dropkick loops, discard cycles, Recycle engine, Necrobinder recursion — every infinite setup for all 5 characters.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/infinite-combos.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STS2Guides">    <meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Slay the Spire 2 Infinite Combos — Every Character's Infinite Loop Guide | STS2Guides">
+    <meta name="twitter:description" content="Complete guide to all Slay the Spire 2 infinite combos. Dropkick loops, discard cycles, Recycle engine, Necrobinder recursion — every infinite setup for all 5 characters.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/infinite-combos.html">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--purple);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:28px;font-weight:800;margin-bottom:4px;color:var(--gold-light);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--gold-light);border-left:4px solid var(--purple);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.card-ref{display:inline-block;padding:2px 10px;background:rgba(142,68,173,0.12);border:1px solid rgba(142,68,173,0.3);border-radius:8px;font-size:13px;margin:2px;}
+.combo-box{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin:20px 0;}
+.combo-box h4{color:var(--gold-light);margin-bottom:8px;}
+.tip-box{background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.tip-box strong{color:var(--green);}
+.warn-box{background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.warn-box strong{color:var(--crimson);}
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:30px;}
+.toc h3{font-size:14px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;}
+.toc a{display:block;padding:4px 0;color:var(--text-secondary);text-decoration:none;font-size:13px;}
+.toc a:hover{color:var(--gold-light);}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}}
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; }
+  .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .lang-switch { order:2; margin-left:auto; }
+  .search-box { width:100%; margin-top:4px; }
+  .search-box input { width:100%; }
+  .hero { padding:32px 16px; }
+  .hero h1 { font-size:22px; }
+  .hero p { font-size:14px; }
+  .hero-stats { gap:16px; flex-wrap:wrap; }
+  .hero-stat .num { font-size:22px; }
+  .section { padding:24px 14px; }
+  .section-title { font-size:18px; }
+  .char-grid { grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px; }
+  .char-card { padding:16px 14px; }
+  .char-card .char-icon { font-size:28px; }
+  .char-card .char-name { font-size:15px; }
+  .char-card .char-desc { font-size:12px; }
+  .char-build { padding:16px; }
+  .char-build h2 { font-size:18px; }
+  .build-grid { grid-template-columns:1fr; }
+  .filters { flex-direction:column; gap:8px; }
+  .filters select, .filters input { width:100%; }
+  .stat-bar { flex-direction:column; gap:8px; align-items:flex-start; }
+  .card-table th, .card-table td { padding:6px 8px; font-size:11px; }
+  .card-table th:last-child, .card-table td:last-child { min-width:180px; }
+  .content-grid { grid-template-columns:1fr; }
+  .footer-links { flex-wrap:wrap; gap:12px; }
+  .guide-card { padding:16px; }
+  .boss-grid { grid-template-columns:1fr; }
+  .relic-grid { grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); }
+  .search-modal { width:95vw; max-height:70vh; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size:18px; }
+  .logo-text { font-size:13px; }
+  .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; }
+  .section-title { font-size:16px; }
+  .char-grid { grid-template-columns:1fr 1fr; gap:8px; }
+  .char-card .char-name { font-size:13px; }
+  .card-table { font-size:10px; }
+  .card-table th, .card-table td { padding:4px 6px; font-size:10px; }
+  footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "STS2Guides",
+      "item": "https://sts2guides.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guides",
+      "item": "https://sts2guides.com/en/guides/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Infinite Combos Guide",
+      "item": "https://sts2guides.com/en/guides/infinite-combos.html"
+    }
+  ]
+}
+</script>
+
+<style>
+/* Cookie Consent Banner */
+#cookie-consent {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #1a1a2e; border-top: 1px solid #3a3a5a;
+  padding: 16px 24px; z-index: 9999;
+  display: none;
+  align-items: center; justify-content: center; gap: 16px;
+  flex-wrap: wrap; box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+}
+#cookie-consent p {
+  margin: 0; color: #c8c4b4; font-size: 14px; max-width: 500px; line-height: 1.5;
+}
+#cookie-consent a { color: #e6a750; text-decoration: underline; }
+#cookie-consent .cc-btns { display: flex; gap: 10px; }
+.cc-btn {
+  padding: 8px 20px; border-radius: 6px; font-size: 14px; font-weight: 600;
+  cursor: pointer; border: none; transition: background 0.2s;
+}
+.cc-accept { background: #e6a750; color: #0d0d1a; }
+.cc-accept:hover { background: #f0c060; }
+.cc-reject { background: #3a3a5a; color: #c8c4b4; }
+.cc-reject:hover { background: #4a4a6a; }
+@media (max-width: 480px) {
+  #cookie-consent { flex-direction: column; text-align: center; padding: 14px 16px; }
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+            <a href="./" class="active">Guides</a>
+<a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a>
+      <a href="../relics/index.html">Relics</a>
+      <a href="../bosses/index.html">Bosses</a>
+      <a href="../patch-notes/">Patch Notes</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Infinite Combos Guide</div>
+
+<article class="article">
+  <h1>Slay the Spire 2 Infinite Combos: Every Character's Infinite Loop Setup</h1>
+  <div class="meta">📖 Advanced Guide · Updated May 26, 2026 · 14 min read</div>
+
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <a href="#what-is">1. What Is an Infinite Combo?</a>
+    <a href="#ironclad">2. Ironclad Infinite Combos</a>
+    <a href="#silent">3. Silent Infinite Combos</a>
+    <a href="#defect">4. Defect Infinite Combos</a>
+    <a href="#necrobinder">5. Necrobinder Infinite Combos</a>
+    <a href="#regent">6. Regent Infinite Combos</a>
+    <a href="#setup">7. How to Build Toward an Infinite</a>
+    <a href="#enemies">8. Enemies That Counter Infinites</a>
+  </div>
+
+  <h2 id="what-is">1. What Is an Infinite Combo?</h2>
+  <p>An <strong>infinite combo</strong> is a sequence of card plays that generates enough energy and card draw to <strong>repeat itself indefinitely</strong> — letting you play the same cards over and over until every enemy is dead, all in a single turn. In Slay the Spire 2, infinites are the ultimate expression of deck mastery: once assembled, they bypass the game's core resource constraints (energy and card draw) entirely.</p>
+
+  <p>Why build toward an infinite? Three reasons:</p>
+  <ul>
+    <li><strong>100% consistent kills</strong> — once the loop starts, nothing stops it (except certain counter-enemies, covered below)</li>
+    <li><strong>Ignores enemy scaling</strong> — boss has 500 HP? Doesn't matter. You'll deal 5 damage 100 times.</li>
+    <li><strong>Ascension 20 viable</strong> — when enemies have 25% more HP and deal 50% more damage, infinites bypass those numbers entirely</li>
+  </ul>
+
+  <div class="warn-box">
+    <strong>⚠️ Infinites are advanced strategies.</strong> They require tight deck construction, aggressive card removal, and specific relic support. Don't force them every run — recognize when the pieces are falling into place. If you're still learning fundamentals, start with our <a href="beginner.html" style="color:var(--crimson);">Beginner's Guide</a> first.
+  </div>
+
+  <h2 id="ironclad">2. Ironclad Infinite Combos</h2>
+  <p>Ironclad has the <strong>easiest infinites to assemble</strong> in the game. His kit naturally supports thin-deck strategies with exhaust mechanics and cheap attacks.</p>
+
+  <h3>Combo A — Double Dropkick (Most Reliable)</h3>
+  <p>The classic Ironclad infinite. Requires: two copies of <span class="card-ref">Dropkick</span> (1-cost, deal 5-8 damage, draw 1 card if enemy has Vulnerable).</p>
+
+  <div class="combo-box">
+    <h4>🔥 Setup Requirements</h4>
+    <ul>
+      <li><strong>2× Dropkick (upgraded recommended)</strong> — the engine</li>
+      <li><strong>Vulnerable source:</strong> <span class="card-ref">Bash</span>, <span class="card-ref">Thunderclap</span>, <span class="card-ref">Uppercut</span>, or <span class="card-ref">Shockwave</span></li>
+      <li><strong>Thin deck:</strong> Under 10 cards after exhausting. Remove ALL Strikes and Defends.</li>
+      <li><strong>Energy:</strong> You need 2 energy per cycle, but Dropkick refunds if enemy is already Vulnerable</li>
+    </ul>
+  </div>
+
+  <p><strong>How it works:</strong> Apply Vulnerable once. Then play Dropkick → it draws the second Dropkick → second Dropkick draws the first → repeat infinitely. Each cycle deals 5-8 damage for 1 energy (the Vulnerable condition is already satisfied).</p>
+
+  <p><strong>Best relics:</strong> <span class="card-ref">Sundial</span> (gain 2 energy every 3 shuffles), <span class="card-ref">Peace Pipe</span> (remove cards at campfires), <span class="card-ref">Medical Kit</span> (exhaust status cards so they don't clog the deck). <strong>Snecko Eye is a trap</strong> — randomization ruins the combo.</p>
+
+  <h3>Combo B — Pommel Strike Loop</h3>
+  <p>A variant using <span class="card-ref">Pommel Strike+</span> (9 damage, draw 2 cards) instead of Dropkick. Requires more energy (1 per play) but doesn't need Vulnerable. Pair with <span class="card-ref">Offering</span> or energy relics to sustain the loop. Flash of Steel (colorless, 0-cost, deal 3 damage, draw 1) is an excellent filler piece.</p>
+
+  <div class="tip-box">
+    <strong>💡 Pro Tip:</strong> <span class="card-ref">Dual Wield</span> can create a second Dropkick mid-combat, turning a near-infinite into a true infinite. If you only have one Dropkick, Dual Wield solves the problem instantly.
+  </div>
+
+  <h2 id="silent">3. Silent Infinite Combos</h2>
+  <p>Silent's infinite relies on <strong>discard synergy</strong>. Unlike Ironclad's straightforward attack loop, Silent infinites generate infinite energy and draw through discard chains.</p>
+
+  <h3>Combo — Tactician + Reflex Engine</h3>
+  <div class="combo-box">
+    <h4>🔥 Setup Requirements</h4>
+    <ul>
+      <li><strong>1-2× <span class="card-ref">Tactician+</span></strong> — when discarded, gain 2 energy</li>
+      <li><strong>1-2× <span class="card-ref">Reflex+</span></strong> — when discarded, draw 2-3 cards</li>
+      <li><strong>Discard outlets:</strong> <span class="card-ref">Calculated Gamble+</span> (discard hand, draw new), <span class="card-ref">Acrobatics</span> (draw 3-4, discard 1), <span class="card-ref">Prepared+</span> (draw 2, discard 2)</li>
+      <li><strong>Damage:</strong> <span class="card-ref">Eviscerate</span> (cost decreases per discard), or any 0-cost attack</li>
+      <li><strong>Draw engine:</strong> Enough Acrobatics and Backflips to cycle the deck</li>
+    </ul>
+  </div>
+
+  <p><strong>How it works:</strong> Play Calculated Gamble+ → discard hand (triggering Tactician+ and Reflex+) → gain 2-4 energy, draw 4-8 new cards → the new hand contains more Acrobatics/Prepared cards → discard again → the cycle self-perpetuates. Eventually you generate more energy than you spend and more draw than your deck size.</p>
+
+  <p>Once you have infinite energy, any attack card in your hand can be played repeatedly. <span class="card-ref">Sneaky Strike</span> (gains energy on discard) is an excellent bridge piece. <span class="card-ref">Eviscerate</span> scales to 0 cost with enough discards.</p>
+
+  <h3>Combo B — Shiv Infinite (with Relics)</h3>
+  <p>Requires <span class="card-ref">Dead Branch</span> + massive shiv generation (<span class="card-ref">Infinite Blades</span>, <span class="card-ref">Cloak and Dagger</span>, <span class="card-ref">Blade Dance</span>). Dead Branch adds random cards to your hand when shivs exhaust — some of those cards will be 0-cost attacks or draw cards, extending the turn indefinitely. Less reliable than the discard engine but easier to stumble into.</p>
+
+  <h2 id="defect">4. Defect Infinite Combos</h2>
+  <p>Defect infinites revolve around <strong>0-cost energy generation</strong> and the Recycle engine. They're harder to set up but absolutely devastating once online.</p>
+
+  <h3>Combo — Recycle + All for One Loop</h3>
+  <div class="combo-box">
+    <h4>🔥 Setup Requirements</h4>
+    <ul>
+      <li><strong><span class="card-ref">Recycle</span></strong> — exhaust a card, gain energy equal to its cost</li>
+      <li><strong><span class="card-ref">All for One</span></strong> — return all 0-cost cards from discard to hand</li>
+      <li><strong>0-cost cards:</strong> <span class="card-ref">Claw</span>, <span class="card-ref">Go for the Eyes</span>, <span class="card-ref">Beam Cell</span>, <span class="card-ref">Zap</span>, <span class="card-ref">Dualcast</span></li>
+      <li><strong>Energy generation:</strong> <span class="card-ref">Turbo</span>, <span class="card-ref">Double Energy</span>, <span class="card-ref">Aggregate</span></li>
+    </ul>
+  </div>
+
+  <p><strong>How it works:</strong> Recycle your entire deck until only All for One and 0-cost attacks remain. Play All for One → retrieve all 0-cost cards → play them all → All for One returns to your hand next cycle → repeat. Claw scales damage with each play, so after 10+ cycles it's hitting for 30-40 damage per Claw.</p>
+
+  <p>The key enabler is <strong>deck thinning</strong> via Recycle. Every card you Recycle is permanently removed from that combat. A 25-card deck becomes 10 cards within 3-4 turns. Once only the essential pieces remain, the infinite starts.</p>
+
+  <div class="tip-box">
+    <strong>💡 Key Relics:</strong> <span class="card-ref">Unceasing Top</span> (draw when hand is empty) turns any 0-cost hand into an infinite. <span class="card-ref">Ice Cream</span> (conserve energy) lets you bank excess Turbo energy. <span class="card-ref">Runic Capacitor</span> gives you more orb slots for passive defense while cycling.
+  </div>
+
+  <h3>Combo B — Hologram + Madness Zero-Cost Loop</h3>
+  <p>Use <span class="card-ref">Madness</span> (event card, makes a random card cost 0) to reduce <span class="card-ref">Hologram+</span> to 0 cost. Then Hologram+ retrieves itself from the discard pile — generating infinite block (from Frost orbs) and letting you stall until any win condition (Claw scaling, Blizzard, Thunder Strike) kicks in.</p>
+
+  <h2 id="necrobinder">5. Necrobinder Infinite Combos</h2>
+  <p>Necrobinder is the newest character and has <strong>the most creative infinites</strong> using minion recursion. These loops are harder to explain but brutally effective.</p>
+
+  <h3>Combo — Minion Death-Recursion Loop</h3>
+  <div class="combo-box">
+    <h4>🔥 Setup Requirements</h4>
+    <ul>
+      <li><strong><span class="card-ref">Soul Harvest</span></strong> — when a minion dies, draw 1 card and gain 1 energy</li>
+      <li><strong>Cheap minion spawn:</strong> <span class="card-ref">Raise Dead</span>, <span class="card-ref">Bone Fragments</span>, <span class="card-ref">Summon Wisp</span></li>
+      <li><strong>Sacrifice outlets:</strong> <span class="card-ref">Dark Ritual</span> (kill minion, gain strength), <span class="card-ref">Blood Offering</span></li>
+      <li><strong>Recursion:</strong> <span class="card-ref">Grave Call</span> (return dead minion to hand)</li>
+    </ul>
+  </div>
+
+  <p><strong>How it works:</strong> Spawn a 0-1 cost minion → immediately sacrifice it with Dark Ritual or similar → Soul Harvest triggers (draw + energy) → play Grave Call to return the minion → spawn it again → sacrifice again → repeat. Each loop is net energy-positive and draws cards, meaning you can keep going until you build lethal Strength or overwhelm with corpse explosion effects.</p>
+
+  <p>The beauty of this engine is that many Necrobinder cards naturally support it. You're not hunting for exotic rares — most of these pieces are commons and uncommons.</p>
+
+  <div class="warn-box">
+    <strong>⚠️ Board space matters.</strong> Necrobinder can only have 4 minions active at a time. Make sure you're killing minions to free space before spawning new ones. Overcrowding breaks the loop.
+  </div>
+
+  <h2 id="regent">6. Regent Infinite Combos</h2>
+  <p>Regent relies on <strong>Command stacking</strong> and clever interaction chains. His infinites are the most conditional but can output astronomical damage.</p>
+
+  <h3>Combo — Sly Star Recursion</h3>
+  <div class="combo-box">
+    <h4>🔥 Setup Requirements</h4>
+    <ul>
+      <li><strong><span class="card-ref">Scheme</span></strong> — next turn, gain 2 Command and draw 2 cards</li>
+      <li><strong><span class="card-ref">Court Intrigue</span></strong> — Command abilities trigger twice</li>
+      <li><strong>Sly Star generators:</strong> <span class="card-ref">Starfall</span>, <span class="card-ref">Royal Decree</span>, <span class="card-ref">Constellation</span></li>
+      <li><strong>Star consumers:</strong> Cards that spend Sly Stars for scaling effects</li>
+    </ul>
+  </div>
+
+  <p><strong>How it works:</strong> Scheme chains into itself — play Scheme to gain Command + draw, use Command to generate Sly Stars, spend Stars to trigger abilities that draw more Schemes, repeat. With Court Intrigue doubling Command triggers, each cycle generates net-positive resources. The loop culminates in spending 10+ Sly Stars on <span class="card-ref">Imperial Wrath</span> (deal damage per Star spent) for a one-turn kill.</p>
+
+  <p>Regent's infinites are the least reliable to force, but when the pieces align — typically from Act 2 onward — they're among the most satisfying payoffs in the entire game.</p>
+
+  <h2 id="setup">7. How to Build Toward an Infinite</h2>
+  <p>Infinites don't happen by accident. Here's the 5-step framework:</p>
+
+  <ol>
+    <li><strong>Thin your deck relentlessly.</strong> Remove Strikes and Defends at every shop and event. A 15-card deck goes infinite; a 35-card deck doesn't. The difference is 5-7 removals.</li>
+    <li><strong>Skip aggressively.</strong> Every card you take makes the infinite harder. In Act 2-3, skip card rewards unless they're direct combo pieces or essential defense.</li>
+    <li><strong>Look for card draw.</strong> <span class="card-ref">Offering</span>, <span class="card-ref">Acrobatics</span>, <span class="card-ref">Skim</span>, <span class="card-ref">Battle Trance</span> — cards that cycle your deck faster help you reach the infinite state sooner.</li>
+    <li><strong>Prioritize energy relics.</strong> Boss relics like <span class="card-ref">Cursed Key</span>, <span class="card-ref">Coffee Dripper</span>, and <span class="card-ref">Philosopher's Stone</span> give the energy surplus needed for setup turns.</li>
+    <li><strong>Survive until the combo assembles.</strong> Infinites take time to set up. You need strong Act 1 block and AoE to reach the point where your thin deck pops off. Don't die chasing the dream.</li>
+  </ol>
+
+  <div class="tip-box">
+    <strong>💡 The Thin Deck Rule:</strong> A true infinite requires your entire hand + draw pile ≤ your draw per turn. If you draw 5 cards per turn and have 20 cards total, it takes 4 turns to cycle — too slow. Aim for 10-15 cards post-exhaust. Use our <a href="deck-building.html" style="color:var(--green);">deck building guide</a> for more on deck size optimization.
+  </div>
+
+  <h2 id="enemies">8. Enemies That Counter Infinites</h2>
+  <p>Some enemies are specifically designed to punish infinite combos:</p>
+
+  <ul>
+    <li><strong>Time Eater (Act 3 Boss)</strong> — <strong>The biggest counter.</strong> After you play 12 cards, Time Eater ends your turn and gains Strength. For infinite builds against Time Eater, play exactly 11 cards, deal maximum damage on the 12th, then block on the forced end-turn. Plan your 12-card bursts carefully.</li>
+    <li><strong>The Heart (Act 4)</strong> — Beats of Death deals 1-2 damage per card played. Playing 30 cards = 30-60 damage taken. You need block generation per card (<span class="card-ref">After Image</span>, <span class="card-ref">Feel No Pain</span>, <span class="card-ref">Orichalcum</span>) or enough max HP to tank it.</li>
+    <li><strong>Nemesis (Act 3 Elite)</strong> — Gains Intangible on alternating turns. Your 5-damage ping hits Intangible for 1. Time your infinite burst for the non-Intangible turn, or bring enough block to stall through it.</li>
+    <li><strong>Spikers (Act 3)</strong> — Reflects damage when taking damage. Multiple small hits = multiple thorns procs. Use <span class="card-ref">Disarm</span> or pack healing to survive.</li>
+  </ul>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">📖 Explore more: <a href="../cards/index.html" style="color:var(--gold-light);">Card Database</a> · <a href="ironclad-strength-build.html" style="color:var(--gold-light);">Ironclad Builds</a> · <a href="silent-poison-build.html" style="color:var(--gold-light);">Silent Builds</a> · <a href="deck-building.html" style="color:var(--gold-light);">Deck Building Guide</a></p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a><a href="../about.html">About</a><a href="../privacy.html">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+
+<div id="searchOverlay" class="search-overlay" onclick="closeSearch(event)">
+  <div class="search-modal" onclick="event.stopPropagation()">
+    <div class="search-modal-header">
+      <input type="text" id="searchModalInput" placeholder="Type to search..." autofocus>
+      <button class="search-close" onclick="closeSearch()">✕</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+<style>
+.search-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); z-index:1000; justify-content:center; padding-top:60px; }
+.search-overlay.active { display:flex; }
+.search-modal { width:640px; max-width:90vw; background:var(--bg-secondary); border:1px solid var(--border); border-radius:12px; overflow:hidden; max-height:80vh; display:flex; flex-direction:column; }
+.search-modal-header { display:flex; align-items:center; padding:16px; gap:12px; border-bottom:1px solid var(--border); }
+.search-modal-header input { flex:1; background:var(--bg-card); border:1px solid var(--border); color:var(--text-primary); padding:10px 16px; border-radius:8px; font-size:15px; outline:none; }
+.search-modal-header input:focus { border-color:var(--gold); }
+.search-close { background:none; border:none; color:var(--text-muted); font-size:20px; cursor:pointer; padding:4px 8px; }
+.search-close:hover { color:var(--gold-light); }
+.search-results { overflow-y:auto; padding:8px; flex:1; }
+.search-result-item { display:flex; align-items:center; gap:12px; padding:12px 16px; border-radius:8px; cursor:pointer; transition:all .15s; text-decoration:none; color:inherit; }
+.search-result-item:hover { background:var(--bg-card-hover); }
+.search-result-item .result-icon { font-size:20px; flex-shrink:0; width:36px; text-align:center; }
+.search-result-item .result-info { overflow:hidden; }
+.search-result-item .result-title { font-size:14px; font-weight:600; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-result-item .result-cat { font-size:11px; color:var(--gold-light); display:inline-block; padding:1px 6px; background:rgba(212,160,60,0.15); border-radius:3px; margin-bottom:2px; }
+.search-result-item .result-desc { font-size:12px; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-empty { text-align:center; padding:40px; color:var(--text-muted); font-size:14px; }
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; }
+  .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .lang-switch { order:2; margin-left:auto; }
+  .search-box { width:100%; margin-top:4px; }
+  .search-box input { width:100%; }
+  .hero { padding:32px 16px; }
+  .hero h1 { font-size:22px; }
+  .hero p { font-size:14px; }
+  .hero-stats { gap:16px; flex-wrap:wrap; }
+  .hero-stat .num { font-size:22px; }
+  .section { padding:24px 14px; }
+  .section-title { font-size:18px; }
+  .char-grid { grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px; }
+  .char-card { padding:16px 14px; }
+  .char-card .char-icon { font-size:28px; }
+  .char-card .char-name { font-size:15px; }
+  .char-card .char-desc { font-size:12px; }
+  .char-build { padding:16px; }
+  .char-build h2 { font-size:18px; }
+  .build-grid { grid-template-columns:1fr; }
+  .filters { flex-direction:column; gap:8px; }
+  .filters select, .filters input { width:100%; }
+  .stat-bar { flex-direction:column; gap:8px; align-items:flex-start; }
+  .card-table th, .card-table td { padding:6px 8px; font-size:11px; }
+  .card-table th:last-child, .card-table td:last-child { min-width:180px; }
+  .content-grid { grid-template-columns:1fr; }
+  .footer-links { flex-wrap:wrap; gap:12px; }
+  .guide-card { padding:16px; }
+  .boss-grid { grid-template-columns:1fr; }
+  .relic-grid { grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); }
+  .search-modal { width:95vw; max-height:70vh; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size:18px; }
+  .logo-text { font-size:13px; }
+  .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; }
+  .section-title { font-size:16px; }
+  .char-grid { grid-template-columns:1fr 1fr; gap:8px; }
+  .char-card .char-name { font-size:13px; }
+  .card-table { font-size:10px; }
+  .card-table th, .card-table td { padding:4px 6px; font-size:10px; }
+  footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script>
+let searchIndex = [];
+fetch('../search-index.json').then(r => r.json()).then(d => { searchIndex = d; }).catch(() => { fetch('search-index.json').then(r => r.json()).then(d => { searchIndex = d; }) });
+function openSearch() { document.getElementById('searchOverlay').classList.add('active'); document.getElementById('searchModalInput').focus(); }
+function closeSearch(e) { if (e && e.target !== document.getElementById('searchOverlay')) return; var el = document.getElementById('searchOverlay'); el.classList.remove('active'); document.getElementById('searchModalInput').value = ''; document.getElementById('searchResults').innerHTML = ''; }
+document.getElementById('searchModalInput').addEventListener('input', function() {
+  var q = this.value.toLowerCase().trim(), el = document.getElementById('searchResults');
+  if (!q) { el.innerHTML = ''; return; }
+  var r = searchIndex.filter(function(i) { return i.title.toLowerCase().includes(q) || i.keywords.includes(q) || i.category.toLowerCase().includes(q); }).slice(0, 10);
+  if (!r.length) { el.innerHTML = '<div class="search-empty">No results for "<strong>' + q + '</strong>"</div>'; return; }
+  var icons = { Characters: '\u{1F9B8}', Cards: '\u{1F0CF}', Relics: '\u{1F48E}', Bosses: '\u{1F479}', Guides: '\u{1F4D6}', Home: '\u{1F3E0}' };
+  el.innerHTML = r.map(function(i) { return '<a class="search-result-item" href="' + i.url + '"><span class="result-icon">' + (icons[i.category] || '\u{1F4C4}') + '</span><div class="result-info"><span class="result-cat">' + i.category + '</span><div class="result-title">' + i.title + '</div></div></a>'; }).join('');
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); } });
+</script>
+
+<div id="cookie-consent">
+  <p>We use cookies to improve your experience and for analytics. <a href="/en/privacy.html">Privacy Policy</a></p>
+  <div class="cc-btns">
+    <button class="cc-btn cc-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cc-btn cc-reject" onclick="rejectCookies()">Reject</button>
+  </div>
+</div>
+<script>
+(function(){
+  var c = document.cookie.match('(^|;)\\s*cookie_consent\\s*=\\s*([^;]+)');
+  if (!c) { document.getElementById('cookie-consent').style.display = 'flex'; }
+})();
+function acceptCookies(){
+  document.cookie = 'cookie_consent=accepted; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+function rejectCookies(){
+  document.cookie = 'cookie_consent=rejected; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+</script>
+</body>
+</html>

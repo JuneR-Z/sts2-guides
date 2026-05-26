@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slay the Spire 2 Boss Guide — How to Beat Every Boss (Acts 1-4) | STS2Guides</title>
+<meta name="description" content="Complete Slay the Spire 2 boss guide. Detailed strategies for every Act 1, Act 2, Act 3, and Act 4 boss — attack patterns, best cards, and how to beat each one.">
+    <meta property="og:title" content="Slay the Spire 2 Boss Guide — How to Beat Every Boss (Acts 1-4) | STS2Guides">
+    <meta property="og:description" content="Complete Slay the Spire 2 boss guide. Detailed strategies for every Act 1, Act 2, Act 3, and Act 4 boss — attack patterns, best cards, and how to beat each one.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/boss-strategy.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STS2Guides">    <meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Slay the Spire 2 Boss Guide — How to Beat Every Boss (Acts 1-4) | STS2Guides">
+    <meta name="twitter:description" content="Complete Slay the Spire 2 boss guide. Detailed strategies for every Act 1, Act 2, Act 3, and Act 4 boss — attack patterns, best cards, and how to beat each one.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/boss-strategy.html">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--crimson);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:28px;font-weight:800;margin-bottom:4px;color:var(--gold-light);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--gold-light);border-left:4px solid var(--crimson);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.boss-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin:24px 0;}
+.boss-card h4{color:var(--crimson);font-size:18px;margin-bottom:8px;}
+.boss-card .pattern{display:inline-block;padding:3px 12px;background:rgba(192,57,43,0.12);border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:12px;margin:3px;color:var(--text-secondary);}
+.tip-box{background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.tip-box strong{color:var(--green);}
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:30px;}
+.toc h3{font-size:14px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;}
+.toc a{display:block;padding:4px 0;color:var(--text-secondary);text-decoration:none;font-size:13px;}
+.toc a:hover{color:var(--gold-light);}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}}
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; }
+  .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .lang-switch { order:2; margin-left:auto; }
+  .search-box { width:100%; margin-top:4px; }
+  .search-box input { width:100%; }
+  .hero { padding:32px 16px; }
+  .hero h1 { font-size:22px; }
+  .hero p { font-size:14px; }
+  .hero-stats { gap:16px; flex-wrap:wrap; }
+  .hero-stat .num { font-size:22px; }
+  .section { padding:24px 14px; }
+  .section-title { font-size:18px; }
+  .char-grid { grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px; }
+  .char-card { padding:16px 14px; }
+  .char-card .char-icon { font-size:28px; }
+  .char-card .char-name { font-size:15px; }
+  .char-card .char-desc { font-size:12px; }
+  .char-build { padding:16px; }
+  .char-build h2 { font-size:18px; }
+  .build-grid { grid-template-columns:1fr; }
+  .filters { flex-direction:column; gap:8px; }
+  .filters select, .filters input { width:100%; }
+  .stat-bar { flex-direction:column; gap:8px; align-items:flex-start; }
+  .card-table th, .card-table td { padding:6px 8px; font-size:11px; }
+  .card-table th:last-child, .card-table td:last-child { min-width:180px; }
+  .content-grid { grid-template-columns:1fr; }
+  .footer-links { flex-wrap:wrap; gap:12px; }
+  .guide-card { padding:16px; }
+  .boss-grid { grid-template-columns:1fr; }
+  .relic-grid { grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); }
+  .search-modal { width:95vw; max-height:70vh; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size:18px; }
+  .logo-text { font-size:13px; }
+  .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; }
+  .section-title { font-size:16px; }
+  .char-grid { grid-template-columns:1fr 1fr; gap:8px; }
+  .char-card .char-name { font-size:13px; }
+  .card-table { font-size:10px; }
+  .card-table th, .card-table td { padding:4px 6px; font-size:10px; }
+  footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem","position": 1,"name": "STS2Guides","item": "https://sts2guides.com/"},
+    {"@type": "ListItem","position": 2,"name": "Guides","item": "https://sts2guides.com/en/guides/"},
+    {"@type": "ListItem","position": 3,"name": "Boss Strategy Guide","item": "https://sts2guides.com/en/guides/boss-strategy.html"}
+  ]
+}
+</script>
+
+<style>
+#cookie-consent {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #1a1a2e; border-top: 1px solid #3a3a5a;
+  padding: 16px 24px; z-index: 9999;
+  display: none;
+  align-items: center; justify-content: center; gap: 16px;
+  flex-wrap: wrap; box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+}
+#cookie-consent p {
+  margin: 0; color: #c8c4b4; font-size: 14px; max-width: 500px; line-height: 1.5;
+}
+#cookie-consent a { color: #e6a750; text-decoration: underline; }
+#cookie-consent .cc-btns { display: flex; gap: 10px; }
+.cc-btn {
+  padding: 8px 20px; border-radius: 6px; font-size: 14px; font-weight: 600;
+  cursor: pointer; border: none; transition: background 0.2s;
+}
+.cc-accept { background: #e6a750; color: #0d0d1a; }
+.cc-accept:hover { background: #f0c060; }
+.cc-reject { background: #3a3a5a; color: #c8c4b4; }
+.cc-reject:hover { background: #4a4a6a; }
+@media (max-width: 480px) {
+  #cookie-consent { flex-direction: column; text-align: center; padding: 14px 16px; }
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+            <a href="./" class="active">Guides</a>
+<a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a>
+      <a href="../relics/index.html">Relics</a>
+      <a href="../bosses/index.html">Bosses</a>
+      <a href="../patch-notes/">Patch Notes</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Boss Strategy Guide</div>
+
+<article class="article">
+  <h1>Slay the Spire 2 Boss Guide: How to Beat Every Boss (Acts 1-4)</h1>
+  <div class="meta">📖 Strategy Guide · Updated May 26, 2026 · 18 min read</div>
+
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <a href="#act1">1. Act 1 Bosses</a>
+    <a href="#act2">2. Act 2 Bosses</a>
+    <a href="#act3">3. Act 3 Bosses</a>
+    <a href="#act4">4. Act 4 — The Corrupted Heart</a>
+    <a href="#prep">5. How to Prepare for Each Act Boss</a>
+  </div>
+
+  <p><strong>"How do I beat [Boss X]?"</strong> is the single most-searched question in Slay the Spire 2. This guide covers every boss across all four acts — their attack patterns, what cards counter them, and exactly how to prepare for each one before the fight even starts.</p>
+
+  <h2 id="act1">1. Act 1 Bosses</h2>
+  <p>You'll face one of three bosses at floor 16. The boss is revealed on the map, so you can prepare once you know which one you're fighting.</p>
+
+  <div class="boss-card">
+    <h4>🐉 Slime Boss</h4>
+    <p><strong>HP:</strong> 140. <strong>Special:</strong> Splits into 2 Medium Slimes at half HP (70), each with 36-40 HP.</p>
+    <p><strong>Attack Pattern:</strong> <span class="pattern">Prepare (debuff)</span> → <span class="pattern">Slam: 35-38 dmg</span> → cycle. After first Slam, pattern accelerates. At half HP, boss splits immediately and the fight becomes a 2-enemy battle.</p>
+    <p><strong>How to Beat:</strong></p>
+    <ul>
+      <li><strong>Control the Split:</strong> The most important concept. When Slime Boss is at 75-80 HP, spend a turn doing nothing except block. Then burst him as far below 70 HP as possible — ideally to 40-50 in one turn. This leaves the Medium Slimes with low starting HP.</li>
+      <li><strong>Bring AoE:</strong> <span class="card-ref">Whirlwind</span> (Ironclad), <span class="card-ref">Dagger Spray</span> (Silent), <span class="card-ref">Sweeping Beam</span> (Defect), <span class="card-ref">Corpse Explosion</span> (any). AoE lets you kill both Medium Slimes simultaneously.</li>
+      <li><strong>Watch for the Slam:</strong> It hits for 35-38. If you can't full-block, use Weak (<span class="card-ref">Shockwave</span>, <span class="card-ref">Neutralize</span>) to reduce it to 26-28.</li>
+      <li><strong>Save your potions:</strong> A <span class="card-ref">Fire Potion</span> or <span class="card-ref">Explosive Potion</span> makes the split burst trivial.</li>
+    </ul>
+    <p><strong>Best Cards:</strong> Whirlwind, Cleave, Immolate, Dagger Spray, Sweeping Beam. Any AoE is invaluable here.</p>
+  </div>
+
+  <div class="boss-card">
+    <h4>🛡️ The Guardian</h4>
+    <p><strong>HP:</strong> 240. <strong>Special:</strong> Alternates between Defense Mode (takes 0 damage in bronze form, gains block) and Attack Mode (vulnerable). Enters Defense Mode after taking 30-35 damage.</p>
+    <p><strong>Attack Pattern:</strong> <span class="pattern">Charging Up: gain 9 block</span> → <span class="pattern">Fierce Bash: 32 dmg</span> → <span class="pattern">Vent Steam: debuff -1 Dex/Str</span> → <span class="pattern">Defensive Stance: +20 block</span> → repeat. Pattern fixed, not random.</p>
+    <p><strong>How to Beat:</strong></p>
+    <ul>
+      <li><strong>Exploit Defense Mode turns:</strong> When Guardian curls up, he does NOTHING for 1-2 turns. Use these turns to play Powers, set up scaling (Demon Form, Noxious Fumes, Defragment), and heal if needed.</li>
+      <li><strong>Pace your damage:</strong> Don't burst him — you'll trigger Defense Mode faster. Deal exactly enough damage per cycle to break through his block, then set up on the Defense turns.</li>
+      <li><strong>Block the Fierce Bash:</strong> It always comes after Charging Up. You get exactly 1 turn warning. Have 32+ block ready or use Weak.</li>
+      <li><strong>Vent Steam is temporary:</strong> The -Dex/-Str debuff fades after combat. Don't stress about it, just block through it.</li>
+    </ul>
+    <p><strong>Best Cards:</strong> Powers of any kind (free setup turns), <span class="card-ref">Spot Weakness</span>, <span class="card-ref">Footwork</span>, <span class="card-ref">Defragment</span>. Scaling cards that you can set up during Defense Mode turns.</p>
+  </div>
+
+  <div class="boss-card">
+    <h4>👻 Hexaghost</h4>
+    <p><strong>HP:</strong> 250. <strong>Special:</strong> Turn 2 attack damage scales with your current HP — higher HP = bigger hit.</p>
+    <p><strong>Attack Pattern:</strong> <span class="pattern">Turn 1: 2×6 damage</span> → <span class="pattern">Turn 2: 2×6 OR big single hit (scales with HP)</span> → <span class="pattern">Turn 3: 3 Burns added to discard</span> → <span class="pattern">Turn 4+: multi-hit + Burn cycling</span></p>
+    <p><strong>How to Beat:</strong></p>
+    <ul>
+      <li><strong>Don't heal before the fight.</strong> Hexaghost's Turn 2 nuke is based on your HP. At full health (70 HP), it hits for ~36. At half HP (35), it hits for ~18. Counter-intuitive but true: entering the fight injured actually reduces the damage you take.</li>
+      <li><strong>Bring scaling damage.</strong> Hexaghost has 250 HP and no damage cap. A Strength build or Poison build will out-scale him. The fight is a DPS race.</li>
+      <li><strong>Manage the Burns.</strong> He shuffles 3 Burns into your discard pile. These thin your effective draw — you'll see fewer of your good cards. <span class="card-ref">Medical Kit</span> trivializes this. Without it, make sure your key cards are already in hand before Turn 3.</li>
+      <li><strong>His multi-hits are individually weak.</strong> 2×6 damage means 12 total. A single <span class="card-ref">Shrug It Off</span> blocks the entire attack. Don't over-block.</li>
+    </ul>
+    <p><strong>Best Cards:</strong> Demon Form, Noxious Fumes, Defragment. Any long-term scaling. Disarm reduces multi-hit damage to zero.</p>
+  </div>
+
+  <h2 id="act2">2. Act 2 Bosses</h2>
+  <p>Act 2 bosses are widely considered the hardest fights in the game. You'll face one at floor 33.</p>
+
+  <div class="boss-card">
+    <h4>🏆 The Collector</h4>
+    <p><strong>HP:</strong> 280. <strong>Special:</strong> Summons 2 Torch Head minions (38-40 HP each). Main threat comes from minions, not the boss.</p>
+    <p><strong>Attack Pattern:</strong> <span class="pattern">Turn 1: Summon Torches</span> → <span class="pattern">Turn 2: Buff (all gain +3 Str)</span> → <span class="pattern">Turn 3: Attack (16-18)</span> → cycle. Torch Heads attack for 7-9 each turn.</p>
+    <p><strong>How to Beat:</strong></p>
+    <ul>
+      <li><strong>Kill Torch Heads IMMEDIATELY.</strong> On turn 1, there are 3 enemies: Collector (280 HP) + 2 Torches (38-40 HP each). If both Torches survive to Turn 2, the Collector buffs them. A 7-damage hit becomes a 10-damage hit. Kill at least one before Turn 2.</li>
+      <li><strong>Turn 1 AoE is premium.</strong> <span class="card-ref">Whirlwind</span>, <span class="card-ref">Immolate</span>, <span class="card-ref">Dagger Spray</span>, <span class="card-ref">Electrodynamics</span> — anything that hits multiple enemies on turn 1 is S-Tier here.</li>
+      <li><strong>After Torches die, the fight is free.</strong> Collector alone deals 16-18 damage every 3 turns. That's trivially blockable. The challenge is killing Torches before they scale.</li>
+      <li><strong>Weak on Collector is fine but not essential.</strong> His individual damage is low. Focus on Weak for the Torches in the first 2 turns.</li>
+    </ul>
+    <p><strong>Best Cards:</strong> Any AoE. Disarm or Malaise on Torches. Burst damage to kill minions within 2 turns.</p>
+  </div>
+
+  <div class="boss-card">
+    <h4>🤖 Automaton</h4>
+    <p><strong>HP:</strong> 300. <strong>Special:</strong> Fires Hyperbeam every 6 turns. Gains Strength each cycle.</p>
+    <p><strong>Attack Pattern:</strong> <span class="pattern">Turn 1: spawn 2 Orbs</span> → <span class="pattern">Turn 2: 12-15 dmg + 1-2 Weak</span> → <span class="pattern">Turn 3-5: 16-22 dmg attacks</span> → <span class="pattern">Turn 6: HYPERBEAM (45-50 dmg)</span> → repeat with +3 Strength.</p>
+    <p><strong>How to Beat:</strong></p>
+    <ul>
+      <li><strong>This is a DPS race.</strong> Automaton gains +3 Strength every 6 turns. If the fight lasts 3 cycles (18 turns), he'll have +9 Strength — his basic attacks hit for 30+ and Hyperbeam hits for 60+. You must kill him within 10-12 turns.</li>
+      <li><strong>Kill the Orbs early.</strong> They deal 6-8 damage each and apply debuffs. They're weak (15-20 HP) — one strong attack kills them. Don't let them accumulate.</li>
+      <li><strong>The Hyperbeam turn: BLOCK EVERYTHING.</strong> On turn 6 (and turn 12), Automaton does NOTHING else. No minion attacks, no debuffs. Spend all your energy on block. <span class="card-ref">Impervious</span>, <span class="card-ref">Wraith Form</span>, <span class="card-ref">Buffer</span> — anything that negates a single massive hit.</li>
+      <li><strong>Intangible breaks the fight.</strong> <span class="card-ref">Wraith Form</span> or <span class="card-ref">Incense Burner</span> timed to the Hyperbeam turns makes you take 1 damage instead of 50.</li>
+    </ul>
+    <p><strong>Best Cards:</strong> Wraith Form, Impervious, Buffer, Corruption + heavy block. Scaling damage — you need to kill before turn 18.</p>
+  </div>
+
+  <div class="boss-card">
+    <h4>🧛 Champion</h4>
+    <p><strong>HP:</strong> 420. <strong>Special:</strong> Invincible at half HP; transforms into a stronger form. Clears all debuffs on transform.</p>
+    <p><strong>Attack Pattern (Phase 1):</strong> <span class="pattern">17-20 dmg</span> → <span class="pattern">+Metallicize</span> → <span class="pattern">20-25 dmg + Frail</span> → cycle. Pattern (Phase 2): <span class="pattern">30-35 dmg</span> → <span class="pattern">Apply Vulnerable</span> → <span class="pattern">45-50 dmg</span> → cycle.</p>
+    <p><strong>How to Beat:</strong></p>
+    <ul>
+      <li><strong>Phase 1: Build up.</strong> The Champion's Phase 1 damage (17-25) is manageable. Use this phase to play ALL your Powers. Demon Form, Noxious Fumes, Defragment, Footwork — get everything online before you push him below 210 HP.</li>
+      <li><strong>Phase 1 stall until ready.</strong> There's no penalty for dragging out Phase 1. Play block cards. Don't attack more than necessary. Once all Powers are played and you have a full hand of attacks, unleash.</li>
+      <li><strong>Phase 2 is brutal.</strong> 30-50 damage per turn. You need <strong>heavy burst</strong> — the Champion must die within 3-4 turns of Phase 2. If you have 200+ damage potential (Strength-scaled Heavy Blade, stacked Poison, Dark Orb recursion), pop it all.</li>
+      <li><strong>Don't waste debuffs in Phase 1.</strong> All debuffs (Weak, Vulnerable, Poison) are cleared on transform. Apply them only after Phase 2 starts.</li>
+    </ul>
+    <p><strong>Best Cards:</strong> Scaling Powers that accumulate value passively (Demon Form, Noxious Fumes, Creative AI). Burst damage in Phase 2.</p>
+  </div>
+
+  <h2 id="act3">3. Act 3 Bosses</h2>
+  <p>Act 3 bosses test whether your deck has a coherent win condition. You'll face one at floor 50.</p>
+
+  <div class="boss-card">
+    <h4>⏳ Time Eater</h4>
+    <p><strong>HP:</strong> 456. <strong>Special:</strong> After you play 12 cards, Time Eater ends your turn, gains +2 Strength, and cleanses debuffs. The card counter resets each turn.</p>
+    <p><strong>Attack Pattern:</strong>  <span class="pattern">7-9×3 dmg + Draw Reduction</span> → <span class="pattern">26-30 dmg</span> → <span class="pattern">32-36 dmg + Vulnerable</span> → <span class="pattern">Ripple: No attack, shuffles Slimed</span> → cycle.</p>
+    <p><strong>How to Beat:</strong></p>
+    <ul>
+      <li><strong>Plan your 12-card turns.</strong> This is the single most important concept in all of STS2 boss strategy. Before you play anything, count: "I have 12 cards this turn. What are the most impactful 12 plays?" Cards 1-10 should be block and scaling. Card 11 should be your biggest debuff (Weak, Vulnerable). Card 12 should be your heaviest attack — make Time Eater earn that turn-end.</li>
+      <li><strong>High-impact cards over lots of small ones.</strong> <span class="card-ref">Bludgeon</span> (one card, 42 damage) is better than 10 Shivs. <span class="card-ref">Heavy Blade</span> at 15 Strength (one card, 60 damage) is perfect. Avoid Shiv decks and infinite combos unless you can kill within 3-4 turns.</li>
+      <li><strong>Ignore the Slimed.</strong> Time Eater shuffles Slimed into your discard. Unless you have Medical Kit, just accept the smaller effective draw. Don't spend energy exhausting them.</li>
+      <li><strong>Don't panic-burst at 12.</strong> Time Eater ends your turn — you don't take damage for hitting 12 cards. The penalty is the +Strength. At +4 Strength (after 2 cycles), his attacks hurt significantly. Kill him before he reaches +6 to +8.</li>
+    </ul>
+    <p><strong>Best Cards:</strong> Bludgeon, Heavy Blade, Demon Form, Wraith Form, Malaise (Strength reduction!). Avoid: shiv-based builds, infinite combos.</p>
+  </div>
+
+  <div class="boss-card">
+    <h4>🐦 Awakened One</h4>
+    <p><strong>HP:</strong> 320 (Phase 1: 320, Phase 2: 320 — revives at full HP). <strong>Special:</strong> Gains +1 Strength every time you play a Power card in Phase 1. Transforms at 0 HP.</p>
+    <p><strong>Attack Pattern (Phase 1):</strong> <span class="pattern">8-10×3 or 16-20</span> → <span class="pattern">Soul Strike: 6×4</span> → cycle. <strong>Phase 2:</strong> <span class="pattern">20-24 + Void to discard</span> → <span class="pattern">Sludge: 18-22</span> → <span class="pattern">Tackle: 10×3</span> → <span class="pattern">Dark Echo: 40</span> → cycle.</p>
+    <p><strong>How to Beat:</strong></p>
+    <ul>
+      <li><strong>Control which Powers you play in Phase 1.</strong> Every Power gives him +1 Strength. Play only your MOST ESSENTIAL Powers — usually 1-2 per run. Corruption? Yes. Demon Form? Yes. Feel No Pain AND Dark Embrace? Play one, save one for Phase 2. Don't play Niche Powers (Juggernaut, Evolve) until Phase 2.</li>
+      <li><strong>Phase 2 doesn't scale from Powers.</strong> Once he transforms, play ALL remaining Powers freely. The +Strength mechanic is gone. If you held back Dark Embrace, Second Wind, and Inflame, Phase 2 becomes a victory lap.</li>
+      <li><strong>The 40-damage Dark Echo is telegraphed.</strong> It always comes after the Tackle turn. You get 1 full turn to prepare block. If you can block 40, you win. If not, use Intangible.</li>
+      <li><strong>Strength reduction is excellent.</strong> <span class="card-ref">Disarm</span> in Phase 1 reduces his multi-hits to near-zero. <span class="card-ref">Malaise</span> (Silent) can reset his strength entirely.</li>
+    </ul>
+    <p><strong>Best Cards:</strong> Disarm, Malaise, Wraith Form. Limit Power plays in Phase 1 to 2 maximum.</p>
+  </div>
+
+  <div class="boss-card">
+    <h4>🔮 Donu & Deca</h4>
+    <p><strong>HP:</strong> Donu: 250, Deca: 250. <strong>Special:</strong> Two bosses fought simultaneously. Donu buffs both (+3 Strength to all). Deca applies Block and Dazes. When one dies, the survivor goes "enraged" (+5 Strength).</p>
+    <p><strong>Attack Pattern:</strong> Donu: <span class="pattern">Buff (+3 Str all)</span> → <span class="pattern">12-16×2</span> → cycle. Deca: <span class="pattern">16 Block + 2 Dazed</span> → <span class="pattern">10-14×2</span> → cycle.</p>
+    <p><strong>How to Beat:</strong></p>
+    <ul>
+      <li><strong>Focus Donu first.</strong> Donu is the damage scaler. Every buff cycle adds +3 Strength to both Donu and Deca. After 4 cycles, their basic attacks hit for 22-28 ×2. Kill Donu within 4-5 turns or the fight spirals.</li>
+      <li><strong>Block Deca's Dazes.</strong> Deca shuffles 2 Dazed into your discard every other turn. These accumulate and thin your effective draw. Without Medical Kit, by turn 6 you'll draw 3 Dazed + 2 real cards. Kill Donu faster, or have a plan for the status cards (<span class="card-ref">Evolve</span>, <span class="card-ref">Feel No Pain</span> + <span class="card-ref">Dark Embrace</span>).</li>
+      <li><strong>AoE is incredible here.</strong> You're hitting two 250-HP targets. <span class="card-ref">Whirlwind</span>, <span class="card-ref">Immolate</span>, <span class="card-ref">Electrodynamics</span> — anything that damages both simultaneously cuts the fight time in half.</li>
+      <li><strong>Kill them simultaneously OR with a 1-turn gap.</strong> The survivor enrages. If you leave one at 20 HP for 3 turns, you're eating +15 Strength boosted attacks. The ideal sequence: kill Donu, kill Deca on the next turn.</li>
+    </ul>
+    <p><strong>Best Cards:</strong> AoE damage, Strength reduction (Disarm on Donu), Medical Kit, Evolve, Feel No Pain + Dark Embrace to handle Dazed.</p>
+  </div>
+
+  <h2 id="act4">4. Act 4 — The Corrupted Heart</h2>
+  <p>The Heart is the true final boss of Slay the Spire 2 (available from Ascension 1+). You must collect 3 keys during your run to access Act 4.</p>
+
+  <div class="boss-card">
+    <h4>❤️ The Corrupted Heart</h4>
+    <p><strong>HP:</strong> 750. <strong>Special:</strong> <strong>Invincible</strong> (caps damage at 300 per turn). <strong>Beat of Death:</strong> deals 1-2 damage every time you play a card. Gains 50% Strength per cycle.</p>
+    <p><strong>Attack Pattern:</strong> <span class="pattern">Turn 1: Debuff (-1 Draw, -1 Energy, Statuses)</span> → <span class="pattern">Turn 2: 45-67 dmg multi-hit</span> → <span class="pattern">Turn 3: 40-45 single hit</span> → cycle. Multi-hit applies 1-2 Frail/Weak/Vulnerable.</p>
+    <p><strong>How to Beat:</strong></p>
+    <ul>
+      <li><strong>Turn 1 is brutal.</strong> You lose 1 card draw and 1 energy permanently, plus 2-3 status cards are added to your deck. This is the single hardest opening turn in the game. <strong>You need card draw on turn 1.</strong> <span class="card-ref">Offering</span>, <span class="card-ref">Battle Trance</span>, <span class="card-ref">Adrenaline</span>, <span class="card-ref">Skim</span>. If you start with 3 cards (5 base - 1 debuff - 1 from statuses), you lose. If you start with 8+ (through draw), you can stabilize.</li>
+      <li><strong>Beat of Death punishes card spam.</strong> Playing 10 cards = 10-20 damage taken. Shiv decks, infinite combos, and Corruption+Dead Branch spam need <span class="card-ref">After Image</span>, <span class="card-ref">Tough Bandages</span>, or <span class="card-ref">Orichalcum</span> to offset the damage. 20-Shiv turns require 20 Block from After Image just to break even.</li>
+      <li><strong>You need TWO win conditions: damage cap + survival.</strong> The 300 damage cap means you can't one-shot the Heart. You need to survive through 3 rounds minimum (300 + 300 + 150 = 750 damage over 3 turns). That means blocking 45-67 damage turns while outputting 300 damage per turn. Heavy scaling (Strength, Focus, Poison) plus robust block is mandatory.</li>
+      <li><strong>The multi-hit turn (Turn 2): BLOCK EVERYTHING.</strong> 45-67 damage randomly split across multiple hits. Each hit reduces your block and bleeds through. <span class="card-ref">Impervious</span>, <span class="card-ref">Wraith Form</span>, <span class="card-ref">Buffer</span> are premium. Weak (<span class="card-ref">Disarm</span>, <span class="card-ref">Malaise</span>, <span class="card-ref">Piercing Wail</span>) reduces it to 30-44.</li>
+    </ul>
+    <p><strong>Absolute Best Cards for The Heart:</strong> Wraith Form (Silent), Buffer (Defect), Impervious + Corruption (Ironclad), Malaise (Silent), After Image (Silent, for Beat of Death), Feel No Pain + Dark Embrace (Ironclad, exhaust statuses for block/draw).</p>
+  </div>
+
+  <div class="tip-box">
+    <strong>💡 The Key Strategy:</strong> The Heart fight tests whether your deck is truly complete. If you can survive the Turn 1 debuff, block the Turn 2 multi-hit, and output 300 damage on Turn 3 — your deck can handle anything Slay the Spire 2 throws at you. If you're struggling, your deck probably needs more card draw (for Turn 1) and more burst scaling (for the damage cap).
+  </div>
+
+  <h2 id="prep">5. How to Prepare for Each Act Boss</h2>
+  <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;color:var(--text-secondary);">
+    <tr style="border-bottom:1px solid var(--border);">
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Act</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">What You Need</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Key Cards</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Potion Strategy</th>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Act 1</strong></td>
+      <td style="padding:10px;">Front-loaded damage, 1 AoE card, 25+ max HP</td>
+      <td style="padding:10px;">Carnage, Whirlwind, Dagger Spray, Sweeping Beam</td>
+      <td style="padding:10px;">Attack Potion or Fire Potion to burst the split/Slam turn</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Act 2</strong></td>
+      <td style="padding:10px;">Scaling damage, AoE, 40+ block capacity per turn</td>
+      <td style="padding:10px;">Demon Form, Noxious Fumes, Disarm, Wraith Form</td>
+      <td style="padding:10px;">Block Potion or Ghost in a Jar for Hyperbeam turn</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Act 3</strong></td>
+      <td style="padding:10px;">Finished deck, strong win condition, block engine</td>
+      <td style="padding:10px;">High-impact attacks, reliable scaling, Energy relics</td>
+      <td style="padding:10px;">Fairy in a Bottle or Ghost in a Jar as safety net</td>
+    </tr>
+    <tr>
+      <td style="padding:10px;"><strong>Act 4</strong></td>
+      <td style="padding:10px;">Card draw (turn 1), burst damage (300 cap), block engine</td>
+      <td style="padding:10px;">Offering, Adrenaline, Corruption, Wraith Form, Buffer</td>
+      <td style="padding:10px;">Ghost in a Jar ×2 is the optimal setup if you can find them</td>
+    </tr>
+  </table>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">📖 More guides: <a href="../characters/index.html" style="color:var(--gold-light);">Character Builds</a> · <a href="beginner.html" style="color:var(--gold-light);">Beginner's Guide</a> · <a href="deck-building.html" style="color:var(--gold-light);">Deck Building</a> · <a href="../cards/index.html" style="color:var(--gold-light);">Card Database</a></p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a><a href="../about.html">About</a><a href="../privacy.html">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+
+<div id="searchOverlay" class="search-overlay" onclick="closeSearch(event)">
+  <div class="search-modal" onclick="event.stopPropagation()">
+    <div class="search-modal-header">
+      <input type="text" id="searchModalInput" placeholder="Type to search..." autofocus>
+      <button class="search-close" onclick="closeSearch()">✕</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+<style>
+.search-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); z-index:1000; justify-content:center; padding-top:60px; }
+.search-overlay.active { display:flex; }
+.search-modal { width:640px; max-width:90vw; background:var(--bg-secondary); border:1px solid var(--border); border-radius:12px; overflow:hidden; max-height:80vh; display:flex; flex-direction:column; }
+.search-modal-header { display:flex; align-items:center; padding:16px; gap:12px; border-bottom:1px solid var(--border); }
+.search-modal-header input { flex:1; background:var(--bg-card); border:1px solid var(--border); color:var(--text-primary); padding:10px 16px; border-radius:8px; font-size:15px; outline:none; }
+.search-modal-header input:focus { border-color:var(--gold); }
+.search-close { background:none; border:none; color:var(--text-muted); font-size:20px; cursor:pointer; padding:4px 8px; }
+.search-close:hover { color:var(--gold-light); }
+.search-results { overflow-y:auto; padding:8px; flex:1; }
+.search-result-item { display:flex; align-items:center; gap:12px; padding:12px 16px; border-radius:8px; cursor:pointer; transition:all .15s; text-decoration:none; color:inherit; }
+.search-result-item:hover { background:var(--bg-card-hover); }
+.search-result-item .result-icon { font-size:20px; flex-shrink:0; width:36px; text-align:center; }
+.search-result-item .result-info { overflow:hidden; }
+.search-result-item .result-title { font-size:14px; font-weight:600; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-result-item .result-cat { font-size:11px; color:var(--gold-light); display:inline-block; padding:1px 6px; background:rgba(212,160,60,0.15); border-radius:3px; margin-bottom:2px; }
+.search-result-item .result-desc { font-size:12px; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-empty { text-align:center; padding:40px; color:var(--text-muted); font-size:14px; }
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; }
+  .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .lang-switch { order:2; margin-left:auto; }
+  .search-box { width:100%; margin-top:4px; }
+  .search-box input { width:100%; }
+  .hero { padding:32px 16px; }
+  .hero h1 { font-size:22px; }
+  .hero p { font-size:14px; }
+  .hero-stats { gap:16px; flex-wrap:wrap; }
+  .hero-stat .num { font-size:22px; }
+  .section { padding:24px 14px; }
+  .section-title { font-size:18px; }
+  .char-grid { grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px; }
+  .char-card { padding:16px 14px; }
+  .char-card .char-icon { font-size:28px; }
+  .char-card .char-name { font-size:15px; }
+  .char-card .char-desc { font-size:12px; }
+  .char-build { padding:16px; }
+  .char-build h2 { font-size:18px; }
+  .build-grid { grid-template-columns:1fr; }
+  .filters { flex-direction:column; gap:8px; }
+  .filters select, .filters input { width:100%; }
+  .stat-bar { flex-direction:column; gap:8px; align-items:flex-start; }
+  .card-table th, .card-table td { padding:6px 8px; font-size:11px; }
+  .card-table th:last-child, .card-table td:last-child { min-width:180px; }
+  .content-grid { grid-template-columns:1fr; }
+  .footer-links { flex-wrap:wrap; gap:12px; }
+  .guide-card { padding:16px; }
+  .boss-grid { grid-template-columns:1fr; }
+  .relic-grid { grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); }
+  .search-modal { width:95vw; max-height:70vh; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size:18px; }
+  .logo-text { font-size:13px; }
+  .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; }
+  .section-title { font-size:16px; }
+  .char-grid { grid-template-columns:1fr 1fr; gap:8px; }
+  .char-card .char-name { font-size:13px; }
+  .card-table { font-size:10px; }
+  .card-table th, .card-table td { padding:4px 6px; font-size:10px; }
+  footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script>
+let searchIndex = [];
+fetch('../search-index.json').then(r => r.json()).then(d => { searchIndex = d; }).catch(() => { fetch('search-index.json').then(r => r.json()).then(d => { searchIndex = d; }) });
+function openSearch() { document.getElementById('searchOverlay').classList.add('active'); document.getElementById('searchModalInput').focus(); }
+function closeSearch(e) { if (e && e.target !== document.getElementById('searchOverlay')) return; var el = document.getElementById('searchOverlay'); el.classList.remove('active'); document.getElementById('searchModalInput').value = ''; document.getElementById('searchResults').innerHTML = ''; }
+document.getElementById('searchModalInput').addEventListener('input', function() {
+  var q = this.value.toLowerCase().trim(), el = document.getElementById('searchResults');
+  if (!q) { el.innerHTML = ''; return; }
+  var r = searchIndex.filter(function(i) { return i.title.toLowerCase().includes(q) || i.keywords.includes(q) || i.category.toLowerCase().includes(q); }).slice(0, 10);
+  if (!r.length) { el.innerHTML = '<div class="search-empty">No results for "<strong>' + q + '</strong>"</div>'; return; }
+  var icons = { Characters: '\u{1F9B8}', Cards: '\u{1F0CF}', Relics: '\u{1F48E}', Bosses: '\u{1F479}', Guides: '\u{1F4D6}', Home: '\u{1F3E0}' };
+  el.innerHTML = r.map(function(i) { return '<a class="search-result-item" href="' + i.url + '"><span class="result-icon">' + (icons[i.category] || '\u{1F4C4}') + '</span><div class="result-info"><span class="result-cat">' + i.category + '</span><div class="result-title">' + i.title + '</div></div></a>'; }).join('');
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); } });
+</script>
+
+<div id="cookie-consent">
+  <p>We use cookies to improve your experience and for analytics. <a href="/en/privacy.html">Privacy Policy</a></p>
+  <div class="cc-btns">
+    <button class="cc-btn cc-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cc-btn cc-reject" onclick="rejectCookies()">Reject</button>
+  </div>
+</div>
+<script>
+(function(){
+  var c = document.cookie.match('(^|;)\\s*cookie_consent\\s*=\\s*([^;]+)');
+  if (!c) { document.getElementById('cookie-consent').style.display = 'flex'; }
+})();
+function acceptCookies(){
+  document.cookie = 'cookie_consent=accepted; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+function rejectCookies(){
+  document.cookie = 'cookie_consent=rejected; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silent Shiv & Discard Build — Infinite Card Cycle Guide | STS2Guides</title>
+<meta name="description" content="Complete Silent Shiv & Discard build guide for Slay the Spire 2. Infinite Blades, Accuracy, Calculated Gamble + Tactician engine, best relics, and A20 strategy.">
+    <meta property="og:title" content="Silent Shiv & Discard Build — Infinite Card Cycle Guide | STS2Guides">
+    <meta property="og:description" content="Complete Silent Shiv & Discard build guide for Slay the Spire 2. Infinite Blades, Accuracy, Calculated Gamble + Tactician engine, best relics, and A20 strategy.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/silent-shiv-build.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STS2Guides">    <meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Silent Shiv & Discard Build — Infinite Card Cycle Guide | STS2Guides">
+    <meta name="twitter:description" content="Complete Silent Shiv & Discard build guide for Slay the Spire 2. Infinite Blades, Accuracy, Calculated Gamble + Tactician engine, best relics, and A20 strategy.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/silent-shiv-build.html">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--green);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:26px;font-weight:800;margin-bottom:4px;color:var(--green);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--green);border-left:4px solid var(--green);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.card-ref{display:inline-block;padding:2px 10px;background:rgba(39,174,96,0.1);border:1px solid rgba(39,174,96,0.3);border-radius:8px;font-size:13px;margin:2px;}
+.combo-box{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin:20px 0;}
+.combo-box h4{color:var(--gold-light);margin-bottom:8px;}
+.stage-guide{counter-reset:stage;list-style:none;padding-left:0;}
+.stage-guide li{counter-increment:stage;padding:12px 0 12px 40px;position:relative;border-bottom:1px solid var(--border);}
+.stage-guide li::before{content:counter(stage);position:absolute;left:0;width:26px;height:26px;background:var(--green);color:#fff;border-radius:50%;text-align:center;line-height:26px;font-size:13px;font-weight:700;top:12px;}
+.tip-box{background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.tip-box strong{color:var(--green);}
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:30px;}
+.toc h3{font-size:14px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;}
+.toc a{display:block;padding:4px 0;color:var(--text-secondary);text-decoration:none;font-size:13px;}
+.toc a:hover{color:var(--gold-light);}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}}
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; }
+  .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .lang-switch { order:2; margin-left:auto; }
+  .search-box { width:100%; margin-top:4px; }
+  .search-box input { width:100%; }
+  .hero { padding:32px 16px; }
+  .hero h1 { font-size:22px; }
+  .hero p { font-size:14px; }
+  .hero-stats { gap:16px; flex-wrap:wrap; }
+  .hero-stat .num { font-size:22px; }
+  .section { padding:24px 14px; }
+  .section-title { font-size:18px; }
+  .char-grid { grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px; }
+  .char-card { padding:16px 14px; }
+  .char-card .char-icon { font-size:28px; }
+  .char-card .char-name { font-size:15px; }
+  .char-card .char-desc { font-size:12px; }
+  .char-build { padding:16px; }
+  .char-build h2 { font-size:18px; }
+  .build-grid { grid-template-columns:1fr; }
+  .filters { flex-direction:column; gap:8px; }
+  .filters select, .filters input { width:100%; }
+  .stat-bar { flex-direction:column; gap:8px; align-items:flex-start; }
+  .card-table th, .card-table td { padding:6px 8px; font-size:11px; }
+  .card-table th:last-child, .card-table td:last-child { min-width:180px; }
+  .content-grid { grid-template-columns:1fr; }
+  .footer-links { flex-wrap:wrap; gap:12px; }
+  .guide-card { padding:16px; }
+  .boss-grid { grid-template-columns:1fr; }
+  .relic-grid { grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); }
+  .search-modal { width:95vw; max-height:70vh; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size:18px; }
+  .logo-text { font-size:13px; }
+  .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; }
+  .section-title { font-size:16px; }
+  .char-grid { grid-template-columns:1fr 1fr; gap:8px; }
+  .char-card .char-name { font-size:13px; }
+  .card-table { font-size:10px; }
+  .card-table th, .card-table td { padding:4px 6px; font-size:10px; }
+  footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem","position": 1,"name": "STS2Guides","item": "https://sts2guides.com/"},
+    {"@type": "ListItem","position": 2,"name": "Guides","item": "https://sts2guides.com/en/guides/"},
+    {"@type": "ListItem","position": 3,"name": "Silent Shiv & Discard Build","item": "https://sts2guides.com/en/guides/silent-shiv-build.html"}
+  ]
+}
+</script>
+
+<style>
+#cookie-consent {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #1a1a2e; border-top: 1px solid #3a3a5a;
+  padding: 16px 24px; z-index: 9999;
+  display: none;
+  align-items: center; justify-content: center; gap: 16px;
+  flex-wrap: wrap; box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+}
+#cookie-consent p {
+  margin: 0; color: #c8c4b4; font-size: 14px; max-width: 500px; line-height: 1.5;
+}
+#cookie-consent a { color: #e6a750; text-decoration: underline; }
+#cookie-consent .cc-btns { display: flex; gap: 10px; }
+.cc-btn {
+  padding: 8px 20px; border-radius: 6px; font-size: 14px; font-weight: 600;
+  cursor: pointer; border: none; transition: background 0.2s;
+}
+.cc-accept { background: #e6a750; color: #0d0d1a; }
+.cc-accept:hover { background: #f0c060; }
+.cc-reject { background: #3a3a5a; color: #c8c4b4; }
+.cc-reject:hover { background: #4a4a6a; }
+@media (max-width: 480px) {
+  #cookie-consent { flex-direction: column; text-align: center; padding: 14px 16px; }
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+            <a href="./" class="active">Guides</a>
+<a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a>
+      <a href="../relics/index.html">Relics</a>
+      <a href="../bosses/index.html">Bosses</a>
+      <a href="../patch-notes/">Patch Notes</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Silent Shiv & Discard Build</div>
+
+<article class="article">
+  <h1>Silent Shiv & Discard Build: Infinite Card Cycle Guide</h1>
+  <div class="meta">🏆 Build Guide · Updated May 26, 2026 · 10 min read · <span style="color:var(--green);font-weight:700;">S-Tier</span></div>
+
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <a href="#how-it-works">1. How It Works</a>
+    <a href="#core-cards">2. Core Cards</a>
+    <a href="#relics">3. Best Relics</a>
+    <a href="#run-strategy">4. Run Strategy — Stage by Stage</a>
+    <a href="#discard-vs-shiv">5. Two Variants: Discard vs. Pure Shiv</a>
+    <a href="#matchups">6. Matchup Notes</a>
+  </div>
+
+  <p>The Shiv & Discard build is Silent's most aggressive archetype, combining <strong>free 0-cost Shivs</strong> with a discard engine that generates near-infinite card draw and energy. When fully assembled, you can play 15+ cards per turn, stacking damage with <span class="card-ref">Accuracy</span> and <span class="card-ref">Wrist Blade</span> while cycling through your entire deck multiple times per turn.</p>
+
+  <h2 id="how-it-works">1. How It Works</h2>
+  <p>This build operates on two synergistic axes:</p>
+
+  <div class="combo-box">
+    <h4>🔥 Engine 1 — Shiv Generation</h4>
+    <p>Generate free 0-cost Attacks every turn. <span class="card-ref">Infinite Blades</span> gives 1 Shiv per turn passively. <span class="card-ref">Blade Dance</span> creates 3 Shivs immediately. <span class="card-ref">Cloak and Dagger</span> creates 1-2 Shivs plus Block. Stack <span class="card-ref">Accuracy</span> to make each Shiv deal 6-10 damage instead of 4.</p>
+  </div>
+
+  <div class="combo-box">
+    <h4>🔥 Engine 2 — Discard Cycle</h4>
+    <p><span class="card-ref">Calculated Gamble+</span> discards your entire hand and redraws. <span class="card-ref">Tactician+</span> gives +2 energy when discarded. <span class="card-ref">Reflex+</span> draws 2-3 when discarded. Together, these turn every discard into a net-positive resource engine, letting you chain Acrobatics into Calculated Gamble into more Acrobatics indefinitely.</p>
+  </div>
+
+  <p>The magic happens when both engines run simultaneously: discard effects reload your hand with more Shiv generators, free Shivs give you damage without spending energy, and the energy saved lets you play more draw/discard cards. A single turn can easily involve 12-20 card plays.</p>
+
+  <h2 id="core-cards">2. Core Cards</h2>
+
+  <h3>Must-Have (S-Tier)</h3>
+  <ul>
+    <li><strong>Accuracy</strong> — +3-5 damage to ALL Shivs. With 3 Shivs per turn, that's +9-15 damage for 1 energy, permanently. The single most important damage card in the build.</li>
+    <li><strong>Infinite Blades</strong> — 1-cost Power: gain 1 Shiv every turn. Over a 5-turn fight, that's 5 free attacks. Upgrade to Innate so it starts in your opening hand.</li>
+    <li><strong>Blade Dance</strong> — 1-cost: add 3 Shivs to your hand. At 6-9 damage each (with Accuracy), that's 18-27 damage for 1 energy — elite-level efficiency.</li>
+    <li><strong>Calculated Gamble+</strong> — 0-cost: discard your hand, draw that many cards. The best discard trigger in the game. With Tactician and Reflex in hand, this single card can generate 4+ energy and 5+ card draw.</li>
+  </ul>
+
+  <h3>Discard Engine (A-Tier)</h3>
+  <ul>
+    <li><strong>Tactician+</strong> — When discarded, gain 2 energy. The energy backbone. Stack 2 copies and a single Calculated Gamble generates 4 energy.</li>
+    <li><strong>Reflex+</strong> — When discarded, draw 2-3 cards. The draw backbone. Combined with Tactician, discard becomes net-positive in both resources.</li>
+    <li><strong>Acrobatics</strong> — Draw 3-4, discard 1. Triggers Tactician/Reflex while refreshing your hand.</li>
+    <li><strong>Prepared+</strong> — Draw 2, discard 2. Cheap draw and double discard trigger. Excellent at digging for key pieces.</li>
+  </ul>
+
+  <h3>Strong Support</h3>
+  <ul>
+    <li><strong>Cloak and Dagger</strong> — 6 Block + 1-2 Shivs. The perfect defensive Shiv card. Scales with both Accuracy and Dexterity.</li>
+    <li><strong>Finisher</strong> — Deal 6-8 damage per Attack played this turn. After 10 Shivs, that's 60-80 damage for 1 energy.</li>
+    <li><strong>After Image</strong> — Gain 1 Block per card played. Playing 10+ cards per turn = 10+ free Block. Essential for Heart fights.</li>
+    <li><strong>Well-Laid Plans</strong> — Retain 1-2 cards per turn. Hold Calculated Gamble until Tactician is in hand.</li>
+    <li><strong>Tools of the Trade</strong> — Draw 1, discard 1 at start of turn. Free discard trigger every turn, helps find your pieces.</li>
+  </ul>
+
+  <div class="tip-box">
+    <strong>💡 The Sneaky Strike Trap:</strong> <span class="card-ref">Sneaky Strike</span> (gain 2 energy when discarded) seems perfect for this build — but it's a Trap. It costs 2 energy to play and only refunds if discarded. Skip it unless you have multiple discard outlets AND no other energy generation.
+  </div>
+
+  <h2 id="relics">3. Best Relics</h2>
+  <ul>
+    <li><strong>Wrist Blade</strong> (S+) — 0-cost Attacks deal +4 damage. Every Shiv now hits for 8 base damage. With 2 Accuracies, that's 16 damage per Shiv. This relic alone doubles your damage output.</li>
+    <li><strong>Tingsha</strong> (S) — Deal 3 damage to a random enemy whenever you discard. With the discard engine generating 5-8 discards per turn, that's 15-24 passive damage per turn.</li>
+    <li><strong>Tough Bandages</strong> (S) — Gain 3 Block whenever you discard. 8 discards/turn = 24 free Block. Nearly as good as After Image, but as a relic.</li>
+    <li><strong>Shuriken</strong> (A) — Every 3 Attacks played, gain +1 Strength. The Shiv engine plays 5-10 Attacks per turn → 2-3 Strength per turn. Scales aggressively.</li>
+    <li><strong>Kunai</strong> (A) — Every 3 Attacks played, gain +1 Dexterity. Free block scaling to survive while you set up.</li>
+    <li><strong>Ornamental Fan</strong> (A) — Every 3 Attacks played, gain 4 Block. Adds up fast with Shiv spam.</li>
+    <li><strong>Dead Branch</strong> (B) — Shivs exhaust when played, generating random cards. Can break your deck's consistency but occasionally gifts game-winning rares. Not recommended for reliability, but fun.</li>
+  </ul>
+
+  <h2 id="run-strategy">4. Run Strategy — Stage by Stage</h2>
+  <ol class="stage-guide">
+    <li>
+      <strong>Floors 1-8 (Early Act 1):</strong>
+      <p>Take attacks that deal damage immediately — <span class="card-ref">Dagger Throw</span>, <span class="card-ref">Quick Slash</span>, <span class="card-ref">Poisoned Stab</span>. You need to kill Act 1 elites. <span class="card-ref">Blade Dance</span> is an instant-pick. <span class="card-ref">Cloak and Dagger</span> is excellent if you see it. Skip discard enablers (Tactician, Reflex) until you have enough draw to support them.</p>
+    </li>
+    <li>
+      <strong>Floors 9-16 (Late Act 1):</strong>
+      <p>If <span class="card-ref">Accuracy</span> appears, take it — it's the build's defining card. Look for <span class="card-ref">Infinite Blades</span> and a second <span class="card-ref">Blade Dance</span>. Start removing Strikes at shops (you have Shivs now, you don't need basic attacks). Upgrade <span class="card-ref">Neutralize</span> at campfires for the early-game Weak utility.</p>
+    </li>
+    <li>
+      <strong>Floors 17-25 (Early Act 2):</strong>
+      <p>The build comes alive. Take <span class="card-ref">Calculated Gamble</span> whenever you see it. If offered <span class="card-ref">Tactician</span> or <span class="card-ref">Reflex</span>, grab them but don't prioritize them over additional Shiv generators. <span class="card-ref">After Image</span> solves all your defensive problems. At this point, you should have 2+ Accuracy cards and consistent 3-5 Shivs per turn.</p>
+    </li>
+    <li>
+      <strong>Floors 26-33 (Late Act 2):</strong>
+      <p>Refine the engine. If you have Tactician+ and Calculated Gamble+, you can now cycle your entire deck each turn. Remove remaining Strikes and Defends. Take <span class="card-ref">Finisher</span> as your boss-killer. Your deck should be 20-25 cards with half being Shiv generators and half being discard/draw.</p>
+    </li>
+    <li>
+      <strong>Floors 34-50 (Act 3):</strong>
+      <p>Every fight is solved. Turn 1: play Infinite Blades (if Innate) + Well-Laid Plans to hold Calculated Gamble. Turn 2-3: chain Acrobatics → Calculated Gamble → play all Shiv generators → Finisher. You'll deal 80-120 damage per turn while generating 20-30 Block passively. Bosses die in 4-6 turns.</p>
+    </li>
+  </ol>
+
+  <h2 id="discard-vs-shiv">5. Two Variants: Discard-Heavy vs. Pure Shiv</h2>
+  <p>Depending on what cards you're offered, you'll lean into one of two flavors:</p>
+
+  <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;color:var(--text-secondary);">
+    <tr style="border-bottom:1px solid var(--border);">
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Aspect</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Discard-Heavy</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Pure Shiv</th>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Key Cards</strong></td>
+      <td style="padding:10px;">Tactician, Reflex, Calculated Gamble, Acrobatics</td>
+      <td style="padding:10px;">Accuracy, Infinite Blades, Blade Dance, Finisher</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Energy Source</strong></td>
+      <td style="padding:10px;">Discard triggers (Tactician)</td>
+      <td style="padding:10px;">Base energy (Shivs are free)</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Ceiling</strong></td>
+      <td style="padding:10px;color:var(--green);">Infinite</td>
+      <td style="padding:10px;">Very high, but finite</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Floor</strong></td>
+      <td style="padding:10px;">Low without pieces</td>
+      <td style="padding:10px;color:var(--green);">Medium (Blade Dance alone works)</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Best Relics</strong></td>
+      <td style="padding:10px;">Tingsha, Tough Bandages</td>
+      <td style="padding:10px;">Wrist Blade, Shuriken, Kunai</td>
+    </tr>
+    <tr>
+      <td style="padding:10px;"><strong>A20 Viability</strong></td>
+      <td style="padding:10px;color:var(--green);">S-Tier</td>
+      <td style="padding:10px;">A-Tier</td>
+    </tr>
+  </table>
+
+  <p>Most successful A20 Silent runs blend both. You take whatever pieces show up and build around them. A typical winning deck has 2-3 Shiv generators + 1 Accuracy + 1 Tactician + 1 Reflex + 1 Calculated Gamble. That's only 6-8 cards dedicated to the engine — the rest is block and utility.</p>
+
+  <h2 id="matchups">6. Matchup Notes</h2>
+  <ul>
+    <li><strong>vs Gremlin Nob:</strong> Avoid playing Skills (including Shiv generators like Cloak and Dagger). Use Blade Dance and attacks only. Shivs are Skills — Cloak and Dagger triggers Nob's Strength gain. Check your card types!</li>
+    <li><strong>vs Book of Stabbing:</strong> After Image hard-counters this fight. Every Shiv play gives you Block against the multi-hit. After Image alone makes this fight trivial.</li>
+    <li><strong>vs Collector:</strong> Kill the torch minions ASAP with Finisher or multi-Shiv turns. The fight becomes simple once they're down.</li>
+    <li><strong>vs Time Eater:</strong> Play carefully. Each Shiv counts toward the 12-card limit. Stack Accuracy early, play exactly 11 cards, then unleash a 70+ damage Finisher. Don't waste card plays on low-value Shivs.</li>
+    <li><strong>vs The Heart:</strong> After Image is mandatory. Beats of Death deals 1-2 damage per card played. With After Image and a Kunai/Ornamental Fan, you can offset the Beat damage while still playing 10+ cards per turn. Without After Image, this fight is extremely difficult.</li>
+  </ul>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">Also check: <a href="silent-poison-build.html" style="color:var(--gold-light);">Silent Poison Build</a> · <a href="../cards/index.html" style="color:var(--gold-light);">Card Database</a> · <a href="infinite-combos.html" style="color:var(--gold-light);">Infinite Combos Guide</a></p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a><a href="../about.html">About</a><a href="../privacy.html">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+
+<div id="searchOverlay" class="search-overlay" onclick="closeSearch(event)">
+  <div class="search-modal" onclick="event.stopPropagation()">
+    <div class="search-modal-header">
+      <input type="text" id="searchModalInput" placeholder="Type to search..." autofocus>
+      <button class="search-close" onclick="closeSearch()">✕</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+<style>
+.search-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); z-index:1000; justify-content:center; padding-top:60px; }
+.search-overlay.active { display:flex; }
+.search-modal { width:640px; max-width:90vw; background:var(--bg-secondary); border:1px solid var(--border); border-radius:12px; overflow:hidden; max-height:80vh; display:flex; flex-direction:column; }
+.search-modal-header { display:flex; align-items:center; padding:16px; gap:12px; border-bottom:1px solid var(--border); }
+.search-modal-header input { flex:1; background:var(--bg-card); border:1px solid var(--border); color:var(--text-primary); padding:10px 16px; border-radius:8px; font-size:15px; outline:none; }
+.search-modal-header input:focus { border-color:var(--gold); }
+.search-close { background:none; border:none; color:var(--text-muted); font-size:20px; cursor:pointer; padding:4px 8px; }
+.search-close:hover { color:var(--gold-light); }
+.search-results { overflow-y:auto; padding:8px; flex:1; }
+.search-result-item { display:flex; align-items:center; gap:12px; padding:12px 16px; border-radius:8px; cursor:pointer; transition:all .15s; text-decoration:none; color:inherit; }
+.search-result-item:hover { background:var(--bg-card-hover); }
+.search-result-item .result-icon { font-size:20px; flex-shrink:0; width:36px; text-align:center; }
+.search-result-item .result-info { overflow:hidden; }
+.search-result-item .result-title { font-size:14px; font-weight:600; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-result-item .result-cat { font-size:11px; color:var(--gold-light); display:inline-block; padding:1px 6px; background:rgba(212,160,60,0.15); border-radius:3px; margin-bottom:2px; }
+.search-result-item .result-desc { font-size:12px; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-empty { text-align:center; padding:40px; color:var(--text-muted); font-size:14px; }
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; }
+  .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .lang-switch { order:2; margin-left:auto; }
+  .search-box { width:100%; margin-top:4px; }
+  .search-box input { width:100%; }
+  .hero { padding:32px 16px; }
+  .hero h1 { font-size:22px; }
+  .hero p { font-size:14px; }
+  .hero-stats { gap:16px; flex-wrap:wrap; }
+  .hero-stat .num { font-size:22px; }
+  .section { padding:24px 14px; }
+  .section-title { font-size:18px; }
+  .char-grid { grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px; }
+  .char-card { padding:16px 14px; }
+  .char-card .char-icon { font-size:28px; }
+  .char-card .char-name { font-size:15px; }
+  .char-card .char-desc { font-size:12px; }
+  .char-build { padding:16px; }
+  .char-build h2 { font-size:18px; }
+  .build-grid { grid-template-columns:1fr; }
+  .filters { flex-direction:column; gap:8px; }
+  .filters select, .filters input { width:100%; }
+  .stat-bar { flex-direction:column; gap:8px; align-items:flex-start; }
+  .card-table th, .card-table td { padding:6px 8px; font-size:11px; }
+  .card-table th:last-child, .card-table td:last-child { min-width:180px; }
+  .content-grid { grid-template-columns:1fr; }
+  .footer-links { flex-wrap:wrap; gap:12px; }
+  .guide-card { padding:16px; }
+  .boss-grid { grid-template-columns:1fr; }
+  .relic-grid { grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); }
+  .search-modal { width:95vw; max-height:70vh; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size:18px; }
+  .logo-text { font-size:13px; }
+  .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; }
+  .section-title { font-size:16px; }
+  .char-grid { grid-template-columns:1fr 1fr; gap:8px; }
+  .char-card .char-name { font-size:13px; }
+  .card-table { font-size:10px; }
+  .card-table th, .card-table td { padding:4px 6px; font-size:10px; }
+  footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script>
+let searchIndex = [];
+fetch('../search-index.json').then(r => r.json()).then(d => { searchIndex = d; }).catch(() => { fetch('search-index.json').then(r => r.json()).then(d => { searchIndex = d; }) });
+function openSearch() { document.getElementById('searchOverlay').classList.add('active'); document.getElementById('searchModalInput').focus(); }
+function closeSearch(e) { if (e && e.target !== document.getElementById('searchOverlay')) return; var el = document.getElementById('searchOverlay'); el.classList.remove('active'); document.getElementById('searchModalInput').value = ''; document.getElementById('searchResults').innerHTML = ''; }
+document.getElementById('searchModalInput').addEventListener('input', function() {
+  var q = this.value.toLowerCase().trim(), el = document.getElementById('searchResults');
+  if (!q) { el.innerHTML = ''; return; }
+  var r = searchIndex.filter(function(i) { return i.title.toLowerCase().includes(q) || i.keywords.includes(q) || i.category.toLowerCase().includes(q); }).slice(0, 10);
+  if (!r.length) { el.innerHTML = '<div class="search-empty">No results for "<strong>' + q + '</strong>"</div>'; return; }
+  var icons = { Characters: '\u{1F9B8}', Cards: '\u{1F0CF}', Relics: '\u{1F48E}', Bosses: '\u{1F479}', Guides: '\u{1F4D6}', Home: '\u{1F3E0}' };
+  el.innerHTML = r.map(function(i) { return '<a class="search-result-item" href="' + i.url + '"><span class="result-icon">' + (icons[i.category] || '\u{1F4C4}') + '</span><div class="result-info"><span class="result-cat">' + i.category + '</span><div class="result-title">' + i.title + '</div></div></a>'; }).join('');
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); } });
+</script>
+
+<div id="cookie-consent">
+  <p>We use cookies to improve your experience and for analytics. <a href="/en/privacy.html">Privacy Policy</a></p>
+  <div class="cc-btns">
+    <button class="cc-btn cc-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cc-btn cc-reject" onclick="rejectCookies()">Reject</button>
+  </div>
+</div>
+<script>
+(function(){
+  var c = document.cookie.match('(^|;)\\s*cookie_consent\\s*=\\s*([^;]+)');
+  if (!c) { document.getElementById('cookie-consent').style.display = 'flex'; }
+})();
+function acceptCookies(){
+  document.cookie = 'cookie_consent=accepted; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+function rejectCookies(){
+  document.cookie = 'cookie_consent=rejected; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+</script>
+</body>
+</html>

@@ -327,7 +327,7 @@ function renderCards() {
     <tr>
       <td><span class="tier-badge ${c.tier.toLowerCase()}" title="${c.reason ? c.reason : 'Auto-assigned based on rarity'}">${c.tier}</span></td>
       <td>
-        <a href="${c.id}/" style="text-decoration:none;color:inherit;">
+        <a href="${c.rarity === 'Ancient' ? c.id + '.html' : c.id + '/'}" style="text-decoration:none;color:inherit;" title="${c.rarity === 'Ancient' ? 'View full strategy guide' : 'View card details'}">
         <div class="card-name">
           ${c.name}
           <span style="font-size:11px;color:var(--text-muted);" title="${c.upgrade}">+</span>

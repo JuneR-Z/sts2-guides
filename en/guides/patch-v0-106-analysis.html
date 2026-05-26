@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STS2 v0.106.0 Patch Analysis: What Changed &amp; How to Adapt | STS2Guides</title>
+<meta name="description" content="Complete strategy analysis of the STS2 v0.106.0 patch — enemy reworks (Infested Prism, Aeonglass, Haunted Ship), card buffs/nerfs for all 5 characters, Mummified Hand rework, and updated tier lists.">
+    <meta property="og:title" content="STS2 v0.106.0 Patch Analysis: What Changed &amp; How to Adapt | STS2Guides">
+    <meta property="og:description" content="Complete strategy analysis of the STS2 v0.106.0 patch — enemy reworks, card buffs/nerfs, Mummified Hand rework, and updated tier lists for all 5 characters.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/patch-v0-106-analysis.html">
+    <meta property="og:type" content="website"><meta property="og:site_name" content="STS2Guides"><meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="STS2 v0.106.0 Patch Analysis: What Changed &amp; How to Adapt | STS2Guides">
+    <meta name="twitter:description" content="Complete strategy analysis — enemy reworks, card buffs/nerfs, Mummified Hand rework, and updated tier lists."><meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/patch-v0-106-analysis.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://sts2guides.com/en/guides/"},{"@type":"ListItem","position":2,"name":"v0.106.0 Patch Analysis","item":"https://sts2guides.com/en/guides/patch-v0-106-analysis.html"}]}</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L97YHHQRT3');</script>
+<!-- Google AdSense Auto Ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<style>:root{--bg-primary:#0d0d1a;--bg-secondary:#151528;--bg-card:#1a1a30;--bg-card-hover:#222240;--border:#2a2a45;--text-primary:#e8e6dc;--text-secondary:#a09c8c;--text-muted:#686450;--gold:#d4a03c;--gold-light:#f0c860;--crimson:#c0392b;--green:#27ae60;--blue:#3498db;--purple:#8e44ad;}*{margin:0;padding:0;box-sizing:border-box;}body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}header{background:var(--bg-secondary);border-bottom:2px solid var(--blue);position:sticky;top:0;z-index:100;}.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}.logo-text span{color:var(--gold-light);}nav{display:flex;gap:0;}nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}nav a.active{color:var(--gold-light);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}.breadcrumb a{color:var(--text-secondary);text-decoration:none;}.breadcrumb a:hover{color:var(--gold-light);}main{max-width:800px;margin:0 auto;padding:20px;}h1{font-size:2em;margin:0 0 8px;color:var(--gold-light);}h2{font-size:1.5em;margin:40px 0 16px;color:var(--gold);border-bottom:1px solid var(--border);padding-bottom:8px;}h3{font-size:1.2em;margin:28px 0 12px;color:var(--text-primary);}p{margin:12px 0;color:var(--text-secondary);}ul,ol{margin:12px 0 12px 24px;color:var(--text-secondary);}li{margin:6px 0;}strong{color:var(--text-primary);}a{color:var(--gold-light);text-decoration:underline;}.tip-box{background:var(--bg-card);border-left:3px solid var(--gold);padding:16px 20px;margin:20px 0;border-radius:0 6px 6px 0;}.tip-box strong{color:var(--gold-light);}.danger-box{background:var(--bg-card);border-left:3px solid var(--crimson);padding:16px 20px;margin:20px 0;border-radius:0 6px 6px 0;}.danger-box strong{color:var(--crimson);}.buff{color:var(--green);font-weight:700;}.nerf{color:var(--crimson);font-weight:700;}.rework{color:var(--gold-light);font-weight:700;}.change-card{background:var(--bg-card);border-radius:8px;padding:16px;margin:16px 0;}.change-card h4{margin:0 0 8px;font-size:1.05em;}table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;}th{background:var(--bg-card);color:var(--gold-light);padding:10px 12px;text-align:left;border-bottom:2px solid var(--border);}td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text-secondary);}tr:hover td{background:var(--bg-card-hover);}.cta-section{text-align:center;margin:40px 0 20px;padding:24px;background:var(--bg-card);border-radius:8px;}.cta-section p{margin:8px 0;}footer{text-align:center;padding:30px 20px;color:var(--text-muted);font-size:13px;border-top:1px solid var(--border);margin-top:40px;}footer a{color:var(--text-secondary);}@media(max-width:768px){main{padding:16px;}h1{font-size:1.5em;}nav a{padding:6px 10px;font-size:12px;}.header-inner{padding:0 10px;}}</style>
+</head>
+<body>
+<header><div class="header-inner"><a href="../index.html" class="logo"><div class="logo-icon">⬆️</div><div class="logo-text">STS2<span>Guides</span></div></a><nav><a href="../index.html">Home</a><a href="../guides/index.html" class="active">Guides</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a><a href="../tier-list/index.html">Tier List</a><a href="../relics/index.html">Relics</a><a href="../bosses/index.html">Bosses</a><a href="../patch-notes/index.html">Patch Notes</a></nav></div></header>
+<div class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Guides</a> / v0.106.0 Analysis</div>
+<main>
+<h1>STS2 Patch v0.106.0 Strategy Analysis: How the Meta Changed</h1>
+<p style="color:var(--text-muted);">~12 min read · Full strategic breakdown of every card buff, nerf, enemy rework, and how to update your win conditions</p>
+<p style="color:var(--text-muted);">📅 Published: May 22, 2026 · Beta Patch</p>
+
+<h2>Patch Overview: What Really Changed?</h2>
+<p>v0.106.0 is a <strong>balance-focused patch</strong> built around enemy adjustments. The headline changes are a <strong>complete Infested Prism rework</strong>, Aeonglass boss tuning, and card changes for every character. But the real meta impact comes from <strong>Fusion's transformation into a premier Defect card</strong> and the <strong>Mummified Hand quality-of-life rework</strong>.</p>
+
+<div class="tip-box"><strong>⚡ TL;DR — Biggest Winners &amp; Losers:</strong><br>
+<span class="buff">▲ BIGGEST BUFFS:</span> Defect Fusion (reworked to 1-cost, no-exhaust), Ironclad Entrench (counts Dexterity), Defect Death March (damage buffed), Predator (downshifted to Common)<br>
+<span class="nerf">▼ BIGGEST NERFS:</span> Silent Shatter (damage halved), Necrobinder Debilitate (duration reduced), Regent Sealed Throne (lost Innate), Regent Minion Sacrifice (block reduced)</p>
+
+<h2>🔥 Enemy Reworks — What to Expect Now</h2>
+
+<div class="change-card">
+<h4>Infested Prism — <span class="rework">FULL REWORK</span></h4>
+<p>The old Infested Prism fight is gone. Mega Crit completely redesigned this enemy, and the community is still discovering the new patterns. <strong>Until the community solves the new Prism, treat it as a high-danger encounter</strong> — bring extra block and expect unexpected attack patterns. This is the single biggest unknown in the current meta.</p>
+<div class="danger-box"><strong>⚠️ Strategy:</strong> Until the new patterns are documented, bring at least <strong>20+ block capacity per turn</strong> for Prism encounters. Stack Weak effects and potion-based emergency block. Unknown patterns mean you can't plan around specific turns.</div>
+</div>
+
+<div class="change-card">
+<h4>Aeonglass (Act 3 Boss) — <span class="rework">ADJUSTED</span></h4>
+<p>Aeonglass received targeted changes: the <strong>Withering Presence</strong> ability and <strong>Wither</strong> status have been rebalanced so all characters have fair counterplay. Previously, characters without cleanse effects (Ironclad, Regent) struggled disproportionately. Now, the 3-turn pattern is more predictable and the Wither penalty isn't as devastating for non-Defect/Silent characters.</p>
+<div class="tip-box"><strong>✅ Updated Strategy:</strong> Aeonglass is now a more "standard" Act 3 boss. The old advice of "bring a cleanse or die" is obsolete. Standard boss preparation (scaling damage + consistent block) is sufficient for all 5 characters. That said, <strong>Wither still punishes long fights</strong> — burst damage builds are still preferred over turtle strategies.</div>
+</div>
+
+<div class="change-card">
+<h4>Haunted Ship — <span class="buff">NERFED</span></h4>
+<p>Lost the "Ram Speed" attack (10 damage + Weak). Now cycles only Slam → Stomp, always opening with Slam. <strong>Result:</strong> This fight is significantly easier. The first turn is always predictable (block required), and you no longer need to worry about Weak debuffing your follow-up turn.</p>
+</div>
+
+<div class="change-card">
+<h4>Punch Construct — <span class="rework">PATTERN CHANGED</span></h4>
+<p>New pattern: Prepare → Laser Punch (5×2 + Weak) → Power Punch (now applies Vulnerable instead of Weak). <strong>Impact:</strong> The first turn is safe (Prepare), turn 2 requires moderate block, turn 3 hits hard AND applies Vulnerable, making turn 4+ much more dangerous. Stack block BEFORE turn 3, not after.</p>
+</div>
+
+<div class="change-card">
+<h4>Skulking Colony — <span class="rework">MIXED CHANGES</span></h4>
+<p>HP 70→75 (80 at A2+), Hardened Shell block 15→20. Lost "Slam" (12 fixed damage), replaced with "Pounce" (14/16 damage) on turns 1-2. <strong>Net effect:</strong> Fight tests sustained damage output more (more HP + more block) but the damage pattern is more predictable. Bring <strong>scaling damage</strong> rather than burst.</p>
+</div>
+
+<h2>💪 Card Changes — Strategic Impact</h2>
+
+<h3>IRONCLAD — All Positive</h3>
+<div class="change-card"><h4>Entrench — <span class="buff">BUFFED</span></h4>
+<p>Now counts Dexterity-based block when doubling. Combined with a Dexterity potion or enchantment, Entrench can create absurd block totals. <strong>New synergy:</strong> Entrench + Footwork (from Prismatic Shard) or Dexterity potion = instant Block cap. This makes the Block Ramp archetype significantly stronger.</p></div>
+<div class="change-card"><h4>Howl from Beyond — <span class="rework">ADJUSTED</span></h4>
+<p>Now activates at end of turn instead of start of turn. You can Exhaust it mid-turn and still get the payoff — no more holding it all turn. This is a <strong>quality-of-life buff</strong> that makes the card feel smoother without changing its power level.</p></div>
+
+<h3>SILENT — New Card Added</h3>
+<div class="change-card"><h4>Scare (NEW) — <span class="buff">Replaces Follow Through</span></h4>
+<p>Uncommon Skill. Unupgraded: Apply Weak to ALL enemies, Exhaust. Upgraded: Apply Weak to ALL enemies, cost 0, <strong>removes Exhaust</strong>. This is a <strong>massive addition to Silent's toolkit</strong>. A 0-cost reusable AoE Weak is premium in every archetype. It competes with Leg Sweep for the "best Silent block support" slot.</p></div>
+<div class="change-card"><h4>Predator — <span class="buff">BUFFED</span></h4>
+<p>Rarity reduced from Uncommon → Common. This appears in <strong>early card rewards</strong> now, dramatically improving Silent's Act 1 consistency. Predator is excellent damage for Act 1 elites and provides card draw for the next turn — seeing it earlier is a huge win for Silent players.</p></div>
+
+<h3>DEFECT — The Biggest Winner</h3>
+<div class="change-card"><h4>Fusion — <span class="buff">GIGA-BUFFED</span></h4>
+<p><strong>Energy cost: 2(1) → 1.</strong> Unupgraded adds Exhaust. Upgraded <strong>removes Exhaust</strong>. This is the single biggest card change in the patch. A 1-cost Plasma channel that doesn't exhaust is now the best energy engine in the game. Paired with Hologram or All for One, Fusion can generate infinite energy. <strong>Every Defect deck should now consider Fusion as a high-priority pick.</strong></p>
+<div class="tip-box"><strong>🔑 New Meta:</strong> Fusion (upgraded) + Hologram = infinite Plasma cycling. With Echo Form, you channel 2 Plasma for 1 energy. Defect's power level just jumped significantly.</div></div>
+<div class="change-card"><h4>Shatter — <span class="nerf">MASSIVE NERF</span></h4>
+<p>Damage: 11/15 → 7/11. A ~40% damage reduction. Shatter still evokes all orbs (the main reason you pick it), but the base damage is now terrible. <strong>Result:</strong> Shatter drops from A-tier to B-tier. It's still good in orb-heavy decks but is no longer a generically strong attack.</p></div>
+
+<h3>NECROBINDER &amp; REGENT — Mixed</h3>
+<div class="change-card"><h4>Debilitate — <span class="nerf">NERFED</span></h4>
+<p>Duration: 3/4 turns → 2/3 turns. This is painful for Necrobinder's boss matchups — the doubled Weak/Vulnerable effect now lasts only 2-3 turns instead of 3-4. You need to time Debilitate more carefully and may need a second copy in longer fights.</p></div>
+<div class="change-card"><h4>Sealed Throne — <span class="nerf">NERFED</span></h4>
+<p>Upgrade no longer grants Innate. Now reduces energy cost by 1. <strong>Impact:</strong> Sealed Throne is no longer guaranteed to appear on turn 1. You need Bottled Lightning or extra card draw to find it early. This makes Regent's setup slightly slower and more draw-dependent.</p></div>
+
+<h2>🧩 Mummified Hand Rework — Strategic Implications</h2>
+<p>The new <strong>3-tier priority system</strong> prevents Mummified Hand from wasting its free-play trigger on naturally 0-cost cards. This is a pure quality-of-life improvement that makes the relic more consistent. <strong>All Power-heavy Defect builds benefit</strong> — no more "Echo Form made Claw free" moments.</p>
+
+<h2>Updated Tier List Shifts (v0.106.0)</h2>
+<table>
+<tr><th>Card</th><th>Old Tier</th><th>New Tier</th><th>Reason</th></tr>
+<tr><td>Fusion (Defect)</td><td>B</td><td><span class="buff">A → S</span></td><td>1-cost no-exhaust Plasma channeling is game-breaking</td></tr>
+<tr><td>Predator (Silent)</td><td>B</td><td><span class="buff">A</span></td><td>Common rarity means early availability — huge for Act 1</td></tr>
+<tr><td>Scare (Silent, NEW)</td><td>—</td><td><span class="buff">A</span></td><td>0-cost reusable AoE Weak is premium in all archetypes</td></tr>
+<tr><td>Entrench (Ironclad)</td><td>B</td><td><span class="buff">A</span></td><td>Dexterity synergy opens new build paths</td></tr>
+<tr><td>Shatter (Defect)</td><td>A</td><td><span class="nerf">B</span></td><td>~40% damage nerf; still good in orb decks</td></tr>
+<tr><td>Debilitate (Necrobinder)</td><td>A</td><td><span class="nerf">B</span></td><td>Duration reduction hurts boss performance</td></tr>
+<tr><td>Sealed Throne (Regent)</td><td>S</td><td><span class="nerf">A</span></td><td>Lost Innate = slower setup; still engine-defining</td></tr>
+</table>
+
+<h2>How to Adapt Your Playstyle</h2>
+<ol>
+<li><strong>Defect mains: Prioritize Fusion now.</strong> Upgrade it immediately. Build around Plasma cycling. Pair with Hologram + All for One.</li>
+<li><strong>Silent mains: Look for Predator early.</strong> It's a common now, so it'll appear frequently. Draft Scare whenever offered — it's the best new defensive tool since Leg Sweep.</li>
+<li><strong>Ironclad mains: Experiment with Dexterity.</strong> Entrench + any Dexterity source creates absurd block. Consider Footwork from Prismatic Shard or Dexterity potions as new synergy pieces.</li>
+<li><strong>Necrobinder mains: Time Debilitate more carefully.</strong> With only 2-3 turns of doubled debuffs, use it on the turn before a boss's big attack pattern, not preemptively.</li>
+<li><strong>Regent mains: Adjust to slower starts.</strong> Without Innate Sealed Throne, invest more in card draw (Glimmer, Prophesize) to find your engine consistently.</li>
+<li><strong>All players: Respect Infested Prism until patterns are solved.</strong> Treat it as an elite-level threat.</li>
+</ol>
+
+<div class="cta-section">
+<p style="font-size:1.2em;color:var(--gold-light);">📋 Stay updated with the meta:</p>
+<p><a href="s-tier-cards.html">S-Tier Cards Guide</a> · <a href="../cards/index.html">Card Database</a> · <a href="boss-strategy.html">Updated Boss Strategy</a></p>
+</div>
+</main>
+<footer><p>© 2026 STS2Guides — Unofficial fan site. Not affiliated with Mega Crit.</p><p><a href="../about.html">About</a> · <a href="../privacy.html">Privacy</a> · DMCA: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p></footer>
+</body>
+</html>

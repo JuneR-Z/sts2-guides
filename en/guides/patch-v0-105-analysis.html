@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STS2 v0.105.0: New Aeonglass Boss &amp; Bestiary — Strategy Guide | STS2Guides</title>
+<meta name="description" content="Complete strategy analysis of Slay the Spire 2 v0.105.0 — new Act 3 boss Aeonglass replaces Doormaker, Bestiary system, massive Defect buffs, and how to adapt your runs.">
+    <meta property="og:title" content="STS2 v0.105.0: New Aeonglass Boss &amp; Bestiary — Strategy Guide | STS2Guides">
+    <meta property="og:description" content="Complete strategy analysis — Aeonglass replaces Doormaker, Bestiary arrives, Defect surges with major buffs. Full breakdown with updated build recommendations.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/patch-v0-105-analysis.html">
+    <meta property="og:type" content="website"><meta property="og:site_name" content="STS2Guides"><meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="STS2 v0.105.0: New Aeonglass Boss &amp; Bestiary — Strategy Guide | STS2Guides">
+    <meta name="twitter:description" content="Aeonglass replaces Doormaker, Bestiary arrives, massive Defect buffs. Full strategy breakdown with updated tier list shifts."><meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/patch-v0-105-analysis.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://sts2guides.com/en/guides/"},{"@type":"ListItem","position":2,"name":"v0.105.0 Patch Analysis","item":"https://sts2guides.com/en/guides/patch-v0-105-analysis.html"}]}</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L97YHHQRT3');</script>
+<!-- Google AdSense Auto Ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<style>:root{--bg-primary:#0d0d1a;--bg-secondary:#151528;--bg-card:#1a1a30;--bg-card-hover:#222240;--border:#2a2a45;--text-primary:#e8e6dc;--text-secondary:#a09c8c;--text-muted:#686450;--gold:#d4a03c;--gold-light:#f0c860;--crimson:#c0392b;--green:#27ae60;--blue:#3498db;--purple:#8e44ad;--orange:#e67e22;}*{margin:0;padding:0;box-sizing:border-box;}body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}header{background:var(--bg-secondary);border-bottom:2px solid var(--purple);position:sticky;top:0;z-index:100;}.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}.logo-text span{color:var(--gold-light);}nav{display:flex;gap:0;}nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}nav a.active{color:var(--gold-light);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}.breadcrumb a{color:var(--text-secondary);text-decoration:none;}.breadcrumb a:hover{color:var(--gold-light);}main{max-width:800px;margin:0 auto;padding:20px;}h1{font-size:2em;margin:0 0 8px;color:var(--gold-light);}h2{font-size:1.5em;margin:40px 0 16px;color:var(--gold);border-bottom:1px solid var(--border);padding-bottom:8px;}h3{font-size:1.2em;margin:28px 0 12px;color:var(--text-primary);}p{margin:12px 0;color:var(--text-secondary);}ul,ol{margin:12px 0 12px 24px;color:var(--text-secondary);}li{margin:6px 0;}strong{color:var(--text-primary);}a{color:var(--gold-light);text-decoration:underline;}.tip-box{background:var(--bg-card);border-left:3px solid var(--gold);padding:16px 20px;margin:20px 0;border-radius:0 6px 6px 0;}.tip-box strong{color:var(--gold-light);}.danger-box{background:var(--bg-card);border-left:3px solid var(--crimson);padding:16px 20px;margin:20px 0;border-radius:0 6px 6px 0;}.danger-box strong{color:var(--crimson);}.buff{color:var(--green);font-weight:700;}.nerf{color:var(--crimson);font-weight:700;}.rework{color:var(--gold-light);font-weight:700;}.change-card{background:var(--bg-card);border-radius:8px;padding:16px;margin:16px 0;}.change-card h4{margin:0 0 8px;font-size:1.05em;}table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;}th{background:var(--bg-card);color:var(--gold-light);padding:10px 12px;text-align:left;border-bottom:2px solid var(--border);}td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text-secondary);}tr:hover td{background:var(--bg-card-hover);}footer{text-align:center;padding:30px 20px;color:var(--text-muted);font-size:13px;border-top:1px solid var(--border);margin-top:40px;}footer a{color:var(--text-secondary);}@media(max-width:768px){main{padding:16px;}h1{font-size:1.5em;}nav a{padding:6px 10px;font-size:12px;}.header-inner{padding:0 10px;}}</style>
+</head>
+<body>
+<header><div class="header-inner"><a href="../index.html" class="logo"><div class="logo-icon">&#x1F3AE;</div><div class="logo-text">STS2<span>Guides</span></div></a><nav><a href="../index.html">Home</a><a href="../guides/index.html" class="active">Guides</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a><a href="../tier-list/index.html">Tier List</a><a href="../relics/index.html">Relics</a><a href="../bosses/index.html">Bosses</a><a href="../patch-notes/index.html">Patch Notes</a></nav></div></header>
+<div class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Guides</a> / v0.105.0 Analysis</div>
+<main>
+<h1>STS2 v0.105.0: Aeonglass, Bestiary &amp; the Defect Renaissance</h1>
+<p style="color:var(--text-muted);">~10 min read · Strategy analysis of the biggest STS2 content patch since launch</p>
+<p style="color:var(--text-muted);">&#x1F4C5; Published: May 7, 2026 · Beta Patch</p>
+
+<h2>Patch Overview: This One's a Game-Changer</h2>
+<p>v0.105.0 isn't just a balance patch — it's a <strong>content milestone</strong>. Mega Crit replaced an entire Act 3 boss, shipped the long-requested Bestiary, gave Defect its biggest round of buffs since launch, and committed to a <strong>bi-weekly update cadence</strong>. For anyone who felt STS2's EA was slow-moving, this patch is the clearest signal yet that development is accelerating.</p>
+
+<div class="tip-box"><strong>&#x26A1; TL;DR — Biggest Changes:</strong><br>
+<span class="buff">&#x25B2; DEFECT BUFFS:</span> Hyperbeam 26&#x2192;28, Shatter evokes orbs TWICE, Infused Core +1 Lightning damage, Uproar 5&#x2192;6<br>
+<span class="buff">&#x25B2; NEW BOSS:</span> Aeonglass replaces Doormaker as Act 3 boss — completely new fight to learn<br>
+<span class="buff">&#x25B2; NEW SYSTEM:</span> Bestiary lets you view enemy stats and animations in-game<br>
+<span class="buff">&#x25B2; NEW RELICS:</span> Kaleidoscope, Fishing Rod, Silken Tress (Neow starters)<br>
+<span class="nerf">&#x25BC; NERFED:</span> Blade of Ink Inky Shiv damage +2&#x2192;+1, Bulwark block 13&#x2192;12, Patter block 9&#x2192;8</p>
+
+<h2>&#x1F409; Aeonglass: The New Act 3 Boss — What We Know</h2>
+
+<div class="change-card">
+<h4>Doormaker Is Gone — Aeonglass Takes Over</h4>
+<p>The controversial Doormaker has been <strong>removed entirely</strong> and replaced by <strong>Aeonglass</strong>, a brand-new Act 3 boss. Mega Crit's stated design goal: a boss that "<em>better fits the game's complexity requirements</em>." Aeonglass introduces the <strong>Wither</strong> mechanic — a status that progressively weakens your cards over the course of a long fight.</p>
+</div>
+
+<div class="change-card">
+<h4>Aeonglass Fight Mechanics</h4>
+<p>Based on community testing and data, Aeonglass operates on a <strong>3-turn pattern</strong>:</p>
+<ul>
+<li><strong>Turn 1 — Withering Presence:</strong> Applies Wither to your deck — affected cards lose effectiveness over time. Think of it as a slow-burn scaling debuff.</li>
+<li><strong>Turn 2 — Attack Pattern:</strong> Moderate damage with a secondary effect (varies by encounter RNG).</li>
+<li><strong>Turn 3 — Power Turn:</strong> Heavy attack that scales with how many Wither stacks you've accumulated. <strong>This is the kill window or the death sentence.</strong></li>
+</ul>
+<div class="tip-box"><strong>&#x2705; Strategy: Burst beats sustain.</strong> Unlike Time Eater (who punishes card spam) or Awakened One (who punishes Powers), Aeonglass punishes <strong>long fights</strong>. The longer you take, the more Wither stacks cripple your deck. <strong>Scalable burst damage</strong> — Demon Form + Heavy Blade, Catalyst + Burst, Focus + Dark Orbs — is the optimal approach. Turtle/block strategies will get Wither'd to death.</div>
+<div class="danger-box"><strong>&#x26A0; Per-Character Warnings:</strong><br>
+&#x2022; <strong>Ironclad:</strong> Exhaust engines indirectly counter Wither by removing weakened cards. Corruption builds thrive.<br>
+&#x2022; <strong>Silent:</strong> Access to cleanse effects gives her an edge. Catalyst burst can end fights before Wither matters.<br>
+&#x2022; <strong>Defect:</strong> Biased Cognition + artifact charges block Wither application. Frost orbs don't save you here — go aggressive.<br>
+&#x2022; <strong>Necrobinder:</strong> Summons absorb Wither applications, serving as status sponges. Strong matchup.<br>
+&#x2022; <strong>Regent:</strong> Star resource system means longer setup. Bring Sealed Throne OR plan to end fights fast.</div>
+</div>
+
+<h2>&#x1F4D6; Bestiary: Knowledge Is Power</h2>
+<div class="change-card">
+<h4>What the Bestiary Does</h4>
+<p>Accessible from the <strong>Compendium</strong> menu, the Bestiary lets you view <strong>every enemy's full animation set and stat block</strong>. This is huge for strategy players — you can now study enemy attack patterns, HP ranges, and intent cycles without external wikis or trial-and-error deaths.</p>
+<div class="tip-box"><strong>&#x1F4A1; Pro Tip:</strong> Use the Bestiary before boss fights. Knowing the exact HP threshold for phase transitions and damage ranges lets you calculate lethal precisely — no more guessing whether you can tank one more hit.</div>
+</div>
+
+<h2>&#x26A1; The Defect Renaissance: Biggest Buff Round Yet</h2>
+<p>v0.105.0 is <strong>the Defect patch</strong>. Four core cards received significant buffs, and the net effect is a substantial power boost across all Defect archetypes.</p>
+
+<table>
+<tr><th>Card</th><th>Old Value</th><th>New Value</th><th>Impact</th></tr>
+<tr><td><strong>Hyperbeam</strong></td><td>26(34) damage</td><td><span class="buff">28(36) damage</span></td><td>+8% base damage — now one of the hardest-hitting AOE cards in the game</td></tr>
+<tr><td><strong>Shatter</strong></td><td>Evoke all orbs once</td><td><span class="buff">Evoke all orbs TWICE</span></td><td>Doubles orb payoff. Dark orb builds now have an instant-kill button</td></tr>
+<tr><td><strong>Infused Core</strong></td><td>Lightning orbs: standard</td><td><span class="buff">Lightning orbs +1 damage each</span></td><td>Small but permanent passive buff. Compounding effect over long fights</td></tr>
+<tr><td><strong>Uproar</strong></td><td>5(7) damage</td><td><span class="buff">6(8) damage</span></td><td>20% base damage increase. Better early-game pick</td></tr>
+<tr><td><strong>Tesla Coil+</strong></td><td>6 damage, 1 trigger</td><td><span class="buff">4 damage, 2 triggers</span></td><td>More total damage (8), better synergy with Strength/Focus</td></tr>
+</table>
+
+<div class="change-card">
+<h4>&#x1F4A5; The Shatter Change Is Meta-Defining</h4>
+<p>Shatter going from <strong>1 evoke to 2 evokes</strong> is the single biggest buff in this patch. A Defect with 3 Dark Orbs at 50+ damage each can now deal <strong>300+ damage in one card play</strong> by evoking each orb twice. This makes Defect one of the strongest burst characters in the game — a role traditionally held by Ironclad and Silent.</p>
+<div class="tip-box"><strong>&#x2705; New Build Priority:</strong> Dark Orb + Shatter is now a legitimate S-tier build path. Prioritize: Loop, Darkness+, Defragment, and any orb slot expansions. Save Shatter for the turn you have maximum Dark Orbs charged.</div>
+</div>
+
+<h2>&#x1F48E; New Neow Relics</h2>
+<table>
+<tr><th>Relic</th><th>Effect</th><th>Best For</th></tr>
+<tr><td><strong>Kaleidoscope</strong></td><td>Gain 2 cards from other characters on pickup</td><td>Hybrid build experimentation, co-op synergy</td></tr>
+<tr><td><strong>Fishing Rod</strong></td><td>Upgrade a random card every 3 normal fights</td><td>Any character — passive scaling like Girya but for upgrades</td></tr>
+<tr><td><strong>Silken Tress</strong></td><td>First reward cards all gain Glam enchantment</td><td>Aggressive early-game pathing into elites</td></tr>
+</table>
+
+<div class="tip-box"><strong>&#x1F3A3; Fishing Rod Analysis:</strong> Over a standard 3-act run (~15-20 normal fights), this relic gives 5-7 free upgrades. That's comparable to a Fusion Hammer without the downside. For Ironclad and Defect who benefit heavily from upgrades, this is potentially the strongest Neow relic in the pool.</div>
+
+<h2>&#x1F4C9; Other Balance Changes</h2>
+
+<div class="change-card">
+<h4>Silent — <span class="nerf">Blade of Ink Nerfed</span></h4>
+<p>Inky Shiv bonus damage: <strong>+2 &#x2192; +1</strong>. This tones down the Shiv archetype's snowball potential in Act 1. Shiv builds are still viable but no longer auto-win early encounters. The Inky Shiv still applies Weak, so the utility isn't gone — just the raw damage.</p>
+</div>
+
+<div class="change-card">
+<h4>Regent — <span class="rework">Sword Sage Reworked</span></h4>
+<p>Sword Sage's effect changed: "<strong>Sovereign Blade gains Replay 1</strong>." This creates a deliberate synergy chain with Parry (from v0.104.0). Play Parry &#x2192; Sovereign Blade gains Block &#x2192; Sword Sage gives Replay &#x2192; play Sovereign Blade again for double value. Regent's combo potential just got a structured upgrade path.</p>
+</div>
+
+<div class="change-card">
+<h4>Defense Cards — <span class="nerf">Slight Tuning</span></h4>
+<ul>
+<li><strong>Bulwark:</strong> Block 13(16) &#x2192; 12(15)</li>
+<li><strong>Patter:</strong> Block 9(11) &#x2192; 8(10)</li>
+<li><strong>Crescent Spear:</strong> Damage 6 &#x2192; 8 (actually a buff)</li>
+<li><strong>Royalties:</strong> Gold 30(35) &#x2192; 30(40)</li>
+</ul>
+</div>
+
+<h2>&#x1F4C8; Updated Tier List Shifts (v0.105.0)</h2>
+<table>
+<tr><th>Character</th><th>Previous Tier</th><th>New Tier</th><th>Reason</th></tr>
+<tr><td>Defect</td><td>A</td><td><span class="buff">S</span></td><td>Shatter double-evoke + Hyperbeam buff + Infused Core passive. Highest burst ceiling.</td></tr>
+<tr><td>Silent</td><td>S</td><td><span class="nerf">S (slightly down)</span></td><td>Blade of Ink nerf hurts early snowball but Catalyst builds untouched.</td></tr>
+<tr><td>Ironclad</td><td>A</td><td><span class="nerf">A</span></td><td>No direct changes. Aeonglass favors Corruption builds over Strength.</td></tr>
+<tr><td>Necrobinder</td><td>B</td><td><span class="buff">A</span></td><td>Summons absorb Wither — best Aeonglass matchup. Borrowed Time energy engine.</td></tr>
+<tr><td>Regent</td><td>B</td><td><span class="buff">A-</span></td><td>Sword Sage/Parry synergy adds structured combo lines. Needs time to optimize.</td></tr>
+</table>
+
+<h2>&#x1F504; How to Adapt: 5 Actionable Takeaways</h2>
+<ol>
+<li><strong>Learn Aeonglass immediately.</strong> Spend your next few runs pathing toward Act 3 and dying to learn the new boss patterns. The Bestiary will help — use it.</li>
+<li><strong>Pick Defect more often.</strong> Shatter + Dark Orb is now one of the strongest burst combos in STS2. If you see Darkness+, take it.</li>
+<li><strong>Prioritize Fishing Rod at Neow.</strong> 5-7 free upgrades per run is absurd value. It's now in contention for best Neow relic overall.</li>
+<li><strong>Build for burst, not sustain.</strong> Aeonglass's Wither mechanic punishes long fights across the board. Reevaluate your boss preparation strategy.</li>
+<li><strong>Silent Shiv is still fine.</strong> The Blade of Ink nerf brings it from "oppressive" to "balanced." Don't overreact by abandoning Shiv builds — the Weak application is still valuable.</li>
+</ol>
+
+<div class="tip-box" style="margin-top:40px;"><strong>&#x1F4CB; See also:</strong> <a href="patch-v0-104-analysis.html">v0.104.0 Analysis — Ironclad &amp; Regent Reworks</a> · <a href="patch-v0-106-analysis.html">v0.106.0 Analysis — Enemy Balance &amp; Card Updates</a> · <a href="../patch-notes/index.html">Full Patch History</a></div>
+
+</main>
+<footer>
+<p>STS2Guides is an unofficial fan site. Slay the Spire 2 &copy; Mega Crit Games.</p>
+<p><a href="../about.html">About</a> · <a href="../privacy.html">Privacy</a> · <a href="mailto:dmca@sts2guides.com">DMCA</a></p>
+</footer>
+</body>
+</html>

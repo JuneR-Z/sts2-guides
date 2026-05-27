@@ -229,6 +229,7 @@ footer a:hover { color: var(--gold-light); }
       <option value="defect">⚡ Defect</option>
       <option value="necrobinder">💀 Necrobinder</option>
       <option value="regent">👑 Regent</option>
+      <option value="colorless">🎨 Colorless</option>
     </select>
     <select id="filterType">
       <option value="all">All Types</option>
@@ -293,8 +294,8 @@ footer a:hover { color: var(--gold-light); }
 
 <script src="cards-data.js"></script>
 <script>
-const characterIcons = {ironclad:'⚔️',silent:'🗡️',defect:'⚡',necrobinder:'💀',regent:'👑'};
-const characterNames = {ironclad:'Ironclad',silent:'Silent',defect:'Defect',necrobinder:'Necrobinder',regent:'Regent'};
+const characterIcons = {ironclad:'⚔️',silent:'🗡️',defect:'⚡',necrobinder:'💀',regent:'👑',colorless:'🎨'};
+const characterNames = {ironclad:'Ironclad',silent:'Silent',defect:'Defect',necrobinder:'Necrobinder',regent:'Regent',colorless:'Colorless'};
 
 function renderCards() {
   const char = document.getElementById('filterCharacter').value;

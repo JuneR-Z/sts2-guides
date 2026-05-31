@@ -322,5 +322,35 @@
         "url":  "/en/cards/silent_predator.html",
         "category":  "Cards",
         "keywords":  "predator,silent,skill,draw,strategy,guide"
+    },
+    {
+        "title":  "Necrobinder Doom Execute Build — Skip HP Scaling with One-Turn Kill Combos",
+        "url":  "/en/guides/necrobinder-doom-build.html",
+        "category":  "Guides",
+        "keywords":  "necrobinder,doom,execute,build,guide,ascension,a20,meta"
+    },
+    {
+        "title":  "Aeonglass Boss Strategy Guide — How to Beat the Act 3 Crystal Boss",
+        "url":  "/en/guides/aeonglass-boss-strategy.html",
+        "category":  "Guides",
+        "keywords":  "aeonglass,boss,strategy,act 3,crystal,guide,doormaker"
+    },
+    {
+        "title":  "Infested Prism Rework Guide — v0.106 Enemy Balance Shift",
+        "url":  "/en/guides/infested-prism-rework-guide.html",
+        "category":  "Guides",
+        "keywords":  "infested,prism,rework,v0.106,enemy,balance,guide"
+    },
+    {
+        "title":  "Ascension 20 Challenge Guide — How to Beat the Hardest Difficulty",
+        "url":  "/en/guides/ascension-20-challenge-guide.html",
+        "category":  "Guides",
+        "keywords":  "ascension,20,a20,challenge,guide,difficulty,win,rate"
+    },
+    {
+        "title":  "STS2 Weekly Meta Report — v0.106.1 (May 26-June 1)",
+        "url":  "/en/guides/weekly-meta-report.html",
+        "category":  "Guides",
+        "keywords":  "weekly,meta,report,v0.106.1,tier,list,win,rate"
     }
 ]

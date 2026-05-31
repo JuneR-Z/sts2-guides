@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infested Prism Rework Guide — v0.106 Enemy Balance Shift | STS2Guides</title>
+<meta name="description" content="Complete analysis of the Infested Prism rework in Slay the Spire 2 v0.106. New attack patterns, meta impact, and how to adapt your builds to the changed encounter.">
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Infested Prism Rework Guide — v0.106 Enemy Balance Shift | STS2Guides">
+    <meta property="og:description" content="Complete analysis of the Infested Prism rework in Slay the Spire 2 v0.106. New attack patterns, meta impact, and how to adapt your builds to the changed encounter.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/infested-prism-rework-guide.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STS2Guides">    <meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Infested Prism Rework Guide — v0.106 Enemy Balance Shift | STS2Guides">
+    <meta name="twitter:description" content="Complete analysis of the Infested Prism rework in Slay the Spire 2 v0.106. New attack patterns, meta impact, and how to adapt your builds to the changed encounter.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/infested-prism-rework-guide.html">
+<style>
+::root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--green);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}nav a.active{color:var(--gold-light);}
+.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}
+.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}
+.breadcrumb{max-width:1200px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:40px 20px;}
+.article h1{font-size:28px;font-weight:800;margin-bottom:8px;line-height:1.3;}
+.article h2{font-size:20px;font-weight:700;margin:32px 0 12px;color:var(--gold-light);}
+.article h3{font-size:17px;font-weight:700;margin:20px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:14px;color:var(--text-secondary);}
+.article ul,.article ol{margin:12px 0 12px 24px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article a{color:var(--gold-light);text-decoration:none;}.article a:hover{text-decoration:underline;}
+.meta{font-size:13px;color:var(--text-muted);margin-bottom:20px;}
+.card-ref{background:rgba(212,160,60,0.15);color:var(--gold-light);padding:1px 6px;border-radius:3px;font-size:13px;font-weight:600;white-space:nowrap;}
+.tip-box{background:rgba(39,174,96,0.1);border-left:3px solid var(--green);padding:14px 18px;border-radius:6px;margin:16px 0;}
+.warn-box{background:rgba(192,57,43,0.1);border-left:3px solid var(--crimson);padding:14px 18px;border-radius:6px;margin:16px 0;}
+.combo-box{background:rgba(52,152,219,0.1);border-left:3px solid var(--blue);padding:14px 18px;border-radius:6px;margin:16px 0;}
+.combo-box h4{margin-bottom:6px;color:var(--blue);}
+.stage-guide{list-style:none;margin:0;padding:0;}
+.stage-guide li{padding:16px 0;border-bottom:1px solid var(--border);}
+.stage-guide li:last-child{border-bottom:none;}
+.stage-guide strong{display:block;margin-bottom:4px;color:var(--gold-light);}
+.stage-guide p{color:var(--text-secondary);margin:0;}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){nav{display:none;}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "STS2Guides", "item": "https://sts2guides.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sts2guides.com/en/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "Infested Prism Rework", "item": "https://sts2guides.com/en/guides/infested-prism-rework-guide.html"}
+  ]
+}
+</script>
+<style>
+#cookie-consent{position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;border-top:1px solid #3a3a5a;padding:16px 24px;z-index:9999;display:none;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 20px rgba(0,0,0,0.5);}
+#cookie-consent p{margin:0;color:#c8c4b4;font-size:14px;max-width:500px;line-height:1.5;}
+#cookie-consent a{color:#e6a750;text-decoration:underline;}
+#cookie-consent .cc-btns{display:flex;gap:10px;}
+.cc-btn{padding:8px 20px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;border:none;transition:background 0.2s;}
+.cc-accept{background:#e6a750;color:#0d0d1a;}.cc-accept:hover{background:#f0c060;}
+.cc-reject{background:#3a3a5a;color:#c8c4b4;}.cc-reject:hover{background:#4a4a6a;}
+@media(max-width:480px){#cookie-consent{flex-direction:column;text-align:center;padding:14px 16px;}}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+      <a href="./" class="active">Guides</a>
+      <a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a>
+      <a href="../relics/index.html">Relics</a>
+      <a href="../bosses/index.html">Bosses</a>
+      <a href="../patch-notes/">Patch Notes</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Infested Prism Rework</div>
+
+<article class="article">
+  <h1>Infested Prism Rework Guide: v0.106 Enemy Balance Shift</h1>
+  <div class="meta">📝 Patch Analysis · Updated May 31, 2026 · 8 min read · <span style="color:var(--crimson);font-weight:700;">Hot Topic</span></div>
+
+  <p>The <strong>Infested Prism</strong> was one of six enemies reworked in v0.106.0, and it's become the most discussed non-boss encounter in the community. Previously a straightforward Act 2 elite that spawned parasites, the reworked Prism now uses <strong>Reflective Carapace</strong>, <strong>Parasite Burst</strong>, and a cascading spawn mechanic that punishes AoE-heavy decks. This guide explains exactly what changed, why it matters, and how to beat the new version.</p>
+
+  <h2>What Changed in v0.106.0</h2>
+  <h3>Old Infested Prism (Pre-v0.106)</h3>
+  <ul>
+    <li>180 HP, spawned 2 parasites on Turn 1</li>
+    <li>Parasites dealt 6-8 damage each turn</li>
+    <li>Straightforward: kill parasites, then burn down Prism</li>
+    <li>Weak to AoE — one <span class="card-ref">Conflagration</span> or <span class="card-ref">Blizzard</span> cleared the entire board</li>
+  </ul>
+
+  <h3>New Infested Prism (Post-v0.106)</h3>
+  <ul>
+    <li><strong>220 HP</strong> (+22% health increase)</li>
+    <li><strong>Reflective Carapace:</strong> First 2 turns, Prism takes -50% damage from attacks. Forces you to either stall or use non-attack damage.</li>
+    <li><strong>Parasite Swarm:</strong> Spawns 3 parasites on Turn 1 (up from 2), and each parasite killed has a <strong>33% chance to split into 2 smaller parasites</strong> on death.</li>
+    <li><strong>Parasite Burst:</strong> When Prism drops below 50% HP, all living parasites explode for 10 damage each. This punishes the old "ignore parasites, burn Prism" strategy.</li>
+    <li><strong>Reinforced Shell:</strong> Gains 8 block at the start of every turn if any parasites are alive. You MUST clear parasites or the fight drags forever.</li>
+  </ul>
+
+  <div class="warn-box">
+    <strong>⚠️ The AoE Trap:</strong> The old strategy was "AoE everything and win." Now, killing parasites with AoE can trigger <strong>Parasite Splitting</strong> — your Blizzard kills 3 parasites, 1 splits into 2, and now you have 4 parasites instead of 3. Precision single-target damage is often better than AoE here.
+  </div>
+
+  <h2>New Attack Pattern</h2>
+  <ul>
+    <li><strong>Turn 1:</strong> Spawn 3 Parasites + gain 8 Block (Reinforced Shell). Reflective Carapace active.</li>
+    <li><strong>Turn 2:</strong> Parasites attack (6-8 damage each) + Prism attacks for 12-15. Reflective Carapace still active.</li>
+    <li><strong>Turn 3:</strong> Prism heals 10 HP if parasites alive + spawns 1 replacement parasite. Reflective Carapace expires.</li>
+    <li><strong>Turn 4+:</strong> Standard attack cycle. Prism attacks for 15-18. Parasites attack for 6-8 each. Spawns replacement parasites every 3 turns.</li>
+    <li><strong>Below 50% HP:</strong> Triggers <strong>Parasite Burst</strong> — ALL parasites explode for 10 damage each. If you left 3 parasites alive, that's 30 unavoidable damage.</li>
+  </ul>
+
+  <h2>How to Beat the New Prism</h2>
+  <h3>Strategy 1: Surgical Parasite Removal</h3>
+  <p>Kill parasites one at a time with single-target damage. This avoids the split mechanic (splits only trigger on death, but single-target kills are more controlled). Once parasites are dead, Prism loses Reinforced Shell and you can burn it down safely.</p>
+  <ul>
+    <li>Best cards: <span class="card-ref">Blade Dance</span> (Silent), <span class="card-ref">Claw</span> (Defect), <span class="card-ref">Soul Harvest</span> (Necrobinder)</li>
+    <li>Avoid: Mass AoE on Turn 1 — you'll trigger splits and make the fight harder</li>
+  </ul>
+
+  <h3>Strategy 2: Ignore Parasites, Tank the Burst</h3>
+  <p>If you have massive block generation (<span class="card-ref">Barricade</span>, <span class="card-ref">Frost Orbs</span>, <span class="card-ref">Feel No Pain</span>), you can ignore parasites, burn Prism to 50%, and block the Burst damage. Then clean up.</p>
+  <ul>
+    <li>Requires: 30+ consistent block per turn</li>
+    <li>Best for: Ironclad Exhaust, Defect Frost</li>
+    <li>Risk: Prism heals 10 HP every 3 turns while parasites live — fight drags</li>
+  </ul>
+
+  <h3>Strategy 3: Doom / Execute Bypass</h3>
+  <p>Necrobinder can apply Doom to Prism, ignore the parasites entirely, and execute Prism at 40-50% HP before Parasite Burst triggers. This is the fastest and most consistent strategy if you have the Doom cards.</p>
+
+  <h2>Character Matchups</h2>
+  <ul>
+    <li><strong>Ironclad:</strong> Slightly harder. <span class="card-ref">Cleave</span> and <span class="card-ref">Whirlwind</span> trigger splits. Switch to <span class="card-ref">Uppercut</span> / <span class="card-ref">Heavy Blade</span> for single-target removal. Exhaust engine still works — <span class="card-ref">Feel No Pain</span> blocks the Burst.</li>
+    <li><strong>Silent:</strong> Easier. <span class="card-ref">Blade Dance</span> + <span class="card-ref">Accuracy</span> kills parasites precisely. <span class="card-ref">Catalyst</span> poison ignores Carapace and ticks down Prism while you handle parasites.</li>
+    <li><strong>Defect:</strong> Harder. <span class="card-ref">Blizzard</span> triggers splits. Use <span class="card-ref">Claw</span> or <span class="card-ref">Ball Lightning</span> for precision. Frost orbs block everything.</li>
+    <li><strong>Necrobinder:</strong> Easier. Doom ignores Carapace. Skeleton minions tank parasites while you stack Doom. Execute before Burst triggers.</li>
+    <li><strong>Regent:</strong> Neutral. <span class="card-ref">Starfall</span> AoE triggers splits. Use <span class="card-ref">Parry</span> to block and <span class="card-ref">Command</span> for single-target chip damage.</li>
+  </ul>
+
+  <div class="tip-box">
+    <strong>💡 Pro Tip — Turn 1 Play Order:</strong> On Turn 1, do NOT play your AoE immediately. Instead, play block/mitigation, then on Turn 2 (Carapace still active but parasites have attacked once), use single-target removal on 1-2 parasites. On Turn 3 (Carapace expires), burn Prism with your big attacks while handling remaining parasites.
+  </div>
+
+  <h2>Relic Impact</h2>
+  <ul>
+    <li><strong>Torii</strong> (S) — Parasite attacks deal 6-8 damage. Torii reduces this to 1. Completely trivializes parasite chip damage.</li>
+    <li><strong>Tingsha</strong> (A) — Discard builds benefit from the longer fight. More discards = more Tingsha procs.</li>
+    <li><strong>Bronze Scales</strong> (B) — Thorns damage kills parasites passively, but triggers splits. Risky but can work.</li>
+    <li><strong>Paper Krane</strong> (B) — Enemies with Weak deal less damage. Prism and parasites both affected.</li>
+  </ul>
+
+  <h2>Community Verdict</h2>
+  <p>The Infested Prism rework achieved its goal — it's no longer an "AoE and win" freebie. The fight now tests your deck's ability to handle:</p>
+  <ol>
+    <li>Damage mitigation during Carapace turns</li>
+    <li>Single-target precision (or the block to tank Burst)</li>
+    <li>Sustained damage (220 HP + healing)</li>
+  </ol>
+  <p>Overall difficulty increased from <strong>B-Tier to A-Tier</strong>. It's now a legitimate gear check that can end runs if your deck lacks either precision damage or massive block.</p>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">Also check: <a href="elites.html" style="color:var(--gold-light);">All Elites Guide</a> · <a href="patch-v0-106-analysis.html" style="color:var(--gold-light);">v0.106.0 Full Patch Analysis</a> · <a href="boss-strategy.html" style="color:var(--gold-light);">Boss Strategy Guide</a></p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a><a href="../about.html">About</a><a href="../privacy.html">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+
+<div id="searchOverlay" class="search-overlay" onclick="closeSearch(event)">
+  <div class="search-modal" onclick="event.stopPropagation()">
+    <div class="search-modal-header">
+      <input type="text" id="searchModalInput" placeholder="Type to search..." autofocus>
+      <button class="search-close" onclick="closeSearch()">✕</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+<style>
+.search-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:1000;justify-content:center;padding-top:60px;}
+.search-overlay.active{display:flex;}
+.search-modal{width:640px;max-width:90vw;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;overflow:hidden;max-height:80vh;display:flex;flex-direction:column;}
+.search-modal-header{display:flex;align-items:center;padding:16px;gap:12px;border-bottom:1px solid var(--border);}
+.search-modal-header input{flex:1;background:var(--bg-card);border:1px solid var(--border);color:var(--text-primary);padding:10px 16px;border-radius:8px;font-size:15px;outline:none;}
+.search-modal-header input:focus{border-color:var(--gold);}
+.search-close{background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;}
+.search-close:hover{color:var(--gold-light);}
+.search-results{overflow-y:auto;padding:8px;flex:1;}
+.search-result-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:8px;cursor:pointer;transition:all .15s;text-decoration:none;color:inherit;}
+.search-result-item:hover{background:var(--bg-card-hover);}
+.search-result-item .result-icon{font-size:20px;flex-shrink:0;width:36px;text-align:center;}
+.search-result-item .result-info{overflow:hidden;}
+.search-result-item .result-title{font-size:14px;font-weight:600;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.search-result-item .result-cat{font-size:11px;color:var(--gold-light);display:inline-block;padding:1px 6px;background:rgba(212,160,60,0.15);border-radius:3px;margin-bottom:2px;}
+.search-empty{text-align:center;padding:40px;color:var(--text-muted);font-size:14px;}
+@media(max-width:900px){.search-modal{width:95vw;max-height:70vh;}}
+</style>
+<script>
+let searchIndex=[];
+fetch('../search-index.json').then(r=>r.json()).then(d=>{searchIndex=d;}).catch(()=>{fetch('search-index.json').then(r=>r.json()).then(d=>{searchIndex=d;})});
+function openSearch(){document.getElementById('searchOverlay').classList.add('active');document.getElementById('searchModalInput').focus();}
+function closeSearch(e){if(e&&e.target!==document.getElementById('searchOverlay'))return;var el=document.getElementById('searchOverlay');el.classList.remove('active');document.getElementById('searchModalInput').value='';document.getElementById('searchResults').innerHTML='';}
+document.getElementById('searchModalInput').addEventListener('input',function(){
+var q=this.value.toLowerCase().trim(),el=document.getElementById('searchResults');
+if(!q){el.innerHTML='';return;}
+var r=searchIndex.filter(function(i){return i.title.toLowerCase().includes(q)||i.keywords.includes(q)||i.category.toLowerCase().includes(q);}).slice(0,10);
+if(!r.length){el.innerHTML='<div class="search-empty">No results for "<strong>'+q+'</strong>"</div>';return;}
+var icons={Characters:'\u{1F9B8}',Cards:'\u{1F0CF}',Relics:'\u{1F48E}',Bosses:'\u{1F479}',Guides:'\u{1F4D6}',Home:'\u{1F3E0}'};
+el.innerHTML=r.map(function(i){return'<a class="search-result-item" href="'+i.url+'"><span class="result-icon">'+(icons[i.category]||'\u{1F4C4}')+'</span><div class="result-info"><span class="result-cat">'+i.category+'</span><div class="result-title">'+i.title+'</div></div></a>';}).join('');
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();openSearch();}});
+</script>
+
+<div id="cookie-consent">
+  <p>We use cookies to improve your experience and for analytics. <a href="/en/privacy.html">Privacy Policy</a></p>
+  <div class="cc-btns">
+    <button class="cc-btn cc-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cc-btn cc-reject" onclick="rejectCookies()">Reject</button>
+  </div>
+</div>
+<script>
+(function(){
+  var c=document.cookie.match('(^|;)\s*cookie_consent\s*=\s*([^;]+)');
+  if(!c){document.getElementById('cookie-consent').style.display='flex';}
+})();
+function acceptCookies(){
+  document.cookie='cookie_consent=accepted; max-age='+(365*24*60*60)+'; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display='none';
+}
+function rejectCookies(){
+  document.cookie='cookie_consent=rejected; max-age='+(365*24*60*60)+'; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display='none';
+}
+</script>
+</body>
+</html>

@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Card Database & Tier List — Slay the Spire 2 | STS2Guides</title>
-<meta name="description" content="Every Slay the Spire 2 card ranked S–D — 442 cards across 5 characters (Ironclad, Silent, Defect, Necrobinder, Regent). Filter by cost, rarity, type. See ratings, effects & upgrades at a glance. Updated for v0.106.1 meta.">
+<meta name="description" content="Every Slay the Spire 2 card ranked S–F — 577 cards across 10 categories (Ironclad, Silent, Defect, Necrobinder, Regent, Colorless, Curses, Status, Quest, Token). Filter by cost, rarity, type. See ratings, effects & upgrades at a glance. Updated for v0.106.1 meta.">
     <!-- Open Graph / Social -->
     <meta property="og:title" content="Card Database & Tier List — Slay the Spire 2 | STS2Guides">
-    <meta property="og:description" content="Every Slay the Spire 2 card ranked S–D — 442 cards across 5 characters. Filter by cost, rarity, type. See ratings, effects & upgrades at a glance. Updated for v0.106.1 meta.">
+    <meta property="og:description" content="Every Slay the Spire 2 card ranked S–F — 577 cards across 10 categories. Filter by cost, rarity, type. See ratings, effects & upgrades at a glance. Updated for v0.106.1 meta.">
     <meta property="og:url" content="https://sts2guides.com/en/cards/index.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="STS2Guides">    <meta property="og:image" content="https://sts2guides.com/en/og-image.png">
@@ -15,7 +15,7 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Card Database & Tier List — Slay the Spire 2 | STS2Guides">
-    <meta name="twitter:description" content="Every Slay the Spire 2 card ranked S–D — 442 cards across 5 characters. Filter by cost, rarity, type. See ratings, effects & upgrades at a glance.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+    <meta name="twitter:description" content="Every Slay the Spire 2 card ranked S–F — 577 cards across 10 categories. Filter by cost, rarity, type. See ratings, effects & upgrades at a glance.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
 <link rel="canonical" href="https://sts2guides.com/en/cards/">
 <style>
 :root {
@@ -57,6 +57,8 @@ nav a.active { color: var(--gold-light); }.header-search-btn{background:none;bor
 .tier-legend .tb { background: var(--gold); color: #111; }
 .tier-legend .tc { background: rgba(255,255,255,0.1); color: var(--text-secondary); }
 .tier-legend .td { background: rgba(255,255,255,0.05); color: var(--text-muted); }
+.tier-legend .tf { background: rgba(255,255,255,0.03); color: var(--text-muted); }
+.tier-legend .tstart { background: var(--green); color: #fff; }
 .card-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; }
 .card-table th { text-align: left; padding: 12px 12px 10px; border: none; border-bottom: 2px solid var(--gold); color: var(--text-secondary); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; position: sticky; top: 60px; background: var(--bg-primary); z-index: 10; white-space: nowrap; }
 .card-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
@@ -68,16 +70,28 @@ nav a.active { color: var(--gold-light); }.header-search-btn{background:none;bor
 .char-icon-sm.defect { background: rgba(52,152,219,0.3); }
 .char-icon-sm.necrobinder { background: rgba(142,68,173,0.3); }
 .char-icon-sm.regent { background: rgba(212,160,60,0.3); }
+.char-icon-sm.colorless { background: rgba(149,165,166,0.3); }
+.char-icon-sm.curse { background: rgba(192,57,43,0.3); }
+.char-icon-sm.status { background: rgba(100,100,100,0.3); }
+.char-icon-sm.quest { background: rgba(212,160,60,0.3); }
+.char-icon-sm.token { background: rgba(39,174,96,0.3); }
 .tier-badge { display: inline-block; width: 24px; height: 24px; text-align: center; line-height: 24px; border-radius: 4px; font-weight: 800; font-size: 11px; }
 .tier-badge.s { background: var(--crimson); color: #fff; }
 .tier-badge.a { background: var(--orange); color: #fff; }
 .tier-badge.b { background: var(--gold); color: #111; }
 .tier-badge.c { background: rgba(255,255,255,0.1); color: var(--text-secondary); }
 .tier-badge.d { background: rgba(255,255,255,0.05); color: var(--text-muted); }
+.tier-badge.f { background: rgba(255,255,255,0.03); color: var(--text-muted); }
+.tier-badge.starter { background: var(--green); color: #fff; }
 .rarity-common { color: var(--text-secondary); }
 .rarity-uncommon { color: var(--blue); }
 .rarity-rare { color: var(--gold-light); }
 .rarity-basic { color: var(--text-muted); }
+.rarity-special { color: var(--orange); }
+.rarity-curse { color: var(--crimson); }
+.rarity-status { color: #888; }
+.rarity-quest { color: var(--gold-light); }
+.rarity-token { color: var(--green); }
 .cost-badge { background: var(--bg-secondary); padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; color: var(--gold-light); }
 .effect-text { color: var(--text-secondary); max-width: 320px; }
 .empty-state { text-align: center; padding: 40px; color: var(--text-muted); }
@@ -230,12 +244,19 @@ footer a:hover { color: var(--gold-light); }
       <option value="necrobinder">💀 Necrobinder</option>
       <option value="regent">👑 Regent</option>
       <option value="colorless">🎨 Colorless</option>
+      <option value="curse">☠️ Curse</option>
+      <option value="status">⚠️ Status</option>
+      <option value="quest">📜 Quest</option>
+      <option value="token">🃏 Token</option>
     </select>
     <select id="filterType">
       <option value="all">All Types</option>
       <option value="Attack">Attack</option>
       <option value="Skill">Skill</option>
       <option value="Power">Power</option>
+      <option value="Curse">Curse</option>
+      <option value="Status">Status</option>
+      <option value="Quest">Quest</option>
     </select>
     <select id="filterRarity">
       <option value="all">All Rarities</option>
@@ -244,6 +265,11 @@ footer a:hover { color: var(--gold-light); }
       <option value="Uncommon">Uncommon</option>
       <option value="Rare">Rare</option>
       <option value="Ancient">Ancient</option>
+      <option value="Special">Special</option>
+      <option value="Curse">Curse</option>
+      <option value="Status">Status</option>
+      <option value="Quest">Quest</option>
+      <option value="Token">Token</option>
     </select>
     <select id="filterTier">
       <option value="all">All Tiers</option>
@@ -252,6 +278,8 @@ footer a:hover { color: var(--gold-light); }
       <option value="B">B-Tier</option>
       <option value="C">C-Tier</option>
       <option value="D">D-Tier</option>
+      <option value="F">F-Tier</option>
+      <option value="Starter">Starter</option>
     </select>
     <input type="text" id="filterSearch" placeholder="Search card name...">
   </div>
@@ -264,6 +292,8 @@ footer a:hover { color: var(--gold-light); }
       <span class="tb">B</span>
       <span class="tc">C</span>
       <span class="td">D</span>
+      <span class="tf">F</span>
+      <span class="tstart">Starter</span>
     </div>
   </div>
 
@@ -294,8 +324,8 @@ footer a:hover { color: var(--gold-light); }
 
 <script src="cards-data.js"></script>
 <script>
-const characterIcons = {ironclad:'⚔️',silent:'🗡️',defect:'⚡',necrobinder:'💀',regent:'👑',colorless:'🎨'};
-const characterNames = {ironclad:'Ironclad',silent:'Silent',defect:'Defect',necrobinder:'Necrobinder',regent:'Regent',colorless:'Colorless'};
+const characterIcons = {ironclad:'⚔️',silent:'🗡️',defect:'⚡',necrobinder:'💀',regent:'👑',colorless:'🎨',curse:'☠️',status:'⚠️',quest:'📜',token:'🃏'};
+const characterNames = {ironclad:'Ironclad',silent:'Silent',defect:'Defect',necrobinder:'Necrobinder',regent:'Regent',colorless:'Colorless',curse:'Curse',status:'Status',quest:'Quest',token:'Token'};
 
 function renderCards() {
   const char = document.getElementById('filterCharacter').value;
@@ -304,7 +334,8 @@ function renderCards() {
   const tier = document.getElementById('filterTier').value;
   const search = document.getElementById('filterSearch').value.toLowerCase();
 
-  const filtered = cardsData.filter(c => {
+  const cardList = cardsData.value || cardsData;
+  const filtered = cardList.filter(c => {
     if (char !== 'all' && c.character !== char) return false;
     if (type !== 'all' && c.type !== type) return false;
     if (rarity !== 'all' && c.rarity !== rarity) return false;
@@ -313,7 +344,7 @@ function renderCards() {
     return true;
   });
 
-  document.getElementById('resultCount').textContent = `Showing ${filtered.length} of ${cardsData.length} cards`;
+  document.getElementById('resultCount').textContent = `Showing ${filtered.length} of ${cardList.length} cards`;
   const tbody = document.getElementById('cardBody');
   const empty = document.getElementById('emptyState');
 
@@ -328,7 +359,7 @@ function renderCards() {
     <tr>
       <td><span class="tier-badge ${c.tier.toLowerCase()}" title="${c.reason ? c.reason : 'Auto-assigned based on rarity'}">${c.tier}</span></td>
       <td>
-        <a href="${c.rarity === 'Ancient' ? c.id + '.html' : c.id + '/'}" style="text-decoration:none;color:inherit;" title="${c.rarity === 'Ancient' ? 'View full strategy guide' : 'View card details'}">
+        <a href="${c.id}/" style="text-decoration:none;color:inherit;" title="View card details">
         <div class="card-name">
           ${c.name}
           <span style="font-size:11px;color:var(--text-muted);" title="${c.upgrade}">+</span>
@@ -338,7 +369,7 @@ function renderCards() {
       <td><span class="char-icon-sm ${c.character}">${characterIcons[c.character]}</span></td>
       <td>${c.type}</td>
       <td><span class="rarity-${c.rarity.toLowerCase()}">${c.rarity}</span></td>
-      <td><span class="cost-badge">${c.cost}</span></td>
+      <td><span class="cost-badge">${c.cost === -1 ? (c.type === 'Curse' || c.type === 'Status' || c.type === 'Quest' ? 'N/A' : 'X') : c.cost}</span></td>
       <td class="effect-text">${c.effect}</td>
     </tr>
   `).join('');

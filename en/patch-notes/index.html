@@ -80,6 +80,35 @@ footer a:hover{color:var(--teal);}
   nav { order:3; width:100%; overflow-x:auto; justify-content:flex-start; padding:4px 0; }
   nav a { font-size:12px; padding:6px 10px; white-space:nowrap; }
 }
+.page-nav-bottom {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 30px;
+}
+.page-nav-bottom h3 { font-size: 14px; margin-bottom: 12px; color: var(--text-secondary); }
+.page-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
+}
+.pn-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all .2s;
+}
+.pn-item:hover { border-color: var(--teal); color: var(--teal); background: rgba(0,188,212,0.06); }
+.pn-item.home:hover { border-color: var(--gold-light); color: var(--gold-light); background: rgba(240,200,96,0.06); }
 </style>
 <script type="application/ld+json">
 {
@@ -353,6 +382,18 @@ footer a:hover{color:var(--teal);}
   <p style="margin-top:40px;text-align:center;color:var(--text-muted);font-size:13px;">
     &#x1F4CB; This page is updated after every official patch. Check back regularly.
   </p>
+
+  <div class="page-nav-bottom">
+    <h3>📂 Continue Exploring</h3>
+    <div class="page-nav-grid">
+      <a href="../" class="pn-item home">🏠 Back to Home</a>
+      <a href="../cards/" class="pn-item cards">📊 Card Tier List</a>
+      <a href="../tier-list/" class="pn-item tier">🏆 Tier Rankings</a>
+      <a href="../bosses/" class="pn-item">👹 Boss Guides</a>
+      <a href="../guides/" class="pn-item">📚 All Guides</a>
+      <a href="../characters/" class="pn-item">🦸 Characters</a>
+    </div>
+  </div>
 </article>
 
 <footer>

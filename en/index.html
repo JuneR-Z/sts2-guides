@@ -242,28 +242,139 @@ nav a.active { color: var(--gold-light); }
   color: #fff;
 }
 
-.quick-links {
+.cta-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 12px;
-  margin-bottom: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
 }
-.quick-link {
+.cta-btn {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 14px 16px;
+  text-align: center;
+  padding: 28px 16px 22px;
   background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
   text-decoration: none;
   color: var(--text-primary);
-  font-size: 14px;
-  font-weight: 600;
-  transition: all .2s;
+  transition: all .25s;
+  position: relative;
+  overflow: hidden;
 }
-.quick-link:hover { border-color: var(--gold); background: var(--bg-card-hover); }
-.quick-link .icon { font-size: 18px; }
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  opacity: 0.7;
+  transition: opacity .25s;
+}
+.cta-beginner::before { background: var(--green); }
+.cta-cards::before { background: var(--gold); }
+.cta-patch::before { background: var(--teal); }
+.cta-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.cta-btn:hover::before { opacity: 1; }
+.cta-beginner:hover { border-color: var(--green); }
+.cta-cards:hover { border-color: var(--gold); }
+.cta-patch:hover { border-color: var(--teal); }
+.cta-icon { font-size: 32px; margin-bottom: 10px; }
+.cta-label {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.cta-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+.more-links {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+.more-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color .2s;
+}
+.more-links a:hover { color: var(--gold-light); }
+
+.new-here-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, rgba(39,174,96,0.12), rgba(0,188,212,0.08));
+  border: 1px solid rgba(39,174,96,0.25);
+  border-radius: 10px;
+  font-size: 14px;
+}
+.new-here-bar .nh-icon { font-size: 20px; }
+.new-here-bar .nh-text { color: var(--text-secondary); }
+.new-here-bar a {
+  color: var(--green);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color .2s;
+  margin-left: 2px;
+}
+.new-here-bar a:hover { color: #2ecc71; text-decoration: underline; }
+
+.last-read-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  margin-top: 14px;
+  background: linear-gradient(135deg, rgba(212,160,60,0.1), rgba(240,200,96,0.06));
+  border: 1px solid rgba(212,160,60,0.25);
+  border-radius: 10px;
+  font-size: 13px;
+  animation: lrFadeIn 0.4s ease;
+}
+@keyframes lrFadeIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+.last-read-bar .lr-icon { font-size: 16px; }
+.last-read-bar .lr-text { color: var(--text-muted); }
+.last-read-bar .lr-link {
+  color: var(--gold-light);
+  font-weight: 700;
+  text-decoration: none;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.last-read-bar .lr-link:hover { text-decoration: underline; }
+.last-read-bar .lr-clear {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: all .2s;
+  margin-left: 4px;
+}
+.last-read-bar .lr-clear:hover { color: var(--crimson); background: rgba(192,57,43,0.1); }
+
+@media (max-width: 768px) {
+  .cta-row { grid-template-columns: 1fr; gap: 10px; }
+  .cta-btn { padding: 20px 16px 16px; }
+  .cta-icon { font-size: 26px; }
+  .cta-label { font-size: 14px; }
+  .new-here-bar { flex-wrap: wrap; text-align: center; font-size: 13px; }
+}
 
 .guide-list { display: flex; flex-direction: column; gap: 12px; }
 .guide-item {
@@ -525,14 +636,36 @@ footer a:hover { color: var(--gold-light); }
 </section>
 
 <div class="section">
-  <div class="quick-links">
-    <a href="guides/beginner.html" class="quick-link"><span class="icon">📖</span> Beginner's Guide</a>
-    <a href="characters/" class="quick-link"><span class="icon">🦸</span> Pick Your Character</a>
-    <a href="guides/coop-multiplayer.html" class="quick-link"><span class="icon">🤝</span> Co-op Synergy Guide</a>
-    <a href="cards/" class="quick-link"><span class="icon">📊</span> Card Tier List</a>
-    <a href="guides/" class="quick-link"><span class="icon">💎</span> All Guides</a>
-    <a href="bosses/index.html" class="quick-link"><span class="icon">👹</span> Boss Strategy Guide</a>
-    <a href="guides/necrobinder-doom-build.html" class="quick-link"><span class="icon">💀</span> Necrobinder Doom Meta</a>
+  <div class="cta-row">
+    <a href="guides/beginner.html" class="cta-btn cta-beginner">
+      <span class="cta-icon">📖</span>
+      <span class="cta-label">Beginner's Guide</span>
+      <span class="cta-sub">Start here — learn the basics in 10 minutes</span>
+    </a>
+    <a href="cards/" class="cta-btn cta-cards">
+      <span class="cta-icon">📊</span>
+      <span class="cta-label">Card Tier List</span>
+      <span class="cta-sub">442 cards ranked S-D · filter by character</span>
+    </a>
+    <a href="patch-notes/" class="cta-btn cta-patch">
+      <span class="cta-icon">📋</span>
+      <span class="cta-label">Patch Notes</span>
+      <span class="cta-sub">Latest: May 29 Rollup · 44+ fixes on main branch</span>
+    </a>
+  </div>
+  <div class="more-links">
+    <a href="characters/">Characters</a> ·
+    <a href="bosses/index.html">Bosses</a> ·
+    <a href="guides/">All Guides</a> ·
+    <a href="relics/index.html">Relics</a> ·
+    <a href="tier-list/">Tier List</a> ·
+    <a href="guides/coop-multiplayer.html">Co-op</a>
+  </div>
+  <div id="lastReadBar" class="last-read-bar" style="display:none;">
+    <span class="lr-icon">📌</span>
+    <span class="lr-text">Continue where you left off:</span>
+    <a id="lastReadLink" href="#" class="lr-link"></a>
+    <button id="lastReadClear" class="lr-clear" title="Dismiss">✕</button>
   </div>
 </div>
 
@@ -540,6 +673,12 @@ footer a:hover { color: var(--gold-light); }
   <div class="two-col">
     <div>
       <h2 class="section-title" id="builds">Latest Guides</h2>
+      <div class="new-here-bar">
+        <span class="nh-icon">👋</span>
+        <span class="nh-text">New here?</span>
+        <a href="guides/beginner.html">Start with Beginner's Guide →</a>
+        <span class="nh-text">&nbsp;— learn the basics in 10 minutes</span>
+      </div>
       <p class="section-subtitle">Updated daily — covering every character, mechanic, and ascension strategy.</p>
       <div class="guide-list">
 
@@ -1141,6 +1280,57 @@ function rejectCookies(){
   document.cookie = 'cookie_consent=rejected; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
   document.getElementById('cookie-consent').style.display = 'none';
 }
+</script>
+<script>
+(function(){
+  var STORAGE_KEY = 'sts2_lastRead';
+  var MAX_AGE = 7 * 24 * 60 * 60 * 1000; // 7 days
+  var bar = document.getElementById('lastReadBar');
+  var link = document.getElementById('lastReadLink');
+  var clearBtn = document.getElementById('lastReadClear');
+
+  function showLastRead() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      var data = JSON.parse(raw);
+      if (!data.url || !data.title) return;
+      if (Date.now() - data.ts > MAX_AGE) { localStorage.removeItem(STORAGE_KEY); return; }
+      link.href = data.url;
+      link.textContent = data.title;
+      bar.style.display = 'flex';
+    } catch(e) {}
+  }
+
+  function saveLastRead(url, title) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ url: url, title: title || url, ts: Date.now() }));
+    } catch(e) {}
+  }
+
+  // Intercept clicks on all internal links to save the destination
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    if (!href || href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) return;
+    // Save the link text or href as the title
+    var title = a.textContent.trim().substring(0, 80) || href;
+    saveLastRead(href, title);
+  });
+
+  // Clear button
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      localStorage.removeItem(STORAGE_KEY);
+      bar.style.display = 'none';
+    });
+  }
+
+  showLastRead();
+})();
 </script>
 </body>
 </html>

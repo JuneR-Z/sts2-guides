@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deck Builder — Slay the Spire 2 | STS2Guides</title>
+<meta name="description" content="Build, share, and theorycraft Slay the Spire 2 decks. Drag &amp; drop cards, filter by character/type/cost, share decks via URL. Free interactive deck planner with all 577 cards.">
+<meta property="og:title" content="Deck Builder — Slay the Spire 2 | STS2Guides">
+<meta property="og:description" content="Build, share, and theorycraft Slay the Spire 2 decks. Drag &amp; drop cards. All 577 cards supported with cost curve and synergy stats.">
+<meta property="og:url" content="https://sts2guides.com/en/deck-builder/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="STS2Guides">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Deck Builder — Slay the Spire 2 | STS2Guides">
+<meta name="twitter:description" content="Build, share &amp; theorycraft STS2 decks. Drag &amp; drop, URL sharing, all 577 cards.">
+<link rel="canonical" href="https://sts2guides.com/en/deck-builder/">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+<!-- Google AdSense Auto Ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad; --orange: #e67e22;
+  --char-ironclad: #c0392b; --char-silent: #27ae60; --char-defect: #3498db;
+  --char-necrobinder: #8e44ad; --char-regent: #e67e22;
+  --char-colorless: #95a5a6; --char-curse: #7f0000; --char-status: #555;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.5; min-height: 100vh; overflow-x: hidden; }
+header { background: var(--bg-secondary); border-bottom: 2px solid var(--gold); position: sticky; top:0; z-index:200; }
+.header-inner { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--gold), var(--crimson)); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.logo-text { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+.logo-text span { color: var(--gold-light); }
+nav { display: flex; gap: 0; }
+nav a { color: var(--text-secondary); text-decoration: none; padding: 7px 12px; font-size: 13px; border-radius: 4px; transition: all .2s; }
+nav a:hover { color: var(--gold-light); background: rgba(255,255,255,0.05); }
+nav a.active { color: var(--gold-light); }
+
+/* Layout */
+.layout { display: flex; height: calc(100vh - 56px); position: relative; }
+.left-panel { width: 380px; min-width: 320px; background: var(--bg-secondary); border-right: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; transition: width .25s; }
+.right-panel { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+/* Filters */
+.filters { padding: 12px 14px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+.filter-row { display: flex; gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
+.filter-row:last-child { margin-bottom: 0; }
+.filter-row select, .filter-row input {
+  background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border);
+  padding: 6px 10px; border-radius: 5px; font-size: 12px; outline: none; flex: 1; min-width: 80px;
+}
+.filter-row select:focus, .filter-row input:focus { border-color: var(--gold); }
+.filter-row input::placeholder { color: var(--text-muted); }
+.filter-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px; }
+.filter-tag { display: inline-flex; align-items: center; gap: 3px; padding: 2px 8px; border-radius: 3px; font-size: 11px; background: rgba(212,160,60,0.15); color: var(--gold-light); cursor: pointer; }
+.filter-tag::after { content: '×'; font-size: 13px; margin-left: 2px; }
+.filter-tag:hover { background: rgba(212,160,60,0.3); }
+
+/* Card Library */
+.card-library { flex: 1; overflow-y: auto; padding: 8px; }
+.card-library::-webkit-scrollbar { width: 6px; }
+.card-library::-webkit-scrollbar-track { background: transparent; }
+.card-library::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+.library-card {
+  display: flex; align-items: center; gap: 8px; padding: 7px 10px; margin: 3px 0;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px;
+  cursor: grab; transition: all .15s; user-select: none; font-size: 13px;
+}
+.library-card:hover { background: var(--bg-card-hover); border-color: var(--gold); }
+.library-card:active { cursor: grabbing; }
+.library-card.dragging { opacity: 0.4; }
+.library-card .lib-cost { width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; flex-shrink: 0; }
+.library-card .lib-cost.X { background: var(--purple); }
+.library-card .lib-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.library-card .lib-type { font-size: 11px; color: var(--text-muted); flex-shrink: 0; }
+.library-card .lib-tier { font-size: 10px; font-weight: 700; padding: 1px 5px; border-radius: 3px; flex-shrink: 0; }
+.tier-S { color: #f0c860; } .tier-A { color: #e67e22; } .tier-B { color: #3498db; }
+.tier-C { color: var(--text-secondary); } .tier-D { color: var(--text-muted); }
+.tier-F { color: #7f8c8d; } .tier-Starter { color: #95a5a6; }
+.library-empty { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 13px; }
+.library-count { font-size: 11px; color: var(--text-muted); padding: 4px 10px; }
+
+/* Right Panel - Deck Area */
+.deck-toolbar { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border); background: var(--bg-secondary); flex-shrink: 0; flex-wrap: wrap; }
+.deck-name-input {
+  background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border);
+  padding: 8px 14px; border-radius: 6px; font-size: 15px; font-weight: 600; outline: none;
+  min-width: 200px; flex: 1; max-width: 350px;
+}
+.deck-name-input:focus { border-color: var(--gold); }
+.deck-name-input::placeholder { color: var(--text-muted); font-weight: 400; }
+.btn {
+  padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer;
+  border: 1px solid var(--border); transition: all .2s; white-space: nowrap;
+}
+.btn-primary { background: var(--gold); color: #000; border-color: var(--gold); }
+.btn-primary:hover { background: var(--gold-light); }
+.btn-secondary { background: var(--bg-card); color: var(--text-secondary); }
+.btn-secondary:hover { color: var(--gold-light); border-color: var(--gold); }
+.btn-danger { background: transparent; color: var(--crimson); border-color: var(--crimson); }
+.btn-danger:hover { background: rgba(192,57,43,0.15); }
+.btn-copy { position: relative; }
+.copy-feedback { position: absolute; top: -28px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #000; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; opacity: 0; transition: opacity .2s; pointer-events: none; }
+.copy-feedback.show { opacity: 1; }
+
+/* Deck Stats */
+.deck-stats { display: flex; gap: 16px; padding: 8px 16px; border-bottom: 1px solid var(--border); background: var(--bg-secondary); flex-shrink: 0; flex-wrap: wrap; }
+.stat-item { font-size: 12px; color: var(--text-muted); }
+.stat-item strong { color: var(--text-primary); }
+
+/* Cost Curve */
+.cost-curve { display: flex; gap: 4px; padding: 10px 16px; border-bottom: 1px solid var(--border); align-items: flex-end; flex-shrink: 0; background: rgba(0,0,0,0.2); }
+.cost-col { flex: 1; text-align: center; max-width: 44px; }
+.cost-bar { background: var(--gold); border-radius: 3px 3px 0 0; margin: 0 auto 4px; min-height: 4px; transition: height .3s; width: 100%; }
+.cost-label { font-size: 11px; color: var(--text-muted); }
+
+/* Deck Cards */
+.deck-area { flex: 1; overflow-y: auto; padding: 12px 16px; position: relative; }
+.deck-area::-webkit-scrollbar { width: 6px; }
+.deck-area::-webkit-scrollbar-track { background: transparent; }
+.deck-area::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+.deck-drop-zone {
+  min-height: 200px; border: 2px dashed var(--border); border-radius: 10px;
+  display: flex; flex-direction: column; gap: 4px; padding: 8px; transition: all .2s;
+}
+.deck-drop-zone.drag-over { border-color: var(--gold); background: rgba(212,160,60,0.05); }
+.deck-empty {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  height: 200px; color: var(--text-muted); font-size: 14px; gap: 8px;
+}
+.deck-empty-icon { font-size: 40px; opacity: 0.3; }
+.deck-card {
+  display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px;
+  transition: all .15s; position: relative;
+}
+.deck-card:hover { border-color: rgba(255,255,255,0.3); }
+.deck-card .dc-cost { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; }
+.deck-card .dc-cost.X { background: var(--purple); color: #fff; }
+.deck-card .dc-info { flex: 1; min-width: 0; }
+.deck-card .dc-name { font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.deck-card .dc-meta { font-size: 11px; color: var(--text-muted); }
+.deck-card .dc-effect { font-size: 11px; color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 400px; margin-top: 2px; }
+.deck-card .dc-count { display: flex; align-items: center; gap: 4px; }
+.deck-card .dc-count-btn {
+  width: 24px; height: 24px; border-radius: 4px; border: 1px solid var(--border);
+  background: var(--bg-secondary); color: var(--text-secondary); cursor: pointer;
+  display: flex; align-items: center; justify-content: center; font-size: 16px; line-height: 1;
+  transition: all .15s;
+}
+.deck-card .dc-count-btn:hover { border-color: var(--gold); color: var(--gold-light); }
+.deck-card .dc-count-num { font-size: 14px; font-weight: 600; min-width: 20px; text-align: center; }
+.deck-card .dc-remove {
+  width: 24px; height: 24px; border-radius: 4px; border: none;
+  background: transparent; color: var(--text-muted); cursor: pointer;
+  font-size: 18px; line-height: 1; transition: all .15s;
+}
+.deck-card .dc-remove:hover { color: var(--crimson); }
+.deck-card .dc-link { color: var(--text-muted); text-decoration: none; font-size: 11px; flex-shrink: 0; padding: 2px 6px; border-radius: 3px; transition: all .15s; }
+.deck-card .dc-link:hover { color: var(--gold-light); background: rgba(255,255,255,0.05); }
+
+/* Char badge */
+.char-badge {
+  display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 10px; font-weight: 600;
+  background: rgba(255,255,255,0.08); color: var(--text-secondary);
+}
+.char-badge.ironclad { color: var(--char-ironclad); }
+.char-badge.silent { color: var(--char-silent); }
+.char-badge.defect { color: var(--char-defect); }
+.char-badge.necrobinder { color: var(--char-necrobinder); }
+.char-badge.regent { color: var(--char-regent); }
+.char-badge.colorless { color: var(--char-colorless); }
+
+/* Toast */
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--bg-card); border: 1px solid var(--gold); color: var(--text-primary); padding: 10px 24px; border-radius: 8px; font-size: 13px; z-index: 999; opacity: 0; transition: opacity .3s; pointer-events: none; }
+.toast.show { opacity: 1; }
+
+/* Responsive */
+@media (max-width: 800px) {
+  .layout { flex-direction: column; }
+  .left-panel { width: 100%; min-width: 0; max-height: 45vh; border-right: none; border-bottom: 1px solid var(--border); }
+  .right-panel { min-height: 55vh; }
+  .library-card { padding: 6px 8px; font-size: 12px; }
+  .dc-effect { max-width: 180px !important; }
+  .deck-toolbar { padding: 8px 10px; gap: 6px; }
+  .deck-name-input { font-size: 14px; padding: 6px 10px; }
+}
+
+@media (max-width: 480px) {
+  .filter-row select, .filter-row input { font-size: 11px; padding: 5px 6px; }
+  .btn { padding: 6px 10px; font-size: 11px; }
+}
+
+/* Card type colors */
+.type-Attack .lib-type, .type-Attack .dc-meta span + span { color: var(--crimson) !important; }
+.type-Skill .lib-type, .type-Skill .dc-meta span + span { color: var(--blue) !important; }
+.type-Power .lib-type, .type-Power .dc-meta span + span { color: var(--purple) !important; }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="/en/" class="logo">
+      <div class="logo-icon">🃏</div>
+      <div class="logo-text">STS2<span>Guides</span></div>
+    </a>
+    <nav>
+      <a href="/en/guides/">Guides</a>
+      <a href="/en/cards/">Cards</a>
+      <a href="/en/relics/">Relics</a>
+      <a href="/en/deck-builder/" class="active">Deck Builder</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb" style="max-width:1400px;margin:0 auto;padding:8px 20px;font-size:12px;color:var(--text-muted);">
+  <a href="/en/" style="color:var(--text-secondary);text-decoration:none;">Home</a> / <span>Deck Builder</span>
+</div>
+
+<div class="layout">
+  <!-- Left Panel: Card Library -->
+  <div class="left-panel">
+    <div class="filters">
+      <div class="filter-row">
+        <select id="filter-character">
+          <option value="all">All Characters</option>
+          <option value="ironclad">⚔️ Ironclad</option>
+          <option value="silent">🗡️ Silent</option>
+          <option value="defect">⚡ Defect</option>
+          <option value="necrobinder">💀 Necrobinder</option>
+          <option value="regent">👑 Regent</option>
+          <option value="colorless">🎨 Colorless</option>
+          <option value="curse">☠️ Curse</option>
+          <option value="status">⚠️ Status</option>
+          <option value="quest">📜 Quest</option>
+          <option value="token">🃏 Token</option>
+        </select>
+        <select id="filter-type">
+          <option value="all">All Types</option>
+          <option value="Attack">Attack</option>
+          <option value="Skill">Skill</option>
+          <option value="Power">Power</option>
+        </select>
+        <select id="filter-cost">
+          <option value="all">All Costs</option>
+          <option value="0">0 Energy</option>
+          <option value="1">1 Energy</option>
+          <option value="2">2 Energy</option>
+          <option value="3">3+ Energy</option>
+          <option value="X">X Cost</option>
+        </select>
+      </div>
+      <div class="filter-row">
+        <select id="filter-rarity">
+          <option value="all">All Rarities</option>
+          <option value="Basic">Basic</option>
+          <option value="Common">Common</option>
+          <option value="Uncommon">Uncommon</option>
+          <option value="Rare">Rare</option>
+          <option value="Ancient">Ancient</option>
+          <option value="Special">Special</option>
+          <option value="Curse">Curse</option>
+        </select>
+        <select id="filter-tier">
+          <option value="all">All Tiers</option>
+          <option value="S">S Tier</option>
+          <option value="A">A Tier</option>
+          <option value="B">B Tier</option>
+          <option value="C">C Tier</option>
+          <option value="D">D Tier</option>
+          <option value="F">F Tier</option>
+          <option value="Starter">Starter</option>
+        </select>
+        <input type="text" id="filter-search" placeholder="🔍 Search cards...">
+      </div>
+      <div class="filter-tags" id="filter-tags"></div>
+    </div>
+    <div class="library-count" id="library-count">Showing 0 cards</div>
+    <div class="card-library" id="card-library">
+      <div class="library-empty">Select filters to browse cards</div>
+    </div>
+  </div>
+
+  <!-- Right Panel: Deck -->
+  <div class="right-panel">
+    <div class="deck-toolbar">
+      <input type="text" class="deck-name-input" id="deck-name" placeholder="Untitled Deck" maxlength="60">
+      <button class="btn btn-primary" id="btn-share" title="Copy shareable URL">🔗 Share</button>
+      <button class="btn btn-secondary btn-copy" id="btn-copy" title="Copy deck list as text">
+        📋 Copy List
+        <span class="copy-feedback" id="copy-feedback">Copied!</span>
+      </button>
+      <button class="btn btn-danger" id="btn-clear">🗑 Clear</button>
+    </div>
+    <div class="deck-stats" id="deck-stats">
+      <span class="stat-item">Cards: <strong id="stat-count">0</strong></span>
+      <span class="stat-item">Avg Cost: <strong id="stat-avg">—</strong></span>
+      <span class="stat-item">Skills: <strong id="stat-skills">0</strong></span>
+      <span class="stat-item">Attacks: <strong id="stat-attacks">0</strong></span>
+      <span class="stat-item">Powers: <strong id="stat-powers">0</strong></span>
+    </div>
+    <div class="cost-curve" id="cost-curve"></div>
+    <div class="deck-area">
+      <div class="deck-drop-zone" id="deck-drop-zone">
+        <div class="deck-empty" id="deck-empty">
+          <div class="deck-empty-icon">📥</div>
+          <div>Drag cards here or click to add</div>
+          <div style="font-size:12px;color:var(--text-muted);">Tip: Click any card in the library to add it</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="../cards/cards-data.js"></script>
+<script>
+(function() {
+  const cards = (typeof cardsData !== 'undefined' && cardsData.value) ? cardsData.value : [];
+  if (!cards.length) { document.getElementById('card-library').innerHTML = '<div class="library-empty">Failed to load card data. Please refresh.</div>'; return; }
+
+  // State
+  let deck = [];           // Array of { id, count }
+  let selectedCharacter = 'all';
+  let selectedType = 'all';
+  let selectedCost = 'all';
+  let selectedRarity = 'all';
+  let selectedTier = 'all';
+  let searchQuery = '';
+
+  // DOM Refs
+  const libraryEl = document.getElementById('card-library');
+  const libraryCount = document.getElementById('library-count');
+  const deckZone = document.getElementById('deck-drop-zone');
+  const deckEmpty = document.getElementById('deck-empty');
+  const deckNameInput = document.getElementById('deck-name');
+  const toast = document.getElementById('toast');
+  const filterTags = document.getElementById('filter-tags');
+
+  // Constants
+  const BASE36 = '0123456789abcdefghijklmnopqrstuvwxyz';
+  const MAX_DECK_SIZE = 30;
+
+  // Character icons
+  const CHAR_ICONS = {
+    ironclad: '⚔️', silent: '🗡️', defect: '⚡', necrobinder: '💀', regent: '👑',
+    colorless: '🎨', curse: '☠️', status: '⚠️', quest: '📜', token: '🃏'
+  };
+  const CHAR_NAMES = {
+    ironclad: 'Ironclad', silent: 'Silent', defect: 'Defect', necrobinder: 'Necrobinder', regent: 'Regent',
+    colorless: 'Colorless', curse: 'Curse', status: 'Status', quest: 'Quest', token: 'Token'
+  };
+
+  // --- Encoding / Decoding ---
+  function encodeDeck() {
+    // Format: cardIdx*cnt_cardIdx*cnt_...  (each idx in base36, count in base36)
+    const parts = [];
+    for (const dc of deck) {
+      const idx = cards.findIndex(c => c.id === dc.id);
+      if (idx >= 0) {
+        const idxStr = idx.toString(36).padStart(3, '0');
+        const cntStr = dc.count.toString(36).padStart(1, '0');
+        parts.push(idxStr + cntStr);
+      }
+    }
+    return parts.join('');
+  }
+
+  function decodeDeck(hash) {
+    if (!hash || hash.length < 4) return [];
+    const result = [];
+    const str = hash.replace(/^#?d=/, '').replace(/^#/, '');
+    if (!str) return [];
+    // Each card is 4 chars: 3 for index, 1 for count
+    for (let i = 0; i + 4 <= str.length; i += 4) {
+      const idx = parseInt(str.substring(i, i + 3), 36);
+      const cnt = parseInt(str.substring(i + 3, i + 4), 36);
+      if (idx >= 0 && idx < cards.length && cnt > 0 && cnt <= 9) {
+        result.push({ id: cards[idx].id, count: cnt });
+      }
+    }
+    return result;
+  }
+
+  // --- URL State ---
+  function updateURL() {
+    if (deck.length === 0) {
+      history.replaceState(null, '', window.location.pathname);
+      return;
+    }
+    const encoded = encodeDeck();
+    const name = deckNameInput.value.trim();
+    const params = new URLSearchParams();
+    if (name) params.set('name', encodeURIComponent(name));
+    const base = window.location.pathname;
+    const hash = '#d=' + encoded;
+    const query = params.toString();
+    history.replaceState(null, '', base + (query ? '?' + query : '') + hash);
+  }
+
+  function loadFromURL() {
+    const hash = window.location.hash;
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('name')) {
+      deckNameInput.value = decodeURIComponent(params.get('name'));
+    }
+    if (hash) {
+      const decoded = decodeDeck(hash);
+      if (decoded.length > 0) {
+        deck = decoded;
+        selectedCharacter = 'all';
+        updateFilters();
+        renderDeck();
+        renderStats();
+        renderCostCurve();
+      }
+    }
+  }
+
+  // --- Filtering ---
+  function getFilteredCards() {
+    return cards.filter(c => {
+      if (selectedCharacter !== 'all' && c.character !== selectedCharacter) return false;
+      if (selectedType !== 'all' && c.type !== selectedType) return false;
+      if (selectedCost === 'X' && c.cost !== 'X') return false;
+      if (selectedCost === '3' && (!c.cost || c.cost < 3)) return false;
+      if (['0','1','2'].includes(selectedCost) && String(c.cost) !== selectedCost) return false;
+      if (selectedRarity !== 'all' && c.rarity !== selectedRarity) return false;
+      if (selectedTier !== 'all' && c.tier !== selectedTier) return false;
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        const name = (c.name || '').toLowerCase();
+        const effect = (c.effect || '').toLowerCase();
+        const upg = (c.upgraded || '').toLowerCase();
+        return name.includes(q) || effect.includes(q) || upg.includes(q) || (c.id || '').includes(q);
+      }
+      return true;
+    });
+  }
+
+  function renderLibrary() {
+    const filtered = getFilteredCards();
+    libraryCount.textContent = `Showing ${filtered.length} card${filtered.length !== 1 ? 's' : ''}`;
+    if (filtered.length === 0) {
+      libraryEl.innerHTML = '<div class="library-empty">No cards match your filters</div>';
+      return;
+    }
+    libraryEl.innerHTML = filtered.map(c => {
+      const tierClass = 'tier-' + (c.tier || 'C');
+      const costClass = c.cost === 'X' ? 'X' : '';
+      const typeClass = c.type ? 'type-' + c.type : '';
+      return `<div class="library-card ${typeClass}" draggable="true" data-id="${c.id}" data-cost="${c.cost||'0'}" data-type="${c.type||''}" data-character="${c.character||''}">
+        <span class="lib-cost ${costClass}">${c.cost != null ? c.cost : 'N/A'}</span>
+        <span class="lib-name">${c.name || c.id}</span>
+        <span class="lib-tier ${tierClass}">${c.tier || '—'}</span>
+        <span class="lib-type">${c.type || ''}</span>
+      </div>`;
+    }).join('');
+    attachDragListeners();
+  }
+
+  // --- Drag & Drop ---
+  function attachDragListeners() {
+    document.querySelectorAll('.library-card').forEach(el => {
+      el.addEventListener('dragstart', handleDragStart);
+      el.addEventListener('dragend', handleDragEnd);
+      el.addEventListener('click', function(e) {
+        // Only add on click if not dragging
+        const id = this.dataset.id;
+        const card = cards.find(c => c.id === id);
+        if (card) addToDeck(card);
+      });
+    });
+  }
+
+  function handleDragStart(e) {
+    const id = e.target.closest('.library-card').dataset.id;
+    e.dataTransfer.setData('text/plain', id);
+    e.dataTransfer.effectAllowed = 'copy';
+    setTimeout(() => e.target.closest('.library-card').classList.add('dragging'), 0);
+  }
+
+  function handleDragEnd(e) {
+    e.target.closest('.library-card').classList.remove('dragging');
+  }
+
+  deckZone.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'copy';
+    this.classList.add('drag-over');
+  });
+
+  deckZone.addEventListener('dragleave', function(e) {
+    this.classList.remove('drag-over');
+  });
+
+  deckZone.addEventListener('drop', function(e) {
+    e.preventDefault();
+    this.classList.remove('drag-over');
+    const id = e.dataTransfer.getData('text/plain');
+    const card = cards.find(c => c.id === id);
+    if (card) addToDeck(card);
+  });
+
+  // --- Deck Management ---
+  function addToDeck(card) {
+    const existing = deck.find(d => d.id === card.id);
+    if (existing) {
+      if (existing.count >= 9) { showToast('Max 9 copies per card'); return; }
+      existing.count++;
+    } else {
+      deck.push({ id: card.id, count: 1 });
+    }
+    renderDeck();
+    renderStats();
+    renderCostCurve();
+    updateURL();
+  }
+
+  function removeFromDeck(cardId) {
+    const idx = deck.findIndex(d => d.id === cardId);
+    if (idx >= 0) {
+      if (deck[idx].count > 1) {
+        deck[idx].count--;
+      } else {
+        deck.splice(idx, 1);
+      }
+    }
+    renderDeck();
+    renderStats();
+    renderCostCurve();
+    updateURL();
+  }
+
+  function removeAllFromDeck(cardId) {
+    deck = deck.filter(d => d.id !== cardId);
+    renderDeck();
+    renderStats();
+    renderCostCurve();
+    updateURL();
+  }
+
+  function clearDeck() {
+    if (deck.length === 0) return;
+    deck = [];
+    deckNameInput.value = '';
+    renderDeck();
+    renderStats();
+    renderCostCurve();
+    updateURL();
+    showToast('Deck cleared');
+  }
+
+  // --- Render Deck ---
+  function renderDeck() {
+    if (deck.length === 0) {
+      deckEmpty.style.display = 'flex';
+      deckZone.querySelectorAll('.deck-card').forEach(el => el.remove());
+      return;
+    }
+    deckEmpty.style.display = 'none';
+    const existingIds = new Set(deck.map(d => d.id));
+    // Remove cards no longer in deck
+    deckZone.querySelectorAll('.deck-card').forEach(el => {
+      if (!existingIds.has(el.dataset.id)) el.remove();
+    });
+
+    deck.forEach(dc => {
+      const card = cards.find(c => c.id === dc.id);
+      if (!card) return;
+      const existing = deckZone.querySelector(`.deck-card[data-id="${dc.id}"]`);
+      const costClass = card.cost === 'X' ? 'X' : '';
+      const html = `<div class="deck-card type-${card.type||''}" data-id="${dc.id}">
+        <span class="dc-cost ${costClass}">${card.cost != null ? card.cost : 'N/A'}</span>
+        <div class="dc-info">
+          <div class="dc-name">${card.name || card.id}</div>
+          <div class="dc-meta">
+            <span class="char-badge ${card.character||''}">${CHAR_ICONS[card.character]||''} ${CHAR_NAMES[card.character]||card.character||''}</span>
+            <span>${card.rarity||'?'}</span>
+            <span>${card.type||''}</span>
+          </div>
+          <div class="dc-effect">${card.effect||''}</div>
+        </div>
+        <div class="dc-count">
+          <button class="dc-count-btn" data-action="decr">−</button>
+          <span class="dc-count-num">${dc.count}</span>
+          <button class="dc-count-btn" data-action="incr">+</button>
+        </div>
+        <a href="../cards/${card.id}/" class="dc-link" target="_blank" title="View card details">↗</a>
+        <button class="dc-remove" data-action="remove" title="Remove all copies">×</button>
+      </div>`;
+      if (existing) {
+        existing.outerHTML = html;
+      } else {
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        deckZone.appendChild(temp.firstElementChild);
+      }
+    });
+
+    // Re-attach events
+    deckZone.querySelectorAll('.deck-card').forEach(el => {
+      el.querySelector('[data-action="incr"]').onclick = (e) => {
+        e.stopPropagation();
+        const card = cards.find(c => c.id === el.dataset.id);
+        if (card) addToDeck(card);
+      };
+      el.querySelector('[data-action="decr"]').onclick = (e) => {
+        e.stopPropagation();
+        removeFromDeck(el.dataset.id);
+      };
+      el.querySelector('[data-action="remove"]').onclick = (e) => {
+        e.stopPropagation();
+        removeAllFromDeck(el.dataset.id);
+      };
+    });
+  }
+
+  // --- Stats ---
+  function renderStats() {
+    const totalCards = deck.reduce((sum, d) => sum + d.count, 0);
+    let totalCost = 0, costCount = 0;
+    let skills = 0, attacks = 0, powers = 0;
+
+    deck.forEach(dc => {
+      const card = cards.find(c => c.id === dc.id);
+      if (!card) return;
+      if (card.type === 'Skill') skills += dc.count;
+      else if (card.type === 'Attack') attacks += dc.count;
+      else if (card.type === 'Power') powers += dc.count;
+      if (card.cost !== 'X' && card.cost >= 0) {
+        totalCost += card.cost * dc.count;
+        costCount += dc.count;
+      }
+    });
+
+    document.getElementById('stat-count').textContent = totalCards;
+    document.getElementById('stat-avg').textContent = costCount > 0 ? (totalCost / costCount).toFixed(1) : '—';
+    document.getElementById('stat-skills').textContent = skills;
+    document.getElementById('stat-attacks').textContent = attacks;
+    document.getElementById('stat-powers').textContent = powers;
+  }
+
+  function renderCostCurve() {
+    const buckets = [0,0,0,0,0,0,0]; // 0,1,2,3,4,5,6+
+    let maxCount = 0;
+    deck.forEach(dc => {
+      const card = cards.find(c => c.id === dc.id);
+      if (!card || card.cost === 'X') return;
+      const cost = parseInt(card.cost);
+      if (isNaN(cost) || cost < 0) return;
+      const idx = Math.min(cost, 6);
+      buckets[idx] += dc.count;
+      if (buckets[idx] > maxCount) maxCount = buckets[idx];
+    });
+
+    const curveEl = document.getElementById('cost-curve');
+    curveEl.innerHTML = buckets.map((cnt, i) => {
+      const label = i === 6 ? '6+' : i;
+      const h = maxCount > 0 ? Math.max(cnt / maxCount * 60, 4) : 4;
+      return `<div class="cost-col">
+        <div class="cost-bar" style="height:${h}px;background:${cnt>0?'var(--gold)':'var(--bg-card)'};"></div>
+        <div class="cost-label">${label}</div>
+      </div>`;
+    }).join('');
+  }
+
+  // --- Active Filters ---
+  function updateFilterTags() {
+    const tags = [];
+    if (selectedCharacter !== 'all') tags.push({ label: CHAR_ICONS[selectedCharacter]+' '+CHAR_NAMES[selectedCharacter], key: 'character' });
+    if (selectedType !== 'all') tags.push({ label: selectedType, key: 'type' });
+    if (selectedCost !== 'all') tags.push({ label: selectedCost === 'X' ? 'X Cost' : selectedCost === '3' ? '3+ Cost' : selectedCost + ' Cost', key: 'cost' });
+    if (selectedRarity !== 'all') tags.push({ label: selectedRarity, key: 'rarity' });
+    if (selectedTier !== 'all') tags.push({ label: selectedTier + ' Tier', key: 'tier' });
+    filterTags.innerHTML = tags.map(t => `<span class="filter-tag" data-clear="${t.key}">${t.label}</span>`).join('');
+    filterTags.querySelectorAll('.filter-tag').forEach(tag => {
+      tag.addEventListener('click', function() {
+        const key = this.dataset.clear;
+        document.getElementById('filter-' + key).value = 'all';
+        document.getElementById('filter-' + key).dispatchEvent(new Event('change'));
+      });
+    });
+  }
+
+  function updateFilters() {
+    document.getElementById('filter-character').value = selectedCharacter;
+    document.getElementById('filter-type').value = selectedType;
+    document.getElementById('filter-cost').value = selectedCost;
+    document.getElementById('filter-rarity').value = selectedRarity;
+    document.getElementById('filter-tier').value = selectedTier;
+    updateFilterTags();
+  }
+
+  // --- Toast ---
+  let toastTimer;
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+  }
+
+  // --- Share ---
+  document.getElementById('btn-share').addEventListener('click', function() {
+    if (deck.length === 0) { showToast('Add cards to your deck first'); return; }
+    updateURL();
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+      showToast('🔗 Share URL copied to clipboard!');
+      if (typeof gtag === 'function') gtag('event', 'share_deck', { event_category: 'deck_builder' });
+    }).catch(() => {
+      // Fallback
+      const input = document.createElement('textarea');
+      input.value = url;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+      showToast('🔗 Share URL copied!');
+    });
+  });
+
+  // --- Copy List ---
+  document.getElementById('btn-copy').addEventListener('click', function() {
+    if (deck.length === 0) { showToast('Add cards to your deck first'); return; }
+    const lines = deck.map(dc => {
+      const card = cards.find(c => c.id === dc.id);
+      if (!card) return '';
+      return `${dc.count}x ${card.name} (${card.cost}) — ${card.type} ${card.rarity}`;
+    }).filter(Boolean);
+    const name = deckNameInput.value.trim() || 'Untitled Deck';
+    const text = `${name}\n${'='.repeat(name.length)}\n` + lines.join('\n');
+    navigator.clipboard.writeText(text).then(() => {
+      const fb = document.getElementById('copy-feedback');
+      fb.classList.add('show');
+      setTimeout(() => fb.classList.remove('show'), 1500);
+      if (typeof gtag === 'function') gtag('event', 'copy_deck', { event_category: 'deck_builder' });
+    }).catch(() => showToast('Failed to copy'));
+  });
+
+  // --- Clear ---
+  document.getElementById('btn-clear').addEventListener('click', clearDeck);
+
+  // --- Deck Name ---
+  deckNameInput.addEventListener('input', function() {
+    updateURL();
+  });
+
+  // --- Filter Events ---
+  ['character','type','cost','rarity','tier'].forEach(key => {
+    document.getElementById('filter-' + key).addEventListener('change', function() {
+      if (key === 'character') selectedCharacter = this.value;
+      else if (key === 'type') selectedType = this.value;
+      else if (key === 'cost') selectedCost = this.value;
+      else if (key === 'rarity') selectedRarity = this.value;
+      else if (key === 'tier') selectedTier = this.value;
+      updateFilterTags();
+      renderLibrary();
+    });
+  });
+
+  let searchTimeout;
+  document.getElementById('filter-search').addEventListener('input', function() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+      searchQuery = this.value.trim();
+      renderLibrary();
+    }, 200);
+  });
+
+  // --- Keyboard Shortcuts ---
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault();
+      document.getElementById('filter-search').focus();
+    }
+  });
+
+  // --- Init ---
+  function init() {
+    loadFromURL();
+    if (deck.length > 0) {
+      // If loaded from URL, apply deck
+      updateFilters();
+    }
+    renderLibrary();
+    renderDeck();
+    renderStats();
+    renderCostCurve();
+    // Default: show ironclad cards
+    if (deck.length === 0) {
+      selectedCharacter = 'ironclad';
+      updateFilters();
+      renderLibrary();
+    }
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>

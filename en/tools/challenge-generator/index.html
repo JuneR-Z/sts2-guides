@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Challenge Generator — Slay the Spire 2 | STS2Guides</title>
+<meta name="description" content="Generate random Slay the Spire 2 daily challenges with seeded RNG. Random character, restrictions, and win conditions. Share challenges via URL. Perfect for streamers and community events.">
+<meta property="og:title" content="Daily Challenge Generator — Slay the Spire 2 | STS2Guides">
+<meta property="og:description" content="Generate random STS2 challenges with seeded RNG. Shareable daily and custom challenges for the community.">
+<meta property="og:url" content="https://sts2guides.com/en/tools/challenge-generator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="STS2Guides">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Challenge Generator — Slay the Spire 2 | STS2Guides">
+<meta name="twitter:description" content="Random STS2 challenges. Daily seeds, shareable URLs, streamer-ready.">
+<link rel="canonical" href="https://sts2guides.com/en/tools/challenge-generator/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --crimson-light: #e74c3c;
+  --green: #27ae60; --blue: #3498db; --purple: #8e44ad; --orange: #e67e22;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; min-height: 100vh; }
+header { background: var(--bg-secondary); border-bottom: 2px solid var(--gold); position: sticky; top:0; z-index:100; }
+.header-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--gold), var(--crimson)); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+.logo-text { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+.logo-text span { color: var(--gold-light); }
+nav { display: flex; gap: 0; }
+nav a { color: var(--text-secondary); text-decoration: none; padding: 8px 14px; font-size: 13px; border-radius: 4px; transition: all .2s; }
+nav a:hover { color: var(--gold-light); background: rgba(255,255,255,0.05); }
+nav a.active { color: var(--gold-light); }
+.breadcrumb { max-width: 1200px; margin: 0 auto; padding: 12px 20px; font-size: 13px; color: var(--text-muted); }
+.breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+.breadcrumb a:hover { color: var(--gold-light); }
+
+/* Main content */
+.container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+.page-title { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+.page-subtitle { color: var(--text-muted); margin-bottom: 28px; font-size: 14px; }
+
+/* Seed bar */
+.seed-bar { display: flex; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
+.seed-bar input {
+  flex: 1; min-width: 200px;
+  background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border);
+  padding: 10px 16px; border-radius: 8px; font-size: 15px; outline: none;
+  font-family: 'Courier New', monospace; letter-spacing: 2px;
+}
+.seed-bar input:focus { border-color: var(--gold); }
+.seed-bar button, .seed-bar .btn-link {
+  background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border);
+  padding: 10px 20px; border-radius: 8px; font-size: 14px; cursor: pointer; transition: all .2s;
+  white-space: nowrap;
+}
+.seed-bar button:hover, .seed-bar .btn-link:hover { border-color: var(--gold); background: var(--bg-card-hover); }
+.seed-bar .btn-primary { background: var(--gold); color: #000; border-color: var(--gold); font-weight: 600; }
+.seed-bar .btn-primary:hover { background: var(--gold-light); }
+.seed-bar .btn-daily { background: var(--purple); color: #fff; border-color: var(--purple); font-weight: 600; }
+.seed-bar .btn-daily:hover { background: #a855f7; border-color: #a855f7; }
+.seed-bar .btn-share { background: var(--green); color: #fff; border-color: var(--green); }
+.seed-bar .btn-share:hover { background: #2ecc71; border-color: #2ecc71; }
+
+/* Challenge card */
+.challenge-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 24px; margin-bottom: 20px;
+}
+.challenge-card.blur { filter: blur(4px); pointer-events: none; user-select: none; }
+.challenge-header { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
+.char-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border-radius: 8px; font-size: 18px; font-weight: 700;
+}
+.char-badge.ironclad { background: rgba(192,57,43,0.2); color: #e74c3c; border: 1px solid rgba(192,57,43,0.4); }
+.char-badge.silent { background: rgba(39,174,96,0.2); color: #2ecc71; border: 1px solid rgba(39,174,96,0.4); }
+.char-badge.defect { background: rgba(52,152,219,0.2); color: #3498db; border: 1px solid rgba(52,152,219,0.4); }
+.char-badge.necrobinder { background: rgba(142,68,173,0.2); color: #a855f7; border: 1px solid rgba(142,68,173,0.4); }
+.char-badge.regent { background: rgba(230,126,34,0.2); color: #f39c12; border: 1px solid rgba(230,126,34,0.4); }
+.challenge-title { font-size: 22px; font-weight: 700; }
+
+/* Restriction list */
+.restrictions { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
+.restriction-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+  border-radius: 8px; transition: all .2s;
+}
+.restriction-item:hover { border-color: var(--gold); background: rgba(255,255,255,0.05); }
+.restriction-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.restriction-text { flex: 1; }
+.restriction-name { font-size: 14px; font-weight: 600; }
+.restriction-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.difficulty-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600;
+  margin-left: 8px; vertical-align: middle;
+}
+.difficulty-tag.easy { background: rgba(39,174,96,0.2); color: var(--green); }
+.difficulty-tag.medium { background: rgba(212,160,60,0.2); color: var(--gold); }
+.difficulty-tag.hard { background: rgba(192,57,43,0.2); color: var(--crimson); }
+
+/* Bonus objectives */
+.bonus-section { margin-top: 20px; }
+.bonus-title { font-size: 15px; font-weight: 600; color: var(--gold-light); margin-bottom: 10px; }
+.bonus-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px; margin: 4px 0;
+  background: rgba(212,160,60,0.06); border: 1px solid rgba(212,160,60,0.15);
+  border-radius: 6px; font-size: 13px;
+}
+.bonus-icon { font-size: 16px; }
+
+/* Seed info */
+.seed-info { text-align: center; margin: 20px 0; font-size: 12px; color: var(--text-muted); }
+
+/* Copy toast */
+.copied-toast { position: fixed; top: 80px; right: 20px; background: var(--green); color: #fff; padding: 10px 18px; border-radius: 8px; font-size: 14px; z-index: 999; opacity: 0; transition: opacity .3s; pointer-events: none; }
+.copied-toast.show { opacity: 1; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-title { font-size: 22px; }
+  .challenge-card { padding: 16px; }
+  .restrictions { grid-template-columns: 1fr; }
+  .challenge-header { gap: 8px; }
+  .char-badge { font-size: 15px; padding: 6px 12px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="/en/" class="logo"><div class="logo-icon">⬆</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="/en/">Home</a>
+      <a href="/en/guides/">Guides</a>
+      <a href="/en/characters/">Characters</a>
+      <a href="/en/cards/">Cards</a>
+      <a href="/en/tier-list/">Tier List</a>
+      <a href="/en/relics/">Relics</a>
+      <a href="/en/bosses/">Bosses</a>
+      <a href="/en/patch-notes/">Patch Notes</a>
+      <a href="/en/deck-builder/">Deck Builder</a>
+    </nav>
+  </div>
+</header>
+<div class="breadcrumb">
+  <a href="/en/">Home</a> &rsaquo; <a href="/en/tools/">Tools</a> &rsaquo; Challenge Generator
+</div>
+
+<div class="container">
+  <h1 class="page-title">⚔️ Daily Challenge Generator</h1>
+  <p class="page-subtitle">Generate random challenge runs with seeded RNG. All challenges are deterministic from the seed — same seed = same challenge. Share with friends and compete!</p>
+
+  <div class="seed-bar">
+    <input type="text" id="seedInput" placeholder="Enter seed or leave blank for random..." maxlength="64" spellcheck="false">
+    <button class="btn-primary" onclick="generateFromSeed()">🎲 Generate</button>
+    <button class="btn-daily" onclick="generateDaily()">📅 Today's Challenge</button>
+    <button class="btn-share" onclick="shareChallenge()">🔗 Share</button>
+  </div>
+  <div class="seed-info" id="seedInfo"></div>
+
+  <div class="challenge-card" id="challengeCard">
+    <div class="challenge-header">
+      <span class="char-badge" id="charBadge">—</span>
+      <span class="challenge-title" id="challengeName">Enter a seed to generate</span>
+    </div>
+    <div class="restrictions" id="restrictionsList"></div>
+    <div class="bonus-section" id="bonusSection" style="display:none">
+      <div class="bonus-title">🌟 Bonus Objectives</div>
+      <div id="bonusList"></div>
+    </div>
+  </div>
+
+  <div class="copied-toast" id="copiedToast">✅ Link copied to clipboard!</div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  // Seeded PRNG (mulberry32)
+  function mulberry32(a) {
+    return function() {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+
+  function hashString(str) {
+    var hash = 0;
+    for (var i = 0; i < str.length; i++) {
+      var chr = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + chr;
+      hash |= 0;
+    }
+    return Math.abs(hash) || 1;
+  }
+
+  // Characters
+  var characters = [
+    { id: 'ironclad', name: 'Ironclad', icon: '🛡️', color: 'ironclad' },
+    { id: 'silent', name: 'Silent', icon: '🗡️', color: 'silent' },
+    { id: 'defect', name: 'Defect', icon: '⚡', color: 'defect' },
+    { id: 'necrobinder', name: 'Necrobinder', icon: '💀', color: 'necrobinder' },
+    { id: 'regent', name: 'Regent', icon: '👑', color: 'regent' }
+  ];
+
+  // Challenge definitions
+  var challengeTypes = [
+    {
+      name: 'Poverty Run',
+      desc: 'Only Common-rarity cards may be added to your deck.',
+      icon: '🪙',
+      difficulty: 'medium',
+      bonus: ['Reach Act 2 without any Uncommon+ cards', 'Win the run']
+    },
+    {
+      name: 'Glass Cannon',
+      desc: 'No Skills that provide Block may be added to your deck.',
+      icon: '💥',
+      difficulty: 'hard',
+      bonus: ['Kill Act 1 boss in under 6 turns', 'Win without ever gaining Block from cards']
+    },
+    {
+      name: 'Pacifist',
+      desc: 'No Attack cards may be added to your deck. (Starter Strikes are allowed until removed)',
+      icon: '☮️',
+      difficulty: 'hard',
+      bonus: ['Remove all Strikes by end of Act 2', 'Win the run']
+    },
+    {
+      name: 'Type Restriction',
+      desc: 'You may only add {restrictedType} cards. Other card types are banned.',
+      icon: '🔒',
+      difficulty: 'hard',
+      bonus: ['Have at least 15 {restrictedType} cards in your deck', 'Win the run with 100% {restrictedType} cards']
+    },
+    {
+      name: 'Minimalist',
+      desc: 'Your deck may never exceed {maxCards} cards. Remove or skip at every opportunity.',
+      icon: '📏',
+      difficulty: 'hard',
+      bonus: ['Reach Act 3 with ≤ {maxCards} cards', 'Win with ≤ {maxCards} cards']
+    },
+    {
+      name: 'High Roller',
+      desc: 'You must take every Rare card offered. No skipping Rare card rewards.',
+      icon: '💎',
+      difficulty: 'medium',
+      bonus: ['Collect 8+ Rare cards', 'Win with 10+ Rare cards']
+    },
+    {
+      name: 'Curse Bearer',
+      desc: 'You must take every Curse offered from events/choices. Remove them only at shops (max 1 removal per shop).',
+      icon: '👹',
+      difficulty: 'hard',
+      bonus: ['End Act 1 with at least 1 Curse', 'Win the run with a Curse in your deck']
+    },
+    {
+      name: 'Speed Demon',
+      desc: 'Complete the run as fast as possible. No stalling, no unnecessary fights.',
+      icon: '⚡',
+      difficulty: 'medium',
+      bonus: ['Beat Act 1 in under 8 minutes', 'Beat Act 2 in under 20 minutes', 'Win in under 45 minutes']
+    },
+    {
+      name: 'Elite Hunter',
+      desc: 'Path through every possible Elite. Fight at least {eliteCount} Elites.',
+      icon: '👾',
+      difficulty: 'medium',
+      bonus: ['Kill 3+ Elites in a single act', 'Kill the Burning Elite']
+    },
+    {
+      name: 'Potion Addict',
+      desc: 'You must use at least 1 potion per combat. No saving potions for the boss.',
+      icon: '🧪',
+      difficulty: 'easy',
+      bonus: ['Use 10+ potions in a single act', 'Win with empty potion slots']
+    },
+    {
+      name: 'Ascension Climber',
+      desc: 'Play on Ascension {ascLevel} or higher.',
+      icon: '📈',
+      difficulty: 'medium',
+      bonus: ['Beat on Ascension {ascLevel}', 'Beat on Ascension {ascLevel}+2']
+    },
+    {
+      name: 'No Rest',
+      desc: 'You may not Rest at Rest Sites. Smith or other actions only.',
+      icon: '🔨',
+      difficulty: 'hard',
+      bonus: ['Reach Act 3 without ever Resting', 'Win without ever Resting']
+    },
+    {
+      name: 'Single Card Type',
+      desc: 'You may only have one of each card name in your deck. No duplicates.',
+      icon: '📋',
+      difficulty: 'easy',
+      bonus: ['Win the run with unique cards only']
+    }
+  ];
+
+  // Shuffle helper
+  function shuffle(arr, rng) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(rng() * (i + 1));
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
+  function pick(arr, rng) {
+    return arr[Math.floor(rng() * arr.length)];
+  }
+
+  function pickN(arr, n, rng) {
+    return shuffle(arr, rng).slice(0, Math.min(n, arr.length));
+  }
+
+  function randInt(min, max, rng) {
+    return Math.floor(rng() * (max - min + 1)) + min;
+  }
+
+  // Generate challenge from seed
+  function generateChallenge(seed) {
+    var rng = mulberry32(hashString(seed));
+
+    // Pick character
+    var char = pick(characters, rng);
+
+    // Pick challenge type
+    var challenge = pick(challengeTypes, rng);
+
+    // Build restrictions
+    var restrictions = [];
+    var bonuses = [];
+
+    // Add character restriction
+    restrictions.push({
+      name: 'Character Lock',
+      desc: 'You must play as <strong>' + char.name + '</strong>.',
+      icon: char.icon,
+      isChar: true
+    });
+
+    // Add challenge-specific restrictions
+    var challengeDesc = challenge.desc;
+
+    // Handle template vars
+    var maxCards = randInt(12, 20, rng);
+    var eliteCount = randInt(6, 9, rng);
+    var ascLevel = pick([5, 10, 15, 20], rng);
+    var restrictedType = pick(['Power', 'Skill', 'Attack'], rng);
+
+    challengeDesc = challengeDesc.replace('{maxCards}', maxCards);
+    challengeDesc = challengeDesc.replace('{eliteCount}', eliteCount);
+    challengeDesc = challengeDesc.replace('{ascLevel}', ascLevel);
+    challengeDesc = challengeDesc.replace(/\{restrictedType\}/g, restrictedType);
+
+    restrictions.push({
+      name: challenge.name,
+      desc: challengeDesc,
+      icon: challenge.icon,
+      difficulty: challenge.difficulty
+    });
+
+    // Process bonuses
+    if (challenge.bonus) {
+      challenge.bonus.forEach(function(b) {
+        b = b.replace('{maxCards}', maxCards);
+        b = b.replace('{ascLevel}', ascLevel);
+        b = b.replace(/\{restrictedType\}/g, restrictedType);
+        bonuses.push(b);
+      });
+    }
+
+    // Add random secondary restrictions (1-2)
+    var secondaryCount = randInt(1, 2, rng);
+    var secondaryPool = [
+      { name: 'No Shop', desc: 'You may not enter Shops.', icon: '🚫' },
+      { name: 'No ? Rooms', desc: 'You must avoid all ? rooms. Path through regular combats only.', icon: '❓' },
+      { name: 'Starter Only', desc: 'You may not remove Strikes or Defends from your deck.', icon: '🔰' },
+      { name: 'Energy Limit', desc: 'You cannot gain additional Energy from relics or cards (max 3 per turn).', icon: '⚡' },
+      { name: 'No Powers', desc: 'You may not add any Power cards to your deck.', icon: '⭐' },
+      { name: 'No Potions', desc: 'You may not use any potions during the run.', icon: '🧪' },
+      { name: 'No Rare', desc: 'You may not pick up any Rare cards.', icon: '💎' }
+    ];
+
+    var secondaries = pickN(secondaryPool, secondaryCount, rng);
+    secondaries.forEach(function(s) {
+      restrictions.push({ name: s.name, desc: s.desc, icon: s.icon });
+      // Add related bonuses
+      bonuses.push('Obey the "' + s.name + '" restriction through the entire run');
+    });
+
+    return {
+      seed: seed,
+      character: char,
+      challengeName: challenge.name + ' — ' + char.name,
+      restrictions: restrictions,
+      bonuses: bonuses,
+      hasBonuses: bonuses.length > 0,
+      dateLabel: ''
+    };
+  }
+
+  // Render challenge
+  function renderChallenge(challenge) {
+    var card = document.getElementById('challengeCard');
+    var badge = document.getElementById('charBadge');
+    var nameEl = document.getElementById('challengeName');
+    var listEl = document.getElementById('restrictionsList');
+    var bonusSec = document.getElementById('bonusSection');
+    var bonusList = document.getElementById('bonusList');
+
+    // Character badge
+    badge.textContent = challenge.character.icon + ' ' + challenge.character.name;
+    badge.className = 'char-badge ' + challenge.character.color;
+
+    // Challenge name
+    nameEl.textContent = challenge.challengeName;
+
+    // Restrictions
+    listEl.innerHTML = '';
+    challenge.restrictions.forEach(function(r) {
+      var item = document.createElement('div');
+      item.className = 'restriction-item';
+      var diffTag = '';
+      if (r.difficulty) {
+        diffTag = '<span class="difficulty-tag ' + r.difficulty + '">' + r.difficulty.toUpperCase() + '</span>';
+      }
+      item.innerHTML = '<span class="restriction-icon">' + (r.icon || '•') + '</span>' +
+        '<div class="restriction-text">' +
+          '<span class="restriction-name">' + r.name + diffTag + '</span>' +
+          '<div class="restriction-desc">' + r.desc + '</div>' +
+        '</div>';
+      listEl.appendChild(item);
+    });
+
+    // Bonuses
+    if (challenge.hasBonuses) {
+      bonusSec.style.display = '';
+      bonusList.innerHTML = '';
+      challenge.bonuses.forEach(function(b, i) {
+        var item = document.createElement('div');
+        item.className = 'bonus-item';
+        item.innerHTML = '<span class="bonus-icon">⭐</span>' + b + ' <span style="color:var(--text-muted);font-size:11px">(+' + (i+1) + ' pt)</span>';
+        bonusList.appendChild(item);
+      });
+    } else {
+      bonusSec.style.display = 'none';
+    }
+
+    // Seed info
+    document.getElementById('seedInfo').innerHTML = '🎯 Seed: <strong>' + challenge.seed + '</strong>' + (challenge.dateLabel ? ' &mdash; ' + challenge.dateLabel : '');
+    document.getElementById('seedInput').value = challenge.seed;
+
+    // Update URL
+    var url = window.location.pathname + '#' + encodeURIComponent(challenge.seed);
+    window.history.replaceState(null, '', url);
+  }
+
+  // Generate from custom seed
+  function generateFromSeed() {
+    var seed = document.getElementById('seedInput').value.trim();
+    if (!seed) {
+      seed = generateRandomSeed();
+      document.getElementById('seedInput').value = seed;
+    }
+    var challenge = generateChallenge(seed);
+    challenge.dateLabel = 'Custom Seed';
+    renderChallenge(challenge);
+  }
+
+  // Generate daily challenge
+  function generateDaily() {
+    var now = new Date();
+    var dateStr = now.getFullYear() + '-' +
+      String(now.getMonth() + 1).padStart(2, '0') + '-' +
+      String(now.getDate()).padStart(2, '0');
+    var seed = 'daily-' + dateStr;
+    document.getElementById('seedInput').value = seed;
+    var challenge = generateChallenge(seed);
+    challenge.dateLabel = dateStr + ' Daily';
+    renderChallenge(challenge);
+  }
+
+  // Generate random seed
+  function generateRandomSeed() {
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var seed = '';
+    for (var i = 0; i < 12; i++) {
+      seed += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return seed;
+  }
+
+  // Share challenge
+  function shareChallenge() {
+    var url = window.location.href;
+    navigator.clipboard.writeText(url).then(function() {
+      var toast = document.getElementById('copiedToast');
+      toast.classList.add('show');
+      setTimeout(function() { toast.classList.remove('show'); }, 2000);
+    }).catch(function() {
+      var ta = document.createElement('textarea');
+      ta.value = url;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      var toast = document.getElementById('copiedToast');
+      toast.classList.add('show');
+      setTimeout(function() { toast.classList.remove('show'); }, 2000);
+    });
+  }
+
+  // Init — load from URL hash or generate random
+  function init() {
+    var hash = window.location.hash.substring(1);
+    if (hash) {
+      var seed = decodeURIComponent(hash);
+      document.getElementById('seedInput').value = seed;
+      var challenge = generateChallenge(seed);
+      challenge.dateLabel = 'Shared Challenge';
+      renderChallenge(challenge);
+    } else {
+      generateDaily();
+    }
+
+    // Enter key support
+    document.getElementById('seedInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') generateFromSeed();
+    });
+  }
+
+  // Expose to global
+  window.generateFromSeed = generateFromSeed;
+  window.generateDaily = generateDaily;
+  window.shareChallenge = shareChallenge;
+
+  init();
+})();
+</script>
+</body>
+</html>

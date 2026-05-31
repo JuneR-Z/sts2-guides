@@ -330,6 +330,30 @@
     "category": "Tools"
   },
   {
+    "url": "/en/tools/",
+    "title": "Interactive Tools — Deck Builder, Tier Maker & More | STS2Guides",
+    "keywords": "tools,interactive,deck builder,tier maker,challenge generator,card compare,tool",
+    "category": "Tools"
+  },
+  {
+    "url": "/en/tools/tier-maker/",
+    "title": "Tier List Maker — Create & Share Custom Rankings | STS2Guides",
+    "keywords": "tier,list,maker,ranking,drag,drop,custom,share,tierlist,tiermaker,s,a,b,c,d",
+    "category": "Tools"
+  },
+  {
+    "url": "/en/tools/challenge-generator/",
+    "title": "Daily Challenge Generator — Seeded Random Runs | STS2Guides",
+    "keywords": "challenge,generator,daily,seed,random,run,streamer,community,challenge generator,seeded",
+    "category": "Tools"
+  },
+  {
+    "url": "/en/tools/card-compare/",
+    "title": "Card Compare Tool — Side-by-Side Comparison | STS2Guides",
+    "keywords": "card,compare,comparison,side by side,versus,vs,pick,evaluate,card compare",
+    "category": "Tools"
+  },
+  {
     "title": "Necrobinder Doom Execute Build — Skip HP Scaling with One-Turn Kill Combos",
     "url": "/en/guides/necrobinder-doom-build.html",
     "category": "Guides",

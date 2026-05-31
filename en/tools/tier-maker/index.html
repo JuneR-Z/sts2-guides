@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tier List Maker — Create & Share Rankings | STS2Guides</title>
+<meta name="description" content="Create custom Slay the Spire 2 tier lists. Drag &amp; drop cards and relics into S/A/B/C/D/F tiers. Share your rankings via URL. All 577 cards &amp; 293 relics supported.">
+<meta property="og:title" content="Tier List Maker — Create & Share Rankings | STS2Guides">
+<meta property="og:description" content="Create custom Slay the Spire 2 tier lists. Drag &amp; drop cards and relics. Share your rankings with unique URLs.">
+<meta property="og:url" content="https://sts2guides.com/en/tools/tier-maker/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="STS2Guides">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tier List Maker — Slay the Spire 2 | STS2Guides">
+<meta name="twitter:description" content="Create custom STS2 tier lists. Drag &amp; drop ranking, shareable URLs.">
+<link rel="canonical" href="https://sts2guides.com/en/tools/tier-maker/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad; --orange: #e67e22;
+  --char-ironclad: #c0392b; --char-silent: #27ae60; --char-defect: #3498db;
+  --char-necrobinder: #8e44ad; --char-regent: #e67e22;
+  --tier-s: #ff4d4d; --tier-a: #ff944d; --tier-b: #ffd700; --tier-c: #66bb6a; --tier-d: #42a5f5; --tier-f: #9e9e9e; --tier-unranked: #555;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.5; min-height: 100vh; }
+header { background: var(--bg-secondary); border-bottom: 2px solid var(--gold); position: sticky; top:0; z-index:200; }
+.header-inner { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--gold), var(--crimson)); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.logo-text { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+.logo-text span { color: var(--gold-light); }
+nav { display: flex; gap: 0; }
+nav a { color: var(--text-secondary); text-decoration: none; padding: 7px 12px; font-size: 13px; border-radius: 4px; transition: all .2s; }
+nav a:hover { color: var(--gold-light); background: rgba(255,255,255,0.05); }
+nav a.active { color: var(--gold-light); }
+
+/* Toolbar */
+.toolbar { background: var(--bg-secondary); border-bottom: 1px solid var(--border); padding: 10px 20px; }
+.toolbar-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.toolbar select, .toolbar button {
+  background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border);
+  padding: 7px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; outline: none; transition: all .2s;
+}
+.toolbar select:hover, .toolbar button:hover, .toolbar select:focus { border-color: var(--gold); }
+.toolbar button.primary { background: var(--gold); color: #000; border-color: var(--gold); font-weight: 600; }
+.toolbar button.primary:hover { background: var(--gold-light); }
+.toolbar .btn-group { display: flex; gap: 0; }
+.toolbar .btn-group button:first-child { border-radius: 6px 0 0 6px; }
+.toolbar .btn-group button:last-child { border-radius: 0 6px 6px 0; }
+.toolbar .btn-group button:not(:first-child):not(:last-child) { border-radius: 0; }
+.toolbar .separator { width: 1px; height: 24px; background: var(--border); margin: 0 4px; }
+.toolbar .info-text { font-size: 12px; color: var(--text-muted); margin-left: auto; }
+.toolbar .copied-toast { position: fixed; top: 70px; right: 20px; background: var(--green); color: #fff; padding: 8px 16px; border-radius: 6px; font-size: 13px; z-index: 999; opacity: 0; transition: opacity .3s; pointer-events: none; }
+.toolbar .copied-toast.show { opacity: 1; }
+select#charFilter { min-width: 130px; }
+
+/* Tier rows */
+.tier-container { max-width: 1400px; margin: 0 auto; padding: 0 16px 24px; }
+.tier-row { margin-top: 8px; }
+.tier-header { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 8px 8px 0 0; cursor: default; }
+.tier-label { font-size: 20px; font-weight: 800; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 6px; color: #000; flex-shrink: 0; }
+.tier-s .tier-label { background: var(--tier-s); } .tier-a .tier-label { background: var(--tier-a); }
+.tier-b .tier-label { background: var(--tier-b); } .tier-c .tier-label { background: var(--tier-c); }
+.tier-d .tier-label { background: var(--tier-d); } .tier-f .tier-label { background: var(--tier-f); }
+.unranked .tier-label { background: var(--tier-unranked); color: #fff; }
+.tier-name { font-size: 14px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+.tier-count { font-size: 12px; color: var(--text-muted); margin-left: 8px; }
+.tier-cards { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px; min-height: 52px; background: rgba(255,255,255,0.02); border: 2px dashed transparent; border-radius: 0 0 8px 8px; transition: border-color .2s, background .2s; align-content: flex-start; }
+.tier-cards.drag-over { border-color: var(--gold); background: rgba(212,160,60,0.08); }
+
+/* Card chip */
+.card-chip {
+  display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px;
+  font-size: 12px; cursor: grab; transition: all .15s; user-select: none; white-space: nowrap;
+}
+.card-chip:hover { border-color: var(--gold); background: var(--bg-card-hover); transform: translateY(-1px); }
+.card-chip:active { cursor: grabbing; }
+.card-chip.dragging { opacity: 0.4; transform: scale(0.95); }
+.card-chip .cost-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 3px; font-size: 10px; font-weight: 700;
+  background: rgba(212,160,60,0.25); color: var(--gold-light); flex-shrink: 0;
+}
+.card-chip .cost-badge.x-cost { font-size: 9px; }
+.card-chip .chip-type { font-size: 10px; color: var(--text-muted); }
+.card-chip .chip-tier-orig { font-size: 9px; color: var(--text-muted); opacity: 0.7; }
+.card-chip.relic-chip { border-left: 3px solid var(--purple); }
+.card-chip.selected-chip { border-color: var(--gold-light); box-shadow: 0 0 6px rgba(212,160,60,0.3); }
+
+/* Character colors on card chip */
+.card-chip[data-char="ironclad"] { border-left-color: var(--char-ironclad); }
+.card-chip[data-char="silent"] { border-left-color: var(--char-silent); }
+.card-chip[data-char="defect"] { border-left-color: var(--char-defect); }
+.card-chip[data-char="necrobinder"] { border-left-color: var(--char-necrobinder); }
+.card-chip[data-char="regent"] { border-left-color: var(--char-regent); }
+.card-chip[data-char="colorless"] { border-left-color: #95a5a6; }
+
+/* Mobile hint */
+.mobile-hint { text-align: center; padding: 6px; font-size: 11px; color: var(--text-muted); background: var(--bg-secondary); border-top: 1px solid var(--border); }
+.mobile-hint .key { display: inline-block; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-size: 10px; margin: 0 2px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .toolbar-inner { gap: 6px; }
+  .toolbar select, .toolbar button { padding: 5px 10px; font-size: 12px; }
+  .tier-label { width: 28px; height: 28px; font-size: 16px; }
+  .card-chip { font-size: 11px; padding: 2px 6px; }
+  .toolbar .info-text { display: none; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="/en/" class="logo"><div class="logo-icon">⬆</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="/en/">Home</a>
+      <a href="/en/guides/">Guides</a>
+      <a href="/en/characters/">Characters</a>
+      <a href="/en/cards/">Cards</a>
+      <a href="/en/tier-list/">Tier List</a>
+      <a href="/en/relics/">Relics</a>
+      <a href="/en/bosses/">Bosses</a>
+      <a href="/en/patch-notes/">Patch Notes</a>
+      <a href="/en/deck-builder/">Deck Builder</a>
+    </nav>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-inner">
+    <select id="modeSelect">
+      <option value="cards">📇 Cards Tier List</option>
+      <option value="relics">💎 Relics Tier List</option>
+    </select>
+    <select id="charFilter" style="display:none">
+      <option value="all">All Characters</option>
+      <option value="ironclad">Ironclad</option>
+      <option value="silent">Silent</option>
+      <option value="defect">Defect</option>
+      <option value="necrobinder">Necrobinder</option>
+      <option value="regent">Regent</option>
+    </select>
+    <span class="separator"></span>
+    <button onclick="resetToDefaults()" title="Reset to expert tier rankings">↺ Reset Defaults</button>
+    <button onclick="clearAllUnranked()" title="Move everything to Unranked">🔄 Clear All</button>
+    <button class="primary" onclick="copyShareLink()">🔗 Share</button>
+    <span class="info-text" id="itemCount"></span>
+  </div>
+</div>
+<div class="copied-toast" id="copiedToast">✅ Link copied!</div>
+
+<div class="tier-container" id="tierContainer">
+  <div class="tier-row tier-s" data-tier="S">
+    <div class="tier-header"><span class="tier-label">S</span><span class="tier-name">Best — Auto-pick / Run-defining</span><span class="tier-count" id="countS"></span></div>
+    <div class="tier-cards" id="tierS" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 'S')"></div>
+  </div>
+  <div class="tier-row tier-a" data-tier="A">
+    <div class="tier-header"><span class="tier-label">A</span><span class="tier-name">Strong — Very good in most decks</span><span class="tier-count" id="countA"></span></div>
+    <div class="tier-cards" id="tierA" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 'A')"></div>
+  </div>
+  <div class="tier-row tier-b" data-tier="B">
+    <div class="tier-header"><span class="tier-label">B</span><span class="tier-name">Good — Solid but situational</span><span class="tier-count" id="countB"></span></div>
+    <div class="tier-cards" id="tierB" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 'B')"></div>
+  </div>
+  <div class="tier-row tier-c" data-tier="C">
+    <div class="tier-header"><span class="tier-label">C</span><span class="tier-name">Average — Niche or outclassed</span><span class="tier-count" id="countC"></span></div>
+    <div class="tier-cards" id="tierC" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 'C')"></div>
+  </div>
+  <div class="tier-row tier-d" data-tier="D">
+    <div class="tier-header"><span class="tier-label">D</span><span class="tier-name">Weak — Usually skip</span><span class="tier-count" id="countD"></span></div>
+    <div class="tier-cards" id="tierD" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 'D')"></div>
+  </div>
+  <div class="tier-row tier-f" data-tier="F">
+    <div class="tier-header"><span class="tier-label">F</span><span class="tier-name">Bad — Avoid / Curse-tier</span><span class="tier-count" id="countF"></span></div>
+    <div class="tier-cards" id="tierF" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 'F')"></div>
+  </div>
+  <div class="tier-row unranked" data-tier="unranked">
+    <div class="tier-header"><span class="tier-label">?</span><span class="tier-name">Unranked</span><span class="tier-count" id="countUnranked"></span></div>
+    <div class="tier-cards" id="tierUnranked" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 'unranked')"></div>
+  </div>
+</div>
+<div class="mobile-hint">
+  💡 <span class="key">Click</span> a card to select it, then <span class="key">Click</span> a tier row to move it there. Or drag &amp; drop on desktop.
+</div>
+
+<script src="/en/cards/cards-data.js"></script>
+<script src="/en/relics/relics-data.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  const tiers = ['S','A','B','C','D','F','unranked'];
+  const TIER_TO_IDX = {S:0,A:1,B:2,C:3,D:4,F:5,unranked:6};
+  const IDX_TO_TIER = tiers;
+  const CHARS = ['ironclad','silent','defect','necrobinder','regent'];
+  const TIER_ORDER = {S:0,A:1,B:2,C:3,D:4,F:5,unranked:6};
+  // Card types order
+  const TYPE_ORDER = {Power:0,Skill:1,Attack:2,Curse:3,Status:4,Quest:5};
+  // Rarity order
+  const RARITY_ORDER = {Rare:0,Uncommon:1,Common:2,Starter:3};
+
+  let state = {
+    mode: 'cards',          // 'cards' | 'relics'
+    charFilter: 'all',     // for cards mode
+    assignments: {},        // { id: tier } — current tier assignments
+    items: [],             // all display items
+    defaults: {},           // default tier assignments
+    selectedId: null       // for mobile click-select
+  };
+
+  // Get card character display name
+  function charLabel(c) {
+    const map = {ironclad:'Ironclad',silent:'Silent',defect:'Defect',necrobinder:'Necrobinder',regent:'Regent'};
+    return map[c] || c;
+  }
+
+  // Build items list from data
+  function buildItems() {
+    state.items = [];
+    state.assignments = {};
+    state.defaults = {};
+
+    if (state.mode === 'cards') {
+      const cardList = window.cardsData && window.cardsData.value ? window.cardsData.value : (window.cardsData || []);
+      cardList.forEach(function(c, idx) {
+        if (!c || !c.name) return;
+        // Filter by character
+        if (state.charFilter !== 'all' && c.character !== state.charFilter) return;
+        // Skip curses and statuses for individual character views (they're situational)
+        // Actually, include them — user can decide their tier
+
+        const id = c.id || ('card_'+idx);
+        const tier = c.tier || 'unranked';
+        state.defaults[id] = tier;
+        state.assignments[id] = loadAssignment(id) || tier;
+        state.items.push({
+          id: id, name: c.name, type: c.type || '', cost: c.cost,
+          character: c.character || '', rarity: c.rarity || '',
+          tier: state.assignments[id],
+          isCard: true, globalIdx: idx
+        });
+      });
+    } else {
+      const relicList = window.relicsData || [];
+      relicList.forEach(function(r, idx) {
+        if (!r || !r.name) return;
+        const id = r.id || ('relic_'+idx);
+        const tier = r.tier || 'unranked';
+        state.defaults[id] = tier;
+        state.assignments[id] = loadAssignment(id) || tier;
+        state.items.push({
+          id: id, name: r.name, character: r.character || 'all',
+          tier: state.assignments[id],
+          isCard: false, globalIdx: idx
+        });
+      });
+    }
+
+    // Sort items within tiers by name
+    // Actually, sorting is done in render
+  }
+
+  // Parse URL hash for saved state
+  function loadAssignment(id) {
+    // This is handled by loadFromURL which sets assignments
+    return null;
+  }
+
+  // Render all tiers
+  function render() {
+    // Group items by tier
+    const tierBuckets = {};
+    tiers.forEach(function(t) { tierBuckets[t] = []; });
+
+    state.items.forEach(function(item) {
+      const t = state.assignments[item.id] || 'unranked';
+      if (tierBuckets[t]) {
+        tierBuckets[t].push(item);
+      } else {
+        tierBuckets.unranked.push(item);
+      }
+    });
+
+    // Sort within each tier: by type then name
+    tiers.forEach(function(t) {
+      tierBuckets[t].sort(function(a, b) {
+        if (state.mode === 'cards') {
+          // Sort by type order, then rarity, then name
+          const ta = TYPE_ORDER[a.type] !== undefined ? TYPE_ORDER[a.type] : 6;
+          const tb = TYPE_ORDER[b.type] !== undefined ? TYPE_ORDER[b.type] : 6;
+          if (ta !== tb) return ta - tb;
+          const ra = RARITY_ORDER[a.rarity] !== undefined ? RARITY_ORDER[a.rarity] : 9;
+          const rb = RARITY_ORDER[b.rarity] !== undefined ? RARITY_ORDER[b.rarity] : 9;
+          if (ra !== rb) return ra - rb;
+        }
+        return a.name.localeCompare(b.name);
+      });
+    });
+
+    // Render each tier
+    tiers.forEach(function(t) {
+      const container = document.getElementById('tier' + (t === 'unranked' ? 'Unranked' : t));
+      const countEl = document.getElementById('count' + (t === 'unranked' ? 'Unranked' : t));
+      if (!container) return;
+
+      container.innerHTML = '';
+      tierBuckets[t].forEach(function(item) {
+        const chip = createChip(item);
+        container.appendChild(chip);
+      });
+      if (countEl) countEl.textContent = tierBuckets[t].length;
+
+      // Re-bind drop
+      container.ondragover = handleDragOver;
+      container.ondragleave = handleDragLeave;
+      container.ondrop = function(e) { handleDrop(e, t); };
+    });
+
+    // Update item count
+    document.getElementById('itemCount').textContent = state.items.length + ' items';
+  }
+
+  // Create a chip element
+  function createChip(item) {
+    const el = document.createElement('span');
+    el.className = 'card-chip';
+    if (!item.isCard) el.classList.add('relic-chip');
+    el.draggable = true;
+    el.dataset.id = item.id;
+    if (item.character && item.isCard) {
+      el.dataset.char = item.character;
+    }
+
+    // Cost badge (cards only)
+    let costHtml = '';
+    if (item.isCard && item.cost !== undefined) {
+      const costStr = String(item.cost);
+      const xClass = costStr === 'X' ? ' x-cost' : '';
+      costHtml = '<span class="cost-badge' + xClass + '">' + costStr + '</span>';
+    }
+
+    // Type label (cards only)
+    let typeHtml = '';
+    if (item.isCard && item.type) {
+      typeHtml = '<span class="chip-type">' + item.type + '</span>';
+    }
+
+    // Character label for relics
+    let charHtml = '';
+    if (!item.isCard && item.character && item.character !== 'all') {
+      charHtml = '<span class="chip-type">' + charLabel(item.character) + '</span>';
+    }
+
+    // Original tier hint
+    const defaultTier = state.defaults[item.id];
+    const currentTier = state.assignments[item.id];
+    let origHtml = '';
+    if (defaultTier && defaultTier !== currentTier) {
+      origHtml = '<span class="chip-tier-orig" title="Expert rating: ' + defaultTier + '">(' + defaultTier + ')</span>';
+    }
+
+    el.innerHTML = costHtml + '<span class="chip-name">' + escapeHtml(item.name) + '</span>' + typeHtml + charHtml + origHtml;
+
+    // Events
+    el.addEventListener('dragstart', handleDragStart);
+    el.addEventListener('dragend', handleDragEnd);
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      handleChipClick(item.id);
+    });
+
+    if (item.id === state.selectedId) {
+      el.classList.add('selected-chip');
+    }
+
+    return el;
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  // Drag handlers
+  let draggedId = null;
+
+  function handleDragStart(e) {
+    draggedId = e.target.dataset.id;
+    e.target.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', draggedId);
+    // Clear selected state when dragging
+    state.selectedId = null;
+    render();
+  }
+
+  function handleDragEnd(e) {
+    e.target.classList.remove('dragging');
+    draggedId = null;
+    // Remove drag-over from all
+    document.querySelectorAll('.tier-cards.drag-over').forEach(function(el) { el.classList.remove('drag-over'); });
+  }
+
+  function handleDragOver(e) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    e.currentTarget.classList.add('drag-over');
+  }
+
+  function handleDragLeave(e) {
+    e.currentTarget.classList.remove('drag-over');
+  }
+
+  function handleDrop(e, tier) {
+    e.preventDefault();
+    e.currentTarget.classList.remove('drag-over');
+    if (!draggedId) return;
+    moveItem(draggedId, tier);
+  }
+
+  // Click-based mobile flow
+  function handleChipClick(id) {
+    if (state.selectedId === id) {
+      // Deselect
+      state.selectedId = null;
+      render();
+      return;
+    }
+
+    if (state.selectedId) {
+      // Move selected item to this item's tier
+      const targetTier = state.assignments[id] || 'unranked';
+      moveItem(state.selectedId, targetTier);
+      state.selectedId = null;
+    } else {
+      // Select this item
+      state.selectedId = id;
+      render();
+      // Highlight all tier rows as clickable
+      highlightTierRows();
+    }
+  }
+
+  function highlightTierRows() {
+    tiers.forEach(function(t) {
+      const container = document.getElementById('tier' + (t === 'unranked' ? 'Unranked' : t));
+      if (container) {
+        container.style.cursor = 'pointer';
+        container.style.borderColor = 'rgba(212,160,60,0.4)';
+        container.onclick = function() {
+          if (state.selectedId) {
+            moveItem(state.selectedId, t);
+            state.selectedId = null;
+            render();
+            resetTierRowStyles();
+          }
+        };
+      }
+    });
+  }
+
+  function resetTierRowStyles() {
+    tiers.forEach(function(t) {
+      const container = document.getElementById('tier' + (t === 'unranked' ? 'Unranked' : t));
+      if (container) {
+        container.style.cursor = '';
+        container.style.borderColor = '';
+        container.onclick = null;
+        container.ondragover = handleDragOver;
+        container.ondragleave = handleDragLeave;
+        container.ondrop = function(e) { handleDrop(e, t); };
+      }
+    });
+  }
+
+  function moveItem(id, newTier) {
+    state.assignments[id] = newTier;
+    // Update the item's tier reference
+    const item = state.items.find(function(it) { return it.id === id; });
+    if (item) item.tier = newTier;
+    render();
+    updateURL();
+  }
+
+  // URL encoding/decoding
+  function updateURL() {
+    // Build compact representation
+    // Format: mode_charFilter_base36EncodedTiers
+    // Each item gets 1 digit (0-6) for tier index
+    const tierStr = state.items.map(function(item) {
+      const t = state.assignments[item.id] || 'unranked';
+      return TIER_TO_IDX[t] || 6;
+    }).join('');
+
+    // Convert to base36
+    const encoded = base36Encode(tierStr);
+    const mode = state.mode === 'cards' ? 'c' : 'r';
+    const filter = state.mode === 'cards' ? (state.charFilter || 'all') : 'all';
+
+    const hash = mode + '/' + filter + '/' + encoded;
+    window.history.replaceState(null, '', '#' + hash);
+  }
+
+  function loadFromURL() {
+    const hash = window.location.hash.substring(1);
+    if (!hash) return false;
+
+    const parts = hash.split('/');
+    if (parts.length < 3) return false;
+
+    const mode = parts[0];
+    const filter = parts[1];
+    const encoded = parts[2];
+
+    if (!encoded || (mode !== 'c' && mode !== 'r')) return false;
+
+    const tierStr = base36Decode(encoded);
+    if (!tierStr) return false;
+
+    // Apply mode and filter
+    state.mode = mode === 'c' ? 'cards' : 'relics';
+    state.charFilter = filter;
+    document.getElementById('modeSelect').value = state.mode;
+    toggleCharFilter();
+    if (state.mode === 'cards') {
+      document.getElementById('charFilter').value = state.charFilter;
+    }
+
+    // Rebuild items
+    buildItems();
+
+    // Apply stored tiers
+    if (tierStr.length === state.items.length) {
+      for (let i = 0; i < state.items.length; i++) {
+        const tierIdx = parseInt(tierStr[i], 10);
+        state.assignments[state.items[i].id] = IDX_TO_TIER[tierIdx] || 'unranked';
+        state.items[i].tier = state.assignments[state.items[i].id];
+      }
+      render();
+      return true;
+    }
+    return false;
+  }
+
+  function base36Encode(str) {
+    // Convert digit string to BigInt-like base36
+    // Strategy: group by 5 chars, convert to base36
+    let result = '';
+    for (let i = 0; i < str.length; i += 4) {
+      const chunk = str.substring(i, i + 4);
+      let num = 0;
+      // Parse chunk as base-7 number (digits 0-6)
+      for (let j = 0; j < chunk.length; j++) {
+        num = num * 7 + parseInt(chunk[j], 10);
+      }
+      // Convert to 2-char base36
+      let b36 = num.toString(36).padStart(2, '0');
+      result += b36;
+    }
+    // Remove padding zeros at end if any
+    return result.replace(/0+$/, '') || '0';
+  }
+
+  function base36Decode(str) {
+    if (!str || str.length < 1) return '';
+    let result = '';
+    // Process 2 chars at a time
+    for (let i = 0; i < str.length; i += 2) {
+      const pair = (str.substring(i, i + 2) + '00').substring(0, 2);
+      const num = parseInt(pair, 36);
+      if (isNaN(num)) return null;
+      // Convert to base-7 (4 digits max)
+      let base7 = num.toString(7);
+      if (i === 0) {
+        // First chunk, no padding needed
+        result = base7;
+      } else {
+        // Pad to 4 digits
+        while (base7.length < 4) base7 = '0' + base7;
+        result += base7;
+      }
+    }
+    return result;
+  }
+
+  function copyShareLink() {
+    updateURL();
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(function() {
+      showToast();
+    }).catch(function() {
+      // Fallback
+      const ta = document.createElement('textarea');
+      ta.value = url;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast();
+    });
+  }
+
+  function showToast() {
+    const toast = document.getElementById('copiedToast');
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 2000);
+  }
+
+  function resetToDefaults() {
+    if (!confirm('Reset all tiers to expert defaults? Your custom rankings will be lost.')) return;
+    state.items.forEach(function(item) {
+      state.assignments[item.id] = state.defaults[item.id] || 'unranked';
+      item.tier = state.assignments[item.id];
+    });
+    state.selectedId = null;
+    render();
+    updateURL();
+  }
+
+  function clearAllUnranked() {
+    if (!confirm('Move ALL items to Unranked? This cannot be undone with Reset.')) return;
+    state.items.forEach(function(item) {
+      state.assignments[item.id] = 'unranked';
+      item.tier = 'unranked';
+    });
+    state.selectedId = null;
+    render();
+    updateURL();
+  }
+
+  function toggleCharFilter() {
+    const sel = document.getElementById('charFilter');
+    sel.style.display = state.mode === 'cards' ? '' : 'none';
+  }
+
+  function onModeChange() {
+    state.mode = document.getElementById('modeSelect').value;
+    toggleCharFilter();
+    state.selectedId = null;
+    buildItems();
+    render();
+    updateURL();
+  }
+
+  function onCharFilterChange() {
+    state.charFilter = document.getElementById('charFilter').value;
+    state.selectedId = null;
+    buildItems();
+    render();
+    updateURL();
+  }
+
+  // Init
+  document.getElementById('modeSelect').addEventListener('change', onModeChange);
+  document.getElementById('charFilter').addEventListener('change', onCharFilterChange);
+
+  // Try to load from URL first
+  if (!loadFromURL()) {
+    // Default: Cards mode, all characters
+    state.mode = 'cards';
+    state.charFilter = 'all';
+    document.getElementById('modeSelect').value = state.mode;
+    toggleCharFilter();
+    document.getElementById('charFilter').value = state.charFilter;
+    buildItems();
+    render();
+    updateURL();
+  }
+
+})();
+</script>
+</body>
+</html>

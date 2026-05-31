@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Tools — Deck Builder, Tier Maker &amp; More | STS2Guides</title>
+<meta name="description" content="Free interactive Slay the Spire 2 tools: Deck Builder (drag &amp; drop), Tier List Maker, Challenge Generator, and Card Compare. No sign-up required, shareable via URL.">
+<meta property="og:title" content="Interactive Tools — Deck Builder, Tier Maker &amp; More | STS2Guides">
+<meta property="og:description" content="Free interactive STS2 tools. Deck Builder, Tier List Maker, Challenge Generator, Card Compare. No sign-up, shareable URLs.">
+<meta property="og:url" content="https://sts2guides.com/en/tools/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="STS2Guides">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Interactive Tools — STS2Guides">
+<meta name="twitter:description" content="Free STS2 tools. Deck Builder, Tier List Maker, Challenge Generator &amp; Card Compare.">
+<link rel="canonical" href="https://sts2guides.com/en/tools/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad; --orange: #e67e22;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; min-height: 100vh; }
+header { background: var(--bg-secondary); border-bottom: 2px solid var(--gold); position: sticky; top:0; z-index:100; }
+.header-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--gold), var(--crimson)); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+.logo-text { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+.logo-text span { color: var(--gold-light); }
+nav { display: flex; gap: 0; }
+nav a { color: var(--text-secondary); text-decoration: none; padding: 8px 14px; font-size: 13px; border-radius: 4px; transition: all .2s; }
+nav a:hover { color: var(--gold-light); background: rgba(255,255,255,0.05); }
+nav a.active { color: var(--gold-light); }
+.breadcrumb { max-width: 1200px; margin: 0 auto; padding: 12px 20px; font-size: 13px; color: var(--text-muted); }
+.breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+.breadcrumb a:hover { color: var(--gold-light); }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+.page-title { font-size: 32px; font-weight: 700; margin-bottom: 6px; }
+.page-subtitle { color: var(--text-muted); margin-bottom: 32px; font-size: 15px; }
+
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(440px, 1fr)); gap: 16px; }
+.tool-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 24px; transition: all .2s; text-decoration: none; color: inherit;
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.tool-card:hover { border-color: var(--gold); background: var(--bg-card-hover); transform: translateY(-2px); }
+.tool-icon {
+  width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center;
+  justify-content: center; font-size: 26px; flex-shrink: 0;
+}
+.tool-icon.deck-builder { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+.tool-icon.tier-maker { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.tool-icon.challenge { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+.tool-icon.card-compare { background: linear-gradient(135deg, #3498db, #2980b9); }
+.tool-info { flex: 1; }
+.tool-info h3 { font-size: 18px; margin-bottom: 4px; }
+.tool-info p { font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.5; }
+.tool-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tool-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px;
+  background: rgba(255,255,255,0.06); color: var(--text-muted);
+}
+.tool-tag.hot { background: rgba(255,77,77,0.15); color: #ff4d4d; }
+.tool-tag.new { background: rgba(39,174,96,0.15); color: #2ecc71; }
+
+@media (max-width: 768px) {
+  .page-title { font-size: 24px; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .tool-card { padding: 18px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="/en/" class="logo"><div class="logo-icon">⬆</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="/en/">Home</a>
+      <a href="/en/guides/">Guides</a>
+      <a href="/en/characters/">Characters</a>
+      <a href="/en/cards/">Cards</a>
+      <a href="/en/tier-list/">Tier List</a>
+      <a href="/en/relics/">Relics</a>
+      <a href="/en/bosses/">Bosses</a>
+      <a href="/en/patch-notes/">Patch Notes</a>
+      <a href="/en/deck-builder/">Deck Builder</a>
+    </nav>
+  </div>
+</header>
+<div class="breadcrumb">
+  <a href="/en/">Home</a> &rsaquo; Tools
+</div>
+
+<div class="container">
+  <h1 class="page-title">🛠️ Interactive Tools</h1>
+  <p class="page-subtitle">Free, no-sign-up tools for Slay the Spire 2. All shareable via URL — perfect for theorycrafting, community events, and streamers.</p>
+
+  <div class="tools-grid">
+    <!-- Deck Builder -->
+    <a href="/en/deck-builder/" class="tool-card">
+      <div class="tool-icon deck-builder">🃏</div>
+      <div class="tool-info">
+        <h3>Deck Builder</h3>
+        <p>Build, share, and theorycraft decks. Drag &amp; drop cards, filter by character/type/cost. All 577 cards with cost curve and synergy stats. Share decks via unique URLs.</p>
+        <div class="tool-tags">
+          <span class="tool-tag hot">Popular</span>
+          <span class="tool-tag">Drag &amp; Drop</span>
+          <span class="tool-tag">URL Share</span>
+          <span class="tool-tag">Cost Curve</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Tier List Maker -->
+    <a href="/en/tools/tier-maker/" class="tool-card">
+      <div class="tool-icon tier-maker">🏆</div>
+      <div class="tool-info">
+        <h3>Tier List Maker</h3>
+        <p>Create custom tier rankings by dragging cards or relics into S/A/B/C/D/F tiers. Pre-loaded with expert ratings, fully customizable. Share your tier list with a unique URL.</p>
+        <div class="tool-tags">
+          <span class="tool-tag new">New</span>
+          <span class="tool-tag hot">Popular</span>
+          <span class="tool-tag">Drag &amp; Drop</span>
+          <span class="tool-tag">Cards + Relics</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Challenge Generator -->
+    <a href="/en/tools/challenge-generator/" class="tool-card">
+      <div class="tool-icon challenge">⚔️</div>
+      <div class="tool-info">
+        <h3>Daily Challenge Generator</h3>
+        <p>Generate random challenge runs with deterministic seeds. Daily challenges, custom seeds, random characters + restrictions + bonus objectives. Perfect for streamers and community events.</p>
+        <div class="tool-tags">
+          <span class="tool-tag new">New</span>
+          <span class="tool-tag">Daily Seed</span>
+          <span class="tool-tag">Streamer-Ready</span>
+          <span class="tool-tag">13 Challenge Types</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card Compare -->
+    <a href="/en/tools/card-compare/" class="tool-card">
+      <div class="tool-icon card-compare">🔍</div>
+      <div class="tool-info">
+        <h3>Card Compare</h3>
+        <p>Compare any two cards side by side. See cost, type, rarity, tier, effects, and upgrade potential at a glance. Smart search finds cards by name, type, or effect text. Ctrl+K to search.</p>
+        <div class="tool-tags">
+          <span class="tool-tag new">New</span>
+          <span class="tool-tag">Side-by-Side</span>
+          <span class="tool-tag">Auto-Highlight</span>
+          <span class="tool-tag">577 Cards</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+</body>
+</html>

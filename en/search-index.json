@@ -1,8 +1,8 @@
 ﻿[
   {
     "url": "/en/index.html",
-    "title": "STS2Guides — Slay the Spire 2 Strategy & Builds",
-    "keywords": "home,homepage,slay the spire 2,sts2,guide,build,tier list",
+    "title": "STS2Guides — Slay the Spire 2 Strategy & Builds (240M+ Runs)",
+    "keywords": "home,homepage,slay the spire 2,sts2,guide,build,tier list,neowsletter,global stats,240m runs,25% win rate",
     "category": "Home"
   },
   {
@@ -378,10 +378,16 @@
     "keywords": "ascension,20,a20,challenge,guide,difficulty,win,rate"
   },
   {
-    "title": "STS2 Weekly Meta Report — v0.106.1 (May 26-June 1)",
+    "title": "STS2 Weekly Meta Report — Devour the Tower Aftermath (Jun 1-7)",
     "url": "/en/guides/weekly-meta-report.html",
     "category": "Guides",
-    "keywords": "weekly,meta,report,v0.106.1,tier,list,win,rate"
+    "keywords": "weekly,meta,report,tournament,devour the tower,co-op,synergy,neowsletter,240m runs,25% win rate"
+  },
+  {
+    "title": "Devour the Tower Recap — 34-Streamer Co-op Tournament Analysis",
+    "url": "/en/guides/weekly-meta-report.html",
+    "category": "Guides",
+    "keywords": "devour the tower,tournament,co-op,streamer,necrobinder,silent,meta,recap"
   },
   {
     "url": "/en/contact.html",

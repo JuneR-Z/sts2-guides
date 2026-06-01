@@ -100,6 +100,19 @@ footer a:hover { color: var(--gold-light); }
   nav { order:3; width:100%; overflow-x:auto; justify-content:flex-start; padding:4px 0; }
   nav a { font-size:12px; padding:6px 10px; white-space:nowrap; }
 }
+
+.nav-dropdown{position:relative}
+.nav-dropdown>a,.dropdown-trigger{display:flex;align-items:center;gap:4px;color:var(--text-secondary);padding:8px 14px;font-size:13px;border-radius:4px;cursor:pointer;user-select:none;white-space:nowrap;transition:all .2s;text-decoration:none}
+.nav-dropdown>a:hover,.dropdown-trigger:hover{color:var(--gold-light);background:rgba(255,255,255,0.05)}
+.nav-dropdown>a::after,.dropdown-trigger::after{content:'▼';font-size:8px;margin-top:2px}
+.dropdown-trigger.active{color:var(--gold-light)}
+.nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:4px 0;min-width:140px;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{display:block}
+.nav-dropdown-menu a{display:block;padding:8px 16px;font-size:13px;border-radius:0;white-space:nowrap}
+.nav-dropdown-menu a:hover{background:rgba(255,255,255,0.08)}
+.search-btn{background:none;border:none;color:var(--gold);cursor:pointer;font-size:18px;padding:8px;border-radius:4px;transition:all .2s}
+.search-btn:hover{background:rgba(255,255,255,0.05)}
+nav a{white-space:nowrap}
 </style>
 <script type="application/ld+json">
 {
@@ -137,18 +150,29 @@ Put 1 card from your Hand on top of your Draw Pile.",
   <div class="header-inner">
     <a href="../../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
     <nav>
-      <a href="../../">Home</a>
-      <a href="../../guides/index.html">Guides</a>
-      <a href="../../characters/index.html">Characters</a>
-      <a href="../" class="active">Cards</a>
-      <a href="../../tier-list/">Tier List</a>
-      <a href="../../deck-builder/">Deck Builder</a>
-      <a href="../../tools/">Tools</a>
-      <a href="../../relics/index.html">Relics</a>
-      <a href="../../bosses/index.html">Bosses</a>
-      <a href="../../patch-notes/">Patch Notes</a>
-      <a href="../../about.html">About</a>
+      <a href="../">Home</a>
+      <a href="../guides/index.html">Guides</a>
+      <a href="../characters/index.html">Characters</a>
+      <div class="nav-dropdown" onclick="event.stopPropagation();this.classList.toggle('open')">
+        <span class="dropdown-trigger">Database</span>
+        <div class="nav-dropdown-menu">
+          <a href="../cards/index.html">Cards</a>
+          <a href="../relics/index.html">Relics</a>
+          <a href="../bosses/index.html">Bosses</a>
+        </div>
+      </div>
+      <div class="nav-dropdown" onclick="event.stopPropagation();this.classList.toggle('open')">
+        <span class="dropdown-trigger">Tools</span>
+        <div class="nav-dropdown-menu">
+          <a href="../tier-list/">Tier List</a>
+          <a href="../deck-builder/">Deck Builder</a>
+          <a href="../tools/">Tools</a>
+        </div>
+      </div>
+      <a href="../patch-notes/">Patch Notes</a>
+      <a href="../about.html">About</a>
     </nav>
+    <button class="search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
   </div>
 </header>
 

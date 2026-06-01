@@ -85,7 +85,7 @@ header {
 .logo-text { font-size: 18px; font-weight: 700; color: var(--text-primary); }
 .logo-text span { color: var(--gold-light); }
 
-nav { display: flex; gap: 0; }
+nav { display: flex; gap: 0; align-items: center; }
 nav a {
   color: var(--text-secondary);
   text-decoration: none;
@@ -93,9 +93,51 @@ nav a {
   font-size: 13px;
   border-radius: 4px;
   transition: all .2s;
+  white-space: nowrap;
 }
 nav a:hover { color: var(--gold-light); background: rgba(255,255,255,0.05); }
 nav a.active { color: var(--gold-light); }
+
+.nav-dropdown { position: relative; }
+.nav-dropdown > a,
+.dropdown-trigger {
+  display: flex; align-items: center; gap: 4px;
+  color: var(--text-secondary);
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: all .2s;
+}
+.nav-dropdown > a:hover,
+.dropdown-trigger:hover { color: var(--gold-light); background: rgba(255,255,255,0.05); }
+.nav-dropdown > a::after,
+.dropdown-trigger::after { content: '▼'; font-size: 8px; margin-top: 2px; }
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 0;
+  min-width: 140px;
+  z-index: 200;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 13px;
+  border-radius: 0;
+  white-space: nowrap;
+}
+.nav-dropdown-menu a:hover { background: rgba(255,255,255,0.08); }
 
 .lang-switch {
   display: flex;
@@ -114,25 +156,17 @@ nav a.active { color: var(--gold-light); }
 .lang-switch a:hover { border-color: var(--gold); color: var(--gold-light); }
 .lang-switch a.active-lang { background: var(--gold); color: #111; border-color: var(--gold); }
 
-.search-box {
-  display: flex;
-  align-items: center;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 8px 12px;
-  gap: 6px;
-}
-.search-box input {
+.search-btn {
   background: none;
   border: none;
-  color: var(--text-primary);
-  font-size: 13px;
-  outline: none;
-  width: 120px;
+  color: var(--gold);
+  cursor: pointer;
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all .2s;
 }
-.search-box input::placeholder { color: var(--text-muted); }
-.search-box button { background: none; border: none; color: var(--gold); cursor: pointer; font-size: 16px; }
+.search-btn:hover { background: rgba(255,255,255,0.05); }
 
 .hero {
   background: linear-gradient(180deg, #1a1030 0%, var(--bg-primary) 100%);
@@ -506,9 +540,9 @@ footer a:hover { color: var(--gold-light); }
   .logo-text { font-size:15px; }
   nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
   nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  nav .nav-dropdown { flex-shrink:0; }
   .lang-switch { order:2; margin-left:auto; }
-  .search-box { width:100%; margin-top:4px; }
-  .search-box input { width:100%; }
+  .search-btn { font-size:16px; padding:6px; }
   .hero { padding:32px 16px; }
   .hero h1 { font-size:22px; }
   .hero p { font-size:14px; }
@@ -614,21 +648,29 @@ footer a:hover { color: var(--gold-light); }
     </a>
     <nav>
       <a href="./" class="active">Home</a>
-            <a href="guides/index.html">Guides</a>
-<a href="characters/index.html">Characters</a>
-      <a href="cards/index.html">Cards</a>
-      <a href="tier-list/index.html">Tier List</a>
-      <a href="deck-builder/">Deck Builder</a>
-      <a href="tools/">Tools</a>
-      <a href="relics/index.html">Relics</a>
-      <a href="bosses/index.html">Bosses</a><a href="patch-notes/">Patch Notes</a>
+      <a href="guides/index.html">Guides</a>
+      <a href="characters/index.html">Characters</a>
+      <div class="nav-dropdown" onclick="event.stopPropagation();this.classList.toggle('open')">
+        <span class="dropdown-trigger">Database</span>
+        <div class="nav-dropdown-menu">
+          <a href="cards/index.html">Cards</a>
+          <a href="relics/index.html">Relics</a>
+          <a href="bosses/index.html">Bosses</a>
+        </div>
+      </div>
+      <div class="nav-dropdown" onclick="event.stopPropagation();this.classList.toggle('open')">
+        <span class="dropdown-trigger">Tools</span>
+        <div class="nav-dropdown-menu">
+          <a href="tier-list/index.html">Tier List</a>
+          <a href="deck-builder/">Deck Builder</a>
+          <a href="tools/">Tools</a>
+        </div>
+      </div>
+      <a href="patch-notes/">Patch Notes</a>
       <a href="about.html">About</a>
     </nav>
     <div style="display:flex;align-items:center;gap:16px;">
-      <div class="search-box">
-        <input type="text" placeholder="Search guides, cards, relics..." id="searchBox" autocomplete="off">
-        <button onclick="openSearch()">🔍</button>
-      </div>
+      <button class="search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
     </div>
   </div>
 </header>
@@ -1256,9 +1298,9 @@ footer a:hover { color: var(--gold-light); }
   .logo-text { font-size:15px; }
   nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
   nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  nav .nav-dropdown { flex-shrink:0; }
   .lang-switch { order:2; margin-left:auto; }
-  .search-box { width:100%; margin-top:4px; }
-  .search-box input { width:100%; }
+  .search-btn { font-size:16px; padding:6px; }
   .hero { padding:32px 16px; }
   .hero h1 { font-size:22px; }
   .hero p { font-size:14px; }
@@ -1309,8 +1351,6 @@ fetch('search-index.json').then(r=>r.json()).then(d=>{searchIndex=d;}).catch(()=
 function openSearch(){document.getElementById('searchOverlay').classList.add('active');document.getElementById('searchModalInput').focus();}
 function closeSearch(e){if(e&&e.target!==document.getElementById('searchOverlay'))return;document.getElementById('searchOverlay').classList.remove('active');document.getElementById('searchModalInput').value='';document.getElementById('searchResults').innerHTML='';}
 
-document.getElementById('searchBox').addEventListener('keydown',function(e){if(e.key==='Enter')openSearch();});
-
 document.getElementById('searchModalInput').addEventListener('input',function(){
   var q=this.value.toLowerCase().trim(),el=document.getElementById('searchResults');
   if(!q){el.innerHTML='';return;}
@@ -1320,6 +1360,12 @@ document.getElementById('searchModalInput').addEventListener('input',function(){
   el.innerHTML=r.map(function(i){return'<a class="search-result-item" href="'+i.url+'"><span class="result-icon">'+(icons[i.category]||'📄')+'</span><div class="result-info"><span class="result-cat">'+i.category+'</span><div class="result-title">'+i.title+'</div></div></a>';}).join('');
 });
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();openSearch();}});
+
+document.addEventListener('click',function(e){
+  document.querySelectorAll('.nav-dropdown.open').forEach(function(d){
+    if(!d.contains(e.target)) d.classList.remove('open');
+  });
+});
 </script>
 
 

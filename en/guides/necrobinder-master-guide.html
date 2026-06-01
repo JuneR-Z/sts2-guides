@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Necrobinder Master Guide — Summon &amp; Doom Builds, Best Cards, A20 Strategy | STS2Guides</title>
+<meta name="description" content="Complete Necrobinder guide for Slay the Spire 2. Both Summon Army and Doom Execute builds, best cards tier list, relic priorities, minion board management, and A20 climbing strategy. 32.1% community WR.">
+    <meta property="og:title" content="Necrobinder Master Guide — Summon &amp; Doom Builds, Best Cards, A20 Strategy | STS2Guides">
+    <meta property="og:description" content="Complete Necrobinder guide. Summon Army &amp; Doom Execute builds, card tier list, relic priorities, and A20 strategy. 32.1% community win rate.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/necrobinder-master-guide.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STS2Guides">    <meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Necrobinder Master Guide — Summon &amp; Doom Builds, A20 Strategy | STS2Guides">
+    <meta name="twitter:description" content="Complete Necrobinder guide. Summon Army &amp; Doom Execute builds, card tier list, relic priorities, and A20 strategy.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/necrobinder-master-guide.html">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--purple);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:26px;font-weight:800;margin-bottom:4px;color:#b07cd8;}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:#b07cd8;border-left:4px solid var(--purple);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.card-ref{display:inline-block;padding:2px 10px;background:rgba(142,68,173,0.1);border:1px solid rgba(142,68,173,0.3);border-radius:8px;font-size:13px;margin:2px;}
+.combo-box{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin:20px 0;}
+.combo-box h4{color:var(--gold-light);margin-bottom:8px;}
+.tip-box{background:rgba(142,68,173,0.08);border:1px solid rgba(142,68,173,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.tip-box strong{color:#b07cd8;}
+.warn-box{background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.warn-box strong{color:var(--crimson);}
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:30px;}
+.toc h3{font-size:14px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;}
+.toc a{display:block;padding:4px 0;color:var(--text-secondary);text-decoration:none;font-size:13px;}
+.toc a:hover{color:var(--gold-light);}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}}
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; } .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .search-modal { width:95vw; max-height:70vh; }
+  .footer-links { flex-wrap:wrap; gap:12px; }
+}
+
+@media (max-width: 480px) {
+  .logo-text { font-size:13px; } .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; } footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem","position": 1,"name": "STS2Guides","item": "https://sts2guides.com/"},
+    {"@type": "ListItem","position": 2,"name": "Guides","item": "https://sts2guides.com/en/guides/"},
+    {"@type": "ListItem","position": 3,"name": "Necrobinder Master Guide","item": "https://sts2guides.com/en/guides/necrobinder-master-guide.html"}
+  ]
+}
+</script>
+
+<style>
+#cookie-consent {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #1a1a2e; border-top: 1px solid #3a3a5a;
+  padding: 16px 24px; z-index: 9999;
+  display: none;
+  align-items: center; justify-content: center; gap: 16px;
+  flex-wrap: wrap; box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+}
+#cookie-consent p { margin: 0; color: #c8c4b4; font-size: 14px; max-width: 500px; line-height: 1.5; }
+#cookie-consent a { color: #e6a750; text-decoration: underline; }
+#cookie-consent .cc-btns { display: flex; gap: 10px; }
+.cc-btn { padding: 8px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; border: none; transition: background 0.2s; }
+.cc-accept { background: #e6a750; color: #0d0d1a; }
+.cc-accept:hover { background: #f0c060; }
+.cc-reject { background: #3a3a5a; color: #c8c4b4; }
+.cc-reject:hover { background: #4a4a6a; }
+@media (max-width: 480px) { #cookie-consent { flex-direction: column; text-align: center; padding: 14px 16px; } }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+<!-- Google AdSense Auto Ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+            <a href="./" class="active">Guides</a>
+<a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a>
+      <a href="../relics/index.html">Relics</a>
+      <a href="../bosses/index.html">Bosses</a>
+      <a href="../patch-notes/">Patch Notes</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Necrobinder Master Guide</div>
+
+<article class="article">
+  <h1>Necrobinder Master Guide: From First Run to A20</h1>
+  <div class="meta">💀 Master Guide · Updated Jun 1, 2026 · 12 min read · <span style="color:var(--purple);font-weight:700;">32.1% WR</span> · 2nd Best Character</div>
+
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <a href="#overview">1. Character Overview — Why Necrobinder?</a>
+    <a href="#mechanics">2. Core Mechanics — Minions, Souls &amp; Doom</a>
+    <a href="#summon-build">3. Build #1: Summon Army (Beginner → A15)</a>
+    <a href="#doom-build">4. Build #2: Doom Execute (A15 → A20)</a>
+    <a href="#hybrid">5. Build #3: Hybrid — The A20 Sweet Spot</a>
+    <a href="#board-management">6. Board Management — The Skill Gap</a>
+    <a href="#card-tier">7. Complete Card Tier List</a>
+    <a href="#relics">8. Best Relics &amp; Synergies</a>
+    <a href="#ascension">9. Ascension Climbing Roadmap</a>
+    <a href="#coop">10. Necrobinder in Co-op</a>
+  </div>
+
+  <p>Necrobinder is STS2's first brand-new character — a dark summoner who fills the battlefield with undead minions while accumulating Soul energy for devastating finishers. With a <strong>32.1% community win rate</strong>, Necrobinder is the 2nd-best performing character, right behind Silent. This guide covers everything: from basic minion management to A20 Doom chains.</p>
+
+  <div class="combo-box">
+    <h4>💀 Necrobinder at a Glance</h4>
+    <p><strong>Starting HP:</strong> 72 | <strong>Starting Relic:</strong> Soul Vessel (start combat with 1 Soul) | <strong>Two Archetypes:</strong> Summon Army &amp; Doom Execute | <strong>Unique Resource:</strong> Souls | <strong>Unique Mechanic:</strong> 4-slot Minion Board</p>
+  </div>
+
+  <h2 id="overview">1. Character Overview — Why Necrobinder?</h2>
+  <p>Necrobinder offers something no other character provides: a <strong>positional minion board</strong>. Your Skeletons, Ghosts, and Abominations occupy up to 4 slots and interact with enemies independently. This creates a strategic layer absent from Ironclad's face-tanking and Silent's evasion. Necrobinder is:</p>
+  <ul>
+    <li><strong>The safest character:</strong> Taunt minions absorb damage that would otherwise hit you. You take less HP damage per run than any other character.</li>
+    <li><strong>The most resource-rich:</strong> Souls accumulate passively as minions die. You always have a comeback mechanic.</li>
+    <li><strong>The hardest to pilot optimally:</strong> Board positioning, sacrifice timing, and Soul banking separate 20% WR players from 40% WR players.</li>
+    <li><strong>Best for co-op:</strong> Necrobinder provides the team with a front-line tank, making them the most sought-after co-op partner.</li>
+  </ul>
+
+  <h2 id="mechanics">2. Core Mechanics — Minions, Souls &amp; Doom</h2>
+
+  <h3>Minion Board (4 Slots)</h3>
+  <p>You have 4 minion slots numbered 1-4 (left to right). Enemies attack slot 1 first (if it has Taunt), then slot 2, etc. Minions without Taunt are attacked last. <strong>Positioning matters:</strong></p>
+  <ul>
+    <li><strong>Slot 1:</strong> Your primary tank. Always a Skeleton (natural Taunt). This minion absorbs 60-80% of incoming damage.</li>
+    <li><strong>Slot 2:</strong> Secondary tank or second Skeleton. Absorbs spillover damage.</li>
+    <li><strong>Slot 3:</strong> DPS slot. Ghosts (passive damage) or Abominations (heavy hitters). Protected behind 2 tanks.</li>
+    <li><strong>Slot 4:</strong> Flex slot. DPS, utility, or a fresh summon waiting to rotate forward.</li>
+  </ul>
+
+  <h3>Souls</h3>
+  <p>Souls are Necrobinder's unique resource. Gain Souls when minions die, from specific cards (<span class="card-ref">Soul Harvest</span>), or from relics. Spend Souls on powerful finishers like <span class="card-ref">Soul Nova</span>. <strong>Souls persist between fights</strong> — you can bank them for boss encounters.</p>
+
+  <h3>Doom Counters</h3>
+  <p>Doom is Necrobinder's second archetype. Apply Doom stacks to an enemy. When total Doom ≥ enemy's current HP, the enemy is <strong>instantly executed</strong>, bypassing block. This creates a clock: stack Doom faster than the enemy kills you. Doom counters decay by 1 each turn, so you need to apply them consistently.</p>
+
+  <h2 id="summon-build">3. Build #1: Summon Army (Beginner → A15)</h2>
+  <p>The Summon Army build is Necrobinder's most accessible archetype. Fill your board with minions, buff them, and let them win the fight while you focus on survival. <strong>Recommended for A0-A15.</strong></p>
+
+  <h3>Core Loop</h3>
+  <p>Summon minions (fill board) → Buff minions (<span class="card-ref">Undead Commander</span>) → Replace dead minions → Accumulate Souls → Finish with <span class="card-ref">Soul Nova</span></p>
+
+  <h3>Key Cards</h3>
+  <ul>
+    <li><strong>S-Tier:</strong> <span class="card-ref">Mass Grave</span> (3 Skeletons), <span class="card-ref">Undead Commander</span> (buff all), <span class="card-ref">Soul Nova</span> (finisher)</li>
+    <li><strong>A-Tier:</strong> <span class="card-ref">Bone Legion</span> (2 Skeletons), <span class="card-ref">Skeleton Crew</span> (2 Skeletons + Souls), <span class="card-ref">Ghost Form</span> (passive DPS), <span class="card-ref">Dark Offering</span> (sacrifice for draw/energy)</li>
+    <li><strong>B-Tier:</strong> <span class="card-ref">Raise Dead</span> (1 Skeleton, starter card), <span class="card-ref">Graveyard Shift</span> (resurrect), <span class="card-ref">Soul Drain</span> (Soul generation)</li>
+  </ul>
+
+  <div class="tip-box">
+    <strong>💡 Draft Priority:</strong> You need 6-8 summon cards to consistently fill your board. Take every <span class="card-ref">Mass Grave</span> and <span class="card-ref">Bone Legion</span> offered. One <span class="card-ref">Undead Commander</span> is mandatory — never skip it.
+  </div>
+
+  <h2 id="doom-build">4. Build #2: Doom Execute (A15 → A20)</h2>
+  <p>The Doom build is Necrobinder's high-ceiling archetype. Instead of overwhelming with numbers, you apply Doom counters to execute enemies directly. <strong>Higher skill floor, higher skill ceiling.</strong></p>
+
+  <h3>Core Loop</h3>
+  <p>Apply Doom (<span class="card-ref">Death Mark</span>, <span class="card-ref">Doom Blade</span>) → Protect yourself (1-2 tanks) → Stack Doom to enemy HP threshold → Execute → Repeat on next enemy</p>
+
+  <h3>Key Cards</h3>
+  <ul>
+    <li><strong>S-Tier:</strong> <span class="card-ref">Death Mark</span> (apply 3 Doom), <span class="card-ref">Doom Blade</span> (deal damage + apply 2 Doom), <span class="card-ref">Soul Reaper</span> (execute if enemy below 30% HP)</li>
+    <li><strong>A-Tier:</strong> <span class="card-ref">Decay Touch</span> (apply Doom to all enemies), <span class="card-ref">Dark Prophecy</span> (Doom doesn't decay this turn), <span class="card-ref">Soul Harvest</span> (Souls from dying enemies)</li>
+    <li><strong>B-Tier:</strong> <span class="card-ref">Bone Throw</span> (damage, starter), <span class="card-ref">Soul Drain</span> (Soul generation), <span class="card-ref">Raise Dead</span> (defensive tank, starter)</li>
+  </ul>
+
+  <div class="warn-box">
+    <strong>⚠️ Doom Math:</strong> An enemy with 80 HP needs 80 total Doom stacks to execute. If you apply 8 Doom per turn and decay removes 1 per turn, you need ~10 turns. That's too slow. You need <span class="card-ref">Dark Prophecy</span> (prevents decay) or multiple Doom sources to hit the threshold in 4-5 turns. Without acceleration, Doom decks lose to enemy scaling.
+  </div>
+
+  <h2 id="hybrid">5. Build #3: Hybrid — The A20 Sweet Spot</h2>
+  <p>Pure Summon struggles against A20's double-boss gauntlet (minions die too fast). Pure Doom struggles against multi-enemy fights (can't spread Doom efficiently). The solution: <strong>Hybrid</strong>.</p>
+  <p>A Hybrid deck runs 2-3 summon cards for defense, 3-4 Doom cards for damage, and 2-3 utility cards for consistency. Example A20-winning decklist:</p>
+  <ul>
+    <li>2x <span class="card-ref">Mass Grave</span> or <span class="card-ref">Bone Legion</span> (defensive core)</li>
+    <li>1x <span class="card-ref">Undead Commander</span> (buff)</li>
+    <li>2x <span class="card-ref">Death Mark</span> (Doom engine)</li>
+    <li>1x <span class="card-ref">Doom Blade</span> (damage + Doom)</li>
+    <li>1x <span class="card-ref">Dark Prophecy</span> (Doom lock)</li>
+    <li>1x <span class="card-ref">Soul Nova</span> (finisher)</li>
+    <li>1x <span class="card-ref">Dark Offering</span> (draw)</li>
+  </ul>
+
+  <h2 id="board-management">6. Board Management — The Skill Gap</h2>
+  <p>Board management separates good Necrobinder players from great ones. Master these techniques:</p>
+  <ol>
+    <li><strong>Sacrifice Timing:</strong> Sacrifice a Skeleton at 1-2 HP — not at full HP. Use <span class="card-ref">Dark Offering</span> or <span class="card-ref">Soul Drain</span> to extract value before the enemy kills it.</li>
+    <li><strong>Slot Rotation:</strong> When your slot-1 Skeleton dies, everything shifts left. A Ghost in slot 3 is now in slot 2 — exposed. Always keep a fresh Skeleton in your hand to fill the gap.</li>
+    <li><strong>Pre-Summoning:</strong> Against bosses with predictable attack patterns, summon minions the turn BEFORE the big attack. Your new minions will tank it.</li>
+    <li><strong>Soul Banking:</strong> Don't spend Souls on small fights. Bank them for elites and bosses. A <span class="card-ref">Soul Nova</span> at 10+ Souls one-shots most Act 2 bosses.</li>
+    <li><strong>Doom Target Priority:</strong> In multi-enemy fights, focus Doom on the highest-HP target. AoE damage or minions handle the rest. Don't spread Doom thin.</li>
+  </ol>
+
+  <h2 id="card-tier">7. Complete Card Tier List</h2>
+  <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;color:var(--text-secondary);">
+    <tr style="border-bottom:1px solid var(--border);">
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Tier</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Cards</th>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);background:rgba(39,174,96,0.05);">
+      <td style="padding:10px;color:var(--green);font-weight:700;">S</td>
+      <td style="padding:10px;">Mass Grave, Undead Commander, Soul Nova, Death Mark, Dark Prophecy</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;color:var(--gold-light);font-weight:700;">A</td>
+      <td style="padding:10px;">Bone Legion, Skeleton Crew, Doom Blade, Soul Reaper, Dark Offering, Ghost Form, Soul Harvest</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;color:var(--blue);font-weight:700;">B</td>
+      <td style="padding:10px;">Graveyard Shift, Decay Touch, Soul Drain, Raise Dead, Bone Throw</td>
+    </tr>
+    <tr>
+      <td style="padding:10px;color:var(--text-muted);font-weight:700;">C</td>
+      <td style="padding:10px;">Bone Fragments, Wither, Dark Pact, Cursed Blade</td>
+    </tr>
+  </table>
+
+  <h2 id="relics">8. Best Relics &amp; Synergies</h2>
+  <ul>
+    <li><strong>General's Banner</strong> (S+) — All minions +1 damage. Stacks with Undead Commander.</li>
+    <li><strong>Necronomicon</strong> (S) — Summoned minions have +2 HP. Essential for A17+.</li>
+    <li><strong>Soul Vessel / Greater Soul Vessel</strong> (A) — Start with more Souls. Speeds up your early game.</li>
+    <li><strong>Blood Chalice</strong> (A) — Heal 2 HP per sacrifice. Free sustain.</li>
+    <li><strong>Doom Hourglass</strong> (A) — Doom counters don't decay the first turn after being applied.</li>
+    <li><strong>Soul Anchor</strong> (B) — Gain 1 Soul per combat. Consistent but slow.</li>
+  </ul>
+
+  <h2 id="ascension">9. Ascension Climbing Roadmap</h2>
+  <ul>
+    <li><strong>A0-A5:</strong> Learn Summon build. Force it every run. You'll win 25-30% of runs just by filling your board.</li>
+    <li><strong>A6-A10:</strong> Start experimenting with Doom cards. Add 1-2 Doom sources to your Summon deck. Learn sacrifice timing.</li>
+    <li><strong>A11-A15:</strong> Transition to Hybrid. Pure Summon falls off here. You need Doom to close fights before enemy scaling overwhelms you.</li>
+    <li><strong>A16-A19:</strong> Refine Hybrid ratios. 7-8 core cards + 2-3 flex. Remove starter Strikes aggressively. Upgrade <span class="card-ref">Dark Offering</span> for consistency.</li>
+    <li><strong>A20:</strong> Double boss demands perfection. Bank maximum Souls before each boss. Save a potion for gap between bosses. <span class="card-ref">Necronomicon</span> relic is the difference maker.</li>
+  </ul>
+
+  <h2 id="coop">10. Necrobinder in Co-op</h2>
+  <p>Necrobinder is the <strong>#1 co-op pick</strong>. Your taunt minions protect all 4 players, not just yourself. Key co-op synergies:</p>
+  <ul>
+    <li><strong>+ Ironclad:</strong> Your Skeletons tank while Ironclad sets up <span class="card-ref">Demon Form</span>. The perfect setup-turn protector.</li>
+    <li><strong>+ Silent:</strong> Silent's Sly cards cycle fast; your minions provide passive damage while Silent sets up. Low communication required.</li>
+    <li><strong>+ Defect:</strong> Two summoners fill the board. Coordinate orb types (Defect Frost orbs + your Skeletons = infinite defense).</li>
+    <li><strong>+ Regent:</strong> Regent's team buffs affect your minions. <span class="card-ref">Undead Commander</span> + Regent's Star buff = unstoppable army.</li>
+  </ul>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">Also check: <a href="necrobinder-summon-build.html" style="color:var(--gold-light);">Summon Build Deep Dive</a> · <a href="necrobinder-doom-build.html" style="color:var(--gold-light);">Doom Build Guide</a> · <a href="defect-vs-necrobinder.html" style="color:var(--gold-light);">Defect vs Necrobinder</a> · <a href="../characters/necrobinder.html" style="color:var(--gold-light);">Character Page</a></p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a><a href="../about.html">About</a><a href="../privacy.html">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+
+<div id="searchOverlay" class="search-overlay" onclick="closeSearch(event)">
+  <div class="search-modal" onclick="event.stopPropagation()">
+    <div class="search-modal-header">
+      <input type="text" id="searchModalInput" placeholder="Type to search..." autofocus>
+      <button class="search-close" onclick="closeSearch()">✕</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+<style>
+.search-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); z-index:1000; justify-content:center; padding-top:60px; }
+.search-overlay.active { display:flex; }
+.search-modal { width:640px; max-width:90vw; background:var(--bg-secondary); border:1px solid var(--border); border-radius:12px; overflow:hidden; max-height:80vh; display:flex; flex-direction:column; }
+.search-modal-header { display:flex; align-items:center; padding:16px; gap:12px; border-bottom:1px solid var(--border); }
+.search-modal-header input { flex:1; background:var(--bg-card); border:1px solid var(--border); color:var(--text-primary); padding:10px 16px; border-radius:8px; font-size:15px; outline:none; }
+.search-modal-header input:focus { border-color:var(--gold); }
+.search-close { background:none; border:none; color:var(--text-muted); font-size:20px; cursor:pointer; padding:4px 8px; }
+.search-close:hover { color:var(--gold-light); }
+.search-results { overflow-y:auto; padding:8px; flex:1; }
+.search-result-item { display:flex; align-items:center; gap:12px; padding:12px 16px; border-radius:8px; cursor:pointer; transition:all .15s; text-decoration:none; color:inherit; }
+.search-result-item:hover { background:var(--bg-card-hover); }
+.search-result-item .result-icon { font-size:20px; flex-shrink:0; width:36px; text-align:center; }
+.search-result-item .result-info { overflow:hidden; }
+.search-result-item .result-title { font-size:14px; font-weight:600; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-result-item .result-cat { font-size:11px; color:var(--gold-light); display:inline-block; padding:1px 6px; background:rgba(212,160,60,0.15); border-radius:3px; margin-bottom:2px; }
+.search-result-item .result-desc { font-size:12px; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-empty { text-align:center; padding:40px; color:var(--text-muted); font-size:14px; }
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; } .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .search-modal { width:95vw; max-height:70vh; }
+}
+
+@media (max-width: 480px) {
+  .logo-text { font-size:13px; } .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; } footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script>
+let searchIndex = [];
+fetch('../search-index.json').then(r => r.json()).then(d => { searchIndex = d; }).catch(() => { fetch('search-index.json').then(r => r.json()).then(d => { searchIndex = d; }) });
+function openSearch() { document.getElementById('searchOverlay').classList.add('active'); document.getElementById('searchModalInput').focus(); }
+function closeSearch(e) { if (e && e.target !== document.getElementById('searchOverlay')) return; var el = document.getElementById('searchOverlay'); el.classList.remove('active'); document.getElementById('searchModalInput').value = ''; document.getElementById('searchResults').innerHTML = ''; }
+document.getElementById('searchModalInput').addEventListener('input', function() {
+  var q = this.value.toLowerCase().trim(), el = document.getElementById('searchResults');
+  if (!q) { el.innerHTML = ''; return; }
+  var r = searchIndex.filter(function(i) { return i.title.toLowerCase().includes(q) || i.keywords.includes(q) || i.category.toLowerCase().includes(q); }).slice(0, 10);
+  if (!r.length) { el.innerHTML = '<div class="search-empty">No results for "<strong>' + q + '</strong>"</div>'; return; }
+  var icons = { Characters: '\u{1F9B8}', Cards: '\u{1F0CF}', Relics: '\u{1F48E}', Bosses: '\u{1F479}', Guides: '\u{1F4D6}', Home: '\u{1F3E0}' };
+  el.innerHTML = r.map(function(i) { return '<a class="search-result-item" href="' + i.url + '"><span class="result-icon">' + (icons[i.category] || '\u{1F4C4}') + '</span><div class="result-info"><span class="result-cat">' + i.category + '</span><div class="result-title">' + i.title + '</div></div></a>'; }).join('');
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); } });
+</script>
+
+<div id="cookie-consent">
+  <p>We use cookies to improve your experience and for analytics. <a href="/en/privacy.html">Privacy Policy</a></p>
+  <div class="cc-btns">
+    <button class="cc-btn cc-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cc-btn cc-reject" onclick="rejectCookies()">Reject</button>
+  </div>
+</div>
+<script>
+(function(){
+  var c = document.cookie.match('(^|;)\\s*cookie_consent\\s*=\\s*([^;]+)');
+  if (!c) { document.getElementById('cookie-consent').style.display = 'flex'; }
+})();
+function acceptCookies(){
+  document.cookie = 'cookie_consent=accepted; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+function rejectCookies(){
+  document.cookie = 'cookie_consent=rejected; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+</script>
+</body>
+</html>

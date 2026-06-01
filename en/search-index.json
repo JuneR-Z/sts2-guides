@@ -394,5 +394,35 @@
     "title": "Contact Us — STS2Guides",
     "keywords": "contact,dmca,copyright,feedback,corrections,email,support",
     "category": "Site"
+  },
+  {
+    "title": "Silent Sly Discard Build — The #1 Meta Monster (35.6% WR)",
+    "url": "/en/guides/silent-sly-discard-build.html",
+    "category": "Guides",
+    "keywords": "silent,sly,discard,build,meta,sly strike,sly dodge,sly gambit,tactician,calculated gamble"
+  },
+  {
+    "title": "STS1 to STS2 Transition Guide — What Every Veteran Needs to Know",
+    "url": "/en/guides/sts1-to-sts2-transition.html",
+    "category": "Guides",
+    "keywords": "transition,sts1,sts2,veteran,differences,new mechanics,sly,doom,co-op,ascension"
+  },
+  {
+    "title": "Top 10 Overpowered Cards in STS2 (v0.106.1 Meta)",
+    "url": "/en/guides/top-10-op-cards.html",
+    "category": "Guides",
+    "keywords": "overpowered,cards,top 10,tier,meta,sly gambit,mass grave,calculated gamble,undead commander"
+  },
+  {
+    "title": "Necrobinder Master Guide — Summon & Doom Builds, A20 Strategy",
+    "url": "/en/guides/necrobinder-master-guide.html",
+    "category": "Guides",
+    "keywords": "necrobinder,master,guide,summon,doom,build,board,management,a20"
+  },
+  {
+    "title": "Co-op Synergy Deep Dive — Best Team Comps & Role Guide",
+    "url": "/en/guides/coop-synergy-deep-dive.html",
+    "category": "Guides",
+    "keywords": "co-op,synergy,team,comp,role,tank,dps,support,tournament,devour the tower"
   }
 ]

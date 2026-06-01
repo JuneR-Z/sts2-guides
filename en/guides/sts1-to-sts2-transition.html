@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STS1 to STS2 Transition Guide — What Every Veteran Needs to Know | STS2Guides</title>
+<meta name="description" content="Complete transition guide from Slay the Spire 1 to Slay the Spire 2. Key differences, reworked characters, new mechanics, A0 16% WR vs STS1 9%, and what veterans get wrong.">
+    <meta property="og:title" content="STS1 to STS2 Transition Guide — What Every Veteran Needs to Know | STS2Guides">
+    <meta property="og:description" content="Complete transition guide from Slay the Spire 1 to 2. Key differences, reworked characters, new mechanics, WR gap (16% vs 9%), and veteran pitfalls.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/sts1-to-sts2-transition.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STS2Guides">    <meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="STS1 to STS2 Transition Guide — What Every Veteran Needs to Know | STS2Guides">
+    <meta name="twitter:description" content="Complete transition guide for STS1 veterans moving to STS2. Character reworks, new mechanics, and the key differences that define the new meta.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/sts1-to-sts2-transition.html">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--blue);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:26px;font-weight:800;margin-bottom:4px;color:var(--blue);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--blue);border-left:4px solid var(--blue);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.card-ref{display:inline-block;padding:2px 10px;background:rgba(52,152,219,0.1);border:1px solid rgba(52,152,219,0.3);border-radius:8px;font-size:13px;margin:2px;}
+.combo-box{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin:20px 0;}
+.combo-box h4{color:var(--gold-light);margin-bottom:8px;}
+.tip-box{background:rgba(52,152,219,0.08);border:1px solid rgba(52,152,219,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.tip-box strong{color:var(--blue);}
+.warn-box{background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.warn-box strong{color:var(--crimson);}
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:30px;}
+.toc h3{font-size:14px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;}
+.toc a{display:block;padding:4px 0;color:var(--text-secondary);text-decoration:none;font-size:13px;}
+.toc a:hover{color:var(--gold-light);}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}}
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; }
+  .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .search-box { width:100%; margin-top:4px; }
+  .search-box input { width:100%; }
+  .search-modal { width:95vw; max-height:70vh; }
+  .footer-links { flex-wrap:wrap; gap:12px; }
+}
+
+@media (max-width: 480px) {
+  .logo-text { font-size:13px; }
+  .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; }
+  footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem","position": 1,"name": "STS2Guides","item": "https://sts2guides.com/"},
+    {"@type": "ListItem","position": 2,"name": "Guides","item": "https://sts2guides.com/en/guides/"},
+    {"@type": "ListItem","position": 3,"name": "STS1 to STS2 Transition Guide","item": "https://sts2guides.com/en/guides/sts1-to-sts2-transition.html"}
+  ]
+}
+</script>
+
+<style>
+#cookie-consent {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #1a1a2e; border-top: 1px solid #3a3a5a;
+  padding: 16px 24px; z-index: 9999;
+  display: none;
+  align-items: center; justify-content: center; gap: 16px;
+  flex-wrap: wrap; box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+}
+#cookie-consent p { margin: 0; color: #c8c4b4; font-size: 14px; max-width: 500px; line-height: 1.5; }
+#cookie-consent a { color: #e6a750; text-decoration: underline; }
+#cookie-consent .cc-btns { display: flex; gap: 10px; }
+.cc-btn { padding: 8px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; border: none; transition: background 0.2s; }
+.cc-accept { background: #e6a750; color: #0d0d1a; }
+.cc-accept:hover { background: #f0c060; }
+.cc-reject { background: #3a3a5a; color: #c8c4b4; }
+.cc-reject:hover { background: #4a4a6a; }
+@media (max-width: 480px) { #cookie-consent { flex-direction: column; text-align: center; padding: 14px 16px; } }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+<!-- Google AdSense Auto Ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+            <a href="./" class="active">Guides</a>
+<a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a>
+      <a href="../relics/index.html">Relics</a>
+      <a href="../bosses/index.html">Bosses</a>
+      <a href="../patch-notes/">Patch Notes</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › STS1 to STS2 Transition Guide</div>
+
+<article class="article">
+  <h1>STS1 → STS2 Transition Guide: What Every Veteran Needs to Know</h1>
+  <div class="meta">📖 Transition Guide · Updated Jun 1, 2026 · 14 min read · 240M+ Global STS2 Runs · Official Neowsletter Data</div>
+
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <a href="#quick-facts">1. Quick Facts — The Numbers</a>
+    <a href="#whats-new">2. What's New — Core System Changes</a>
+    <a href="#characters">3. Character-by-Character Rework Breakdown</a>
+    <a href="#bad-habits">4. 7 STS1 Habits That Will Get You Killed</a>
+    <a href="#new-keywords">5. New Keywords & Mechanics</a>
+    <a href="#coop">6. Co-op Multiplayer — The Biggest Addition</a>
+    <a href="#ascension-diff">7. Ascension Differences (A0 16% vs STS1 9%)</a>
+    <a href="#transferable-skills">8. Skills That Transfer (And Skills That Don't)</a>
+    <a href="#one-week-plan">9. Your First Week — A Step-by-Step Plan</a>
+  </div>
+
+  <p>You've beaten A20 Heart in Slay the Spire 1. You know every card, every relic, every enemy pattern. Now you're jumping into STS2 — and despite 500+ hours of STS1 experience, <strong>you're losing runs you feel you should be winning</strong>. You're not alone. The Neowsletter confirms: STS2's A0 has a 16% win rate versus STS1's 9% — the game is <em>easier</em> at baseline, but <strong>your STS1 instincts are working against you</strong>. This guide bridges the gap.</p>
+
+  <div class="combo-box">
+    <h4>📊 STS1 vs STS2 — By the Numbers (Official Neowsletter, May 2026)</h4>
+    <p><strong>STS2:</strong> 240M+ total runs · 25% overall WR · A0 16% WR · A10 ~17% (WR peaks at mid-Ascension) · 5 characters · 4-player co-op<br>
+    <strong>STS1:</strong> ~2B estimated total runs · ~8% overall WR · A0 9% WR · A20 ~3% WR · 4 characters · Single-player only</p>
+  </div>
+
+  <h2 id="quick-facts">1. Quick Facts — The Numbers</h2>
+  <ul>
+    <li><strong>STS2 A0 is nearly twice as winnable</strong> as STS1 A0 (16% vs 9%). The game is more forgiving at entry level.</li>
+    <li><strong>Win rate peaks at A10 (~17%)</strong> — players who climb mid-Ascension actually win <em>more</em> than A0 players, because they understand the game better. This inverted curve doesn't exist in STS1.</li>
+    <li><strong>All 5 characters are nearly equal in popularity</strong> (Ironclad & Silent slightly ahead). No Watcher-style outlier.</li>
+    <li><strong>Co-op is the #1 engagement driver</strong> — 4-player runs are the most discussed content in the community.</li>
+  </ul>
+
+  <h2 id="whats-new">2. What's New — Core System Changes</h2>
+
+  <h3>2.1 Minion Board (Necrobinder)</h3>
+  <p>STS2 introduces a <strong>4-slot minion board</strong>. Necrobinder (and some Regent cards) summon units that occupy these slots, tank hits, and deal passive damage. This fundamentally changes combat: you now have a positional layer that doesn't exist in STS1. Minions with <strong>Taunt</strong> absorb enemy attacks that would otherwise hit you.</p>
+
+  <h3>2.2 Sly Keyword</h3>
+  <p><strong>Sly X: Y</strong> means "If this card was added to your hand this turn, do Y instead of X." This synergizes with draw, discard, and shuffle effects. It's the defining Silent mechanic in STS2 and creates a new archetype that didn't exist in STS1.</p>
+
+  <h3>2.3 Doom Counters (Necrobinder)</h3>
+  <p>Necrobinder's second archetype applies <strong>Doom counters</strong> to enemies. When Doom stacks reach a threshold (matching or exceeding enemy HP), the target is instantly executed. This is a completely new win condition — bypassing HP and block entirely — with no STS1 equivalent.</p>
+
+  <h3>2.4 Co-op Multiplayer (4 Players)</h3>
+  <p>The biggest addition. 4 players fight simultaneously, sharing a turn order. Team synergies (Ironclad buffs + Silent debuffs + Necrobinder tanks + Defect orbs) create entirely new strategic layers. See <a href="coop-multiplayer.html" style="color:var(--gold-light);">Co-op Guide</a> for full details.</p>
+
+  <h2 id="characters">3. Character-by-Character Rework Breakdown</h2>
+
+  <h3>Ironclad — The Reliable Bruiser (31.7% WR)</h3>
+  <p><strong>What's the same:</strong> Strength scaling, Exhaust synergy, self-damage themes. <span class="card-ref">Demon Form</span>, <span class="card-ref">Limit Break</span>, <span class="card-ref">Corruption</span> still exist.</p>
+  <p><strong>What's different:</strong> New Sly-adjacent cards (Ironclad Sly Strike variants). Exhaust synergies are deeper — more cards that benefit from having an empty deck. <span class="card-ref">Second Wind</span> is significantly buffed.</p>
+  <p><strong>STS1 veteran trap:</strong> Over-relying on Strength scaling. STS2 Ironclad has stronger exhaust-oriented block engines. If you're not exhausting half your deck every fight, you're leaving power on the table.</p>
+
+  <h3>Silent — The Meta Queen (35.6% WR)</h3>
+  <p><strong>What's the same:</strong> Poison stacking, Shiv generation, discard cycling. <span class="card-ref">Catalyst</span>, <span class="card-ref">Wraith Form</span>, <span class="card-ref">Nightmare</span> still work.</p>
+  <p><strong>What's different:</strong> The <strong>Sly</strong> keyword transforms Silent. <span class="card-ref">Sly Strike</span>, <span class="card-ref">Sly Dodge</span>, <span class="card-ref">Sly Gambit</span> create a new engine that didn't exist. Sly Discard is now the #1 meta build.</p>
+  <p><strong>STS1 veteran trap:</strong> Forcing Poison every run. Poison is still viable but Sly Discard outclasses it at all Ascension levels. Don't sleep on Sly cards.</p>
+
+  <h3>Defect — Orb Master Returns (29.8% WR)</h3>
+  <p><strong>What's the same:</strong> Orb slots, Focus scaling, Frost/Lightning/Dark orbs. <span class="card-ref">Biased Cognition</span>, <span class="card-ref">Echo Form</span>, <span class="card-ref">Glacier</span> are back.</p>
+  <p><strong>What's different:</strong> New <strong>Plasma</strong> orb rework — now generates energy AND deals damage. <span class="card-ref">Capacitor</span> starts with more orb slots. Defect has the lowest WR but the highest skill ceiling — mastery rewards disproportionately.</p>
+  <p><strong>STS1 veteran trap:</strong> Rushing too many orb slots. STS2 Defect decks need to be leaner. 5-6 orb slots is optimal; 10 slots leaves you vulnerable in setup turns.</p>
+
+  <h3>Necrobinder — The Newcomer (32.1% WR)</h3>
+  <p><strong>No STS1 equivalent.</strong> Two archetypes: Summon Army (minion board) and Doom Execute (bypass HP). Start with the Summon build — it's more forgiving while you learn. Doom is higher-ceiling but punishes misplays harder.</p>
+  <p><strong>STS1 veteran trap:</strong> Treating Necrobinder like Defect. The minion board adds a positional layer. Minion placement matters. A Skeleton in slot 1 tanks hits; a Ghost in slot 3 deals damage. Position wrong and you die.</p>
+
+  <h3>Regent — Tactical Commander (30.4% WR)</h3>
+  <p><strong>No STS1 equivalent.</strong> Regent is a hybrid leader who commands allies (in solo play, summons temporary units; in co-op, buffs teammates). Sly and Star mechanics. The most complex character to learn but with unique team utility.</p>
+  <p><strong>STS1 veteran trap:</strong> Playing Regent like Ironclad. Regent is a support-commander, not a front-line fighter. Your job is to enable your board (solo) or your team (co-op), not to solo-carry.</p>
+
+  <h2 id="bad-habits">4. 7 STS1 Habits That Will Get You Killed</h2>
+  <ol>
+    <li><strong>"Skip elites to survive."</strong> — STS2 elites drop more relics and better card rewards. Skipping elites is worse in STS2. Fight 2-3 elites per act minimum.</li>
+    <li><strong>"Remove all Strikes ASAP."</strong> — Some STS2 Sly cards scale off basic attacks. Removing all Strikes before you have replacements can brick your early game.</li>
+    <li><strong>"Always take the boss relic with energy."</strong> — STS2 has more energy-generating cards (Tactician, Sly Gambit). You don't need Cursed Key or Fusion Hammer as desperately.</li>
+    <li><strong>"Thin deck = good deck."</strong> — Sly cards and Co-op interactions reward larger decks (25-35 cards). The 15-card ultra-thin deck is less optimal in STS2.</li>
+    <li><strong>"Block cards are a last resort."</strong> — STS2 enemies hit harder earlier. You need block by floor 5, not floor 15. Take the first decent block card you see.</li>
+    <li><strong>"Watcher stance-dancing prepared me for Sly."</strong> — Sly is fundamentally different. It's about hand-state, not stance-state. Discard/redraw triggers matter more than turn-by-turn planning.</li>
+    <li><strong>"Co-op is just 4 solo players."</strong> — Team synergy dwarfs individual power. An average co-op team with good synergy beats four individually strong players with no synergy. See <a href="#coop">Co-op section</a>.</li>
+  </ol>
+
+  <div class="warn-box">
+    <strong>⚠️ The #1 Veteran Mistake:</strong> Playing too fast. STS1 veterans are used to snapping off decisions in 2 seconds. STS2 adds minion positioning, Sly hand-state tracking, and co-op communication. Slow down by 50% and you'll win 30% more.
+  </div>
+
+  <h2 id="new-keywords">5. New Keywords & Mechanics</h2>
+  <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;color:var(--text-secondary);">
+    <tr style="border-bottom:1px solid var(--border);">
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Keyword</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Effect</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Primary Character</th>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Sly X: Y</strong></td><td style="padding:10px;">Do Y if added to hand this turn</td><td style="padding:10px;">Silent, Regent</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Doom N</strong></td><td style="padding:10px;">Execute target when Doom ≥ HP</td><td style="padding:10px;">Necrobinder</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Taunt</strong></td><td style="padding:10px;">Enemies target this minion first</td><td style="padding:10px;">Necrobinder (Skeletons)</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Summon</strong></td><td style="padding:10px;">Place a minion on the board</td><td style="padding:10px;">Necrobinder, Regent</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Star</strong></td><td style="padding:10px;">Cards that scale based on remaining energy</td><td style="padding:10px;">Regent</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Sacrifice</strong></td><td style="padding:10px;">Destroy a minion for an effect</td><td style="padding:10px;">Necrobinder</td>
+    </tr>
+    <tr>
+      <td style="padding:10px;"><strong>Plasma (Reworked)</strong></td><td style="padding:10px;">Generates energy + deals damage</td><td style="padding:10px;">Defect</td>
+    </tr>
+  </table>
+
+  <h2 id="coop">6. Co-op Multiplayer — The Biggest Addition</h2>
+  <p>STS2 supports 4-player co-op runs. This is the feature that's generated the most community excitement, culminating in the <strong>Devour the Tower</strong> tournament (34 streamers, May 2026). Key points:</p>
+  <ul>
+    <li><strong>Shared turn order:</strong> All 4 players take their turns simultaneously against shared enemies.</li>
+    <li><strong>Team synergies:</strong> Ironclad's Strength buffs + Silent's multi-hits; Necrobinder's taunt minions protect Defect's setup turns; Regent's team buffs amplify everyone.</li>
+    <li><strong>Shared relic pool:</strong> Relics affect the whole team. <span class="card-ref">Vajra</span> (+1 Strength) buffs all 4 players.</li>
+    <li><strong>Communication matters:</strong> Voice chat teams have a 40% higher win rate than silent teams, per tournament data.</li>
+  </ul>
+  <p>Read our full <a href="coop-multiplayer.html" style="color:var(--gold-light);">Co-op Multiplayer Guide</a> for team comps and synergy breakdowns.</p>
+
+  <h2 id="ascension-diff">7. Ascension Differences (A0 16% vs STS1 9%)</h2>
+  <p>The Ascension curve works differently in STS2:</p>
+  <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;color:var(--text-secondary);">
+    <tr style="border-bottom:1px solid var(--border);">
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Ascension Range</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">STS2 Win Rate</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">STS1 Win Rate</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Key Difference</th>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;">A0</td><td style="padding:10px;color:var(--green);">16%</td><td style="padding:10px;">9%</td><td style="padding:10px;">STS2 is nearly 2× easier at base</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;">A5-A10</td><td style="padding:10px;color:var(--green);">~17%</td><td style="padding:10px;">~6%</td><td style="padding:10px;">STS2 WR <em>increases</em> mid-climb</td>
+    </tr>
+    <tr>
+      <td style="padding:10px;">A20</td><td style="padding:10px;">~5-8% (est.)</td><td style="padding:10px;">~3%</td><td style="padding:10px;">STS2 remains more winnable at top</td>
+    </tr>
+  </table>
+  <p>The key insight: STS2 is designed to be more accessible. You'll climb Ascension faster than in STS1. If you beat A20 in STS1, you can realistically reach A20 in STS2 within your first 100 runs.</p>
+
+  <h2 id="transferable-skills">8. Skills That Transfer (And Skills That Don't)</h2>
+
+  <h3>✅ Skills That Transfer 1:1</h3>
+  <ul>
+    <li>Path planning (elites vs campfires vs shops)</li>
+    <li>Potion management (save for elites/bosses)</li>
+    <li>Card removal prioritization</li>
+    <li>Gold management fundamentals</li>
+    <li>Reading enemy attack patterns</li>
+    <li>Deck archetype identification</li>
+  </ul>
+
+  <h3>⚠️ Skills You Need to Relearn</h3>
+  <ul>
+    <li><strong>Card evaluation:</strong> Sly and Doom keywords change card values dramatically. An STS1 C-tier card might be S-tier in STS2 with Sly synergy.</li>
+    <li><strong>Minion management:</strong> No STS1 equivalent. Positioning, sacrifice timing, and taunt management are new skills.</li>
+    <li><strong>Deck size philosophy:</strong> STS2 rewards 25-35 card decks more than STS1's 15-25 card sweet spot.</li>
+    <li><strong>Team synergy thinking:</strong> Even in solo, thinking about "how would this card work with others" matters more due to deeper keyword interactions.</li>
+  </ul>
+
+  <h2 id="one-week-plan">9. Your First Week — A Step-by-Step Plan</h2>
+  <ol>
+    <li><strong>Day 1-2: Play Ironclad A0-A5.</strong> Most familiar character. Relearn fundamentals without the distraction of new mechanics. Aim: reach A5.</li>
+    <li><strong>Day 3-4: Play Silent A0-A5.</strong> Learn the Sly keyword. Play 5-10 runs forcing Sly Discard to understand the mechanic. Aim: understand Sly hand-state tracking.</li>
+    <li><strong>Day 5: Play Necrobinder A0-A3.</strong> Learn minion board management. Start with Summon build, try Doom build once comfortable. Aim: understand positioning.</li>
+    <li><strong>Day 6: Try 4-player Co-op.</strong> Join a public lobby or play with friends. Focus on communication and team synergy. Don't worry about winning — learn the flow.</li>
+    <li><strong>Day 7: Pick your main.</strong> By now you've tried all 5 characters. Pick the one you enjoy most and start the A5-A20 climb. With STS1 experience, expect to hit A20 within 2-3 weeks of focused play.</li>
+  </ol>
+
+  <div class="tip-box">
+    <strong>💡 Pro Transition Tip:</strong> Install a deck tracker overlay. In STS1, you could mentally track your deck. In STS2, with Sly hand-states, discard pile cycling, and co-op interactions, a tracker saves you from missing lethal or block breakpoints by 3-5 HP. The best STS2 players all use one.
+  </div>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">Also check: <a href="beginner.html" style="color:var(--gold-light);">Beginner Guide</a> · <a href="silent-sly-discard-build.html" style="color:var(--gold-light);">Sly Discard Build</a> · <a href="coop-multiplayer.html" style="color:var(--gold-light);">Co-op Guide</a> · <a href="ascension.html" style="color:var(--gold-light);">Ascension Guide</a></p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a><a href="../about.html">About</a><a href="../privacy.html">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+
+<div id="searchOverlay" class="search-overlay" onclick="closeSearch(event)">
+  <div class="search-modal" onclick="event.stopPropagation()">
+    <div class="search-modal-header">
+      <input type="text" id="searchModalInput" placeholder="Type to search..." autofocus>
+      <button class="search-close" onclick="closeSearch()">✕</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+<style>
+.search-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); z-index:1000; justify-content:center; padding-top:60px; }
+.search-overlay.active { display:flex; }
+.search-modal { width:640px; max-width:90vw; background:var(--bg-secondary); border:1px solid var(--border); border-radius:12px; overflow:hidden; max-height:80vh; display:flex; flex-direction:column; }
+.search-modal-header { display:flex; align-items:center; padding:16px; gap:12px; border-bottom:1px solid var(--border); }
+.search-modal-header input { flex:1; background:var(--bg-card); border:1px solid var(--border); color:var(--text-primary); padding:10px 16px; border-radius:8px; font-size:15px; outline:none; }
+.search-modal-header input:focus { border-color:var(--gold); }
+.search-close { background:none; border:none; color:var(--text-muted); font-size:20px; cursor:pointer; padding:4px 8px; }
+.search-close:hover { color:var(--gold-light); }
+.search-results { overflow-y:auto; padding:8px; flex:1; }
+.search-result-item { display:flex; align-items:center; gap:12px; padding:12px 16px; border-radius:8px; cursor:pointer; transition:all .15s; text-decoration:none; color:inherit; }
+.search-result-item:hover { background:var(--bg-card-hover); }
+.search-result-item .result-icon { font-size:20px; flex-shrink:0; width:36px; text-align:center; }
+.search-result-item .result-info { overflow:hidden; }
+.search-result-item .result-title { font-size:14px; font-weight:600; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-result-item .result-cat { font-size:11px; color:var(--gold-light); display:inline-block; padding:1px 6px; background:rgba(212,160,60,0.15); border-radius:3px; margin-bottom:2px; }
+.search-result-item .result-desc { font-size:12px; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-empty { text-align:center; padding:40px; color:var(--text-muted); font-size:14px; }
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; }
+  .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .search-box { width:100%; margin-top:4px; }
+  .search-box input { width:100%; }
+  .search-modal { width:95vw; max-height:70vh; }
+}
+
+@media (max-width: 480px) {
+  .logo-text { font-size:13px; }
+  .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; }
+  footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script>
+let searchIndex = [];
+fetch('../search-index.json').then(r => r.json()).then(d => { searchIndex = d; }).catch(() => { fetch('search-index.json').then(r => r.json()).then(d => { searchIndex = d; }) });
+function openSearch() { document.getElementById('searchOverlay').classList.add('active'); document.getElementById('searchModalInput').focus(); }
+function closeSearch(e) { if (e && e.target !== document.getElementById('searchOverlay')) return; var el = document.getElementById('searchOverlay'); el.classList.remove('active'); document.getElementById('searchModalInput').value = ''; document.getElementById('searchResults').innerHTML = ''; }
+document.getElementById('searchModalInput').addEventListener('input', function() {
+  var q = this.value.toLowerCase().trim(), el = document.getElementById('searchResults');
+  if (!q) { el.innerHTML = ''; return; }
+  var r = searchIndex.filter(function(i) { return i.title.toLowerCase().includes(q) || i.keywords.includes(q) || i.category.toLowerCase().includes(q); }).slice(0, 10);
+  if (!r.length) { el.innerHTML = '<div class="search-empty">No results for "<strong>' + q + '</strong>"</div>'; return; }
+  var icons = { Characters: '\u{1F9B8}', Cards: '\u{1F0CF}', Relics: '\u{1F48E}', Bosses: '\u{1F479}', Guides: '\u{1F4D6}', Home: '\u{1F3E0}' };
+  el.innerHTML = r.map(function(i) { return '<a class="search-result-item" href="' + i.url + '"><span class="result-icon">' + (icons[i.category] || '\u{1F4C4}') + '</span><div class="result-info"><span class="result-cat">' + i.category + '</span><div class="result-title">' + i.title + '</div></div></a>'; }).join('');
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); } });
+</script>
+
+<div id="cookie-consent">
+  <p>We use cookies to improve your experience and for analytics. <a href="/en/privacy.html">Privacy Policy</a></p>
+  <div class="cc-btns">
+    <button class="cc-btn cc-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cc-btn cc-reject" onclick="rejectCookies()">Reject</button>
+  </div>
+</div>
+<script>
+(function(){
+  var c = document.cookie.match('(^|;)\\s*cookie_consent\\s*=\\s*([^;]+)');
+  if (!c) { document.getElementById('cookie-consent').style.display = 'flex'; }
+})();
+function acceptCookies(){
+  document.cookie = 'cookie_consent=accepted; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+function rejectCookies(){
+  document.cookie = 'cookie_consent=rejected; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+</script>
+</body>
+</html>

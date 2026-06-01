@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Co-op Synergy Deep Dive — Best Team Comps &amp; Role Guide | STS2Guides</title>
+<meta name="description" content="Advanced co-op synergy guide for Slay the Spire 2. Best 4-player team compositions, role assignments, card synergies, and lessons from the Devour the Tower tournament. 40% higher WR with voice comms.">
+    <meta property="og:title" content="Co-op Synergy Deep Dive — Best Team Comps &amp; Role Guide | STS2Guides">
+    <meta property="og:description" content="Advanced co-op synergy guide. Best team comps, role assignments, card synergies, and tournament lessons. 40% higher WR with voice communication.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/coop-synergy-deep-dive.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STS2Guides">    <meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Co-op Synergy Deep Dive — Best Team Comps &amp; Role Guide | STS2Guides">
+    <meta name="twitter:description" content="Advanced co-op synergy guide. Best 4-player team comps, role assignments, and tournament-winning strategies.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/coop-synergy-deep-dive.html">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad; --orange: #e67e22;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--orange);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:26px;font-weight:800;margin-bottom:4px;color:var(--orange);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--orange);border-left:4px solid var(--orange);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.card-ref{display:inline-block;padding:2px 10px;background:rgba(230,126,34,0.1);border:1px solid rgba(230,126,34,0.3);border-radius:8px;font-size:13px;margin:2px;}
+.combo-box{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin:20px 0;}
+.combo-box h4{color:var(--gold-light);margin-bottom:8px;}
+.tip-box{background:rgba(230,126,34,0.08);border:1px solid rgba(230,126,34,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.tip-box strong{color:var(--orange);}
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:30px;}
+.toc h3{font-size:14px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;}
+.toc a{display:block;padding:4px 0;color:var(--text-secondary);text-decoration:none;font-size:13px;}
+.toc a:hover{color:var(--gold-light);}
+.synergy-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;}
+.synergy-s{background:rgba(39,174,96,0.2);color:var(--green);}
+.synergy-a{background:rgba(52,152,219,0.2);color:var(--blue);}
+.synergy-b{background:rgba(255,255,255,0.1);color:var(--text-secondary);}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}}
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; } .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .search-modal { width:95vw; max-height:70vh; }
+  .footer-links { flex-wrap:wrap; gap:12px; }
+}
+
+@media (max-width: 480px) {
+  .logo-text { font-size:13px; } .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; } footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem","position": 1,"name": "STS2Guides","item": "https://sts2guides.com/"},
+    {"@type": "ListItem","position": 2,"name": "Guides","item": "https://sts2guides.com/en/guides/"},
+    {"@type": "ListItem","position": 3,"name": "Co-op Synergy Deep Dive","item": "https://sts2guides.com/en/guides/coop-synergy-deep-dive.html"}
+  ]
+}
+</script>
+
+<style>
+#cookie-consent {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #1a1a2e; border-top: 1px solid #3a3a5a;
+  padding: 16px 24px; z-index: 9999;
+  display: none;
+  align-items: center; justify-content: center; gap: 16px;
+  flex-wrap: wrap; box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+}
+#cookie-consent p { margin: 0; color: #c8c4b4; font-size: 14px; max-width: 500px; line-height: 1.5; }
+#cookie-consent a { color: #e6a750; text-decoration: underline; }
+#cookie-consent .cc-btns { display: flex; gap: 10px; }
+.cc-btn { padding: 8px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; border: none; transition: background 0.2s; }
+.cc-accept { background: #e6a750; color: #0d0d1a; }
+.cc-accept:hover { background: #f0c060; }
+.cc-reject { background: #3a3a5a; color: #c8c4b4; }
+.cc-reject:hover { background: #4a4a6a; }
+@media (max-width: 480px) { #cookie-consent { flex-direction: column; text-align: center; padding: 14px 16px; } }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+<!-- Google AdSense Auto Ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+            <a href="./" class="active">Guides</a>
+<a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a>
+      <a href="../relics/index.html">Relics</a>
+      <a href="../bosses/index.html">Bosses</a>
+      <a href="../patch-notes/">Patch Notes</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Co-op Synergy Deep Dive</div>
+
+<article class="article">
+  <h1>Co-op Synergy Deep Dive: Best Team Comps &amp; Role Guide</h1>
+  <div class="meta">🤝 Advanced Co-op Guide · Updated Jun 1, 2026 · 11 min read · Post-Devour the Tower Tournament Meta</div>
+
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <a href="#roles">1. The Four Roles — Tank, DPS, Support, Flex</a>
+    <a href="#top-comps">2. Top 5 Team Compositions (Ranked)</a>
+    <a href="#synergy-matrix">3. Character Pair Synergy Matrix</a>
+    <a href="#card-synergies">4. Cross-Character Card Synergies</a>
+    <a href="#tournament">5. Devour the Tower Tournament Lessons</a>
+    <a href="#communication">6. Communication — The 40% Advantage</a>
+    <a href="#common-mistakes">7. Common Co-op Mistakes</a>
+  </div>
+
+  <p>Four players, one shared battlefield. STS2's co-op mode isn't just 4 solo players fighting alongside each other — it's a completely different game where <strong>team synergy trumps individual power</strong>. The Devour the Tower tournament (34 streamers, May 2026) proved that well-coordinated teams with synergy-first drafting beat individually stronger players every time. This guide breaks down the meta, the math, and the mindset.</p>
+
+  <div class="combo-box">
+    <h4>📊 Key Co-op Stat</h4>
+    <p>Teams using voice communication have a <strong>40% higher win rate</strong> than silent teams (Devour the Tower data). Synergy-drafted teams beat "4 solo mains" teams by a 3:1 margin in tournament play.</p>
+  </div>
+
+  <h2 id="roles">1. The Four Roles — Tank, DPS, Support, Flex</h2>
+  <p>Every successful co-op team assigns clear roles. Trying to have all 4 players do everything leads to resource competition and dead turns.</p>
+
+  <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;color:var(--text-secondary);">
+    <tr style="border-bottom:1px solid var(--border);">
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Role</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Job</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Best Characters</th>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;">🛡️ <strong>Tank</strong></td>
+      <td style="padding:10px;">Absorb damage for the team. Keep everyone alive during setup turns. Crowd control.</td>
+      <td style="padding:10px;color:var(--purple);">Necrobinder (S+), Ironclad (A)</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;">⚔️ <strong>DPS</strong></td>
+      <td style="padding:10px;">Kill things. Scale damage for boss fights. Burst down priority targets.</td>
+      <td style="padding:10px;color:var(--green);">Silent (S+), Ironclad (A)</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;">🔮 <strong>Support</strong></td>
+      <td style="padding:10px;">Buff the team. Debuff enemies. Provide utility and card draw.</td>
+      <td style="padding:10px;color:var(--orange);">Regent (S+), Defect (B)</td>
+    </tr>
+    <tr>
+      <td style="padding:10px;">🔄 <strong>Flex</strong></td>
+      <td style="padding:10px;">Fill gaps. Off-tank or off-DPS depending on the fight. Adapt turn-by-turn.</td>
+      <td style="padding:10px;">Defect (A), Silent (B)</td>
+    </tr>
+  </table>
+
+  <div class="tip-box">
+    <strong>💡 Role Assignment Rule:</strong> Every team MUST have a Tank (Necrobinder preferred) and a DPS (Silent preferred). A team without a Tank wipes to Act 2 elites. A team without a DPS can't kill bosses before scaling kills them.
+  </div>
+
+  <h2 id="top-comps">2. Top 5 Team Compositions (Ranked)</h2>
+
+  <h3>#1 — The Classic (S-Tier) <span class="synergy-badge synergy-s">43% Est. WR</span></h3>
+  <p><strong>Tank: Necrobinder · DPS: Silent · Support: Regent · Flex: Defect</strong></p>
+  <p>The most balanced comp. Necrobinder's Skeletons tank for everyone. Silent's Sly Discard engine provides burst damage. Regent buffs the entire team with Star cards. Defect's Frost orbs provide secondary defense while Lightning orbs contribute chip damage. This was the winning composition at Devour the Tower.</p>
+
+  <h3>#2 — Double Bruiser (A-Tier) <span class="synergy-badge synergy-a">38% Est. WR</span></h3>
+  <p><strong>Tank: Ironclad · DPS: Silent · Tank: Necrobinder · Support: Regent</strong></p>
+  <p>Two tanks, one DPS, one support. Ironclad and Necrobinder share damage absorption duties — one tanks while the other sets up. Silent provides all the damage. Regent buffs everyone. This comp never dies but can struggle with DPS checks against A20 bosses. Win condition: outlast everything.</p>
+
+  <h3>#3 — Glass Cannon (A-Tier) <span class="synergy-badge synergy-a">36% Est. WR</span></h3>
+  <p><strong>Tank: Necrobinder · DPS: Silent · DPS: Ironclad · Support: Regent</strong></p>
+  <p>Maximum damage output. Necrobinder tanks alone (risky but workable). Silent and Ironclad both scale damage — by turn 4, bosses face Demon Form-boosted Ironclad attacks AND Sly Strike chains simultaneously. Regent accelerates both DPS players. Weakness: if Necrobinder loses all minions, the team has no backup defense.</p>
+
+  <h3>#4 — Orbital Defense (B-Tier) <span class="synergy-badge synergy-b">33% Est. WR</span></h3>
+  <p><strong>Tank: Defect (Frost) · DPS: Silent · Support: Regent · Flex: Ironclad</strong></p>
+  <p>Defect goes full Frost — 5+ Frost orbs generating 10-15 passive block per turn for the team. This frees everyone else to go full offense. Requires Defect to draft heavily into Focus. Ironclad provides secondary damage. Silent provides burst. Viable but less consistent than Necrobinder-tank comps.</p>
+
+  <h3>#5 — 4 Necrobinders (Meme Tier) <span class="synergy-badge synergy-b">25% Est. WR</span></h3>
+  <p>16 minion slots. Absolute chaos. Fun but impractical — all 4 players compete for the same summon cards in the draft pool. When it works, it's unstoppable. When it doesn't (most of the time), it's a fast wipe. Play this for fun, not for win rate.</p>
+
+  <h2 id="synergy-matrix">3. Character Pair Synergy Matrix</h2>
+  <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;color:var(--text-secondary);">
+    <tr style="border-bottom:1px solid var(--border);">
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Pair</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Synergy</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Why It Works</th>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;">Necrobinder + Ironclad</td><td style="padding:10px;"><span class="synergy-badge synergy-s">S</span></td><td style="padding:10px;">Skeletons tank while Ironclad sets up <span class="card-ref">Demon Form</span>. Perfect setup protection.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;">Silent + Regent</td><td style="padding:10px;"><span class="synergy-badge synergy-s">S</span></td><td style="padding:10px;">Regent's team buffs amplify Silent's multi-hit Sly chains. Exponential scaling.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;">Necrobinder + Regent</td><td style="padding:10px;"><span class="synergy-badge synergy-s">S</span></td><td style="padding:10px;">Regent buffs affect Necrobinder's minions. Banners + Commander = +5 damage per minion.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;">Necrobinder + Silent</td><td style="padding:10px;"><span class="synergy-badge synergy-a">A</span></td><td style="padding:10px;">Skeletons protect Silent's setup turns. Silent provides burst damage while Necrobinder holds the line.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;">Ironclad + Silent</td><td style="padding:10px;"><span class="synergy-badge synergy-a">A</span></td><td style="padding:10px;">Dual DPS. Two scaling damage threats force enemies to split focus. Hard to counter.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;">Defect + Necrobinder</td><td style="padding:10px;"><span class="synergy-badge synergy-a">A</span></td><td style="padding:10px;">Dual summoners. Skeletons + Frost orbs = wall. Lightning orbs + Ghosts = passive damage field.</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px;">Regent + Defect</td><td style="padding:10px;"><span class="synergy-badge synergy-b">B</span></td><td style="padding:10px;">Regent buffs help Defect set up faster. Viable but less explosive than other S-tier pairs.</td></tr>
+    <tr><td style="padding:10px;">Ironclad + Defect</td><td style="padding:10px;"><span class="synergy-badge synergy-b">B</span></td><td style="padding:10px;">No natural synergy. Ironclad wants to get hit (self-damage); Defect wants to prevent hits (Frost). Antisynergistic.</td></tr>
+  </table>
+
+  <h2 id="card-synergies">4. Cross-Character Card Synergies</h2>
+  <p>Some card combinations across characters create effects stronger than the sum of their parts:</p>
+  <ul>
+    <li><strong>Regent's Star Buffs + Silent's Sly Gambit:</strong> Regent's Star cards buff allies based on remaining energy. Silent's Sly Gambit reduces card costs to 0. Combined, Silent plays 0-cost cards while Regent's Star effects trigger at full value. <strong>+60% damage output in coordinated turns.</strong></li>
+    <li><strong>Necrobinder's Skeleton Crew + Ironclad's Reaper:</strong> Skeletons tank while Ironclad accumulates Strength. When Ironclad plays <span class="card-ref">Reaper</span> at +10 Strength with the whole team alive, it heals everyone for 40-60 HP. <strong>Team-wide full heal on demand.</strong></li>
+    <li><strong>Defect's Biased Cognition + Regent's Dark Prophecy:</strong> Regent can prevent Defect's Focus decay with certain Star cards that "lock ally buffs." Permanent +5 Focus. <strong>Game-winning synergy.</strong></li>
+    <li><strong>Silent's After Image + Necrobinder's Minions:</strong> After Image triggers on <em>card plays</em>, not personal cards. When Silent plays 15+ cards and Necrobinder plays 5+ summons, After Image generates 20+ block for the <em>entire team</em>.</li>
+  </ul>
+
+  <h2 id="tournament">5. Devour the Tower Tournament Lessons</h2>
+  <p>The first community-led STS2 tournament (May 25, 2026) featured 34 streamers in 4-player co-op. Key takeaways:</p>
+  <ol>
+    <li><strong>Synergy drafting > Individual strength:</strong> The winning team passed individually strong cards to pick synergy pieces. They took <span class="card-ref">Regent's Star Banner</span> over <span class="card-ref">Demon Form</span> because it buffed all 4 players.</li>
+    <li><strong>Shared relic pool changes everything:</strong> <span class="card-ref">Vajra</span> (+1 Strength) buffs all 4 players. In co-op, it's worth 4× its solo value. Teams that prioritized shared relics had a 25% higher win rate.</li>
+    <li><strong>Turn coordination beats reaction speed:</strong> The fastest individual player lost in quarterfinals. The most coordinated team (planned each turn for 10-15 seconds) won.</li>
+    <li><strong>Potion sharing is optimal:</strong> Teams that pooled potions and used them on whoever needed them most performed 30% better than teams where each player hoarded their own.</li>
+  </ol>
+
+  <h2 id="communication">6. Communication — The 40% Advantage</h2>
+  <p>Voice comms teams have a 40% higher win rate. Here's what to communicate:</p>
+  <ul>
+    <li><strong>Turn 1 of each fight:</strong> "I have X block, Y damage. Who needs setup protection? Tank, are you good?" (5 seconds)</li>
+    <li><strong>Before playing key cards:</strong> "Playing Demon Form — I need 3 energy and no damage this turn. Can anyone cover?" (3 seconds)</li>
+    <li><strong>Boss pattern calls:</strong> "Boss is attacking next turn for 40. Necrobinder, do you have fresh Skeletons? If not, everyone play block." (4 seconds)</li>
+    <li><strong>Card draft coordination:</strong> "Mass Grave in my reward screen. Does anyone else have a Necrobinder synergy piece I should consider instead?" (5 seconds)</li>
+  </ul>
+  <p>Total communication overhead: ~20-30 seconds per fight. The return: 40% more wins.</p>
+
+  <h2 id="common-mistakes">7. Common Co-op Mistakes</h2>
+  <ol>
+    <li><strong>"My deck, my choice."</strong> — In co-op, every card pick affects the team. A Silent passing <span class="card-ref">Tactician</span> because "I'm playing Poison" hurts the team if the Ironclad could have used the discard synergy. Draft as a team.</li>
+    <li><strong>"I'll just carry."</strong> — No single character can carry a 4-player co-op run on A10+. Enemy HP scales multiplicatively. Everyone needs to contribute.</li>
+    <li><strong>Ignoring the shared relic pool.</strong> — <span class="card-ref">Vajra</span>, <span class="card-ref">Smooth Stone</span>, <span class="card-ref">Ginger</span> affect all players. These are S-tier co-op relics despite being B-tier in solo.</li>
+    <li><strong>Competing for the same archetype.</strong> — Two players both forcing Sly Discard? Now you're fighting over the same card pool. Diversify your team's archetypes.</li>
+    <li><strong>No designated shot-caller.</strong> — In chaotic fights, someone needs to make the final call. Rotate the shot-caller role each act to prevent burnout.</li>
+  </ol>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">Also check: <a href="coop-multiplayer.html" style="color:var(--gold-light);">Co-op Basics Guide</a> · <a href="weekly-meta-report.html" style="color:var(--gold-light);">Weekly Meta Report (Devour the Tower)</a> · <a href="necrobinder-master-guide.html" style="color:var(--gold-light);">Necrobinder Master Guide</a></p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a><a href="../about.html">About</a><a href="../privacy.html">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+
+<div id="searchOverlay" class="search-overlay" onclick="closeSearch(event)">
+  <div class="search-modal" onclick="event.stopPropagation()">
+    <div class="search-modal-header">
+      <input type="text" id="searchModalInput" placeholder="Type to search..." autofocus>
+      <button class="search-close" onclick="closeSearch()">✕</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+<style>
+.search-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); z-index:1000; justify-content:center; padding-top:60px; }
+.search-overlay.active { display:flex; }
+.search-modal { width:640px; max-width:90vw; background:var(--bg-secondary); border:1px solid var(--border); border-radius:12px; overflow:hidden; max-height:80vh; display:flex; flex-direction:column; }
+.search-modal-header { display:flex; align-items:center; padding:16px; gap:12px; border-bottom:1px solid var(--border); }
+.search-modal-header input { flex:1; background:var(--bg-card); border:1px solid var(--border); color:var(--text-primary); padding:10px 16px; border-radius:8px; font-size:15px; outline:none; }
+.search-modal-header input:focus { border-color:var(--gold); }
+.search-close { background:none; border:none; color:var(--text-muted); font-size:20px; cursor:pointer; padding:4px 8px; }
+.search-close:hover { color:var(--gold-light); }
+.search-results { overflow-y:auto; padding:8px; flex:1; }
+.search-result-item { display:flex; align-items:center; gap:12px; padding:12px 16px; border-radius:8px; cursor:pointer; transition:all .15s; text-decoration:none; color:inherit; }
+.search-result-item:hover { background:var(--bg-card-hover); }
+.search-result-item .result-icon { font-size:20px; flex-shrink:0; width:36px; text-align:center; }
+.search-result-item .result-info { overflow:hidden; }
+.search-result-item .result-title { font-size:14px; font-weight:600; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-result-item .result-cat { font-size:11px; color:var(--gold-light); display:inline-block; padding:1px 6px; background:rgba(212,160,60,0.15); border-radius:3px; margin-bottom:2px; }
+.search-result-item .result-desc { font-size:12px; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-empty { text-align:center; padding:40px; color:var(--text-muted); font-size:14px; }
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; } .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .search-modal { width:95vw; max-height:70vh; }
+}
+
+@media (max-width: 480px) {
+  .logo-text { font-size:13px; } .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; } footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script>
+let searchIndex = [];
+fetch('../search-index.json').then(r => r.json()).then(d => { searchIndex = d; }).catch(() => { fetch('search-index.json').then(r => r.json()).then(d => { searchIndex = d; }) });
+function openSearch() { document.getElementById('searchOverlay').classList.add('active'); document.getElementById('searchModalInput').focus(); }
+function closeSearch(e) { if (e && e.target !== document.getElementById('searchOverlay')) return; var el = document.getElementById('searchOverlay'); el.classList.remove('active'); document.getElementById('searchModalInput').value = ''; document.getElementById('searchResults').innerHTML = ''; }
+document.getElementById('searchModalInput').addEventListener('input', function() {
+  var q = this.value.toLowerCase().trim(), el = document.getElementById('searchResults');
+  if (!q) { el.innerHTML = ''; return; }
+  var r = searchIndex.filter(function(i) { return i.title.toLowerCase().includes(q) || i.keywords.includes(q) || i.category.toLowerCase().includes(q); }).slice(0, 10);
+  if (!r.length) { el.innerHTML = '<div class="search-empty">No results for "<strong>' + q + '</strong>"</div>'; return; }
+  var icons = { Characters: '\u{1F9B8}', Cards: '\u{1F0CF}', Relics: '\u{1F48E}', Bosses: '\u{1F479}', Guides: '\u{1F4D6}', Home: '\u{1F3E0}' };
+  el.innerHTML = r.map(function(i) { return '<a class="search-result-item" href="' + i.url + '"><span class="result-icon">' + (icons[i.category] || '\u{1F4C4}') + '</span><div class="result-info"><span class="result-cat">' + i.category + '</span><div class="result-title">' + i.title + '</div></div></a>'; }).join('');
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); } });
+</script>
+
+<div id="cookie-consent">
+  <p>We use cookies to improve your experience and for analytics. <a href="/en/privacy.html">Privacy Policy</a></p>
+  <div class="cc-btns">
+    <button class="cc-btn cc-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cc-btn cc-reject" onclick="rejectCookies()">Reject</button>
+  </div>
+</div>
+<script>
+(function(){
+  var c = document.cookie.match('(^|;)\\s*cookie_consent\\s*=\\s*([^;]+)');
+  if (!c) { document.getElementById('cookie-consent').style.display = 'flex'; }
+})();
+function acceptCookies(){
+  document.cookie = 'cookie_consent=accepted; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+function rejectCookies(){
+  document.cookie = 'cookie_consent=rejected; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+</script>
+</body>
+</html>

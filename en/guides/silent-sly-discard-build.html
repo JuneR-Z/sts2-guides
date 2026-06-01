@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silent Sly Discard Build — 35.6% WR Monster | STS2Guides</title>
+<meta name="description" content="The #1 meta build in Slay the Spire 2. Master Silent's Sly Discard engine: free cards, infinite block, energy-positive cycling. 35.6% Win Rate from 240M+ global runs.">
+    <meta property="og:title" content="Silent Sly Discard Build — 35.6% WR Monster | STS2Guides">
+    <meta property="og:description" content="The #1 meta build in Slay the Spire 2. Master Silent's Sly Discard engine: free cards, infinite block, energy-positive cycling. 35.6% community win rate.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/silent-sly-discard-build.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STS2Guides">    <meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Silent Sly Discard Build — 35.6% WR Monster | STS2Guides">
+    <meta name="twitter:description" content="The #1 meta build in Slay the Spire 2. Master Silent's Sly Discard engine for free cards, infinite block, energy-positive cycling.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/silent-sly-discard-build.html">
+<style>
+:root {
+  --bg-primary: #0d0d1a; --bg-secondary: #151528; --bg-card: #1a1a30;
+  --bg-card-hover: #222240; --border: #2a2a45;
+  --text-primary: #e8e6dc; --text-secondary: #a09c8c; --text-muted: #686450;
+  --gold: #d4a03c; --gold-light: #f0c860;
+  --crimson: #c0392b; --green: #27ae60; --blue: #3498db; --purple: #8e44ad;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}
+header{background:var(--bg-secondary);border-bottom:2px solid var(--green);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}
+.logo-text span{color:var(--gold-light);}
+nav{display:flex;gap:0;}
+nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}
+nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}
+nav a.active{color:var(--gold-light);}.header-search-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:15px;transition:all .2s;margin-left:8px;white-space:nowrap;}.header-search-btn:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(255,255,255,0.05);}
+.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}
+.breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-light);}
+.article{max-width:800px;margin:0 auto;padding:20px;padding-bottom:60px;}
+.article h1{font-size:26px;font-weight:800;margin-bottom:4px;color:var(--green);}
+.article .meta{font-size:12px;color:var(--text-muted);margin-bottom:30px;}
+.article h2{font-size:20px;font-weight:700;margin:36px 0 12px;color:var(--green);border-left:4px solid var(--green);padding-left:12px;}
+.article h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text-primary);}
+.article p{margin-bottom:16px;color:var(--text-secondary);}
+.article ul,.article ol{margin-bottom:16px;padding-left:20px;color:var(--text-secondary);}
+.article li{margin-bottom:6px;}
+.article strong{color:var(--gold-light);}
+.card-ref{display:inline-block;padding:2px 10px;background:rgba(39,174,96,0.1);border:1px solid rgba(39,174,96,0.3);border-radius:8px;font-size:13px;margin:2px;}
+.combo-box{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin:20px 0;}
+.combo-box h4{color:var(--gold-light);margin-bottom:8px;}
+.stage-guide{counter-reset:stage;list-style:none;padding-left:0;}
+.stage-guide li{counter-increment:stage;padding:12px 0 12px 40px;position:relative;border-bottom:1px solid var(--border);}
+.stage-guide li::before{content:counter(stage);position:absolute;left:0;width:26px;height:26px;background:var(--green);color:#fff;border-radius:50%;text-align:center;line-height:26px;font-size:13px;font-weight:700;top:12px;}
+.tip-box{background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.tip-box strong{color:var(--green);}
+.warn-box{background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);border-radius:8px;padding:16px 20px;margin:20px 0;}
+.warn-box strong{color:var(--crimson);}
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:30px;}
+.toc h3{font-size:14px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;}
+.toc a{display:block;padding:4px 0;color:var(--text-secondary);text-decoration:none;font-size:13px;}
+.toc a:hover{color:var(--gold-light);}
+.wr-badge{display:inline-block;background:linear-gradient(135deg,#27ae60,#1e8449);color:#fff;padding:4px 12px;border-radius:12px;font-size:13px;font-weight:700;margin-left:8px;}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:30px 20px;margin-top:40px;text-align:center;color:var(--text-muted);font-size:12px;}
+footer a{color:var(--text-secondary);text-decoration:none;}
+footer a:hover{color:var(--gold-light);}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+@media(max-width:768px){.article h1{font-size:22px;}nav{display:none;}}
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; }
+  .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .search-box { width:100%; margin-top:4px; }
+  .search-box input { width:100%; }
+  .search-modal { width:95vw; max-height:70vh; }
+  .footer-links { flex-wrap:wrap; gap:12px; }
+}
+
+@media (max-width: 480px) {
+  .logo-text { font-size:13px; }
+  .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; }
+  footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem","position": 1,"name": "STS2Guides","item": "https://sts2guides.com/"},
+    {"@type": "ListItem","position": 2,"name": "Guides","item": "https://sts2guides.com/en/guides/"},
+    {"@type": "ListItem","position": 3,"name": "Silent Sly Discard Build","item": "https://sts2guides.com/en/guides/silent-sly-discard-build.html"}
+  ]
+}
+</script>
+
+<style>
+#cookie-consent {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #1a1a2e; border-top: 1px solid #3a3a5a;
+  padding: 16px 24px; z-index: 9999;
+  display: none;
+  align-items: center; justify-content: center; gap: 16px;
+  flex-wrap: wrap; box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+}
+#cookie-consent p {
+  margin: 0; color: #c8c4b4; font-size: 14px; max-width: 500px; line-height: 1.5;
+}
+#cookie-consent a { color: #e6a750; text-decoration: underline; }
+#cookie-consent .cc-btns { display: flex; gap: 10px; }
+.cc-btn {
+  padding: 8px 20px; border-radius: 6px; font-size: 14px; font-weight: 600;
+  cursor: pointer; border: none; transition: background 0.2s;
+}
+.cc-accept { background: #e6a750; color: #0d0d1a; }
+.cc-accept:hover { background: #f0c060; }
+.cc-reject { background: #3a3a5a; color: #c8c4b4; }
+.cc-reject:hover { background: #4a4a6a; }
+@media (max-width: 480px) {
+  #cookie-consent { flex-direction: column; text-align: center; padding: 14px 16px; }
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L97YHHQRT3');
+</script>
+<!-- Google AdSense Auto Ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">🗡️</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav>
+      <a href="../">Home</a>
+            <a href="./" class="active">Guides</a>
+<a href="../characters/index.html">Characters</a>
+      <a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a>
+      <a href="../relics/index.html">Relics</a>
+      <a href="../bosses/index.html">Bosses</a>
+      <a href="../patch-notes/">Patch Notes</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <button class="header-search-btn" onclick="openSearch()" title="Search (Ctrl+K)">🔍</button>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Silent Sly Discard Build</div>
+
+<article class="article">
+  <h1>Silent Sly Discard Build: The #1 Meta Monster <span class="wr-badge">35.6% WR</span></h1>
+  <div class="meta">🏆 Build Guide · Updated Jun 1, 2026 · 12 min read · <span style="color:var(--green);font-weight:700;">S+ Tier</span> · 240M+ Global Runs</div>
+
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <a href="#why-sly-discard">1. Why Sly Discard Dominates (35.6% WR)</a>
+    <a href="#engine-breakdown">2. The Dual-Engine Breakdown</a>
+    <a href="#core-sly-cards">3. The Sly Package — New STS2 Cards</a>
+    <a href="#full-decklist">4. Optimal Decklist & Card Priorities</a>
+    <a href="#relics">5. Best Relics & Sly Synergies</a>
+    <a href="#turn-by-turn">6. Turn-by-Turn Gameplay</a>
+    <a href="#ascension">7. Ascension Climbing Strategy</a>
+    <a href="#matchups">8. Boss & Elite Matchups</a>
+    <a href="#vs-traditional">9. Sly Discard vs Traditional Shiv/Discard</a>
+  </div>
+
+  <p>Silent's <strong>Sly Discard</strong> archetype is the highest win rate build in Slay the Spire 2's v0.106.1 meta. With a <strong>35.6% community win rate</strong> across 22,560+ tracked runs — and confirmed by Mega Crit's official Neowsletter showing Silent as the top-performing character — this build turns every discard into free cards, every free card into block, and every block into more discards. It's a self-sustaining perpetual-motion engine that <strong>plays 15-25 cards per turn</strong> while generating enough block to be functionally immortal.</p>
+
+  <div class="combo-box">
+    <h4>🔥 The Core Loop (Simplified)</h4>
+    <p><strong>Sly</strong> (new STS2 keyword) triggers when you play a card that was added to your hand this turn. Paired with the discard engine, cards are constantly entering and leaving your hand. Every <span class="card-ref">Sly Strike</span> played after a discard redraw deals bonus damage. Every <span class="card-ref">Sly Dodge</span> grants block equal to the number of cards you've discarded this turn. The engine feeds itself.</p>
+  </div>
+
+  <h2 id="why-sly-discard">1. Why Sly Discard Dominates (35.6% WR)</h2>
+  <p>The numbers don't lie. Silent leads all characters at 35.6% overall win rate, and Sly Discard is the build driving those numbers. Here's why:</p>
+  <ul>
+    <li><strong>Energy-Positive:</strong> <span class="card-ref">Tactician+</span> gives +2 energy per discard. With 3-5 discards per turn, you're netting 6-10 bonus energy. You effectively have 9-13 energy per turn.</li>
+    <li><strong>Card-Positive:</strong> <span class="card-ref">Reflex+</span> draws 2-3 when discarded. <span class="card-ref">Calculated Gamble</span> redraws your whole hand. You see 15-25 cards per turn.</li>
+    <li><strong>Block-Positive:</strong> <span class="card-ref">Sly Dodge</span> and <span class="card-ref">After Image</span> generate block from card plays. 15+ cards = 15+ free block plus Sly bonuses.</li>
+    <li><strong>Damage-Scalable:</strong> <span class="card-ref">Sly Strike</span> deals 8→12→16 damage as you chain discards. <span class="card-ref">Finisher</span> caps the turn at 70-100 damage.</li>
+    <li><strong>Consistent:</strong> The discard engine thins your deck in real-time. By turn 3, you're cycling your entire deck every turn.</li>
+  </ul>
+
+  <div class="tip-box">
+    <strong>📊 By the Numbers:</strong> A fully assembled Sly Discard deck averages <strong>140-180 damage/turn</strong> and <strong>25-40 block/turn</strong> from turn 3 onward. That's enough to outscale every boss in the game, including the Heart on A20.
+  </div>
+
+  <h2 id="engine-breakdown">2. The Dual-Engine Breakdown</h2>
+  <p>Sly Discard runs on two interlocking engines. Understanding how they feed each other is the key to piloting this build.</p>
+
+  <h3>Engine A — The Discard Core (Energy & Draw)</h3>
+  <div class="combo-box">
+    <h4>🔄 Discard Loop Components</h4>
+    <p><strong>Step 1:</strong> Play <span class="card-ref">Acrobatics</span> → Draw 3-4, discard 1 <span class="card-ref">Tactician+</span> → Gain 2 energy.<br>
+    <strong>Step 2:</strong> Play <span class="card-ref">Calculated Gamble+</span> → Discard hand (triggering 2x Tactician = 4 energy, 1x Reflex = draw 3). Redraw full hand.<br>
+    <strong>Step 3:</strong> New hand contains fresh Sly cards. Play them. Cycle back to Step 1.</p>
+  </div>
+
+  <h3>Engine B — The Sly Package (Damage & Block)</h3>
+  <p>Sly is a new STS2 keyword: <strong>"Sly X: Y"</strong> means "If this card was added to your hand this turn, do Y instead of X." Since the discard engine constantly adds cards to your hand (draw, Calculated Gamble redraw, Reflex procs), <em>every</em> card you play potentially triggers its Sly effect.</p>
+
+  <div class="combo-box">
+    <h4>🃏 Key Sly Interactions</h4>
+    <p><span class="card-ref">Sly Strike</span> — Deal 6 damage. <strong>Sly:</strong> Deal 12 damage. If you've discarded 3+ cards this turn, deal 18 instead.<br>
+    <span class="card-ref">Sly Dodge</span> — Gain 5 Block. <strong>Sly:</strong> Gain 8 Block plus 2 additional Block for each card discarded this turn.<br>
+    <span class="card-ref">Sly Gambit</span> — Draw 2 cards. <strong>Sly:</strong> Draw 3 cards and reduce their cost by 1 this turn.</p>
+  </div>
+
+  <h2 id="core-sly-cards">3. The Sly Package — New STS2 Cards</h2>
+  <p>These are the new cards that separate Sly Discard from the traditional Shiv/Discard hybrid. They're unique to STS2 and form the backbone of this archetype.</p>
+
+  <h3>Must-Have Sly Cards (S-Tier)</h3>
+  <ul>
+    <li><strong>Sly Strike</strong> — 1-cost Attack. Deal 6 damage. Sly: Deal 12 (+3 per discard this turn). With 5+ discards, this routinely hits for 25-30 damage for 1 energy. Take 2-3 copies.</li>
+    <li><strong>Sly Dodge</strong> — 1-cost Skill. Gain 5 Block. Sly: Gain 8 + (2 × discards this turn). After a Calculated Gamble turn, this gives 18-22 Block for 1 energy. Your primary defensive card.</li>
+    <li><strong>Sly Gambit</strong> — 0-cost Skill. Draw 2. Sly: Draw 3, reduce cost by 1 this turn. This is the engine's lubricant — it finds your pieces while making them cheaper. Upgrade to Innate.</li>
+    <li><strong>Shadow Step</strong> — 0-cost Skill. Discard 1, gain 4 Block. Sly: Discard 2, gain 8 Block, draw 1. Cheap discard trigger + block + draw. Excellent at all stages.</li>
+  </ul>
+
+  <h3>Traditional Discard Engine (A-Tier)</h3>
+  <ul>
+    <li><strong>Tactician+</strong> — +2 energy when discarded. Run 2 copies. The energy backbone.</li>
+    <li><strong>Reflex+</strong> — Draw 2-3 when discarded. Run 1-2 copies.</li>
+    <li><strong>Calculated Gamble+</strong> — 0-cost, discard hand, redraw. The combo enabler. Run 1-2 copies.</li>
+    <li><strong>Acrobatics</strong> — Draw 3-4, discard 1. Primary draw and discard trigger.</li>
+    <li><strong>Prepared+</strong> — Draw 2, discard 2. Efficient double-trigger.</li>
+  </ul>
+
+  <div class="warn-box">
+    <strong>⚠️ Don't Overload on Discard:</strong> A common mistake is taking every discard card offered. You only need 6-8 discard engine cards total. The rest should be Sly payoffs and defensive tools. Too many discard enablers without Sly finishers leaves you cycling cards for no reason.
+  </div>
+
+  <h2 id="full-decklist">4. Optimal Decklist & Card Priorities</h2>
+  <p>A winning A20 Sly Discard deck targets 25-30 cards and looks roughly like this:</p>
+
+  <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;color:var(--text-secondary);">
+    <tr style="border-bottom:1px solid var(--border);">
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Card Type</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Ideal Count</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Examples</th>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;">Sly Payoffs</td><td style="padding:10px;">5-7</td><td style="padding:10px;">Sly Strike x2-3, Sly Dodge x2, Sly Gambit x1, Shadow Step x1</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;">Discard Engine</td><td style="padding:10px;">6-8</td><td style="padding:10px;">Tactician x2, Reflex x1-2, Calculated Gamble x1-2, Acrobatics x1, Prepared+ x1</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;">Defense</td><td style="padding:10px;">3-4</td><td style="padding:10px;">After Image x1, Well-Laid Plans x1, Backflip x1-2</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;">Finisher</td><td style="padding:10px;">1-2</td><td style="padding:10px;">Finisher x1, Eviscerate x1</td>
+    </tr>
+    <tr>
+      <td style="padding:10px;">Utility</td><td style="padding:10px;">2-3</td><td style="padding:10px;">Tools of the Trade, Adrenaline, Terror</td>
+    </tr>
+  </table>
+
+  <div class="tip-box">
+    <strong>💡 Draft Priority Order:</strong> Act 1 → Take any Sly Strike or damage card. Act 2 → Prioritize Tactician + Reflex + Calculated Gamble. Act 3 → Round out with Sly Dodge, After Image, Finisher. Never pass Sly Gambit — it's the rarest and most important Sly enabler.
+  </div>
+
+  <h2 id="relics">5. Best Relics & Sly Synergies</h2>
+  <ul>
+    <li><strong>Wrist Blade</strong> (S+) — 0-cost Attacks deal +4 damage. Sly Gambit and Shadow Step become 0-cost. Combined with Sly Strike (often reduced to 0-1 cost), this doubles your damage floor.</li>
+    <li><strong>Tingsha</strong> (S) — Deal 3 damage per discard. With 8-12 discards per turn, that's 24-36 passive damage. This alone wins hallway fights.</li>
+    <li><strong>Tough Bandages</strong> (S) — Gain 3 Block per discard. 8-12 discards = 24-36 passive Block. Stacked with Sly Dodge + After Image, you're generating 40-60 block per turn.</li>
+    <li><strong>Band of Sly</strong> (S) — New STS2 relic: Sly effects trigger twice. This doubles Sly Strike damage, Sly Dodge block, and Sly Gambit draw. The single most impactful relic for this build.</li>
+    <li><strong>Hovering Kite</strong> (A) — Gain 1 energy per 2 discards each turn. Free energy from your engine.</li>
+    <li><strong>Pocketwatch</strong> (A) — If you play 3 or fewer cards, draw 3 next turn. Synergizes poorly — you're playing 15+ cards. Skip this.</li>
+  </ul>
+
+  <h2 id="turn-by-turn">6. Turn-by-Turn Gameplay</h2>
+  <p>Here's how a typical fight plays out with the engine assembled:</p>
+  <ol class="stage-guide">
+    <li>
+      <strong>Turn 1 — Setup:</strong>
+      <p>Play <span class="card-ref">Well-Laid Plans</span> to hold Calculated Gamble. Play <span class="card-ref">Sly Gambit</span> (Innate) for draw + cost reduction. Play any 0-cost cards in hand. Play <span class="card-ref">Tools of the Trade</span> if available. End turn with Tactician and Reflex in hand if possible.</p>
+    </li>
+    <li>
+      <strong>Turn 2 — Engine Start:</strong>
+      <p>Play <span class="card-ref">Acrobatics</span>, discarding Tactician/Reflex. Play <span class="card-ref">Sly Strike</span> (now Sly-triggered, hitting for 12-18). Play <span class="card-ref">Shadow Step</span> for more discards. You've now discarded 4-5 times. Sly effects are online.</p>
+    </li>
+    <li>
+      <strong>Turn 3 — Full Throttle:</strong>
+      <p>Play <span class="card-ref">Calculated Gamble+</span>. Your entire hand goes to discard (triggering ALL Tactician/Reflex effects). Redraw a fresh 7-10 cards. Play every Sly card — they're all newly added to hand, so every Sly effect triggers. <span class="card-ref">Sly Dodge</span> for 16-22 Block. <span class="card-ref">Sly Strike</span> x3 for 45-60 damage. <span class="card-ref">Finisher</span> for 70+. This turn alone does 120-150 damage while generating 30-40 block.</p>
+    </li>
+    <li>
+      <strong>Turn 4+ — Infinite Loop:</strong>
+      <p>Your discard pile is now your entire deck. Play another Acrobatics or Prepared to restart the cycle. You'll see every card every turn. Bosses die in 2-3 cycles.</p>
+    </li>
+  </ol>
+
+  <h2 id="ascension">7. Ascension Climbing Strategy</h2>
+  <p>Sly Discard scales remarkably well through Ascension levels because it doesn't rely on any single card and generates its own resources:</p>
+  <ul>
+    <li><strong>A0-A9:</strong> Build is borderline unfair. You can force Sly Discard almost every run and win. Prioritize Sly Gambit over everything.</li>
+    <li><strong>A10-A16:</strong> Enemies hit harder. You need <span class="card-ref">Sly Dodge</span> by mid-Act 2 or you'll bleed out. <span class="card-ref">After Image</span> becomes mandatory against multi-hit enemies.</li>
+    <li><strong>A17-A19:</strong> Enemies have more HP and better AI. You need <span class="card-ref">Terror</span> or <span class="card-ref">Finisher</span> to close fights before enemy scaling outpaces you. Two Tacticians are non-negotiable.</li>
+    <li><strong>A20:</strong> Double boss gauntlet. The deck that beats Act 3 boss #1 must also beat boss #2. Save a potion. <span class="card-ref">Band of Sly</span> relic is the difference between a close win and a crushing victory.</li>
+  </ul>
+
+  <h2 id="matchups">8. Boss & Elite Matchups</h2>
+  <ul>
+    <li><strong>Gremlin Nob:</strong> Hard. Skills trigger his Strength buff. Play only Sly Strike and attacks. Save Sly Gambit for after the fight. Bring a potion.</li>
+    <li><strong>Lagavulin:</strong> Easy. You have time to set up. Play all your Powers (Tools of the Trade, Well-Laid Plans) before waking it. Then unleash the full engine.</li>
+    <li><strong>Book of Stabbing:</strong> Easy with After Image. Every multi-hit is negated by your card-play block. Sly Dodge shines here.</li>
+    <li><strong>Collector:</strong> Medium. Kill minions with Sly Strike chains. Don't waste Finisher on minions.</li>
+    <li><strong>Time Eater:</strong> Tricky but winnable. Play exactly 12 cards/turn. The key: play 11 cards, then end with a massive Finisher. Don't waste card plays on low-value cycling.</li>
+    <li><strong>Awakened One:</strong> Hard. Powers trigger its Strength. Play only essential Powers (1 After Image, 1 Tools). Win with raw damage.</li>
+    <li><strong>The Heart:</strong> After Image + Sly Dodge are mandatory. Beat of Death deals 2 damage per card played. You need to generate 30+ block per turn passively. With Band of Sly, this fight becomes winnable. Without it, it's a 50/50.</li>
+  </ul>
+
+  <h2 id="vs-traditional">9. Sly Discard vs Traditional Shiv/Discard</h2>
+  <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;color:var(--text-secondary);">
+    <tr style="border-bottom:1px solid var(--border);">
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Aspect</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Sly Discard</th>
+      <th style="padding:10px;text-align:left;color:var(--gold-light);">Traditional Shiv/Discard</th>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Win Rate</strong></td>
+      <td style="padding:10px;color:var(--green);">35.6%</td><td style="padding:10px;">~28%</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Key Cards</strong></td>
+      <td style="padding:10px;">Sly Strike, Sly Dodge, Sly Gambit, Tactician</td><td style="padding:10px;">Accuracy, Infinite Blades, Blade Dance, Tactician</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Damage Type</strong></td>
+      <td style="padding:10px;">Burst (Sly Strike chains)</td><td style="padding:10px;">Sustained (Shiv chip damage)</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Block Engine</strong></td>
+      <td style="padding:10px;">Sly Dodge + After Image + Tough Bandages</td><td style="padding:10px;">After Image + Kunai/Ornamental Fan</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Setup Time</strong></td>
+      <td style="padding:10px;color:var(--green);">Fast (1-2 turns)</td><td style="padding:10px;">Medium (2-3 turns)</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:10px;"><strong>Boss Kill Speed</strong></td>
+      <td style="padding:10px;color:var(--green);">3-5 turns</td><td style="padding:10px;">5-8 turns</td>
+    </tr>
+    <tr>
+      <td style="padding:10px;"><strong>A20 Viability</strong></td>
+      <td style="padding:10px;color:var(--green);">S+</td><td style="padding:10px;">A</td>
+    </tr>
+  </table>
+
+  <p>The Sly Discard build is the evolution of Silent's discard archetype. Where traditional Shiv/Discard relies on sustained chip damage from Accuracy-buffed Shivs, Sly Discard delivers <strong>tremendous burst damage</strong> through Sly-triggered attacks while generating comparable block. The result is faster kills, less chip damage taken, and a higher win rate at all Ascension levels.</p>
+
+  <p style="margin-top:40px;text-align:center;color:var(--text-muted);">Also check: <a href="silent-shiv-build.html" style="color:var(--gold-light);">Silent Shiv & Discard Build</a> · <a href="silent-poison-build.html" style="color:var(--gold-light);">Silent Poison Build</a> · <a href="infinite-combos.html" style="color:var(--gold-light);">Infinite Combos Guide</a> · <a href="../tier-list/" style="color:var(--gold-light);">Card Tier List</a></p>
+</article>
+
+<footer>
+  <div class="footer-links"><a href="../">Home</a><a href="../characters/index.html">Characters</a><a href="../cards/index.html">Cards</a>
+      <a href="../tier-list/">Tier List</a><a href="../about.html">About</a><a href="../privacy.html">Privacy</a></div>
+  <p>STS2Guides is an unofficial, fan-made community site. Slay the Spire 2 is developed by Mega Crit Games.<br>This site is not affiliated with or endorsed by Mega Crit. © 2026 STS2Guides.</p>
+  <p>DMCA / Copyright inquiries: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p>
+</footer>
+
+<div id="searchOverlay" class="search-overlay" onclick="closeSearch(event)">
+  <div class="search-modal" onclick="event.stopPropagation()">
+    <div class="search-modal-header">
+      <input type="text" id="searchModalInput" placeholder="Type to search..." autofocus>
+      <button class="search-close" onclick="closeSearch()">✕</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+<style>
+.search-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); z-index:1000; justify-content:center; padding-top:60px; }
+.search-overlay.active { display:flex; }
+.search-modal { width:640px; max-width:90vw; background:var(--bg-secondary); border:1px solid var(--border); border-radius:12px; overflow:hidden; max-height:80vh; display:flex; flex-direction:column; }
+.search-modal-header { display:flex; align-items:center; padding:16px; gap:12px; border-bottom:1px solid var(--border); }
+.search-modal-header input { flex:1; background:var(--bg-card); border:1px solid var(--border); color:var(--text-primary); padding:10px 16px; border-radius:8px; font-size:15px; outline:none; }
+.search-modal-header input:focus { border-color:var(--gold); }
+.search-close { background:none; border:none; color:var(--text-muted); font-size:20px; cursor:pointer; padding:4px 8px; }
+.search-close:hover { color:var(--gold-light); }
+.search-results { overflow-y:auto; padding:8px; flex:1; }
+.search-result-item { display:flex; align-items:center; gap:12px; padding:12px 16px; border-radius:8px; cursor:pointer; transition:all .15s; text-decoration:none; color:inherit; }
+.search-result-item:hover { background:var(--bg-card-hover); }
+.search-result-item .result-icon { font-size:20px; flex-shrink:0; width:36px; text-align:center; }
+.search-result-item .result-info { overflow:hidden; }
+.search-result-item .result-title { font-size:14px; font-weight:600; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-result-item .result-cat { font-size:11px; color:var(--gold-light); display:inline-block; padding:1px 6px; background:rgba(212,160,60,0.15); border-radius:3px; margin-bottom:2px; }
+.search-result-item .result-desc { font-size:12px; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.search-empty { text-align:center; padding:40px; color:var(--text-muted); font-size:14px; }
+
+@media (max-width: 900px) {
+  .header-inner { flex-wrap:wrap; height:auto; padding:8px 12px; gap:8px; }
+  .logo { order:1; }
+  .logo-text { font-size:15px; }
+  nav { order:3; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:4px 0; }
+  nav a { font-size:12px; padding:6px 10px; white-space:nowrap; flex-shrink:0; }
+  .search-box { width:100%; margin-top:4px; }
+  .search-box input { width:100%; }
+  .search-modal { width:95vw; max-height:70vh; }
+}
+
+@media (max-width: 480px) {
+  .logo-text { font-size:13px; }
+  .logo-icon { width:28px; height:28px; font-size:16px; }
+  nav a { font-size:11px; padding:5px 8px; }
+  footer { padding:16px; font-size:11px; }
+}
+
+</style>
+<script>
+let searchIndex = [];
+fetch('../search-index.json').then(r => r.json()).then(d => { searchIndex = d; }).catch(() => { fetch('search-index.json').then(r => r.json()).then(d => { searchIndex = d; }) });
+function openSearch() { document.getElementById('searchOverlay').classList.add('active'); document.getElementById('searchModalInput').focus(); }
+function closeSearch(e) { if (e && e.target !== document.getElementById('searchOverlay')) return; var el = document.getElementById('searchOverlay'); el.classList.remove('active'); document.getElementById('searchModalInput').value = ''; document.getElementById('searchResults').innerHTML = ''; }
+document.getElementById('searchModalInput').addEventListener('input', function() {
+  var q = this.value.toLowerCase().trim(), el = document.getElementById('searchResults');
+  if (!q) { el.innerHTML = ''; return; }
+  var r = searchIndex.filter(function(i) { return i.title.toLowerCase().includes(q) || i.keywords.includes(q) || i.category.toLowerCase().includes(q); }).slice(0, 10);
+  if (!r.length) { el.innerHTML = '<div class="search-empty">No results for "<strong>' + q + '</strong>"</div>'; return; }
+  var icons = { Characters: '\u{1F9B8}', Cards: '\u{1F0CF}', Relics: '\u{1F48E}', Bosses: '\u{1F479}', Guides: '\u{1F4D6}', Home: '\u{1F3E0}' };
+  el.innerHTML = r.map(function(i) { return '<a class="search-result-item" href="' + i.url + '"><span class="result-icon">' + (icons[i.category] || '\u{1F4C4}') + '</span><div class="result-info"><span class="result-cat">' + i.category + '</span><div class="result-title">' + i.title + '</div></div></a>'; }).join('');
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); } });
+</script>
+
+<div id="cookie-consent">
+  <p>We use cookies to improve your experience and for analytics. <a href="/en/privacy.html">Privacy Policy</a></p>
+  <div class="cc-btns">
+    <button class="cc-btn cc-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cc-btn cc-reject" onclick="rejectCookies()">Reject</button>
+  </div>
+</div>
+<script>
+(function(){
+  var c = document.cookie.match('(^|;)\\s*cookie_consent\\s*=\\s*([^;]+)');
+  if (!c) { document.getElementById('cookie-consent').style.display = 'flex'; }
+})();
+function acceptCookies(){
+  document.cookie = 'cookie_consent=accepted; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+function rejectCookies(){
+  document.cookie = 'cookie_consent=rejected; max-age=' + (365*24*60*60) + '; path=/; SameSite=Lax';
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Defect Complete Guide: Orbs, Focus &amp; A10 Strategy (29.8% WR) — STS2 Guides</title>
+<meta name="description" content="Complete Defect guide for Slay the Spire 2. Orb mechanics, Focus scaling, best builds (Frost Wall, Lightning DPS, Dark Orb), card tier list, relic priorities, and A10 climbing strategy. Updated for v0.106.1 meta.">
+<meta property="og:title" content="Defect Complete Guide: Orbs, Focus &amp; A10 Strategy (29.8% WR) — STS2 Guides">
+<meta property="og:description" content="Complete Defect guide. Orb mechanics, Focus scaling, best builds, card tier list, relic priorities, and A10 strategy. Updated for v0.106.1.">
+<meta property="og:url" content="https://sts2guides.com/en/guides/defect-complete-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="STS2Guides">
+<meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Defect Complete Guide: Orbs, Focus &amp; A10 Strategy (29.8% WR)">
+<meta name="twitter:description" content="Complete Defect guide. Orb mechanics, Focus scaling, best builds, card tier list, relic priorities, and A10 strategy.">
+<meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<meta name="keywords" content="STS2 Defect guide, Defect build, Defect orbs, Focus scaling, Frost Wall, Lightning DPS, Dark Orb, Defect A10, Defect tier list, Slay the Spire 2 Defect">
+<link rel="canonical" href="https://sts2guides.com/en/guides/defect-complete-guide.html">
+<style>
+:root{--bg:#0d0d1a;--bg2:#151528;--card:#1a1a30;--border:#2a2a45;--text:#e8e6dc;--muted:#a09c8c;--gold:#d4a03c;--gold-light:#f0c860;--blue:#3498db;--green:#27ae60;--red:#c0392b;--purple:#8e44ad;--orange:#e67e22}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7;min-height:100vh}
+header{background:var(--bg2);border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:100}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),#7b68ee);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.logo-text{font-size:18px;font-weight:700;color:var(--text)}.logo-text span{color:var(--gold-light)}
+nav{display:flex;gap:0}nav a{color:var(--muted);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;white-space:nowrap}nav a:hover{color:var(--gold-light);background:rgba(255,255,255,.05)}
+.breadcrumb{max-width:1100px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--muted)}.breadcrumb a{color:var(--muted);text-decoration:none}.breadcrumb a:hover{color:var(--gold-light)}
+article{max-width:800px;margin:0 auto;padding:30px 20px 60px}
+article h1{font-size:28px;margin-bottom:8px;color:var(--gold-light)}
+article h2{font-size:20px;margin:36px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border);color:var(--gold)}
+article h3{font-size:16px;margin:24px 0 10px;color:var(--text)}
+article p{margin:12px 0;color:var(--muted);font-size:15px}
+article ul,article ol{padding-left:24px;margin:12px 0;color:var(--muted)}
+article li{margin:6px 0;font-size:14px}
+article a{color:var(--gold-light);text-decoration:underline}
+.highlight-box{background:var(--card);border-left:3px solid var(--blue);padding:16px 20px;border-radius:0 8px 8px 0;margin:20px 0;font-size:14px}
+.tier-box{padding:8px 16px;border-radius:6px;margin:8px 0;font-size:14px;font-weight:600}
+.tier-s{background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:#ffd700}
+.tier-a{background:rgba(39,174,96,.1);border:1px solid rgba(39,174,96,.3);color:#2ecc71}
+.tier-b{background:rgba(52,152,219,.1);border:1px solid rgba(52,152,219,.3);color:#3498db}
+.tier-c{background:rgba(160,156,140,.1);border:1px solid rgba(160,156,140,.3);color:#a09c8c}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}
+th{background:var(--bg2);color:var(--gold);padding:10px;text-align:left;font-weight:600;border-bottom:2px solid var(--border)}
+td{padding:10px;border-bottom:1px solid var(--border);color:var(--muted)}
+tr:hover td{background:var(--card)}
+.tag{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:600;margin-right:4px}
+.tag-blue{background:rgba(52,152,219,.15);color:var(--blue)}
+.tag-green{background:rgba(39,174,96,.15);color:var(--green)}
+.tag-red{background:rgba(231,76,60,.15);color:var(--red)}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:30px 20px;text-align:center;color:var(--muted);font-size:12px}
+footer a{color:var(--muted);text-decoration:none}footer a:hover{color:var(--gold-light)}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap}
+@media(max-width:768px){nav{overflow-x:auto;-webkit-overflow-scrolling:touch}article h1{font-size:22px}article h2{font-size:18px}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Defect Complete Guide: Orbs, Focus & A10 Strategy","datePublished":"2026-06-03","dateModified":"2026-06-03","author":{"@type":"Organization","name":"STS2Guides"},"publisher":{"@type":"Organization","name":"STS2Guides"}}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L97YHHQRT3');</script>
+<!-- Google AdSense Auto Ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="../" class="logo"><div class="logo-icon">⚡</div><div class="logo-text">STS2<span>Guides</span></div></a>
+    <nav><a href="../">Home</a><a href="../guides/">Guides</a><a href="../characters/">Characters</a><a href="../cards/">Cards</a><a href="../relics/">Relics</a><a href="../tier-list/">Tier List</a></nav>
+  </div>
+</header>
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Defect Complete Guide</div>
+<article>
+<h1>⚡ Defect Complete Guide: Orbs, Focus &amp; A10 Strategy</h1>
+<p style="color:var(--muted);font-size:13px">📅 Updated Jun 3, 2026 · ⏱️ 14 min read · 🏷️ <span class="tag tag-blue">Master Guide</span> <span class="tag tag-green">v0.106.1</span></p>
+
+<div class="highlight-box"><strong>📊 Community WR: 29.8%</strong> — lowest among all 5 characters. But post-v0.105 buffs, top Defect players are hitting 35%+ A10 WR. The key? <em>Orb slot management</em> and knowing when to pivot from Lightning to Frost.</div>
+
+<h2>Why Defect is the Hardest Character (And How to Fix It)</h2>
+<p>Defect's 29.8% community win rate isn't because the character is bad — it's because <strong>orb management punishes mistakes harder than any other mechanic</strong>. Miss one Focus breakpoint against Aeonglass, and you're dead. Build too many Lightning orbs without block scaling, and Act 3 elites shred you.</p>
+<p>The post-v0.105 Defect is <em>significantly</em> stronger than launch Defect. Shatter now double-evokes, Biased Cognition's downside was reduced, and Frost orbs generate 1 more block at base. But you need to understand the <strong>three-phase game plan</strong> to win consistently.</p>
+
+<h2>Core Mechanics: Orbs, Focus &amp; Slots</h2>
+<h3>Orb Types &amp; Priorities</h3>
+<table><tr><th>Orb</th><th>Effect</th><th>Best For</th><th>Priority</th></tr>
+<tr><td>⚡ Lightning</td><td>Deal 3 dmg to random enemy per turn</td><td>Act 1 hallway fights, elites</td><td>Early game</td></tr>
+<tr><td>❄️ Frost</td><td>Gain 2 Block per turn</td><td>Boss fights, Act 3+</td><td>Mid-late game</td></tr>
+<tr><td>🌑 Dark</td><td>Charge 6 dmg/turn, Evoke for burst</td><td>Boss nuke setups</td><td>Situational</td></tr>
+<tr><td>🔮 Plasma</td><td>Gain 1 Energy per turn</td><td>Energy-hungry builds</td><td>Luxury</td></tr></table>
+
+<h3>Focus: The Scaling Stat</h3>
+<p>Focus is Defect's unique scaling mechanic. Each point of Focus adds +1 damage to Lightning orbs and +1 Block to Frost orbs. At 5 Focus, a full board of Frost orbs passively blocks 30+ damage per turn — enough to trivialize most boss fights.</p>
+<p><strong>Key Focus breakpoints:</strong></p>
+<ul><li><strong>3 Focus</strong> — Minimum for Act 2 elites</li><li><strong>5 Focus</strong> — Comfortable for Act 3</li><li><strong>8+ Focus</strong> — Act 4 / Corrupted Heart territory</li></ul>
+
+<h2>3 Best Defect Builds (Ranked)</h2>
+
+<h3>1. Frost Wall — S-Tier (Highest A10 WR)</h3>
+<p>The safest and most consistent build. Stack Focus, fill orb slots with Frost, and passively block everything while your Lightning orbs chip away.</p>
+<p><strong>Core cards:</strong></p>
+<div class="tier-box tier-s">Glacier (S) · Defragment (S) · Biased Cognition (S) · Coolheaded (A) · Chill (A) · Capacitor (A)</div>
+<p><strong>Game plan:</strong> Act 1: take any damage cards to survive. Act 2: pivot hard to Frost as soon as you find a Focus source. Act 3: you're unkillable — add a Dark orb for boss damage. Act 4: prioritize artifact strip for Biased Cognition.</p>
+<p><strong>Ideal relics:</strong> Data Disk, Inserter, Frozen Core, Runic Capacitor, Gold-Plated Cables, Mummified Hand.</p>
+
+<h3>2. Lightning DPS — A-Tier</h3>
+<p>Full offense — fill the board with Lightning orbs and evoke them rapidly for burst damage. Falls off against Act 3 bosses but <strong>speed-runs Act 1-2 brutally fast</strong>.</p>
+<p><strong>Core cards:</strong></p>
+<div class="tier-box tier-a">Electrodynamics (S) · Ball Lightning (A) · Tempest (A) · Storm (A) · Static Discharge (B)</div>
+<p><strong>Weakness:</strong> No block scaling. You MUST find Frost orbs or a second damage engine by mid-Act 2, or elites will kill you before you kill them.</p>
+
+<h3>3. Dark Orb Nuke — B-Tier (Situational)</h3>
+<p>Set up a single massive Dark Orb, then evoke it with Multi-Cast or Dualcast for 200+ damage. Kills bosses in one turn, but <strong>terrible against multi-enemy fights</strong>.</p>
+<div class="tier-box tier-b">Darkness (A) · Doom and Gloom (A) · Multi-Cast (B) · Recursion (B) · Loop (B)</div>
+<p>Only run this build if you find an early Darkness+ and have a second plan for hallway fights (Lightning orbs, sweeping cards).</p>
+
+<h2>Defect Card Tier List (v0.106.1)</h2>
+<h3>S-Tier — Auto-Pick</h3>
+<table><tr><th>Card</th><th>Reason</th></tr>
+<tr><td>Biased Cognition</td><td>4-5 Focus instantly. Use artifact/orange pellets to block debuff. Best card in the pool.</td></tr>
+<tr><td>Defragment</td><td>1(2) Focus permanently. Stack multiple copies.</td></tr>
+<tr><td>Glacier</td><td>2 Frost orbs + 7(10) Block. Best block card for any Defect build.</td></tr>
+<tr><td>Electrodynamics</td><td>Lightning hits ALL enemies. Carries Act 2 elites solo.</td></tr>
+<tr><td>Echo Form</td><td>Double your first card each turn. 3-cost but game-winning.</td></tr></table>
+
+<h3>A-Tier — Strong Pick</h3>
+<table><tr><th>Card</th><th>Reason</th></tr>
+<tr><td>Coolheaded</td><td>1 Frost orb + draw 1(2). Cycle engine + block in one card.</td></tr>
+<tr><td>Capacitor</td><td>+2(3) orb slots. Essential for Frost Wall scaling.</td></tr>
+<tr><td>Seek</td><td>Tutor any card. 0-cost, sets up combos.</td></tr>
+<tr><td>Genetic Algorithm</td><td>Scaling block for the whole run. Take early.</td></tr>
+<tr><td>Core Surge</td><td>11 damage + 1 Artifact — Biased Cognition combo enabler.</td></tr>
+<tr><td>Ball Lightning</td><td>7(10) dmg + 1 Lightning orb. Act 1 MVP.</td></tr></table>
+
+<h3>B-Tier — Situational</h3>
+<table><tr><th>Card</th><th>When to Take</th></tr>
+<tr><td>Darkness</td><td>If you have a way to evoke it (Multi-Cast, Dualcast+)</td></tr>
+<tr><td>Tempest</td><td>With energy relic or Plasma orbs</td></tr>
+<tr><td>Storm</td><td>Power-heavy build with Mummified Hand</td></tr>
+<tr><td>Loop</td><td>Frost/Dark heavy builds</td></tr>
+<tr><td>Recycle</td><td>Deck-thinning + energy engine in exhaust builds</td></tr></table>
+
+<h3>C-Tier — Avoid</h3>
+<table><tr><th>Card</th><th>Why Skip</th></tr>
+<tr><td>Blizzard</td><td>Too slow to scale. By the time it's good, you've already won.</td></tr>
+<tr><td>Thunder Strike</td><td>3-cost, needs 5+ Lightning orbs channeled to be worth it.</td></tr>
+<tr><td>Rebound</td><td>Minor value, clogs draws without Scry.</td></tr></table>
+
+<h2>Relic Priority for Defect</h2>
+<h3>Boss Relic Pick Order</h3>
+<ol>
+<li><strong>Inserter</strong> — +1 orb slot every 2 turns. Passive scaling beats almost every other boss relic.</li>
+<li><strong>Frozen Core</strong> — Start each combat with 1 Frost orb + channel Frost when you take damage. Defect's best defensive boss relic.</li>
+<li><strong>Runic Capacitor</strong> — +3 orb slots. Immediate power spike, no downside.</li>
+<li><strong>Nuclear Battery</strong> — Start each combat with 1 Plasma orb. Free energy.</li>
+<li><strong>Cursed Key / Velvet Choker / Sozu</strong> — Standard energy relics. Choker is bad in orb-heavy decks.</li>
+</ol>
+
+<h3>Non-Boss Priority Relics</h3>
+<table><tr><th>Relic</th><th>Impact</th></tr>
+<tr><td>Data Disk</td><td>Start with +1 Focus. Huge early spike.</td></tr>
+<tr><td>Gold-Plated Cables</td><td>Rightmost orb's passive triggers twice. Place Frost here.</td></tr>
+<tr><td>Emotion Chip</td><td>Trigger all orbs' passive effects every turn. Mini-echo for orbs.</td></tr>
+<tr><td>Symbiotic Virus</td><td>Start with 1 Dark orb. Enables early Dark build.</td></tr>
+<tr><td>Mummified Hand</td><td>Powers cost 0 after playing a Power. Echo Form for 0 energy.</td></tr></table>
+
+<h2>Act-by-Act Strategy</h2>
+<h3>Act 1 — Survive &amp; Collect Damage</h3>
+<p>Defect starts with a <strong>terrible basic deck</strong> (Zap + Dualcast). You need damage immediately. Take Ball Lightning, Cold Snap, Compile Driver over anything else in the first 3 floors. Your goal is to beat the Act 1 boss with at least 50% HP — don't greed for scaling yet.</p>
+<p><strong>Act 1 card priority:</strong> Damage > Damage > Block. You can block via Frost later.</p>
+<p><strong>Elite hunting:</strong> Only take 1 elite in Act 1. Defect dies to Gremlin Nob and Lagavulin without a strong damage frontload.</p>
+
+<h3>Act 2 — Pivot to Frost</h3>
+<p>This is where Defect runs die. The difficulty spike is brutal. You MUST find at least 1 Focus source (Defragment or Biased Cognition) and 1 Frost generator (Glacier, Coolheaded, Chill) before the first Act 2 elite.</p>
+<p>Without Frost scaling, Shelled Parasite + Snake Plant will chip you to death. With it, you cruise.</p>
+
+<h3>Act 3 — Scale to Immortality</h3>
+<p>By now you should have 4-5 orb slots, 5+ Focus, and 70%+ Frost orb uptime. Add a Dark orb or Echo Form for boss damage. Against Aeonglass specifically, you need artifact strip before playing Biased Cognition — the debuff will get you killed.</p>
+
+<h3>Act 4 — Corrupted Heart</h3>
+<p>The Heart's Beat of Death (2 damage per card played) is brutal for Defect's card-heavy playstyle. Key techs:</p>
+<ul><li>Have 8+ Focus before the fight starts</li><li>Save a potion slot for Focus Potion or Artifact Potion</li><li>Core Surge → Biased Cognition on turn 1</li><li>Don't play orb-channeling cards after the first cycle — let passives do the work</li></ul>
+
+<div class="highlight-box"><strong>🎯 Key Takeaway:</strong> Defect's win rate jumps from 29.8% to ~35% when you understand the Frost pivot timing. The character isn't weak — just <em>punishing</em>. Master Act 2 pivot, and you master Defect.</div>
+
+</article>
+<footer><div class="footer-links"><a href="../">Home</a><a href="./">Guides</a><a href="../characters/">Characters</a><a href="../tier-list/">Tier List</a></div>
+<p>STS2Guides is unofficial. Slay the Spire 2 © Mega Crit Games. Not affiliated. © 2026 STS2Guides.</p>
+<p>DMCA: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p></footer>
+</body>
+</html>

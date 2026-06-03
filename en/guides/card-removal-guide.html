@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Card Removal Strategy Guide: When, What &amp; How Many Cards to Cut — STS2 Guides</title>
+<meta name="description" content="Complete card removal strategy guide for STS2. When to remove, what cards to cut first (Strikes vs Defends), shop removal math, optimal deck size, per-character priorities. Updated v0.106.1.">
+<meta property="og:title" content="Card Removal Strategy Guide: When, What &amp; How Many Cards to Cut — STS2 Guides">
+<meta property="og:description" content="Complete card removal strategy. When to remove, what to cut, shop removal math, optimal deck size, per-character priorities. Updated v0.106.1.">
+<meta property="og:url" content="https://sts2guides.com/en/guides/card-removal-guide.html"><meta property="og:type" content="article"><meta property="og:site_name" content="STS2Guides">
+<meta property="og:image" content="https://sts2guides.com/en/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Card Removal Strategy Guide: When, What &amp; How Many Cards to Cut">
+<meta name="twitter:description" content="Complete card removal strategy. When to remove, what to cut, shop removal math, optimal deck size."><meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<meta name="keywords" content="STS2 card removal, Slay the Spire 2 remove cards, deck thinning, shop removal strategy, optimal deck size">
+<link rel="canonical" href="https://sts2guides.com/en/guides/card-removal-guide.html">
+<style>:root{--bg:#0d0d1a;--bg2:#151528;--card:#1a1a30;--border:#2a2a45;--text:#e8e6dc;--muted:#a09c8c;--gold:#d4a03c;--gold-light:#f0c860;--green:#27ae60;--red:#c0392b;--orange:#e67e22}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7}
+header{background:var(--bg2);border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:100}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--orange));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px}.logo-text{font-size:18px;font-weight:700;color:var(--text)}.logo-text span{color:var(--gold-light)}
+nav{display:flex}nav a{color:var(--muted);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;white-space:nowrap}nav a:hover{color:var(--gold-light)}
+.breadcrumb{max-width:1100px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--muted)}.breadcrumb a{color:var(--muted);text-decoration:none}.breadcrumb a:hover{color:var(--gold-light)}
+article{max-width:800px;margin:0 auto;padding:30px 20px 60px}
+article h1{font-size:28px;color:var(--gold-light)}article h2{font-size:20px;margin:36px 0 14px;border-bottom:1px solid var(--border);color:var(--gold);padding-bottom:6px}article h3{font-size:16px;margin:24px 0 10px;color:var(--text)}article p{margin:12px 0;color:var(--muted);font-size:15px}article ul,ol{padding-left:24px;margin:12px 0;color:var(--muted)}article li{margin:6px 0;font-size:14px}
+.hl{background:var(--card);border-left:3px solid var(--orange);padding:16px 20px;margin:20px 0;border-radius:0 8px 8px 0;font-size:14px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}th{background:var(--bg2);color:var(--gold);padding:10px;text-align:left;border-bottom:2px solid var(--border)}td{padding:10px;border-bottom:1px solid var(--border);color:var(--muted)}tr:hover td{background:var(--card)}
+.tag{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:600}.tag-green{background:rgba(39,174,96,.15);color:var(--green)}.tag-red{background:rgba(231,76,60,.15);color:var(--red)}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:30px 20px;text-align:center;color:var(--muted);font-size:12px}
+footer a{color:var(--muted);text-decoration:none}footer a:hover{color:var(--gold-light)}.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap}
+@media(max-width:768px){article h1{font-size:22px}article h2{font-size:18px}}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Card Removal Strategy Guide: When, What & How Many Cards to Cut","datePublished":"2026-06-03","dateModified":"2026-06-03","author":{"@type":"Organization","name":"STS2Guides"},"publisher":{"@type":"Organization","name":"STS2Guides"}}</script>
+<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L97YHHQRT3');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+<header><div class="header-inner"><a href="../" class="logo"><div class="logo-icon">🗑️</div><div class="logo-text">STS2<span>Guides</span></div></a><nav><a href="../">Home</a><a href="../guides/">Guides</a><a href="../characters/">Characters</a><a href="../cards/">Cards</a><a href="../relics/">Relics</a><a href="../tier-list/">Tier List</a></nav></div></header>
+<div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Card Removal Strategy</div>
+<article>
+<h1>🗑️ Card Removal Strategy: When, What &amp; How Many Cards to Cut</h1>
+<p style="color:var(--muted);font-size:13px">📅 Updated Jun 3, 2026 · ⏱️ 11 min read · 🏷️ <span class="tag tag-green">Strategy</span> <span class="tag tag-red">v0.106.1</span></p>
+
+<div class="hl"><strong>Card removal is the most underrated skill in STS2.</strong> The difference between a 25-card deck and a 15-card deck isn't just 10 cards — it's seeing your best cards 40% more often, setting up combos 2 turns faster, and dying to bad draws far less frequently.</div>
+
+<h2>Why Card Removal Wins Runs</h2>
+<p>Every card you remove increases the probability of drawing your best cards by <strong>1/(deck size-1)</strong>. In a 25-card deck, you see any specific card once every 5 turns. In a 15-card deck, you see it once every 3 turns. That 2-turn difference is <strong>lethal in boss fights</strong>.</p>
+
+<p><strong>The golden rule:</strong> Every time you add a card to your deck, ask "Is this card better than the average card currently in my deck?" If not, skipping is correct. If the card is strong but you already have 20+ cards, removing a bad card becomes higher priority.</p>
+
+<h2>What to Remove First: Strike vs Defend</h2>
+<table><tr><th>Character</th><th>Remove First</th><th>Why</th></tr>
+<tr><td>Ironclad</td><td>Defend (after Act 1)</td><td>Ironclad blocks with HP/Reaper. Strikes scale with Strength. Remove Defends mid-game.</td></tr>
+<tr><td>Silent</td><td>Strike</td><td>Silent's damage comes from skills (Poison/Sly/Shiv). Strikes don't scale. Remove all 5 ASAP.</td></tr>
+<tr><td>Defect</td><td>Strike</td><td>Orbs provide passive damage. Strikes are dead draws. Remove Strikes aggressively.</td></tr>
+<tr><td>Necrobinder</td><td>Strike (in Doom build), Defend (in Summon build)</td><td>Minions provide block/damage. Remove whichever basic card your minions replace.</td></tr>
+<tr><td>Regent</td><td>Strike</td><td>Sly/Stars provide damage. Strikes are the worst cards in Regent's large starter deck.</td></tr></table>
+
+<h2>Shop Removal Math: When to Spend Gold</h2>
+<p>Card removal at a shop costs: <strong>75g → 100g → 125g → 150g → 175g</strong> (increasing per removal).</p>
+<ul><li><strong>First removal (75g):</strong> Almost always worth it. Buy before a common relic (150-180g) if your deck is >15 cards.</li>
+<li><strong>Second removal (100g):</strong> Worth it if deck is >18 cards and you can still afford a key relic.</li>
+<li><strong>Third removal (125g):</strong> Only if you're rich (250g+) and your deck is >20 cards.</li>
+<li><strong>Fourth+ removal:</strong> Diminishing returns. Spend gold on relics/cards instead.</li></ul>
+
+<h2>Event-Based Removal — Best Sources</h2>
+<table><tr><th>Event</th><th>Cost</th><th>When to Take</th></tr>
+<tr><td>Bonfire Spirits</td><td>Offer a card → remove</td><td><span class="tag tag-green">Always</span> if offering a basic card. Skip if offering a core card.</td></tr>
+<tr><td>Cleric (Remove card for 50g)</td><td>50g</td><td><span class="tag tag-green">Always take</span>. Half the shop price.</td></tr>
+<tr><td>Ancient Writing</td><td>Free (remove or upgrade all)</td><td>Remove if deck >18, upgrade if deck is already tight.</td></tr>
+<tr><td>Designer In-Spire</td><td>75g → remove, or skip</td><td>Take if your deck is >15 cards. Cheapest shop-equivalent removal.</td></tr>
+<tr><td>Falling</td><td>Lose a random card (Skill/Attack/Power)</td><td>Almost always positive if it hits a basic card. Can be devastating if it forces you to lose a key card.</td></tr></table>
+
+<h2>Optimal Deck Sizes</h2>
+<table><tr><th>Archetype</th><th>Ideal Size</th><th>Max</th></tr>
+<tr><td>Infinite combo</td><td>7-10 cards</td><td>12</td></tr>
+<tr><td>Sly Discard (Silent)</td><td>12-16 cards</td><td>18</td></tr>
+<tr><td>Strength scaling (Ironclad)</td><td>15-20 cards</td><td>25</td></tr>
+<tr><td>Frost Wall (Defect)</td><td>15-22 cards</td><td>28</td></tr>
+<tr><td>Summon (Necrobinder)</td><td>18-25 cards</td><td>30</td></tr>
+<tr><td>Starfall Combo (Regent)</td><td>15-20 cards</td><td>25</td></tr></table>
+
+<h2>When NOT to Remove</h2>
+<ul><li><strong>Act 1 before the first elite:</strong> You need damage density. Removing a Strike when you only have 3 other attack cards is suicide — the elite kills you while you're drawing Defends.</li><li><strong>When you have Toxic Egg + early shop:</strong> Upgraded Defends are legitimately good. Keep them.</li><li><strong>Ironclad with Strength relics:</strong> A Strike with +3 Strength is 9 damage for 1 energy — better than many common damage cards. Remove Defends instead.</li></ul>
+
+<div class="hl"><strong>🎯 Key Takeaway:</strong> Aim for your deck to be 15-20 cards by the Act 3 boss. Remove the worst basic card at every cheap opportunity (events, first 2 shop removals). The single most impactful removal is the first one — it increases the consistency of your entire deck by 5-8%.</div>
+</article>
+<footer><div class="footer-links"><a href="../">Home</a><a href="./">Guides</a><a href="../characters/">Characters</a><a href="../tier-list/">Tier List</a></div><p>STS2Guides unofficial. Slay the Spire 2 © Mega Crit Games. Not affiliated. © 2026 STS2Guides.</p><p>DMCA: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p></footer>
+</body>
+</html>

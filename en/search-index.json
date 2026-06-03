@@ -424,5 +424,65 @@
     "url": "/en/guides/coop-synergy-deep-dive.html",
     "category": "Guides",
     "keywords": "co-op,synergy,team,comp,role,tank,dps,support,tournament,devour the tower"
+  },
+  {
+    "url": "/en/guides/defect-complete-guide.html",
+    "title": "Defect Complete Guide: Orbs, Focus & A10 Strategy (29.8% WR)",
+    "keywords": "defect,complete guide,orbs,focus,frost,lightning,dark orb,plasma,a10,ascension,card tier list,relic priority",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/regent-master-guide.html",
+    "title": "Regent Master Guide: Stars, Forge & Sly Resource Management",
+    "keywords": "regent,master guide,stars,forge,sly,resource management,starfall,sly control,royal guard,card tier list",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/corrupted-heart-guide.html",
+    "title": "How to Beat the Corrupted Heart: Act 4 Boss Strategy Guide",
+    "keywords": "corrupted heart,act 4,boss guide,beat of death,final boss,heart strategy,per character,preparation",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/neow-bonus-guide.html",
+    "title": "Neow's Blessing Tier List: Best Starter Bonuses for Every Character",
+    "keywords": "neow,blessing,bonus,starter,tier list,best pick,per character,neow bonus",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/card-removal-guide.html",
+    "title": "Card Removal Strategy Guide: When, What & How Many Cards to Cut",
+    "keywords": "card removal,deck thinning,remove cards,strikes vs defends,shop removal,optimal deck size",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/enchantment-guide.html",
+    "title": "Enchantment System Complete Guide: How Enchanted Cards Work in STS2",
+    "keywords": "enchantment,enchanted cards,new mechanic,enchant types,enchanted combos,cards,enchantment system",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/coop-team-comps.html",
+    "title": "Co-op Team Composition Tier List: Best 2/3/4-Player Combos",
+    "keywords": "co-op,team comp,tier list,2 player,3 player,4 player,duo,trio,squad,tournament,team composition",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/ancient-boons-guide.html",
+    "title": "Ancient Boons & Alternate Chapters: Complete System Guide",
+    "keywords": "ancient boons,alternate chapters,ancient enemies,chapter route,boss rewards,boon tier list,per character",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/relic-synergies-guide.html",
+    "title": "Best Relic Combos & Synergies: Beyond Individual Rankings",
+    "keywords": "relic combos,relic synergy,best combinations,dead branch corruption,mummified hand,relic pairs,synergy matrix",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/a10-character-guide.html",
+    "title": "How to Beat A10 with Every Character: Ultimate Ascension Clear Guide",
+    "keywords": "a10,ascension 10,hardest difficulty,per character,ascension guide,boss tips,a10 modifiers,high ascension",
+    "category": "Guides"
   }
 ]

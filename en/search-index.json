@@ -482,7 +482,67 @@
   {
     "url": "/en/guides/a10-character-guide.html",
     "title": "How to Beat A10 with Every Character: Ultimate Ascension Clear Guide",
-    "keywords": "a10,ascension 10,hardest difficulty,per character,ascension guide,boss tips,a10 modifiers,high ascension",
+    "keywords": "a10,ascension 10,hardest difficulty,a10 guide,per character,high ascension,boss counters,universal tips",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/weekly-meta-report-week25.html",
+    "title": "Week 25 Meta Report: Quiet Window & v0.108.0 Predictions (Jun 9鈥?5)",
+    "keywords": "week 25,meta report,quiet window,v0.108.0,predictions,player count,meta snapshot,weekly",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/patch-v0-108-predictions.html",
+    "title": "v0.108.0 Predictions: What Cards Will Be Nerfed & Buffed?",
+    "keywords": "v0.108,patch predictions,nerf,buff,sly strike,death sentence,defect,regent,balance,act 4",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/silent-vs-necrobinder.html",
+    "title": "Silent vs Necrobinder: #1 (35.6%) vs #2 (28.4%) Head-to-Head",
+    "keywords": "silent,necrobinder,vs,comparison,head to head,meta king,dps,win rate,which character",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/coop-carries-tier-list.html",
+    "title": "Co-op Carries Tier List: Best DPS Characters & Comps for Multiplayer",
+    "keywords": "co-op,carries,tier list,dps,damage,dealer,multiplayer,team comp,devour the tower",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/a20-endgame-guide.html",
+    "title": "A20 Endgame Guide: Ascension 15鈫?0 Difficulty Spike & Character Builds",
+    "keywords": "a20,endgame,ascension 20,hardest difficulty,a15,a20,character builds,boss hp scaling",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/best-powers-tier-list.html",
+    "title": "Best Powers Tier List: Every Power Card Ranked S Through B",
+    "keywords": "powers,power cards,tier list,corruption,footwork,echo form,devoted legion,archetype,ranked",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/regent-vs-silent.html",
+    "title": "Regent vs Silent: Scaling Minions vs Tempo Burst â€" Who Deals More Damage?",
+    "keywords": "regent,silent,vs,comparison,damage,dps,scaling,minions,tempo burst,showdown",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/necrobinder-sic-em-build.html",
+    "title": "Necrobinder Sic 'Em Build: Post-v0.107.0 Swarm Engine Guide",
+    "keywords": "necrobinder,sic em,build,summon,swarm,post buff,v0.107,engine,minion army",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/budget-builds-guide.html",
+    "title": "Budget Builds Guide: Win Without Ancient Cards (All 5 Characters)",
+    "keywords": "budget,builds,common,uncommon,no ancient,budget principles,cheap,beginner,a20 viable",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/speedrun-optimization.html",
+    "title": "Speedrun Optimization Guide: Character Tier List & Turbo Builds",
+    "keywords": "speedrun,optimization,turbo,exhaust engine,character tier,settings,pathing,categories",
     "category": "Guides"
   }
 ]

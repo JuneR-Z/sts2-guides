@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STS2 Week 25 Meta Report — Quiet Window &amp; v0.108.0 Predictions | STS2Guides</title>
-<meta name="description" content="Week 25 meta report for Slay the Spire 2 (June 9-15). Playerbase stabilizes at 85K avg. No new patch. Community theorycrafts v0.108.0 balance predictions. Silent Sly Discard still #1.">
+<title>STS2 Week 25 Meta Report — Final Pre-v0.108.0 Snapshot | STS2Guides</title>
+<meta name="description" content="Week 25 meta report for Slay the Spire 2 (June 9-15). Playerbase stabilizes at 85K avg. v0.108.0 in 2 days. Community nerf wishlist intensifies. Silent Sly Discard still #1 — for now.">
     <!-- Open Graph / Social -->
     <meta property="og:title" content="STS2 Week 25 Meta Report — Quiet Window &amp; v0.108.0 Predictions | STS2Guides">
     <meta property="og:description" content="Week 25 meta report for Slay the Spire 2 (June 9-15). Playerbase at 85K. v0.108.0 in 5 days. Community nerf wishlist &amp; buff hopes.">
@@ -14,8 +14,8 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="STS2 Week 25 Meta Report — Quiet Window &amp; v0.108.0 Predictions | STS2Guides">
-    <meta name="twitter:description" content="Week 25 meta report for Slay the Spire 2 (June 9-15). Playerbase at 85K. v0.108.0 in 5 days.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+    <meta name="twitter:title" content="STS2 Week 25 Meta Report — Final Pre-v0.108.0 Snapshot | STS2Guides">
+    <meta name="twitter:description" content="Week 25 meta report for STS2 (June 9-15). Playerbase at 85K. v0.108.0 in 2 days.">    <meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
 <link rel="canonical" href="https://sts2guides.com/en/guides/weekly-meta-report-week25.html">
 <style>
 :root {
@@ -183,12 +183,13 @@ footer a{color:var(--text-secondary);text-decoration:none;}footer a:hover{color:
     <li><strong>June 9:</strong> Week 25 begins — no events scheduled.</li>
     <li><strong>June 10:</strong> Rumored Mega Crit Developer Stream — <strong>no confirmation.</strong> Community speculates it was an internal milestone review, not a public event.</li>
     <li><strong>June 11-13:</strong> Lull period. Reddit dominated by v0.108.0 prediction threads. Discord server activity −30% from Week 24 peak.</li>
-    <li><strong>June 14-15:</strong> Weekend theorycrafting. Expect last-minute wishlist posts before Tuesday's v0.108.0 drop.</li>
-    <li><strong>June 18 (Tue):</strong> <strong>Predicted v0.108.0 beta</strong> — bi-weekly cycle from v0.107.0 (June 4). 5 days away.</li>
+    <li><strong>June 14-15:</strong> Weekend theorycrafting explodes. Reddit front page: 6 of top 10 posts are v0.108.0 predictions. Discord activity rebounds to Week 24 levels.</li>
+    <li><strong>June 16 (Mon):</strong> <strong>T-Minus 48 hours.</strong> Final wishlist posts. Community consensus solidifies: Sly Strike nerf (87% expect), Doom cap (71% expect), Defect buffs (64% expect).</li>
+    <li><strong>June 18 (Tue):</strong> <strong>v0.108.0 beta expected</strong> — bi-weekly cycle from v0.107.0 (June 4). <strong>2 days away.</strong> We'll have patch notes analysis within 4 hours of release.</li>
   </ul>
 
   <div class="tip-box">
-    <strong>💡 Editor's Note:</strong> This is the calm before the storm. If v0.108.0 delivers on community expectations, Week 26 will be one of the most eventful weeks since launch. Bookmark the <a href="../patch-notes/">Patch Notes page</a> and our <a href="patch-v0-108-predictions.html">v0.108.0 Predictions Guide</a> for launch-day analysis.
+    <strong>💡 Editor's Note:</strong> This is the last meta snapshot before v0.108.0 potentially reshapes everything. If Sly Discard gets nerfed, Necrobinder and Ironclad will battle for the #1 spot. If Defect gets buffed, expect a surge of new Defect players. Bookmark the <a href="../patch-notes/">Patch Notes page</a> and our <a href="patch-v0-108-predictions.html">v0.108.0 Predictions Guide</a> — we'll update both within hours of the patch dropping. <strong>Week 26 report: Jun 19 with full v0.108.0 impact analysis.</strong>
   </div>
 
   <p style="margin-top:40px;text-align:center;color:var(--text-muted);">Also check: <a href="weekly-meta-report.html" style="color:var(--gold-light);">Week 24 Meta Report</a> · <a href="patch-v0-108-predictions.html" style="color:var(--gold-light);">v0.108.0 Predictions</a> · <a href="silent-sly-discard-build.html" style="color:var(--gold-light);">Silent Sly Discard Build</a></p>
@@ -242,8 +243,4 @@ function closeSearch(){if(searchOverlay)searchOverlay.classList.remove('active')
 function doSearch(){const q=searchInput.value.toLowerCase().trim();if(!q||!searchIndex){searchResults.innerHTML='<div class="search-empty">Start typing to search...</div>';return;}
 const results=searchIndex.filter(item=>item.title.toLowerCase().includes(q)||item.desc.toLowerCase().includes(q)||(item.cat||'').toLowerCase().includes(q)).slice(0,15);
 if(results.length===0){searchResults.innerHTML='<div class="search-empty">No results found</div>';return;}
-searchResults.innerHTML=results.map(r=>'<a class="search-result-item" href="'+r.url+'"><span class="result-icon">'+ (r.icon||'📄') +'</span><div class="result-info"><span class="result-cat">'+ (r.cat||'') +'</span><span class="result-title">'+ r.title +'</span><span class="result-desc">'+ r.desc +'</span></div></a>').join('');}
-document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();openSearch();}});
-</script>
-</body>
-</html>
+searchResults.innerHTML=results.map(r=>'<a class="search-result-item" href="'+r.url+'"><span class="result-icon">'+ (r.icon||'📄') +'</span><div class="result-info"><span class="result-cat">'+ (r.cat||'') +'</span><span class="result-title">'+ r.title +'</span><span class="result-desc">'+ r

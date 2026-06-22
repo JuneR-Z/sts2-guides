@@ -198,6 +198,36 @@
     "category": "Guides"
   },
   {
+    "url": "/en/guides/patch-v0-107.1-analysis.html",
+    "title": "v0.107.1 Major Update #2 — Full Strategy Breakdown (Jun 2026)",
+    "keywords": "patch analysis,v0.107.1,major update 2,aeonglass main branch,doormaker removed,steam workshop,rng rework,xoshiro256,neow relics,regent buffs,bestiary,infested prism",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/weekly-meta-report-week26.html",
+    "title": "Week 26 Meta Report — v0.107.1 First Weekend Data (Jun 2026)",
+    "keywords": "meta report,week 26,v0.107.1,silent 36.3%,necrobinder 34.0%,regent 31.6%,top builds,build tier list,player count",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/top-builds-meta-jun-2026.html",
+    "title": "Top 5 STS2 Builds in the Current Meta — June 2026",
+    "keywords": "top 5 builds,meta builds,sly discard,sic em summon,block ramp,plasma cycling,ritual synergy,best decks,winning builds",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/aeonglass-replaces-doormaker.html",
+    "title": "Goodbye Doormaker — Aeonglass Takes Over Act 4 (Transition Guide)",
+    "keywords": "aeonglass,doormaker removed,act 4 boss,boss guide,transition guide,v0.107.1,character matchup,wither mechanic",
+    "category": "Guides"
+  },
+  {
+    "url": "/en/guides/steam-workshop-guide.html",
+    "title": "Steam Workshop Guide — Install, Best Mods &amp; Create Your Own",
+    "keywords": "steam workshop,mods,how to install mods,best mods,mod creation,downfall,qol mods,content mods",
+    "category": "Guides"
+  },
+  {
     "url": "/en/guides/patch-v0-105-analysis.html",
     "title": "v0.105.0 Patch Analysis — Aeonglass, Bestiary & Defect Renaissance",
     "keywords": "patch analysis,v0.105,aeonglass,bestiary,defect buffs,shatter,doormaker replaced,new boss,fishing rod",

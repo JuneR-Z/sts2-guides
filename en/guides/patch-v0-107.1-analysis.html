@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STS2 v0.107.1 Patch Analysis: Major Update #2 Full Breakdown | STS2Guides</title>
+<meta name="description" content="Complete strategy analysis of STS2 v0.107.1 Major Update #2: Aeonglass replaces Doormaker in Act 4, Steam Workshop launch, xoshiro256** RNG rework, 3 new Neow relics, Regent 9-card buff, Bestiary, Infested Prism rework. How every change affects your runs.">
+    <meta property="og:title" content="STS2 v0.107.1 Patch Analysis: Major Update #2 Full Breakdown | STS2Guides">
+    <meta property="og:description" content="Complete analysis of v0.107.1 Major Update #2: Aeonglass main branch, Workshop, RNG rework, new Neow relics, Regent buffs, Bestiary, Infested Prism rework.">
+    <meta property="og:url" content="https://sts2guides.com/en/guides/patch-v0-107.1-analysis.html">
+    <meta property="og:type" content="website"><meta property="og:site_name" content="STS2Guides"><meta property="og:image" content="https://sts2guides.com/en/og-image.png">
+    <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="STS2 v0.107.1 Patch Analysis: Major Update #2 Full Breakdown | STS2Guides">
+    <meta name="twitter:description" content="Aeonglass main branch, Steam Workshop, RNG rework, Regent buffs — complete strategy analysis."><meta name="twitter:image" content="https://sts2guides.com/en/og-image.png">
+<link rel="canonical" href="https://sts2guides.com/en/guides/patch-v0-107.1-analysis.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Guides","item":"https://sts2guides.com/en/guides/"},{"@type":"ListItem","position":2,"name":"v0.107.1 Patch Analysis","item":"https://sts2guides.com/en/guides/patch-v0-107.1-analysis.html"}]}</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L97YHHQRT3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L97YHHQRT3');</script>
+<!-- Google AdSense Auto Ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<style>:root{--bg-primary:#0d0d1a;--bg-secondary:#151528;--bg-card:#1a1a30;--bg-card-hover:#222240;--border:#2a2a45;--text-primary:#e8e6dc;--text-secondary:#a09c8c;--text-muted:#686450;--gold:#d4a03c;--gold-light:#f0c860;--crimson:#c0392b;--green:#27ae60;--blue:#3498db;--purple:#8e44ad;}*{margin:0;padding:0;box-sizing:border-box;}body{background:var(--bg-primary);color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;min-height:100vh;}header{background:var(--bg-secondary);border-bottom:2px solid var(--blue);position:sticky;top:0;z-index:100;}.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;}.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--crimson));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;}.logo-text{font-size:18px;font-weight:700;color:var(--text-primary);}.logo-text span{color:var(--gold-light);}nav{display:flex;gap:0;}nav a{color:var(--text-secondary);text-decoration:none;padding:8px 14px;font-size:13px;border-radius:4px;transition:all .2s;}nav a:hover{color:var(--gold-light);background:rgba(255,255,255,0.05);}nav a.active{color:var(--gold-light);}.breadcrumb{max-width:800px;margin:0 auto;padding:12px 20px;font-size:13px;color:var(--text-muted);}.breadcrumb a{color:var(--text-secondary);text-decoration:none;}.breadcrumb a:hover{color:var(--gold-light);}main{max-width:800px;margin:0 auto;padding:20px;}h1{font-size:2em;margin:0 0 8px;color:var(--gold-light);}h2{font-size:1.5em;margin:40px 0 16px;color:var(--gold);border-bottom:1px solid var(--border);padding-bottom:8px;}h3{font-size:1.2em;margin:28px 0 12px;color:var(--text-primary);}p{margin:12px 0;color:var(--text-secondary);}ul,ol{margin:12px 0 12px 24px;color:var(--text-secondary);}li{margin:6px 0;}strong{color:var(--text-primary);}a{color:var(--gold-light);text-decoration:underline;}.tip-box{background:var(--bg-card);border-left:3px solid var(--gold);padding:16px 20px;margin:20px 0;border-radius:0 6px 6px 0;}.tip-box strong{color:var(--gold-light);}.danger-box{background:var(--bg-card);border-left:3px solid var(--crimson);padding:16px 20px;margin:20px 0;border-radius:0 6px 6px 0;}.danger-box strong{color:var(--crimson);}.buff{color:var(--green);font-weight:700;}.nerf{color:var(--crimson);font-weight:700;}.rework{color:var(--gold-light);font-weight:700;}table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;}th{background:var(--bg-card);color:var(--gold-light);padding:10px 12px;text-align:left;border-bottom:2px solid var(--border);}td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text-secondary);}tr:hover td{background:var(--bg-card-hover);}.change-card{background:var(--bg-card);border-radius:8px;padding:16px;margin:16px 0;}.change-card h4{margin:0 0 8px;font-size:1.05em;}.cta-section{text-align:center;margin:40px 0 20px;padding:24px;background:var(--bg-card);border-radius:8px;}.cta-section p{margin:8px 0;}footer{text-align:center;padding:30px 20px;color:var(--text-muted);font-size:13px;border-top:1px solid var(--border);margin-top:40px;}footer a{color:var(--text-secondary);}@media(max-width:768px){main{padding:16px;}h1{font-size:1.5em;}nav a{padding:6px 10px;font-size:12px;}.header-inner{padding:0 10px;}}
+.nav-dropdown{position:relative}
+.nav-dropdown>a,.dropdown-trigger{display:flex;align-items:center;gap:4px;padding:8px 14px;font-size:13px;border-radius:4px;cursor:pointer;user-select:none;white-space:nowrap;transition:all .2s;text-decoration:none;color:var(--text-secondary)}
+.nav-dropdown>a:hover,.dropdown-trigger:hover{color:var(--gold-light);background:rgba(255,255,255,0.05)}
+.nav-dropdown>a::after,.dropdown-trigger::after{content:'▼';font-size:8px;margin-top:2px}
+.nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:4px 0;min-width:140px;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{display:block}
+.nav-dropdown-menu a{display:block;padding:8px 16px;font-size:13px;border-radius:0;white-space:nowrap}
+.nav-dropdown-menu a:hover{background:rgba(255,255,255,0.08)}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><a href="../index.html" class="logo"><div class="logo-icon">⬆️</div><div class="logo-text">STS2<span>Guides</span></div></a><nav>
+      <a href="../">Home</a>
+      <a href="../guides/index.html" class="active">Guides</a>
+      <a href="../characters/index.html">Characters</a>
+      <div class="nav-dropdown" onclick="event.stopPropagation();this.classList.toggle('open')">
+        <span class="dropdown-trigger">Database</span>
+        <div class="nav-dropdown-menu"><a href="../cards/index.html">Cards</a><a href="../relics/index.html">Relics</a><a href="../bosses/index.html">Bosses</a></div>
+      </div>
+      <div class="nav-dropdown" onclick="event.stopPropagation();this.classList.toggle('open')">
+        <span class="dropdown-trigger">Tools</span>
+        <div class="nav-dropdown-menu"><a href="../tier-list/">Tier List</a><a href="../deck-builder/">Deck Builder</a><a href="../tools/">Tools</a></div>
+      </div>
+      <a href="../patch-notes/">Patch Notes</a>
+      <a href="../about.html">About</a>
+    </nav></div></header>
+<div class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Guides</a> / v0.107.1 Analysis</div>
+<main>
+<h1>STS2 v0.107.1 Major Update #2: The Complete Strategy Breakdown</h1>
+<p style="color:var(--text-muted);">~14 min read · Every change analyzed, every number crunched, every strategy updated</p>
+<p style="color:var(--text-muted);">📅 Published: June 22, 2026 · v0.107.1 released June 19 (Main Branch)</p>
+
+<div class="tip-box"><strong>Patch at a Glance — What Changed:</strong><br>
+<span class="buff">▲ Aeonglass → Main Branch</span> — Replaces Doormaker as Act 4 boss<br>
+<span class="buff">▲ Steam Workshop Live</span> — Full mod support, 136K concurrent on launch weekend<br>
+<span class="buff">▲ RNG Rewrite</span> — xoshiro256** replaces Java Random, draws more uniform<br>
+<span class="buff">▲ 3 New Neow Relics</span> — New early-game blessing options<br>
+<span class="buff">▲ Regent 9-Card Buff</span> — Ritual synergy package introduced<br>
+<span class="buff">▲ Bestiary Added</span> — In-game enemy/summon documentation<br>
+<span class="rework">▲ Infested Prism Rework</span> — Second rework, patterns now documented<br>
+<span class="nerf">▼ Doormaker Removed</span> — Boss fight deleted from the game</p>
+
+<h2>The Big One: Aeonglass Replaces Doormaker</h2>
+<p>This is the single most impactful change in v0.107.1. <strong>Doormaker has been removed from the game entirely</strong>, and <strong>Aeonglass is now the permanent Act 4 boss</strong> on the main branch. This fundamentally changes how you should prepare for the endgame.</p>
+
+<div class="change-card">
+<h4>Why This Matters</h4>
+<p>Doormaker was a <strong>burst-damage check</strong> — if you could kill the doors fast enough, the fight was trivial. Aeonglass is a <strong>sustained-threat boss</strong> with Wither mechanics that punish long fights and scaling that demands both block and damage output. Every deck that was optimized for Doormaker needs re-evaluation.</p>
+</div>
+
+<div class="change-card">
+<h4>Which Characters Win (and Lose) from This Switch</h4>
+<p><span class="buff">▲ Silent — Big Winner:</span> Sly Discard out-scales Wither naturally. Weak application (Leg Sweep, Scare) neuters multi-hit attacks. Draw-heavy engines find answers to every Aeonglass phase.</p>
+<p><span class="buff">▲ Necrobinder — Winner:</span> Summon armies provide chump-blockers against Aeonglass's targeted attacks. Sic 'Em scaling keeps pace with Wither stacks.</p>
+<p><span class="nerf">▼ Ironclad — Neutral/Slight Loser:</span> Block Ramp struggles against Wither's max HP reduction. Exhaust builds fare better by cycling to key block cards faster.</p>
+<p><span class="buff">▲ Defect — Neutral/Slight Winner:</span> Plasma cycling generates energy to play around Wither. Focus-scaling is slower but more reliable post-RNG rework.</p>
+<p><span class="buff">▲ Regent — Winner:</span> New Ritual cards provide scaling that ignores Wither. Sly stacking still works but Ritual is now the preferred line against Aeonglass.</p>
+</div>
+
+<h2>RNG Rework: xoshiro256** Replaces Java Random</h2>
+<p>The switch from Java's legacy <code>java.util.Random</code> to <strong>xoshiro256**</strong> is the most "invisible but massive" change in STS2 history. It doesn't touch card balance, relic stats, or enemy numbers — but it <strong>changes how runs feel</strong>.</p>
+
+<div class="change-card">
+<h4>What xoshiro256** Does Better</h4>
+<ul>
+<li><strong>No outcome clustering:</strong> Java Random can produce streaks of 10+ "bad" draws. xoshiro256** is mathematically more uniform — you still get variance, but extreme streaks are less common.</li>
+<li><strong>Faster:</strong> xoshiro256** is ~3x faster per call. On runs with thousands of RNG calls (shuffles, loot, enemy intents), this adds up to smoother gameplay.</li>
+<li><strong>More state:</strong> 256 bits of state (vs Java Random's 48 bits) means the seed space is astronomically larger — no two runs will ever feel "samey" due to seed collision.</li>
+</ul>
+</div>
+
+<div class="tip-box"><strong>Strategic Impact:</strong> Draw-heavy characters (Silent, Defect) benefit most — fewer "dead" turns where you draw all skills into an attacking boss. Orb generation (Defect) and summon draws (Necrobinder) feel more consistent. This is a hidden buff to consistency-reliant archetypes.</div>
+
+<h2>3 New Neow Relics: Early Game Reshaped</h2>
+<p>Three new starting blessings join Neow's offering pool. Each rewards a different playstyle and adds meaningful new choices to the "pick your blessing" screen.</p>
+
+<div class="change-card">
+<h4>Relic #1: Shifting Idol <span class="buff">NEW</span></h4>
+<p>Start each combat with 1 temporary Strength. Lose 1 max HP per floor. <strong>High-risk, high-reward</strong> — the Strength is excellent for Act 1 elites, but 1 max HP per floor adds up to ~50 lost max HP over a full run. Ironclad can offset this with healing; Silent struggles.</p>
+</div>
+
+<div class="change-card">
+<h4>Relic #2: Echoing Prism <span class="buff">NEW</span></h4>
+<p>The first 3 times you would shuffle your draw pile each combat, draw 1 card instead. <strong>Incredible for small-deck builds.</strong> Silent and Defect benefit most. This relic effectively gives you 3 free draw triggers per fight — it's particularly strong in Act 1 where fights are short.</p>
+</div>
+
+<div class="change-card">
+<h4>Relic #3: Cursed Figurine <span class="buff">NEW</span></h4>
+<p>Gain 1 energy at the start of each turn. Gain a random Curse. <strong>The Bell Curve with less downside.</strong> 1 extra energy is game-changing, but a random Curse in your deck can brick draws. Necrobinder and Ironclad (who can exhaust curses) handle this best.</p>
+</div>
+
+<h2>Regent's 9-Card Buff: Ritual Enters the Meta</h2>
+<p>Regent received the largest buff package of any character in a single patch. The theme is <strong>Ritual synergy</strong> — these cards now form a coherent second archetype alongside Sly stacking.</p>
+
+<table>
+<tr><th>Card</th><th>Change</th><th>Impact</th></tr>
+<tr><td>Ritual Dagger</td><td class="buff">Damage 8→12, Ritual bonus doubled</td><td>Now a legitimate scaling engine, not a meme pick</td></tr>
+<tr><td>Ritual Potion</td><td class="buff">Cost 1→0, gain 1 Ritual stack</td><td>0-cost Ritual enabler — auto-include in Ritual decks</td></tr>
+<tr><td>Prophesize</td><td class="buff">Draw 2→3, costs Ritual stacks</td><td>More card draw, better late-game cycling</td></tr>
+<tr><td>Glimmer</td><td class="buff">Block 5→7, Ritual bonus adds Weak</td><td>Now provides both block AND debuff in Ritual builds</td></tr>
+<tr><td>Cursed Offering</td><td class="buff">Energy 1→2, costs 3 HP</td><td>Double energy for 3 HP is premium — Ironclad-tier value</td></tr>
+<tr><td>Dark Pact</td><td class="buff">Block 6→9</td><td>Solid defensive card even without Ritual synergy</td></tr>
+<tr><td>Blood Rite</td><td class="buff">Heal 3→5</td><td>Better sustain, helps offset Ritual self-damage effects</td></tr>
+<tr><td>Soul Bind</td><td class="buff">Exhaust 1→0 cards</td><td>No longer forced exhaust — flexible for any build</td></tr>
+<tr><td>Shadow Mend</td><td class="buff">Block 4→6, upgraded: draws 1</td><td>From filler to solid pick — block + draw is always good</td></tr>
+</table>
+
+<div class="tip-box"><strong>New Regent Priority:</strong> Ritual Dagger + Ritual Potion + any Ritual enabler forms the core. Sealed Throne (lost Innate in v0.106.0 but still powerful) remains the best relic target. The Ritual build is <strong>slower but scales harder</strong> than Sly — ideal for Aeonglass and longer boss fights.</div>
+
+<h2>Bestiary: Knowledge Is Power</h2>
+<p>The new <strong>Bestiary</strong> feature provides in-game documentation of enemy patterns, summon stats, and boss abilities. It's not just a lore feature — it's a <strong>strategic tool</strong>.</p>
+<ul>
+<li><strong>Enemy intent previews</strong> — see possible next-turn actions without memorizing wiki pages</li>
+<li><strong>Summon documentation</strong> — Necrobinder summons and Regent minions have their stats and abilities listed</li>
+<li><strong>Boss phase tracking</strong> — know which phase an Aeonglass or Corrupted Heart fight is in</li>
+<li><strong>Enemy unlock progress</strong> — tracks which enemies you've fully documented</li>
+</ul>
+<p>The Bestiary is most impactful for <strong>new and intermediate players</strong> who haven't memorized every enemy pattern. Veterans will appreciate the completion tracking and summon documentation.</p>
+
+<h2>Infested Prism Rework (v2)</h2>
+<p>After the v0.106.0 rework didn't hit the mark, Mega Crit has given Infested Prism a <strong>second rework</strong> in v0.107.1. The new patterns are more intuitive and the fight is now fairer — but it's still a dangerous encounter.</p>
+<div class="danger-box"><strong>Updated Strategy:</strong> The reworked Prism cycles through 4 distinct phases instead of 3. Phase 2 (the "swarm" phase) is the most dangerous — bring AoE or multi-hit attacks. Phase 4 is a damage race — save your potions for it. Block requirements: 15+ per turn average, 25+ for Phase 2.</div>
+
+<h2>How to Adapt Your Runs for v0.107.1</h2>
+<ol>
+<li><strong>Re-evaluate your Act 4 plan.</strong> Doormaker strategies are dead. Build for sustained scaling, not burst.</li>
+<li><strong>Pick a Neow relic that matches your character.</strong> Shifting Idol for Ironclad, Echoing Prism for Silent/Defect, Cursed Figurine for Necrobinder.</li>
+<li><strong>Try Ritual Regent.</strong> The 9-card buff package is the biggest single-character change. Ritual builds are now genuinely competitive.</li>
+<li><strong>Trust the RNG (more).</strong> xoshiro256** reduces feast-or-famine draw patterns. Aggressive pathing is slightly safer now.</li>
+<li><strong>Install a QoL mod.</strong> Relic Stats Tracker and Run History Plus provide data that will make you a better player.</li>
+<li><strong>Use the Bestiary.</strong> Stop memorizing enemy patterns from wiki pages — the in-game Bestiary has everything.</li>
+<li><strong>Respect Aeonglass.</strong> Bring Weak, scaling damage, and at least one cleanse/answer for Wither. The fight is harder than Doormaker.</li>
+</ol>
+
+<div class="cta-section">
+<p style="font-size:1.2em;color:var(--gold-light);">📋 More patch resources:</p>
+<p><a href="../patch-notes/">Full Patch Notes</a> · <a href="weekly-meta-report-week26.html">Week 26 Meta Report</a> · <a href="aeonglass-boss-strategy.html">Aeonglass Boss Guide</a> · <a href="../characters/regent.html">Regent Detail Page</a></p>
+</div>
+</main>
+<footer><p>© 2026 STS2Guides — Unofficial fan site. Not affiliated with Mega Crit.</p><p><a href="../about.html">About</a> · <a href="../privacy.html">Privacy</a> · DMCA: <a href="mailto:dmca@sts2guides.com">dmca@sts2guides.com</a></p></footer>
+<script src="../js/guide-enhancements.js"></script>
+</body>
+</html>
